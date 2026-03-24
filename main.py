@@ -24,7 +24,18 @@ async def main():
     with open(sources_file, 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
         sources_data = data.get('sources', [])
-    
+        
+    # Append private sources from Environment Variable (GitHub Secrets)
+    private_sources = os.getenv('PRIVATE_SOURCES')
+    if private_sources:
+        try:
+            private_data = yaml.safe_load(private_sources)
+            if isinstance(private_data, list):
+                sources_data.extend(private_data)
+                print(f"Loaded {len(private_data)} private sources from Secrets.")
+        except Exception as e:
+            print(f"Failed to parse PRIVATE_SOURCES: {e}")
+            
     for s in sources_data:
         if isinstance(s, dict):
             url = s.get('url')

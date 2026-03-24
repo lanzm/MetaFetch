@@ -54,8 +54,9 @@ MetaFetch 是一款高性能的自动化代理节点聚合工具。它能够从�
 如果你想添加自己的私密源或修改分流规则，可以按照以下步骤操作：
 
 1. **环境准备**：
+   > 💡 **提示：** 由于项目每天自动抓取并提交更新，包含非常多的历史 commit。强烈建议克隆时加上 `--depth=1` 以进行浅克隆，节省下载时间与空间。
    ```bash
-   git clone <你的项目地址>
+   git clone --depth=1 <你的项目地址>
    cd MetaFetch
    pip install -r requirements.txt
    ```

@@ -155,11 +155,11 @@ class Generator:
         for key, name in REGION_NAMES.items():
             count = len(region_nodes.get(key, []))
             if count > 0:
-                header_row.append(name.split(' ')[-1]) # 只取名字，去掉 Emoji 节省空间
+                header_row.append(name) # 保留完整的名称和 Emoji
                 value_row.append(str(count))
         
         if others:
-            header_row.append("其他")
+            header_row.append("🌍 其他")
             value_row.append(str(len(others)))
             
         header_row.append("**总计**")

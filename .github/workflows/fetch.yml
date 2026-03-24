@@ -31,6 +31,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Fetch Task
+        env:
+          PRIVATE_SOURCES: ${{ secrets.PRIVATE_SOURCES }}
         run: |
           python main.py
 
