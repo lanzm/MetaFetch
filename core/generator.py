@@ -155,17 +155,18 @@ class Generator:
         for key, name in REGION_NAMES.items():
             count = len(region_nodes.get(key, []))
             if count > 0:
-                header_row.append(name) # 保留完整的名称和 Emoji
+                header_row.append(name.replace(' ', '')) # 去掉名字里的空格，避免表格换行
                 value_row.append(str(count))
         
         if others:
-            header_row.append("🌍 其他")
+            header_row.append("🌍其他")
             value_row.append(str(len(others)))
             
         header_row.append("**总计**")
         value_row.append(f"**{total_nodes}**")
         
-        # Build Markdown Table
+        # Build Markdown Table Header and Set nowrap layout trick optionally
+
         table_header = "| " + " | ".join(header_row) + " |"
         table_sep = "| :---: " + "| :---: " * (len(header_row) - 1) + "|"
         table_values = "| " + " | ".join(value_row) + " |"
