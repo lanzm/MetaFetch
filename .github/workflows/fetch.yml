@@ -1,6 +1,9 @@
 name: MetaFetch Fetch Update
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '0 */3 * * *'  # 每 3 小时运行一次
   workflow_dispatch:      # 支持手动触发
