@@ -1,0 +1,30 @@
+# Python 缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.env
+.venv
+
+# IDE 配置文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 日志文件
+*.log
+
+# 临时文件
+temp/
+tmp/
+
+# 操作系统特定文件
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,137 @@
+# MetaFetch 订阅源清单 (Structured YAML Version)
+# 已通过自动校验，剔除了失效链接
+
+sources:
+  - name: "🔥🔥🔥 日抛机场系列"
+    url: "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub"
+    note: "产量极高，全球覆盖"
+
+  - name: "🔥🔥🔥 Snakem 24059 精选"
+    url: "https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml"
+    note: "包含 0019 系列高质节点"
+
+  - name: "📡 Huibq 聚合"
+    url: "https://raw.githubusercontent.com/Huibq/TrojanLinks/master/links/vmess"
+    note: "Trojan/VLESS 主力"
+
+  - name: "📡 Zhangkai 系列"
+    url: "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
+
+  - name: "🔬 Mksshare 实验室"
+    url: "https://raw.githubusercontent.com/mksshare/mksshare.github.io/main/README.md"
+    recursive: true
+    note: "自动提取链接"
+
+  - name: "🔬 Abshare 实验室"
+    url: "https://raw.githubusercontent.com/abshare/abshare.github.io/main/README.md"
+    recursive: true
+
+  - name: "[仓库/失效/归档] hy2"
+    url: "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hy2"
+
+  - name: "[仓库/失效/归档] hysteria2"
+    url: "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hysteria2"
+
+  - name: "[仓库/失效/归档] peasoft"
+    url: "https://gist.githubusercontent.com/peasoft/7907a8ee2a4fa5e80cd1bd006664442c/raw/"
+    recursive: true
+
+  - name: "🔥🔥🔥 ClashGitHub"
+    url: "https://clashgithub.com/wp-content/uploads/rss/%Y%m%d.yml"
+    note: "自动填入当前日期"
+
+  - name: "[动态日期] NodeFree TXT"
+    url: "https://node.nodefree.me/%Y/%m/%Y%m%d.txt"
+    note: "自动填入当前日期"
+
+  - name: "[动态日期] NodeFree YAML"
+    url: "https://node.nodefree.me/%Y/%m/%Y%m%d.yaml"
+    note: "自动填入当前日期"
+
+  - name: "[动态日期] v2rayShare TXT"
+    url: "https://static.v2rayshare.net/%Y/%m/%Y%m%d.txt"
+    note: "自动填入当前日期 | 国内不可用"
+
+  - name: "[动态日期] v2rayShare YAML"
+    url: "https://static.v2rayshare.net/%Y/%m/%Y%m%d.yaml"
+    note: "自动填入当前日期 | 国内不可用"
+
+  - name: "[动态日期] oneClash TXT"
+    url: "https://oss.oneclash.cc/%Y/%m/%Y%m%d.txt"
+    note: "自动填入当前日期 | 国内不可用"
+
+  - name: "[动态日期] oneClash YAML"
+    url: "https://oss.oneclash.cc/%Y/%m/%Y%m%d.yaml"
+    note: "自动填入当前日期 | 国内不可用"
+
+backups:
+  - name: "Peasoft Gist"
+    url: "https://gist.githubusercontent.com/peasoft/40b87245630092f30cc98af61190b4e2/raw/"
+    enabled: false
+
+  - name: "[仓库/失效/归档] merged_proxies_new.yaml"
+    url: "https://raw.githubusercontent.com/Misaka-blog/chromego_merge/refs/heads/main/sub/merged_proxies_new.yaml"
+    enabled: false
+    ignore: "vmess,ss,ssr,trojan"
+
+  - name: "[仓库/失效/归档] Jsnzkpg"
+    url: "https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg"
+    enabled: false
+
+  - name: "[仓库/失效/归档] clash.yml"
+    url: "https://raw.githubusercontent.com/moneyfly1/sublist/main/clash.yml"
+    enabled: false
+
+  - name: "[仓库/失效/归档] sub"
+    url: "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
+    enabled: false
+
+  - name: "[仓库/失效/归档] v2ray"
+    url: "https://raw.githubusercontent.com/mfuu/v2ray/master/v2ray"
+    enabled: false
+
+  - name: "[仓库/失效/归档] clash.yaml"
+    url: "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml"
+    enabled: false
+
+  - name: "[仓库/失效/归档] bpjzx1"
+    url: "https://raw.githubusercontent.com/Lewis-1217/FreeNodes/main/bpjzx1"
+    enabled: false
+
+  - name: "[仓库/失效/归档] bpjzx2"
+    url: "https://raw.githubusercontent.com/Lewis-1217/FreeNodes/main/bpjzx2"
+    enabled: false
+
+  - name: "[仓库/失效/归档] clash_near.txt"
+    url: "https://raw.githubusercontent.com/Junely/clash/main/clash_near.txt"
+    enabled: false
+
+  - name: "[仓库/失效/归档] template3.yaml"
+    url: "https://raw.githubusercontent.com/Junely/clash/main/template3.yaml"
+    enabled: false
+
+  - name: "[仓库/失效/归档] Mkhalili"
+    url: "https://raw.githubusercontent.com/imohammadkhalili/V2RAY/main/Mkhalili"
+    enabled: false
+
+  - name: "[仓库/失效/归档] nodefree4clash.txt"
+    url: "https://raw.githubusercontent.com/mlabalabala/v2ray-node/main/nodefree4clash.txt"
+    enabled: false
+
+  - name: "[仓库/失效/归档] Long_term_subscription_num"
+    url: "https://raw.githubusercontent.com/w1770946466/Auto_proxy/main/Long_term_subscription_num"
+    enabled: false
+
+  - name: "[仓库/失效/归档] all"
+    url: "https://raw.githubusercontent.com/mheidari98/.proxy/main/all"
+    enabled: false
+
+  - name: "[仓库/失效/归档] long"
+    url: "https://sub.nicevpn.top/long"
+    enabled: false
+    note: "国内不可用"
+
+  - name: "[仓库/失效/归档] Clash.yaml"
+    url: "https://sub.nicevpn.top/Clash.yaml"
+    enabled: false
+    note: "国内不可用"

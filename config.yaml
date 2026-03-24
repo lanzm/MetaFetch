@@ -1,0 +1,66 @@
+# MetaFetch Configuration Template (Clash Meta)
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: true
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  listen: :1053
+  enhanced-mode: redir-host
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  fallback:
+    - 8.8.8.8
+    - 1.1.1.1
+
+proxy-groups:
+  - name: 🚀 选择代理
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🔰 延迟最低
+      - ✅ 手动选择
+      - 🗺️ 选择地区
+      - DIRECT
+  
+  - name: 🗺️ 选择地区
+    type: select
+    proxies: [] # Will be filled with region groups
+
+  - name: ♻️ 自动选择
+    type: fallback
+    url: http://www.google.com/generate_204
+    interval: 300
+    proxies: []
+
+  - name: 🔰 延迟最低
+    type: url-test
+    url: http://www.google.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies: []
+  
+  - name: ✅ 手动选择
+    type: select
+    proxies: [] # Will be filled with all nodes
+
+rules:
+  - DOMAIN-SUFFIX,google.com,🚀 选择代理
+  - DOMAIN-KEYWORD,google,🚀 选择代理
+  - DOMAIN-SUFFIX,github.com,🚀 选择代理
+  - DOMAIN-SUFFIX,githubusercontent.com,🚀 选择代理
+  - DOMAIN-KEYWORD,github,🚀 选择代理
+  - DOMAIN-SUFFIX,youtube.com,🚀 选择代理
+  - DOMAIN-KEYWORD,youtube,🚀 选择代理
+  - DOMAIN-SUFFIX,facebook.com,🚀 选择代理
+  - DOMAIN-SUFFIX,twitter.com,🚀 选择代理
+  - DOMAIN-SUFFIX,netflix.com,🚀 选择代理
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - MATCH,🚀 选择代理
