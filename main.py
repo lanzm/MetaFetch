@@ -88,7 +88,7 @@ async def main():
         generator = Generator(TEMPLATE_FILE)
         generator.generate(processed_nodes, OUTPUT_FILE, active_source_count, raw_count, elapsed_time)
     
-    print(f"\n✅ All done! Generated: {OUTPUT_FILE}")
+    print(f"\n[OK] All done! Generated: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     asyncio.run(main())
