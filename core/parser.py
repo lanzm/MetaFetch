@@ -53,6 +53,17 @@ class Node:
             if '#' in dt:
                 self.data['name'] = unquote(dt.split('#')[-1])
 
+    def _validate_short_id(self, sid: str) -> Optional[str]:
+        if not sid: return None
+        # 移除非 16 进制字符
+        sid = "".join(c for c in sid if c.lower() in "0123456789abcdef")
+        if not sid: return None
+        # 确保长度为偶数 (Clash 要求)
+        if len(sid) % 2 != 0:
+            sid = sid[:-1]
+        if not sid: return None
+        return sid[:16]
+
     def _load_vmess(self, url: str, dt: str):
         try:
             content = b64decodes(dt)
@@ -120,6 +131,19 @@ class Node:
                 params = dict(qc.split('=', 1) for qc in parsed.query.split('&') if '=' in qc)
                 if 'sni' in params: self.data['sni'] = params['sni']
                 if 'allowInsecure' in params: self.data['skip-cert-verify'] = params['allowInsecure'] == '1'
+                if 'security' in params:
+                    if params['security'] in ('tls', 'reality'):
+                        self.data['tls'] = True
+                if 'fp' in params: self.data['client-fingerprint'] = params['fp']
+                if 'type' in params: self.data['network'] = params['type']
+                
+                # Reality options
+                if 'pbk' in params:
+                    self.data['tls'] = True
+                    self.data['reality-opts'] = {'public-key': params['pbk']}
+                    sid = self._validate_short_id(params.get('sid') or params.get('shortId'))
+                    if sid:
+                        self.data['reality-opts']['short-id'] = sid
         except Exception:
             pass
 
@@ -138,17 +162,25 @@ class Node:
             if parsed.query:
                 params = dict(qc.split('=', 1) for qc in parsed.query.split('&') if '=' in qc)
                 if 'sni' in params: self.data['servername'] = params['sni']
-                if 'security' in params and params['security'] == 'tls': self.data['tls'] = True
+                if 'security' in params:
+                    if params['security'] in ('tls', 'reality'):
+                        self.data['tls'] = True
+                if 'flow' in params: self.data['flow'] = params['flow']
                 if 'fp' in params: self.data['client-fingerprint'] = params['fp']
                 if 'type' in params: self.data['network'] = params['type']
                 if 'path' in params:
-                    if params['type'] == 'ws':
+                    if params.get('type') == 'ws':
                         self.data['ws-opts'] = {'path': params['path']}
+                    elif params.get('type') == 'grpc':
+                        self.data['grpc-opts'] = {'grpc-service-name': params['path']}
+                
+                # Reality options
                 if 'pbk' in params:
-                    self.data['reality-opts'] = {
-                        'public-key': params['pbk'],
-                        'short-id': params.get('sid', '')
-                    }
+                    self.data['tls'] = True
+                    self.data['reality-opts'] = {'public-key': params['pbk']}
+                    sid = self._validate_short_id(params.get('sid') or params.get('shortId'))
+                    if sid:
+                        self.data['reality-opts']['short-id'] = sid
         except Exception:
             pass
 
