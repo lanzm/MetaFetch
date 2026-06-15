@@ -64,6 +64,10 @@ sources:
     url: "https://oss.oneclash.cc/%Y/%m/%Y%m%d.yaml"
     note: "自动填入当前日期 | 国内不可用"
 
+  - name: "📡 shaoyouvip 每日更新"
+    url: "https://raw.githubusercontent.com/shaoyouvip/free/main/all.yaml"
+    note: "与当前库重复率极低（约20%），可贡献大量新节点"
+
 backups:
   - name: "Peasoft Gist"
     url: "https://gist.githubusercontent.com/peasoft/40b87245630092f30cc98af61190b4e2/raw/"
