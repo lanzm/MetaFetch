@@ -37,7 +37,7 @@ sources:
     recursive: true
 
   - name: "🔥🔥🔥 ClashGitHub"
-    url: "https://clashgithub.com/wp-content/uploads/rss/%Y%m%d.yml"
+    url: "https://clashgithub.com/wp-content/uploads/rss/%Y%m%d.txt"
     note: "自动填入当前日期"
 
   - name: "[动态日期] NodeFree TXT"
