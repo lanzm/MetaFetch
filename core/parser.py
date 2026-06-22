@@ -68,6 +68,9 @@ class Node:
         try:
             content = b64decodes(dt)
             v = json.loads(content)
+            cipher = str(v.get('scy') or '').strip().lower()
+            if cipher not in ('auto', 'aes-128-gcm', 'chacha20-poly1305', 'none', 'zero'):
+                cipher = 'auto'
             self.data = {
                 'name': v.get('ps', 'vmess'),
                 'server': v.get('add'),
@@ -75,7 +78,7 @@ class Node:
                 'type': 'vmess',
                 'uuid': v.get('id'),
                 'alterId': int(v.get('aid', 0)),
-                'cipher': v.get('scy', 'auto'),
+                'cipher': cipher,
                 'network': v.get('net', 'tcp'),
                 'tls': v.get('tls') == 'tls',
                 'sni': v.get('sni'),
