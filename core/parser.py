@@ -15,8 +15,9 @@ class Node:
     def __init__(self, data: Union[Dict[str, Any], str]):
         self.data: Dict[str, Any] = {}
         if isinstance(data, dict):
-            self.data = data
+            self.data = data.copy()
             self.type = data.get('type', 'unknown')
+            self._clean_dict_fields()
         elif isinstance(data, str):
             self.load_url(data)
         
@@ -63,6 +64,30 @@ class Node:
             sid = sid[:-1]
         if not sid: return None
         return sid[:16]
+
+    def _clean_dict_fields(self):
+        # 1. Clean cipher for VMess
+        if self.type == 'vmess':
+            cipher = str(self.data.get('cipher') or '').strip().lower()
+            if cipher not in ('auto', 'aes-128-gcm', 'chacha20-poly1305', 'none', 'zero'):
+                cipher = 'auto'
+            self.data['cipher'] = cipher
+            
+        # 2. Clean Reality options for VLESS/Trojan
+        if self.type in ('vless', 'trojan'):
+            ropts = self.data.get('reality-opts')
+            if isinstance(ropts, dict):
+                pbk = ropts.get('public-key')
+                if pbk:
+                    ropts['public-key'] = unquote(str(pbk))
+                sid = ropts.get('short-id') or ropts.get('shortId')
+                if sid:
+                    valid_sid = self._validate_short_id(str(sid))
+                    if valid_sid:
+                        ropts['short-id'] = valid_sid
+                    else:
+                        ropts.pop('short-id', None)
+                        ropts.pop('shortId', None)
 
     def _load_vmess(self, url: str, dt: str):
         try:

@@ -155,6 +155,8 @@ class Generator:
             # 使用正则强制给 short-id 的值加引号 (如果还没加的话)
             # 匹配 short-id: 值，确保值被引号包裹
             yaml_content = re.sub(r'short-id:\s*([^\s"\']+)', r'short-id: "\1"', yaml_content)
+            # 同样强制给 public-key 加引号，避免以 - 开头的密钥引发 YAML 解析歧义
+            yaml_content = re.sub(r'public-key:\s*([^\s"\']+)', r'public-key: "\1"', yaml_content)
             
             f.write(yaml_content)
         
