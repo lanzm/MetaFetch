@@ -2,7 +2,7 @@ import json
 import yaml
 import traceback
 from typing import Dict, Any, List, Union, Optional
-from urllib.parse import urlparse, unquote, quote
+from urllib.parse import urlparse, unquote, quote, parse_qsl
 from utils.common import b64decodes, b64decodes_safe, b64encodes, b64encodes_safe
 
 DEFAULT_UUID = '8' * 8 + '-8888' * 3 + '-' + '8' * 12
@@ -131,7 +131,7 @@ class Node:
             }
             # Query params
             if parsed.query:
-                params = dict(qc.split('=', 1) for qc in parsed.query.split('&') if '=' in qc)
+                params = dict(parse_qsl(parsed.query))
                 if 'sni' in params: self.data['sni'] = params['sni']
                 if 'allowInsecure' in params: self.data['skip-cert-verify'] = params['allowInsecure'] == '1'
                 if 'security' in params:
@@ -163,7 +163,7 @@ class Node:
                 'udp': True
             }
             if parsed.query:
-                params = dict(qc.split('=', 1) for qc in parsed.query.split('&') if '=' in qc)
+                params = dict(parse_qsl(parsed.query))
                 if 'sni' in params: self.data['servername'] = params['sni']
                 if 'security' in params:
                     if params['security'] in ('tls', 'reality'):
@@ -199,7 +199,7 @@ class Node:
                 'udp': True
             }
             if parsed.query:
-                params = dict(qc.split('=', 1) for qc in parsed.query.split('&') if '=' in qc)
+                params = dict(parse_qsl(parsed.query))
                 if 'sni' in params: self.data['sni'] = params['sni']
                 if 'obfs' in params: self.data['obfs'] = params['obfs']
                 if 'obfs-password' in params: self.data['obfs-password'] = params['obfs-password']
