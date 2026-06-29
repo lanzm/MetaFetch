@@ -103,17 +103,40 @@ class NodeProcessor:
     def filter_invalid(self, nodes: List[Node]) -> List[Node]:
         valid_nodes = []
         for node in nodes:
-            # 必须包含 type, server, port (除了 hysteria2 可能自动补全)
-            # 且 type 不能是 unknown
             n_data = node.data
             n_type = n_data.get('type', 'unknown')
             n_server = n_data.get('server')
+            n_port = n_data.get('port')
             
+            # 1. 基础字段验证：type, server 不能为空
             if n_type == 'unknown' or not n_server:
-                # print(f"  - Dropping invalid node: {n_data.get('name', 'Unnamed')}")
                 continue
             
-            # 特殊检查：SS 必须有 password, VMESS 必须有 uuid 等（可选，目前先做基础校验）
+            # 2. 验证 port 必须为有效端口 (1-65535)
+            if n_port is None:
+                continue
+            try:
+                port_val = int(n_port)
+                if not (1 <= port_val <= 65535):
+                    continue
+                n_data['port'] = port_val
+            except (ValueError, TypeError):
+                continue
+            
+            # 3. 协议特定必要字段验证
+            if n_type == 'vmess':
+                if not n_data.get('uuid'):
+                    continue
+            elif n_type == 'vless':
+                if not n_data.get('uuid'):
+                    continue
+            elif n_type == 'ss':
+                if not n_data.get('cipher') or not n_data.get('password'):
+                    continue
+            elif n_type == 'trojan':
+                if not n_data.get('password'):
+                    continue
+            
             valid_nodes.append(node)
         return valid_nodes
 
