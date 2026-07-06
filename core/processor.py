@@ -22,6 +22,7 @@ REGION_FLAGS = {
     'IN': '🇮🇳', 'IND': '🇮🇳', 'India': '🇮🇳', '印度': '🇮🇳',
     'TR': '🇹🇷', 'TUR': '🇹🇷', 'Turkey': '🇹🇷', '土耳其': '🇹🇷',
     'AU': '🇦🇺', 'AUS': '🇦🇺', 'Australia': '🇦🇺', '澳大利亚': '🇦🇺',
+    'RO': '🇷🇴', 'ROU': '🇷🇴', 'Romania': '🇷🇴', '罗马尼亚': '🇷🇴',
 }
 
 class NodeProcessor:
