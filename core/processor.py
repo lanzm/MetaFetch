@@ -1,29 +1,13 @@
 import re
 from typing import List, Set, Dict, Any
 from core.parser import Node
+from utils.regions import REGIONS_DB
 
 # Region mapping for Emoji flags
-REGION_FLAGS = {
-    'HK': '🇭🇰', 'HKG': '🇭🇰', 'Hong Kong': '🇭🇰', '香港': '🇭🇰',
-    'TW': '🇹🇼', 'TWN': '🇹🇼', 'Taiwan': '🇹🇼', '台湾': '🇹🇼',
-    'JP': '🇯🇵', 'JPN': '🇯🇵', 'Japan': '🇯🇵', '日本': '🇯🇵',
-    'US': '🇺🇸', 'USA': '🇺🇸', 'United States': '🇺🇸', '美国': '🇺🇸',
-    'SG': '🇸🇬', 'SGP': '🇸🇬', 'Singapore': '🇸🇬', '新加坡': '🇸🇬',
-    'KR': '🇰🇷', 'KOR': '🇰🇷', 'Korea': '🇰🇷', '韩国': '🇰🇷',
-    'GB': '🇬🇧', 'UK': '🇬🇧', 'United Kingdom': '🇬🇧', '英国': '🇬🇧',
-    'FR': '🇫🇷', 'FRA': '🇫🇷', 'France': '🇫🇷', '法国': '🇫🇷',
-    'DE': '🇩🇪', 'DEU': '🇩🇪', 'Germany': '🇩🇪', '德国': '🇩🇪',
-    'CN': '🇨🇳', 'CHN': '🇨🇳', 'China': '🇨🇳', '中国': '🇨🇳',
-    'RU': '🇷🇺', 'RUS': '🇷🇺', 'Russia': '🇷🇺', '俄罗斯': '🇷🇺',
-    'CA': '🇨🇦', 'CAN': '🇨🇦', 'Canada': '🇨🇦', '加拿大': '🇨🇦',
-    'VN': '🇻🇳', 'VNM': '🇻🇳', 'Vietnam': '🇻🇳', '越南': '🇻🇳',
-    'NL': '🇳🇱', 'NLD': '🇳🇱', 'Netherlands': '🇳🇱', '荷兰': '🇳🇱',
-    'CH': '🇨🇭', 'CHE': '🇨🇭', 'Switzerland': '🇨🇭', '瑞士': '🇨🇭',
-    'IN': '🇮🇳', 'IND': '🇮🇳', 'India': '🇮🇳', '印度': '🇮🇳',
-    'TR': '🇹🇷', 'TUR': '🇹🇷', 'Turkey': '🇹🇷', '土耳其': '🇹🇷',
-    'AU': '🇦🇺', 'AUS': '🇦🇺', 'Australia': '🇦🇺', '澳大利亚': '🇦🇺',
-    'RO': '🇷🇴', 'ROU': '🇷🇴', 'Romania': '🇷🇴', '罗马尼亚': '🇷🇴',
-}
+REGION_FLAGS = {}
+for code, info in REGIONS_DB.items():
+    for kw in info['keywords'] + [code, info['name']]:
+        REGION_FLAGS[kw] = info['emoji']
 
 class NodeProcessor:
     def __init__(self):

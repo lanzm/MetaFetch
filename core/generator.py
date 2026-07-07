@@ -4,46 +4,19 @@ import re
 import os
 from typing import List, Dict, Any
 from core.parser import Node
+from utils.regions import REGIONS_DB
 
 # Region categorization mapping
 REGIONS = {
-    'HK': ['香港', 'HK', 'Hong Kong', '🇭🇰'],
-    'TW': ['台湾', 'TW', 'Taiwan', '🇹🇼'],
-    'JP': ['日本', 'JP', 'Japan', '🇯🇵'],
-    'US': ['美国', 'US', 'United States', '🇺🇸'],
-    'SG': ['新加坡', 'SG', 'Singapore', '🇸🇬'],
-    'KR': ['韩国', 'KR', 'Korea', '🇰🇷'],
-    'DE': ['德国', 'DE', 'Germany', '🇩🇪'],
-    'GB': ['英国', 'GB', 'UK', 'United Kingdom', '🇬🇧'],
-    'FR': ['法国', 'FR', 'France', '🇫🇷'],
-    'RU': ['俄罗斯', 'RU', 'Russia', '🇷🇺'],
-    'CA': ['加拿大', 'CA', 'Canada', '🇨🇦'],
-    'VN': ['越南', 'VN', 'Vietnam', '🇻🇳'],
-    'NL': ['荷兰', 'NL', 'Netherlands', '🇳🇱'],
-    'CH': ['瑞士', 'CH', 'Switzerland', '🇨🇭'],
-    'IN': ['印度', 'IN', 'India', '🇮🇳'],
-    'TR': ['土耳其', 'TR', 'Turkey', '🇹🇷'],
-    'AU': ['澳大利亚', 'AU', 'Australia', '🇦🇺'],
-    'TH': ['泰国', 'TH', 'Thailand', '🇹🇭'],
-    'PH': ['菲律宾', 'PH', 'Philippines', '🇵🇭'],
-    'MY': ['马来西亚', 'MY', 'Malaysia', '🇲🇾'],
-    'ID': ['印尼', 'ID', 'Indonesia', '🇮🇩'],
-    'BR': ['巴西', 'BR', 'Brazil', '🇧🇷'],
-    'AR': ['阿根廷', 'AR', 'Argentina', '🇦🇷'],
-    'MX': ['墨西哥', 'MX', 'Mexico', '🇲🇽'],
-    'IT': ['意大利', 'IT', 'Italy', '🇮🇹'],
-    'ES': ['西班牙', 'ES', 'Spain', '🇪🇸'],
+    code: info['keywords'] + [info['name'], info['emoji']]
+    for code, info in REGIONS_DB.items()
 }
 
 REGION_NAMES = {
-    'HK': '🇭🇰 香港', 'TW': '🇹🇼 台湾', 'JP': '🇯🇵 日本', 'US': '🇺🇸 美国',
-    'SG': '🇸🇬 新加坡', 'KR': '🇰🇷 韩国', 'DE': '🇩🇪 德国', 'GB': '🇬🇧 英国',
-    'FR': '🇫🇷 法国', 'RU': '🇷🇺 俄罗斯', 'CA': '🇨🇦 加拿大', 'VN': '🇻🇳 越南',
-    'NL': '🇳🇱 荷兰', 'CH': '🇨🇭 瑞士', 'IN': '🇮🇳 印度', 'TR': '🇹🇷 土耳其',
-    'AU': '🇦🇺 澳大利亚', 'TH': '🇹🇭 泰国', 'PH': '🇵🇭 菲律宾', 'MY': '🇲🇾 马来西亚',
-    'ID': '🇮🇩 印尼', 'BR': '🇧🇷 巴西', 'AR': '🇦🇷 阿根廷', 'MX': '🇲🇽 墨西哥',
-    'IT': '🇮🇹 意大利', 'ES': '🇪🇸 西班牙',
+    code: f"{info['emoji']} {info['name']}"
+    for code, info in REGIONS_DB.items()
 }
+
 
 FIXED_REGIONS = ['HK', 'JP', 'US']
 
