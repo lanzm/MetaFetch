@@ -27,4 +27,5 @@ REGIONS_DB = {
     'ES': {'name': '西班牙', 'emoji': '🇪🇸', 'keywords': ['ES', 'Spain']},
     'CN': {'name': '中国', 'emoji': '🇨🇳', 'keywords': ['CN', 'China', 'CHN']},
     'RO': {'name': '罗马尼亚', 'emoji': '🇷🇴', 'keywords': ['RO', 'Romania', 'ROU']},
+    'FI': {'name': '芬兰', 'emoji': '🇫🇮', 'keywords': ['FI', 'Finland', 'FIN']},
 }
