@@ -2,8 +2,8 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026-07-14--13%3A20%3A45-green.svg)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-1025-orange.svg)
+![Update](https://img.shields.io/badge/Updated-2026-07-14--15%3A46%3A12-green.svg)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-972-orange.svg)
 ![Sources](https://img.shields.io/badge/Active_Sources-18-blue.svg)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
@@ -39,12 +39,12 @@ MetaFetch 是一款高性能的自动化代理节点聚合工具。它能够从�
 ## 📊 节点分布统计
 
 <!-- STATS_TABLE_START -->
-> 更新时间：`2026-07-14 13:20:45`
-> 运行分析：从 `18` 个活跃源中抓取 `1405` 个节点，耗时 `3.14s`。去重后保留 `1025` 个有效节点。
+> 更新时间：`2026-07-14 15:46:12`
+> 运行分析：从 `18` 个活跃源中抓取 `1340` 个节点，耗时 `3.24s`。去重后保留 `972` 个有效节点。
 
 | 地区分布 | 🇭🇰香港 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇳🇱荷兰 | 🇨🇭瑞士 | 🇮🇳印度 | 🇮🇩印尼 | 🇮🇹意大利 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🌍其他 | **总计** |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 10 | 37 | 80 | 11 | 11 | 673 | 9 | 7 | 50 | 5 | 5 | 5 | 8 | 60 | 13 | 41 | **1025** |
+| **数量** | 9 | 34 | 76 | 5 | 11 | 665 | 9 | 6 | 46 | 5 | 5 | 5 | 8 | 37 | 11 | 40 | **972** |
 <!-- STATS_TABLE_END -->
 
 ---
