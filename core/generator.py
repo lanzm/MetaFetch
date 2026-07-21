@@ -159,8 +159,7 @@ class Generator:
                 }
             ] + sb_nodes + [
                 {"type": "direct", "tag": "direct"},
-                {"type": "block", "tag": "block"},
-                {"type": "dns", "tag": "dns-out"}
+                {"type": "block", "tag": "block"}
             ]
         }
         sb_path = "list.singbox.json"
