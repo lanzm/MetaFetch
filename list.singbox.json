@@ -2969,6 +2969,10 @@
           "enabled": true,
           "public_key": "PL-jIhHOxLpCUmnDvMEsB3YY3n8o7smiAT0P_SV6RCM",
           "short_id": "19d6296d2621d9fa"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -3002,6 +3006,10 @@
           "enabled": true,
           "public_key": "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg",
           "short_id": "2715592069f36fe7"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -3020,6 +3028,10 @@
           "enabled": true,
           "public_key": "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg",
           "short_id": "2715592069f36fe7"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -3038,6 +3050,10 @@
           "enabled": true,
           "public_key": "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg",
           "short_id": "2715592069f36fe7"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -3056,6 +3072,10 @@
           "enabled": true,
           "public_key": "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg",
           "short_id": "2715592069f36fe7"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -3074,6 +3094,10 @@
           "enabled": true,
           "public_key": "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg",
           "short_id": "2715592069f36fe7"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -3098,6 +3122,10 @@
           "enabled": true,
           "public_key": "dY9SNEllJMW63xo-JdXufhmjAxB_4uFw_QMjgufjiD8",
           "short_id": "ea10cd5686751ec5"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -3124,6 +3152,10 @@
           "enabled": true,
           "public_key": "sKWozGVep6wrIm63253QviGBtMLVrGB_W1JJHLEHi0s",
           "short_id": "97a01dfaef"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
         }
       }
     },
@@ -3142,6 +3174,10 @@
           "enabled": true,
           "public_key": "JlcNtRODuC4k8GhBFuXwjps9cRe3asq453_RLd3o9E8",
           "short_id": "e9e3098b62530266"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
         }
       }
     },
@@ -4784,6 +4820,10 @@
           "enabled": true,
           "public_key": "26JUgSVfmjMJCWNELoFDVo5E9Ks6u7WWfdXFGVLLwVk",
           "short_id": "a68956"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -4800,6 +4840,10 @@
           "enabled": true,
           "public_key": "6PX0SCkt6TANowjz80Ugiv4cSg0vF8g0mVt4WbyIGhI",
           "short_id": "8c1d45d1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -4815,6 +4859,10 @@
         "reality": {
           "enabled": true,
           "public_key": "bJrhMKdMfPjEZ-EUazGR6h-uUDWAFxXG1MZlUVsd3Ak"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -4830,6 +4878,10 @@
         "reality": {
           "enabled": true,
           "public_key": "bJrhMKdMfPjEZ-EUazGR6h-uUDWAFxXG1MZlUVsd3Ak"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5287,6 +5339,10 @@
           "enabled": true,
           "public_key": "MF_E-_CYAXdWxC1N_wTkdFyk3K7_1cNqNDPb0vnwl20",
           "short_id": "8311761729abcdef"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5304,6 +5360,10 @@
           "enabled": true,
           "public_key": "QocXHwad0mV7WA5jSAcqDac3uuVBEp1WF775-CilniE",
           "short_id": "45ba18f429ad1f28"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5320,6 +5380,10 @@
           "enabled": true,
           "public_key": "lxq7uAa7l0ozobBgTRrQIF_aCxDeJqZZFaNv8CFA9TQ",
           "short_id": "8622176789abcdef"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5336,6 +5400,10 @@
           "enabled": true,
           "public_key": "X-YL5VNtlMNIaBrwaHt3hJCeF_gMT9gPRDDlK1Qg7Tc",
           "short_id": "8321461729abcdef"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5353,6 +5421,10 @@
           "enabled": true,
           "public_key": "HUIUjR11K2-23-4Y-i51g9cun8etjfgaWW-h8AsEtEU",
           "short_id": "45ba24f179ad1f26"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5370,6 +5442,10 @@
           "enabled": true,
           "public_key": "HQ0kcyQp4LLPMJNtI7kEcQZw1o5AA1YNkOMfUUrsTjU",
           "short_id": "22adce68ed227a4a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -5385,6 +5461,10 @@
         "reality": {
           "enabled": true,
           "public_key": "PEPivzCg5cBehVQUMVJLNPx3A9hy719Fq7HQsXMp4Ro"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5449,6 +5529,10 @@
           "enabled": true,
           "public_key": "KEZ93Y9VgoirI18wIpcfS3z8I9GiaiFe-GKqGdEPMmg",
           "short_id": "e29c9c180c62"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5466,6 +5550,10 @@
           "enabled": true,
           "public_key": "MKXQ6n6iRohWguhAZqABw5XBiymVYZdK7hX9zua0Ik4",
           "short_id": "51ef5a427b3615ee"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5498,6 +5586,10 @@
           "enabled": true,
           "public_key": "bVhVy1hZY_iw-sljlaeVbTBBa6SPvMm0Kg0tCC8CKHM",
           "short_id": "ffffffffff"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -5553,6 +5645,10 @@
           "enabled": true,
           "public_key": "uNqGvaJEIFTFQvAxsTDhetPxkIWzJuBtxXsK0yFMYzM",
           "short_id": "48d5cf47"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -5569,6 +5665,10 @@
           "enabled": true,
           "public_key": "iZmzx7jEQZkVdLufLkHwuVIRXFYdhKG9Fi3AOrbhH3Q",
           "short_id": "373f"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -7053,6 +7153,10 @@
           "enabled": true,
           "public_key": "OigElWLoU6f5iw1SyTt06B2jCxx8-_cU5mY-RxHhejw",
           "short_id": "6a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -7145,6 +7249,10 @@
           "enabled": true,
           "public_key": "jILgyIiDR7xY8WDrU9EMx_iXUi6nKr3LapCgglBVBAU",
           "short_id": "3fa2fdb7dce16b8b"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -7258,6 +7366,10 @@
           "enabled": true,
           "public_key": "C1hW1bTA9WOacIK-fHHg-HLkDZ3FY7FhEhAyldMSUEA",
           "short_id": "a1b2c3d4e5f6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -7273,6 +7385,10 @@
         "reality": {
           "enabled": true,
           "public_key": "f8TgqVBYK3tmhip3lJ-r8D0i6fqEF1Zy-zAfEhS-Cl8"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -7288,6 +7404,10 @@
         "reality": {
           "enabled": true,
           "public_key": "f8TgqVBYK3tmhip3lJ-r8D0i6fqEF1Zy-zAfEhS-Cl8"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -7303,6 +7423,10 @@
         "reality": {
           "enabled": true,
           "public_key": "f8TgqVBYK3tmhip3lJ-r8D0i6fqEF1Zy-zAfEhS-Cl8"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -7318,6 +7442,10 @@
         "reality": {
           "enabled": true,
           "public_key": "f8TgqVBYK3tmhip3lJ-r8D0i6fqEF1Zy-zAfEhS-Cl8"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -7985,6 +8113,10 @@
           "enabled": true,
           "public_key": "pnMR5HaKsdYoVVOsg6dTO5GAE4B7n3oFrR212PBNMD0",
           "short_id": "20d8db26"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8013,6 +8145,10 @@
           "enabled": true,
           "public_key": "wx_YBP-v15Sj6Lj4j9BwxaTPGQM8NCOl4y3xjiJczVI",
           "short_id": "8eb855bd"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8030,6 +8166,10 @@
           "enabled": true,
           "public_key": "_WrhmgMiggnpdWovkTGGeg347TCjVqDdB9F8XZbbxCk",
           "short_id": "7aa4caf7"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8059,6 +8199,10 @@
           "enabled": true,
           "public_key": "Z0e3FDb_eaDgLvkqF3zBS-8GyK4YZZrOSbRsgyRnfFM",
           "short_id": "c2142637"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8076,6 +8220,10 @@
           "enabled": true,
           "public_key": "VToNLWgD_ieTXl5Qj7ugF3QAmij_evy_7c_-ztST50E",
           "short_id": "ac9fe5f6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8223,6 +8371,10 @@
           "enabled": true,
           "public_key": "FIKl-c7Npi_L7Nj_i_PpCOLuUY246lJBHseBwjs3fTs",
           "short_id": "8089be47"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8287,6 +8439,10 @@
           "enabled": true,
           "public_key": "onZAYhiTdAstxmlCt89CCYsuwIJg0HtI83FVyAMf0WY",
           "short_id": "f60bc53a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8486,6 +8642,10 @@
           "enabled": true,
           "public_key": "gqjS9wwxycF16Qf02GDt1UrvdrF_neQgj1Crduo_xB0",
           "short_id": "d5c1b9"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -8535,6 +8695,10 @@
           "enabled": true,
           "public_key": "zA-R_HtKJR1Hb0c1KXA3Yxh1TH_SPi1oV6cDfWURdQs",
           "short_id": "d4f1c403150d9964"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -8559,6 +8723,10 @@
           "enabled": true,
           "public_key": "M4KRLRGcJGhJScjCv3JinHE0Da9s79Ku7GlVFSNsTVY",
           "short_id": "a61500e1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8656,6 +8824,10 @@
           "enabled": true,
           "public_key": "IY7z4YneuuMK6nsOyqxHPC30hLR4CaxBVHD-SpRk2H0",
           "short_id": "377209f7cecf2f7d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -8704,6 +8876,10 @@
         "reality": {
           "enabled": true,
           "public_key": "HN1XHrqmB_-gDnVeXgmyPZFWAZEo4aTqlU-cIWh6hm0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8753,6 +8929,10 @@
           "enabled": true,
           "public_key": "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0",
           "short_id": "48050fab"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -8770,6 +8950,10 @@
           "enabled": true,
           "public_key": "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0",
           "short_id": "48050fab"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -8787,6 +8971,10 @@
           "enabled": true,
           "public_key": "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0",
           "short_id": "48050fab"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -8811,6 +8999,10 @@
           "enabled": true,
           "public_key": "JaP4bhvIMW-l7T0_RkLra59DeBYI6W9XemKa8MyRPSY",
           "short_id": "6c6082a2223c1d03"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8844,6 +9036,10 @@
           "enabled": true,
           "public_key": "oGgupP3uX0TNyFwuxNYaFj-IQ8EPhCuKfJdaOHiMnV0",
           "short_id": "c334408a1056aaf8"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -8861,6 +9057,10 @@
           "enabled": true,
           "public_key": "r93g3bpvAfKqF6GXG6nu0gz670iYPyn1Ve7e-snzqks",
           "short_id": "681333da5a32ba5d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9090,6 +9290,10 @@
           "enabled": true,
           "public_key": "OjkiWIhhS1F6Amq7lvz1KjDGolz7bWAx2J-cUDm6Aj8",
           "short_id": "9ca469a6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9107,6 +9311,10 @@
           "enabled": true,
           "public_key": "5CnEhjRNLBn_hvJ1ElY86WvsnGkEQT9XZTrl92rpciE",
           "short_id": "a825eb96"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9136,6 +9344,10 @@
           "enabled": true,
           "public_key": "BmrlR6aOvs9ynMu8MUMubG8UCyeU240VpzJyZgki4S8",
           "short_id": "69bb8a97"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9152,6 +9364,10 @@
           "enabled": true,
           "public_key": "09A5uaeJZAQZrfHTOltUsz71EgARGib-Gx9pHVTLglo",
           "short_id": "e463fd9a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9168,6 +9384,10 @@
           "enabled": true,
           "public_key": "fzTAlFj6UKULrUJF3v616th91VK9V3b_kpMqr5TIrgY",
           "short_id": "0004c578"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9185,6 +9405,10 @@
           "enabled": true,
           "public_key": "kpU886t2j-1rWjX0glqA-PtlbYqg8lfzoEHZY5STw20",
           "short_id": "c2fb9533"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9234,6 +9458,10 @@
           "enabled": true,
           "public_key": "MAReFiAvOMUMrnmEqmESPLYxP4HYJGA66AW5P6YmVwo",
           "short_id": "b959baf6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9250,6 +9478,10 @@
           "enabled": true,
           "public_key": "PnLhtpDx9g5PmJl85lB7WfP4NufuzlaybLp5HRDtLWk",
           "short_id": "88a08184"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9310,6 +9542,10 @@
           "enabled": true,
           "public_key": "2uLRbJukhltmpc8997ynjxglxcVSZTJMoGzBBGwAVGw",
           "short_id": "6689be8f"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9348,6 +9584,10 @@
           "enabled": true,
           "public_key": "RLybl6NmcuZkEbpr2lu3PVXdQhMLHX_ZM_axVoumOTo",
           "short_id": "10e2552d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9376,6 +9616,10 @@
           "enabled": true,
           "public_key": "lsaSokTYDU65WRP7AHOtw1rz9tA9eXuzt-a40BxxIWI",
           "short_id": "f5c8ce25"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9476,6 +9720,10 @@
           "enabled": true,
           "public_key": "zXMTPx4oY0dhNq0MZavPSejoOtbGpAjNhxUMIKN6JiM",
           "short_id": "87644254"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9493,6 +9741,10 @@
           "enabled": true,
           "public_key": "IP3qwE471JSE--nJnPCRjOhr-1TtuzzNaEZFQP08EDI",
           "short_id": "015c281e"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9532,6 +9784,10 @@
           "enabled": true,
           "public_key": "8pTXNQ3qjXR4G3NdGOpmbyp3G4bcB9_JGDOlVP2syVE",
           "short_id": "11ede74a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9592,6 +9848,10 @@
           "enabled": true,
           "public_key": "ko-IW6dHHFIwYN4MkPyP7Gioey1qJJMgF1ExwrJS1ww",
           "short_id": "fa93e70e"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9643,6 +9903,10 @@
           "enabled": true,
           "public_key": "RsT2axtuSFQi7Joh6iPqViD1OfLR2xgv0zoISlddYjM",
           "short_id": "124eb3c7"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9671,6 +9935,10 @@
           "enabled": true,
           "public_key": "DAmL5sQu3TxC6aBvOG_xr8Fod_4gpjxVdpE-E_q9zHE",
           "short_id": "37a7921d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9733,6 +10001,10 @@
           "enabled": true,
           "public_key": "NIt0H5El0xv6bVpnrearjNhS40Nu0M6b55XmOZi5rRg",
           "short_id": "86f9c18a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9784,6 +10056,10 @@
           "enabled": true,
           "public_key": "YnrFC-SdTr_VT0ntIvD8qqRqFaxWp2XQ2thuiCmZFwU",
           "short_id": "e3b58181"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9813,6 +10089,10 @@
           "enabled": true,
           "public_key": "kd_4j8sy8YqMOgf6sBam8G_7i78wflcmMgx8hKi_7ik",
           "short_id": "bc8eaeed"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9841,6 +10121,10 @@
           "enabled": true,
           "public_key": "bCf5kdCMhUtzLfYXqiJYG-HItln5XqLZmP0jJK7Xkjg",
           "short_id": "f644fb8f"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9880,6 +10164,10 @@
           "enabled": true,
           "public_key": "SQ2r0PTyE1WKEg1XzOR7aolSU93mgmAO3YGwCJkAHnQ",
           "short_id": "59e41686"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9933,6 +10221,10 @@
           "enabled": true,
           "public_key": "ZZbJ691d5ARvLUfBHR-vBvwMBVpQ-EOdyUEOg5QXy1w",
           "short_id": "d6231c85"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -9949,6 +10241,10 @@
           "enabled": true,
           "public_key": "svUkzXRXVvM7RyBVI3_kbzpwueqrDiKGMYUEg5hWcCc",
           "short_id": "1a404e70"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10024,6 +10320,10 @@
           "enabled": true,
           "public_key": "RkkUnRJWLRmkWW2wcovMQs-KPpWfOZDYRql7A_bjnyY",
           "short_id": "d52b92d6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10052,6 +10352,10 @@
           "enabled": true,
           "public_key": "H2wssnWkH-xaoWAjjdlOoWUzZ5XmGbjNMlS70ggY6Vo",
           "short_id": "d6e611a4"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10069,6 +10373,10 @@
           "enabled": true,
           "public_key": "WJTIJxqaoYNTnmIX2JIfiSKV8Y2MEpa6vK8cz3f-2Gg",
           "short_id": "7b45f616"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10085,6 +10393,10 @@
           "enabled": true,
           "public_key": "04dvMnYD6PxzWPRH6qzo4lcm6s8nUL5KUwnls4KqNHw",
           "short_id": "879fc23f"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10113,6 +10425,10 @@
           "enabled": true,
           "public_key": "RFIoJMmttSLnJsk8iHWy_557Qj_D5gLvG7OnbXHbs3U",
           "short_id": "3b6fe5fb"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10130,6 +10446,10 @@
           "enabled": true,
           "public_key": "iIqiTNVH8CCwxgBu-qoG28HRPksNs1TMBDYj9Uic8XM",
           "short_id": "07944eef"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10147,6 +10467,10 @@
           "enabled": true,
           "public_key": "zwolOgFvLNjjjGGmDRoOu-aQwhruW9O3uGF21f7uSWE",
           "short_id": "30d937fd"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10187,6 +10511,10 @@
           "enabled": true,
           "public_key": "v8qF1DIvzS-oTsxSY4jU3MiX2w0vJlE2HFPHfp6aaGI",
           "short_id": "146ff86f"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10409,6 +10737,10 @@
           "enabled": true,
           "public_key": "XgxSAzH0RjD8oPEKeR1kg3wnbNLfA6KZez83hhGEnTI",
           "short_id": "4351ff712d153d06"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -10425,6 +10757,10 @@
           "enabled": true,
           "public_key": "-zNDEqKkScKvMWB7spEper78GE_u-nR4jDHZ3DpOoxM",
           "short_id": "62ad184af31fc8cf"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10441,6 +10777,10 @@
         "reality": {
           "enabled": true,
           "public_key": "HKpd1sbrhBds8SJSL0d22MAq_QyTR6EP6y5b5DYol3U"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -10457,6 +10797,10 @@
         "reality": {
           "enabled": true,
           "public_key": "HKpd1sbrhBds8SJSL0d22MAq_QyTR6EP6y5b5DYol3U"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10554,6 +10898,10 @@
           "enabled": true,
           "public_key": "5KO-p5u_N5i11i_DC49SsSKTW1XvTiYMhg-eMzj3HTw",
           "short_id": "0417be28beffdfc1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -10602,6 +10950,10 @@
           "enabled": true,
           "public_key": "lE58e_UJlvF4EsejAljEtyFwaVhLLwEavnBf47YeoHM",
           "short_id": "5acd"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -10635,6 +10987,10 @@
           "enabled": true,
           "public_key": "Nkgkfi_ek-JldRFZTr-yMkm__nONsk66Zy_Fe48XW0E",
           "short_id": "151233424646c9da"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -10774,6 +11130,10 @@
           "enabled": true,
           "public_key": "sM0zI55WTZvcPhpGauMG84bVXeKcdWlavg16JEdAQn8",
           "short_id": "f69ec2803b8d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -10822,6 +11182,10 @@
           "enabled": true,
           "public_key": "9nvQaypTgq2UZ_9wSUctYxStDRWNJqe3o9evmKc5UBE",
           "short_id": "bc348c28dbc7b9f5"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
         }
       }
     },
@@ -10838,6 +11202,10 @@
           "enabled": true,
           "public_key": "9nvQaypTgq2UZ_9wSUctYxStDRWNJqe3o9evmKc5UBE",
           "short_id": "bc348c28dbc7b9f5"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
         }
       }
     },
@@ -10874,6 +11242,10 @@
           "enabled": true,
           "public_key": "1c7TsslPz_gsvzX4ENkEa36Pp3gm-M3SRLhvqtGaAz4",
           "short_id": "e8e019c424ccb765"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -10941,6 +11313,10 @@
           "enabled": true,
           "public_key": "NpgXDQ6jl_HGPdHAHFeiBl5Ym7bywxmw_EYovmFjVQs",
           "short_id": "c39acc8cb9481d24"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -10957,6 +11333,10 @@
           "enabled": true,
           "public_key": "sVtMU2ZA5W6TLnBCZdgfXqDnOwWePrGVjSNnueDlYmM",
           "short_id": "abbb6e5e07cdf34b"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
         }
       }
     },
@@ -10973,6 +11353,10 @@
           "enabled": true,
           "public_key": "sVtMU2ZA5W6TLnBCZdgfXqDnOwWePrGVjSNnueDlYmM",
           "short_id": "d5e4b75249e38cbb"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -10989,6 +11373,10 @@
         "reality": {
           "enabled": true,
           "public_key": "8i-67NPZNxTU8dgnF5yKYpijyu4GbQsDOdZSHQjsLGQ"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -11021,6 +11409,10 @@
           "enabled": true,
           "public_key": "Ep_RxUq0kSY2xhXtVRHJNQPgl3V_T4UGhTzOYXVPQEk",
           "short_id": "458ff70ea97eeac2"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -11053,6 +11445,10 @@
           "enabled": true,
           "public_key": "79ji8OAmCVQTKcJmvf-iqZypOSKwuTD_sbatB4RHXXM",
           "short_id": "f37329647c9a1886"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -11152,6 +11548,10 @@
           "enabled": true,
           "public_key": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
           "short_id": "43dcff53849b81e6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -11168,6 +11568,10 @@
           "enabled": true,
           "public_key": "i34zHKfyydOveuaYnjEU4ocu662Wagkf7fIbj9qiQRA",
           "short_id": "9e96f30390d6be81"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -11201,6 +11605,10 @@
           "enabled": true,
           "public_key": "1XGOxBopp223HFaTlswL3QE_1KW3WLgEbcHMA5cX9iM",
           "short_id": "80ba"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -11258,6 +11666,10 @@
           "enabled": true,
           "public_key": "zii4nGNapnFKL6SN8GzWNqFlElBvUCUFUThEP0kFH04",
           "short_id": "c6ef72e4635d15a5"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -12501,6 +12913,10 @@
           "enabled": true,
           "public_key": "VToNLWgD_ieTXl5Qj7ugF3QAmij_evy_7c_-ztST50E",
           "short_id": "ac9fe5f6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -12958,6 +13374,10 @@
           "enabled": true,
           "public_key": "VToNLWgD_ieTXl5Qj7ugF3QAmij_evy_7c_-ztST50E",
           "short_id": "ac9fe5f6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -13033,6 +13453,10 @@
           "enabled": true,
           "public_key": "VToNLWgD_ieTXl5Qj7ugF3QAmij_evy_7c_-ztST50E",
           "short_id": "ac9fe5f6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -13457,6 +13881,10 @@
           "enabled": true,
           "public_key": "0soGDTguByd3I9e2nLuzkw5BOHELZ_AHHDkA0Zx3JRA",
           "short_id": "f3f70ca767"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -13485,6 +13913,10 @@
           "enabled": true,
           "public_key": "EyzTSZxq5qlUT2xW0l7VP-DzIh2ucabMan9ekEv9Owo",
           "short_id": "143627f1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -13712,6 +14144,10 @@
           "enabled": true,
           "public_key": "UDLhjunZjP-5A6KBMeuWe3qp_FusLAshcQIcCF7EZh8",
           "short_id": "ce9f790791426d83"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -13729,6 +14165,10 @@
           "enabled": true,
           "public_key": "7BS-JUFgYVaWrwwyDSiVq_YDoG36w8cRd4U8HvEg-F0",
           "short_id": "4bcbc85d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -13746,6 +14186,10 @@
           "enabled": true,
           "public_key": "7BS-JUFgYVaWrwwyDSiVq_YDoG36w8cRd4U8HvEg-F0",
           "short_id": "4bcbc85d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -13801,6 +14245,10 @@
           "enabled": true,
           "public_key": "7BS-JUFgYVaWrwwyDSiVq_YDoG36w8cRd4U8HvEg-F0",
           "short_id": "4bcbc85d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
         }
       }
     },
@@ -13824,6 +14272,10 @@
         "reality": {
           "enabled": true,
           "public_key": "TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -14050,6 +14502,10 @@
           "enabled": true,
           "public_key": "1JlspB1qSmCPGjz7c_pnZnmlDYDVY-7i5LJy_iIxuDk",
           "short_id": "9da962"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -14092,6 +14548,10 @@
           "enabled": true,
           "public_key": "yLDI5Qjzn4AHlXVDEXNVcLKAdr_dFeJ3p4eAScGkQjA",
           "short_id": "0b0aa9caed9d011e"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
         }
       }
     },
@@ -14131,6 +14591,10 @@
           "enabled": true,
           "public_key": "0pXshPAXJ2f2weevsuwKGT5o8uhfYDaZKAdmxmC_4QQ",
           "short_id": "c3e5d2cd032ef410"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -14163,6 +14627,10 @@
           "enabled": true,
           "public_key": "HdM7NNWeW6queFno-hF8CET0i-ykrQJ9X4vqzGhaQ3E",
           "short_id": "74c69f639fff6340"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -14180,6 +14648,10 @@
           "enabled": true,
           "public_key": "pPGE5Uacj1AGAB_WLOXB_UUnVBOmuJGH0vTSfmRBKzM",
           "short_id": "2e40144ddc07e8e1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -14197,6 +14669,10 @@
           "enabled": true,
           "public_key": "pPGE5Uacj1AGAB_WLOXB_UUnVBOmuJGH0vTSfmRBKzM",
           "short_id": "2e40144ddc07e8e1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -14217,6 +14693,10 @@
           "enabled": true,
           "public_key": "_yzmX8WwaZJD4ddVgOZWJsx6r0lJzhTrTbkQLhwiWXk",
           "short_id": "c8540a3e9e1d8136"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
         }
       }
     },
@@ -14237,6 +14717,10 @@
           "enabled": true,
           "public_key": "C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4",
           "short_id": "9e2a6f4c3b7d1e8a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -14257,6 +14741,10 @@
           "enabled": true,
           "public_key": "_yzmX8WwaZJD4ddVgOZWJsx6r0lJzhTrTbkQLhwiWXk",
           "short_id": "c8540a3e9e1d8136"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -14289,6 +14777,10 @@
           "enabled": true,
           "public_key": "nDq00UeDI5TKKFipI6rgdVCqiTO98ncHKn90Qp3EsBE",
           "short_id": "f2b78452f9233f26"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -14324,6 +14816,10 @@
         "reality": {
           "enabled": true,
           "public_key": "-P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
         }
       }
     },
@@ -14355,6 +14851,10 @@
         "reality": {
           "enabled": true,
           "public_key": "YuhNgtj_Tf8WNLiSB2bNJKPvfwmqa6PNRpbP8TvNkzA"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -14372,6 +14872,10 @@
           "enabled": true,
           "public_key": "OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw",
           "short_id": "d67ec5a8fc40ebea"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -14389,6 +14893,10 @@
           "enabled": true,
           "public_key": "OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw",
           "short_id": "d67ec5a8fc40ebea"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
         }
       }
     },
@@ -14405,6 +14913,10 @@
         "reality": {
           "enabled": true,
           "public_key": "ppvT23Dpmf4G9dZLVQJq3Ev9ckq4REa1jJ9gkXqp1zQ"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
         }
       }
     },
@@ -14495,13 +15007,17 @@
           "enabled": true,
           "public_key": "OCLtjVdRxsou3429LRfjkDYgiAPs24TSgSeFZpChCEw",
           "short_id": "d67ec5a8fc40ebea"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本1-Ver.7",
-      "server": "q0cg80d-g06.jp01-nn-vm0.entry.fr0528.art",
+      "server": "f06a10f-g06.jp01-nn-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -14513,7 +15029,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本2-Ver.8",
-      "server": "qv1a10d-g06.jp02-e3-vm0.entry.fr0528.art",
+      "server": "x06g1cb-g06.jp02-e3-vm0.entry.fr0528.art",
       "server_port": 11778,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -14522,7 +15038,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本3-Ver.7",
-      "server": "f11atcb-g06.jp03-j7-vm0.entry.fr0528.art",
+      "server": "x1cg8mb-g06.jp03-j7-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -14534,7 +15050,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本4-Ver.8",
-      "server": "f0yg80b-g06.jp04-1d-vm0.entry.fr0528.art",
+      "server": "f0ypt2f-g06.jp04-1d-vm0.entry.fr0528.art",
       "server_port": 449,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -14543,7 +15059,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本5-Ver.9",
-      "server": "q1cgh0d-g06.jp05-h6-vm0.entry.fr0528.art",
+      "server": "f1cpt0d-g06.jp05-h6-vm0.entry.fr0528.art",
       "server_port": 46487,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -14552,7 +15068,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本6-Ver.8",
-      "server": "f11p82d-g06.jp06-jz-vm0.entry.fr0528.art",
+      "server": "x1yp10b-g06.jp06-jz-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -14564,7 +15080,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本7-Ver.2",
-      "server": "fo1ah0b-g06.jp07-sh-vm0.entry.fr0528.art",
+      "server": "f0ygtcd-g06.jp07-sh-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
