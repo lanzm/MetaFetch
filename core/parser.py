@@ -328,8 +328,14 @@ class Node:
         if not server or not port:
             return None
 
+        sb_type = t
+        if t == 'ss':
+            sb_type = 'shadowsocks'
+        elif t in ('hy2', 'hysteria2'):
+            sb_type = 'hysteria2'
+
         outbound = {
-            "type": t if t != "hy2" else "hysteria2",
+            "type": sb_type,
             "tag": self.name,
             "server": server,
             "server_port": int(port)
