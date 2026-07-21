@@ -142,13 +142,53 @@ class Generator:
         # 7. Save Sing-box JSON (list.singbox.json)
         sb_nodes = [node.to_singbox() for node in nodes if node.to_singbox()]
         sb_tags = [n['tag'] for n in sb_nodes]
-        
+        sb_tag_set = set(sb_tags)
+
+        sb_dynamic_groups = []
+        sb_region_menu = []
+
+        for key in active_keys:
+            group_name = REGION_NAMES[key]
+            region_sb_tags = [t for t in region_nodes[key] if t in sb_tag_set]
+            if not region_sb_tags: continue
+
+            auto_name = f"⚡ 自动选择 | {group_name}"
+            sb_dynamic_groups.append({
+                "type": "urltest", "tag": auto_name, "outbounds": region_sb_tags,
+                "url": "http://www.gstatic.com/generate_204", "interval": "3m"
+            })
+            sb_dynamic_groups.append({
+                "type": "selector", "tag": group_name,
+                "outbounds": [auto_name] + region_sb_tags
+            })
+            sb_region_menu.append(group_name)
+
+        if others:
+            others_sb_tags = [t for t in others if t in sb_tag_set]
+            if others_sb_tags:
+                others_group_name = '🌍 其他地区'
+                others_auto_name = f"⚡ 自动选择 | {others_group_name}"
+                sb_dynamic_groups.append({
+                    "type": "urltest", "tag": others_auto_name, "outbounds": others_sb_tags,
+                    "url": "http://www.gstatic.com/generate_204", "interval": "3m"
+                })
+                sb_dynamic_groups.append({
+                    "type": "selector", "tag": others_group_name,
+                    "outbounds": [others_auto_name] + others_sb_tags
+                })
+                sb_region_menu.append(others_group_name)
+
         singbox_config = {
             "outbounds": [
                 {
                     "type": "selector",
                     "tag": "🚀 选择代理",
-                    "outbounds": ["♻️ 自动选择"] + sb_tags + ["direct"]
+                    "outbounds": ["♻️ 自动选择", "🗺️ 选择地区"] + sb_region_menu + ["direct"]
+                },
+                {
+                    "type": "selector",
+                    "tag": "🗺️ 选择地区",
+                    "outbounds": sb_region_menu if sb_region_menu else ["direct"]
                 },
                 {
                     "type": "urltest",
@@ -156,8 +196,20 @@ class Generator:
                     "outbounds": sb_tags,
                     "url": "http://www.gstatic.com/generate_204",
                     "interval": "3m"
+                },
+                {
+                    "type": "urltest",
+                    "tag": "🔰 延迟最低",
+                    "outbounds": sb_tags,
+                    "url": "http://www.gstatic.com/generate_204",
+                    "interval": "3m"
+                },
+                {
+                    "type": "selector",
+                    "tag": "✅ 手动选择",
+                    "outbounds": sb_tags
                 }
-            ] + sb_nodes + [
+            ] + sb_dynamic_groups + sb_nodes + [
                 {"type": "direct", "tag": "direct"},
                 {"type": "block", "tag": "block"}
             ]
