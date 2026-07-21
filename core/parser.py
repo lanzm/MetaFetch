@@ -419,6 +419,12 @@ class Node:
                 if ropts.get('short-id'):
                     reality_cfg["short_id"] = str(ropts['short-id'])
                 tls_cfg["reality"] = reality_cfg
+                
+                fp = self.data.get('client-fingerprint') or 'chrome'
+                tls_cfg["utls"] = {
+                    "enabled": True,
+                    "fingerprint": str(fp)
+                }
             outbound["tls"] = tls_cfg
 
         return outbound
