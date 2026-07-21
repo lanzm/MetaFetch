@@ -8,7 +8,7 @@
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
 
-MetaFetch 是一款高性能的自动化代理节点聚合工具。它能够从全球公开渠道自动抓取、清洗、分类节点，并为 Clash (Mihomo) 提供开箱即用的高级分流配置文件。
+MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生成免费订阅链接，全球地区自动识别分流的高性能全自动化代理订阅引擎。支持 Clash / Mihomo、Sing-box、Shadowrocket (小火箭) 等全平台客户端。
 
 > [!IMPORTANT]
 > **声明：** 本项目由 [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) 改造而来，并在此基础上进行了深度定制化开发，增强了异步抓取、YAML 配置管理与地区自动分组逻辑。
