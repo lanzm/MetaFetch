@@ -2,9 +2,9 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026-07-21--09%3A21%3A16-green.svg)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-1129-orange.svg)
-![Sources](https://img.shields.io/badge/Active_Sources-18-blue.svg)
+![Update](https://img.shields.io/badge/Updated-2026-07-21--09%3A29%3A16-green.svg)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-1122-orange.svg)
+![Sources](https://img.shields.io/badge/Active_Sources-17-blue.svg)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
 
@@ -13,18 +13,31 @@ MetaFetch 是一款高性能的自动化代理节点聚合工具。它能够从�
 > [!IMPORTANT]
 > **声明：** 本项目由 [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) 改造而来，并在此基础上进行了深度定制化开发，增强了异步抓取、YAML 配置管理与地区自动分组逻辑。
 
-## 📥 订阅链接 (推荐)
+## 📥 订阅链接面板
 
-建议使用 **Clash Meta / Mihomo** 客户端以获得最佳体验（支持最新协议）。
+支持 **Clash / Mihomo**、**Sing-box**、**Shadowrocket (小火箭)**、**V2rayN / V2rayNG**、**Quantumult X** 等全平台客户端。
 
-### 🛠️ Clash / Mihomo 订阅 (YAML)
-
+### 1. 🛡️ Clash / Mihomo 专用订阅 (YAML)
 | 线路类型 | 订阅地址 (复制使用) | 快捷操作 |
 | :--- | :--- | :---: |
 | **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml` | [<img src="https://img.shields.io/badge/一键导入-Clash-2563eb?style=for-the-badge&logo=clash&logoColor=white" height="24" alt="Import to Clash" />](clash://install-config?url=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.meta.yml&name=MetaFetch) |
 | **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml` | [<img src="https://img.shields.io/badge/一键导入-Clash-475569?style=for-the-badge&logo=clash&logoColor=white" height="24" alt="Import to Clash" />](clash://install-config?url=https%3A%2F%2Fraw.githubusercontent.com%2Flanzm%2FMetaFetch%2Fmaster%2Flist.meta.yml&name=MetaFetch) |
 
-> 💡 **提示**：支持 **Clash Verge / Mihomo Party / Clash Nyanpasu / Clash for Windows / Stash** 等全系列 Clash 内核客户端。点击上方 **「一键导入」** 按钮即可自动唤起客户端完成配置添加。
+> 💡 支持 **Clash Verge / Mihomo Party / Clash Nyanpasu / Stash / Clash for Windows** 等客户端。
+
+### 2. ⚡ Sing-box 专用订阅 (JSON)
+| 线路类型 | 订阅地址 (复制使用) | 适用客户端 |
+| :--- | :--- | :--- |
+| **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.singbox.json` | **Sing-box** (iOS/Android/Windows/Mac) |
+| **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.singbox.json` | **Sing-box / Hiddify / Karing** |
+
+### 3. 📱 通用 Base64 / 节点列表订阅 (小火箭 / V2rayN)
+| 格式 | 订阅地址 (复制使用) | 快捷操作 |
+| :--- | :--- | :---: |
+| **Base64 订阅 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64` | [<img src="https://img.shields.io/badge/一键导入-Shadowrocket-3b82f6?style=for-the-badge&logo=shadowrocket&logoColor=white" height="24" alt="Import to Shadowrocket" />](sub://aHR0cHM6Ly9mYXN0bHkuanNkZWxpdnIubmV0L2doL2xhbnptL01ldGFGZXRjaEBtYXN0ZXIvbGlzdC5iNjQ=) |
+| **明文 URL 节点列表** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt` | 复制在线节点链接 |
+
+> 💡 适合 **Shadowrocket (小火箭)**、**V2rayN**、**V2rayNG**、**Quantumult X**、**Surfboard** 等常用代理客户端直接添加订阅。
 
 ---
 
@@ -40,12 +53,12 @@ MetaFetch 是一款高性能的自动化代理节点聚合工具。它能够从�
 ## 📊 节点分布统计
 
 <!-- STATS_TABLE_START -->
-> 更新时间：`2026-07-21 09:21:16`
-> 运行分析：从 `18` 个活跃源中抓取 `1443` 个节点，耗时 `3.20s`。去重后保留 `1129` 个有效节点。
+> 更新时间：`2026-07-21 09:29:16`
+> 运行分析：从 `17` 个活跃源中抓取 `1436` 个节点，耗时 `4.77s`。去重后保留 `1122` 个有效节点。
 
 | 地区分布 | 🇭🇰香港 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇷🇺俄罗斯 | 🇻🇳越南 | 🇳🇱荷兰 | 🇹🇷土耳其 | 🇦🇷阿根廷 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🌍其他 | **总计** |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 13 | 27 | 53 | 13 | 4 | 846 | 5 | 6 | 54 | 4 | 9 | 53 | 4 | 38 | **1129** |
+| **数量** | 13 | 20 | 53 | 13 | 4 | 846 | 5 | 6 | 54 | 4 | 9 | 53 | 4 | 38 | **1122** |
 <!-- STATS_TABLE_END -->
 
 ---

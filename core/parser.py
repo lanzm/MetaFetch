@@ -234,6 +234,189 @@ class Node:
     def to_clash(self) -> Dict[str, Any]:
         return self.data.copy()
 
+    def to_url(self) -> str:
+        t = self.type.lower()
+        tag = quote(self.name)
+        server = self.data.get('server', '')
+        port = self.data.get('port', '')
+
+        if t == 'ss':
+            cipher = self.data.get('cipher', '')
+            pwd = self.data.get('password', '')
+            userinfo = b64encodes(f"{cipher}:{pwd}")
+            return f"ss://{userinfo}@{server}:{port}#{tag}"
+
+        elif t == 'vmess':
+            v_json = {
+                "v": "2",
+                "ps": self.name,
+                "add": server,
+                "port": str(port),
+                "id": self.data.get('uuid', ''),
+                "aid": str(self.data.get('alterId', 0)),
+                "scy": self.data.get('cipher', 'auto'),
+                "net": self.data.get('network', 'tcp'),
+                "type": "none",
+                "host": self.data.get('ws-opts', {}).get('headers', {}).get('Host', '') or self.data.get('sni', '') or '',
+                "path": self.data.get('ws-opts', {}).get('path', '') or self.data.get('grpc-opts', {}).get('grpc-service-name', '') or '',
+                "tls": "tls" if self.data.get('tls') else "",
+                "sni": self.data.get('sni') or self.data.get('servername', '') or ''
+            }
+            return "vmess://" + b64encodes(json.dumps(v_json, ensure_ascii=False))
+
+        elif t == 'vless':
+            uuid = self.data.get('uuid', '')
+            query = []
+            if self.data.get('tls'):
+                query.append("security=" + ("reality" if self.data.get('reality-opts') else "tls"))
+            if self.data.get('servername'):
+                query.append("sni=" + quote(str(self.data.get('servername'))))
+            if self.data.get('network'):
+                query.append("type=" + str(self.data.get('network')))
+            if self.data.get('flow'):
+                query.append("flow=" + str(self.data.get('flow')))
+            if self.data.get('client-fingerprint'):
+                query.append("fp=" + str(self.data.get('client-fingerprint')))
+            ws_path = self.data.get('ws-opts', {}).get('path')
+            if ws_path:
+                query.append("path=" + quote(ws_path))
+            grpc_service = self.data.get('grpc-opts', {}).get('grpc-service-name')
+            if grpc_service:
+                query.append("path=" + quote(grpc_service))
+            ropts = self.data.get('reality-opts')
+            if ropts:
+                if ropts.get('public-key'): query.append("pbk=" + quote(str(ropts['public-key'])))
+                if ropts.get('short-id'): query.append("sid=" + quote(str(ropts['short-id'])))
+            qstr = "?" + "&".join(query) if query else ""
+            return f"vless://{uuid}@{server}:{port}{qstr}#{tag}"
+
+        elif t == 'trojan':
+            pwd = quote(str(self.data.get('password', '')))
+            query = []
+            if self.data.get('sni'):
+                query.append("sni=" + quote(str(self.data.get('sni'))))
+            if self.data.get('network'):
+                query.append("type=" + str(self.data.get('network')))
+            if self.data.get('skip-cert-verify'):
+                query.append("allowInsecure=1")
+            ropts = self.data.get('reality-opts')
+            if ropts:
+                query.append("security=reality")
+                if ropts.get('public-key'): query.append("pbk=" + quote(str(ropts['public-key'])))
+                if ropts.get('short-id'): query.append("sid=" + quote(str(ropts['short-id'])))
+            qstr = "?" + "&".join(query) if query else ""
+            return f"trojan://{pwd}@{server}:{port}{qstr}#{tag}"
+
+        elif t in ('hysteria2', 'hy2'):
+            pwd = quote(str(self.data.get('password', '')))
+            query = []
+            if self.data.get('sni'):
+                query.append("sni=" + quote(str(self.data.get('sni'))))
+            if self.data.get('obfs'):
+                query.append("obfs=" + str(self.data.get('obfs')))
+            if self.data.get('obfs-password'):
+                query.append("obfs-password=" + str(self.data.get('obfs-password')))
+            qstr = "?" + "&".join(query) if query else ""
+            return f"hy2://{pwd}@{server}:{port}{qstr}#{tag}"
+
+        return ""
+
+    def to_singbox(self) -> Optional[Dict[str, Any]]:
+        t = self.type.lower()
+        server = self.data.get('server', '')
+        port = self.data.get('port', 0)
+        if not server or not port:
+            return None
+
+        outbound = {
+            "type": t if t != "hy2" else "hysteria2",
+            "tag": self.name,
+            "server": server,
+            "server_port": int(port)
+        }
+
+        tls_enabled = bool(self.data.get('tls'))
+        sni = self.data.get('sni') or self.data.get('servername')
+        insecure = bool(self.data.get('skip-cert-verify'))
+
+        if t == 'ss':
+            outbound['method'] = self.data.get('cipher', 'aes-128-gcm')
+            outbound['password'] = self.data.get('password', '')
+
+        elif t == 'vmess':
+            outbound['uuid'] = self.data.get('uuid', '')
+            outbound['security'] = self.data.get('cipher', 'auto')
+            if self.data.get('alterId'):
+                outbound['alter_id'] = int(self.data['alterId'])
+            
+            ws_opts = self.data.get('ws-opts')
+            grpc_opts = self.data.get('grpc-opts')
+            if ws_opts:
+                outbound['transport'] = {
+                    "type": "ws",
+                    "path": ws_opts.get('path', '/'),
+                    "headers": ws_opts.get('headers', {})
+                }
+            elif grpc_opts:
+                outbound['transport'] = {
+                    "type": "grpc",
+                    "service_name": grpc_opts.get('grpc-service-name', '')
+                }
+
+        elif t == 'vless':
+            outbound['uuid'] = self.data.get('uuid', '')
+            if self.data.get('flow'):
+                outbound['flow'] = self.data['flow']
+            
+            ws_opts = self.data.get('ws-opts')
+            grpc_opts = self.data.get('grpc-opts')
+            if ws_opts:
+                outbound['transport'] = {
+                    "type": "ws",
+                    "path": ws_opts.get('path', '/'),
+                    "headers": ws_opts.get('headers', {})
+                }
+            elif grpc_opts:
+                outbound['transport'] = {
+                    "type": "grpc",
+                    "service_name": grpc_opts.get('grpc-service-name', '')
+                }
+
+        elif t == 'trojan':
+            outbound['password'] = self.data.get('password', '')
+
+        elif t in ('hysteria2', 'hy2'):
+            outbound['type'] = 'hysteria2'
+            outbound['password'] = self.data.get('password', '')
+            tls_enabled = True
+            if self.data.get('obfs'):
+                outbound['obfs'] = {
+                    "type": self.data['obfs'],
+                    "password": self.data.get('obfs-password', '')
+                }
+
+        else:
+            return None
+
+        # TLS Configuration for Sing-box
+        ropts = self.data.get('reality-opts')
+        if tls_enabled or ropts:
+            tls_cfg: Dict[str, Any] = {"enabled": True}
+            if sni:
+                tls_cfg["server_name"] = str(sni)
+            if insecure:
+                tls_cfg["insecure"] = True
+            if ropts:
+                reality_cfg: Dict[str, Any] = {"enabled": True}
+                if ropts.get('public-key'):
+                    reality_cfg["public_key"] = str(ropts['public-key'])
+                if ropts.get('short-id'):
+                    reality_cfg["short_id"] = str(ropts['short-id'])
+                tls_cfg["reality"] = reality_cfg
+            outbound["tls"] = tls_cfg
+
+        return outbound
+
     def __hash__(self):
         # 建立更精细的唯一标识 (Identity)，防止误删同 IP 不同路径的节点
         ident_parts = [
