@@ -13,17 +13,18 @@ MetaFetch 是一款高性能的自动化代理节点聚合工具。它能够从�
 > [!IMPORTANT]
 > **声明：** 本项目由 [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) 改造而来，并在此基础上进行了深度定制化开发，增强了异步抓取、YAML 配置管理与地区自动分组逻辑。
 
----
-
 ## 📥 订阅链接 (推荐)
 
 建议使用 **Clash Meta / Mihomo** 客户端以获得最佳体验（支持最新协议）。
 
-### 🛠️ Clash / Meta 订阅 (YAML)
-| 线路类型 | 订阅链接 (点击复制) |
-| :--- | :--- |
-| **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml` |
-| **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml` |
+### 🛠️ Clash / Mihomo 订阅 (YAML)
+
+| 线路类型 | 订阅地址 (复制使用) | 快捷操作 |
+| :--- | :--- | :---: |
+| **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml` | [<img src="https://img.shields.io/badge/一键导入-Clash-2563eb?style=for-the-badge&logo=clash&logoColor=white" height="24" alt="Import to Clash" />](clash://install-config?url=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.meta.yml&name=MetaFetch) |
+| **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml` | [<img src="https://img.shields.io/badge/一键导入-Clash-475569?style=for-the-badge&logo=clash&logoColor=white" height="24" alt="Import to Clash" />](clash://install-config?url=https%3A%2F%2Fraw.githubusercontent.com%2Flanzm%2FMetaFetch%2Fmaster%2Flist.meta.yml&name=MetaFetch) |
+
+> 💡 **提示**：支持 **Clash Verge / Mihomo Party / Clash Nyanpasu / Clash for Windows / Stash** 等全系列 Clash 内核客户端。点击上方 **「一键导入」** 按钮即可自动唤起客户端完成配置添加。
 
 ---
 
