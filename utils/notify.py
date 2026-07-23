@@ -1,10 +1,15 @@
 import os
+import re
 import urllib.request
 import urllib.parse
 
 def send_tg_notification():
-    token = os.environ.get('TG_BOT_TOKEN', '').strip()
-    chat_id = os.environ.get('TG_CHAT_ID', '').strip()
+    raw_token = os.environ.get('TG_BOT_TOKEN', '')
+    raw_chat_id = os.environ.get('TG_CHAT_ID', '')
+    
+    # 彻底过滤多余空格、换行符等控制字符
+    token = re.sub(r'\s+', '', raw_token)
+    chat_id = re.sub(r'\s+', '', raw_chat_id)
     
     print(f"[DEBUG] Checking TG Secrets -> Token provided: {bool(token)}, Chat ID: '{chat_id}'")
     
