@@ -15,11 +15,6 @@ def send_tg_notification():
     if token.lower().startswith('bot'):
         token = token[3:]
         
-    token_len = len(token)
-    prefix = token[:3] if token_len >= 3 else token
-    suffix = token[-3:] if token_len >= 6 else ""
-    print(f"[DEBUG] Checking TG Secrets -> Token length: {token_len} (start: '{prefix}...', end: '...{suffix}'), Chat ID: '{chat_id}'")
-    
     if not token or not chat_id:
         print("[WARNING] TG_BOT_TOKEN or TG_CHAT_ID is missing in environment variables. Skipping Telegram notification.")
         return
@@ -41,9 +36,8 @@ def send_tg_notification():
     
     req = urllib.request.Request(url, data=data)
     try:
-        response = urllib.request.urlopen(req)
-        resp_text = response.read().decode('utf-8')
-        print(f"[OK] Telegram notification sent successfully! Response: {resp_text}")
+        urllib.request.urlopen(req)
+        print("[OK] Telegram notification sent successfully!")
     except urllib.error.HTTPError as e:
         err_msg = e.read().decode('utf-8') if e.fp else str(e)
         print(f"[ERROR] Telegram API HTTP Error {e.code}: {err_msg}")
