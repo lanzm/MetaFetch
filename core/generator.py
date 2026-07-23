@@ -220,6 +220,7 @@ class Generator:
             json.dump(singbox_config, f, ensure_ascii=False, indent=2)
 
         self.update_readme(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
+        self.generate_tg_summary(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
         print(f"Successfully generated {len(nodes)} nodes across multi-formats ({output_path}, {sb_path}, {b64_path}, {txt_path})")
 
     def update_readme(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float):
@@ -262,3 +263,32 @@ class Generator:
 
         with open(readme_path, 'w', encoding='utf-8') as f:
             f.write(content)
+
+    def generate_tg_summary(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float):
+        region_lines = []
+        for key in region_nodes:
+            count = len(region_nodes[key])
+            name = REGION_NAMES[key]
+            region_lines.append(f"{name} {count}")
+        if others:
+            region_lines.append(f"🌍 其他 {len(others)}")
+            
+        region_str = " | ".join(region_lines)
+        
+        message = (
+            f"🚀 <b>MetaFetch 节点自动抓取更新通知</b>\n\n"
+            f"⏰ <b>更新时间：</b> <code>{timestamp}</code>\n"
+            f"📡 <b>活跃源：</b> {source_count} 个\n"
+            f"📦 <b>抓取节点：</b> {raw_count} 个\n"
+            f"✅ <b>保留有效节点：</b> <b>{total_nodes}</b> 个 (耗时 {elapsed_time:.2f}s)\n\n"
+            f"🌍 <b>节点地区分布：</b>\n"
+            f"{region_str}\n\n"
+            f"📥 <b>快捷订阅地址 (点击链接直连复制)：</b>\n"
+            f"• <b>Clash / Mihomo:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml</code>\n"
+            f"• <b>Sing-box:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.singbox.json</code>\n"
+            f"• <b>Shadowrocket / Base64:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64</code>\n\n"
+            f"⭐ <b>GitHub 仓库：</b> <a href=\"https://github.com/lanzm/MetaFetch\">lanzm/MetaFetch</a>"
+        )
+        
+        with open("tg_summary.txt", "w", encoding="utf-8") as f:
+            f.write(message)

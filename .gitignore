@@ -23,6 +23,7 @@ ENV/
 # 临时文件
 temp/
 tmp/
+tg_summary.txt
 
 # 操作系统特定文件
 Thumbs.db
