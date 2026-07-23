@@ -44,30 +44,8 @@ jobs:
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Update: $(date +'%Y-%m-%d %H:%M:%S')" && git push)
 
       - name: Send Telegram Notification
-        if: ${{ secrets.TG_BOT_TOKEN != '' && secrets.TG_CHAT_ID != '' }}
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: |
-          python -c "
-import os, urllib.request, urllib.parse
-
-token = os.environ.get('TG_BOT_TOKEN')
-chat_id = os.environ.get('TG_CHAT_ID')
-if token and chat_id and os.path.exists('tg_summary.txt'):
-    with open('tg_summary.txt', 'r', encoding='utf-8') as f:
-        text = f.read()
-    url = f'https://api.telegram.org/bot{token}/sendMessage'
-    data = urllib.parse.urlencode({
-        'chat_id': chat_id,
-        'text': text,
-        'parse_mode': 'HTML',
-        'disable_web_page_preview': 'true'
-    }).encode('utf-8')
-    req = urllib.request.Request(url, data=data)
-    try:
-        res = urllib.request.urlopen(req)
-        print('Telegram notification sent successfully!')
-    except Exception as e:
-        print(f'Failed to send Telegram notification: {e}')
-"
+          python utils/notify.py
