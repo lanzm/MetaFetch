@@ -11,7 +11,12 @@ def send_tg_notification():
     token = re.sub(r'\s+', '', raw_token)
     chat_id = re.sub(r'\s+', '', raw_chat_id)
     
-    print(f"[DEBUG] Checking TG Secrets -> Token provided: {bool(token)}, Chat ID: '{chat_id}'")
+    # 自动切除可能误多复制的 'bot' 前缀
+    if token.lower().startswith('bot'):
+        token = token[3:]
+        
+    masked_token = f"{token[:5]}***{token[-3:]}" if len(token) > 8 else "***"
+    print(f"[DEBUG] Checking TG Secrets -> Token: '{masked_token}', Chat ID: '{chat_id}'")
     
     if not token or not chat_id:
         print("[WARNING] TG_BOT_TOKEN or TG_CHAT_ID is missing in environment variables. Skipping Telegram notification.")
