@@ -32,21 +32,50 @@ class Generator:
         
         config['proxies'] = clash_proxies
         
-        # 1. Identify region for each node
+        # 1. Multi-level precise region identification
         node_to_region = {}
-        region_counts = {key: 0 for key in REGIONS}
-        
+        region_counts = {key: 0 for key in REGIONS_DB}
+
         for name in node_names:
-            found = False
-            for key, keywords in REGIONS.items():
-                for kw in keywords:
-                    if kw in name or kw.lower() in name.lower():
-                        node_to_region[name] = key
-                        region_counts[key] += 1
-                        found = True
+            matched_key = None
+            
+            # Level 1: Emoji 匹配（最高精准度）
+            for key, info in REGIONS_DB.items():
+                if info['emoji'] in name:
+                    matched_key = key
+                    break
+
+            # Level 2: 中文名称匹配（如 "香港", "德国", "罗马尼亚"）
+            if not matched_key:
+                for key, info in REGIONS_DB.items():
+                    if info['name'] in name:
+                        matched_key = key
                         break
-                if found: break
-            if not found:
+
+            # Level 3: 长英文关键词匹配（如 "Germany", "Hong Kong", "Romania"）
+            if not matched_key:
+                for key, info in REGIONS_DB.items():
+                    for kw in info['keywords']:
+                        if len(kw) > 2 and kw.lower() in name.lower():
+                            matched_key = key
+                            break
+                    if matched_key: break
+
+            # Level 4: 短代码边界安全匹配（如 "DE", "RO", "HK", "US"，前后不能紧跟英文字母，防止匹配到 Node 中的 de）
+            if not matched_key:
+                for key, info in REGIONS_DB.items():
+                    for kw in info['keywords']:
+                        if len(kw) <= 2:
+                            pattern = rf'(?<![a-zA-Z]){re.escape(kw)}(?![a-zA-Z])'
+                            if re.search(pattern, name):
+                                matched_key = key
+                                break
+                    if matched_key: break
+
+            if matched_key:
+                node_to_region[name] = matched_key
+                region_counts[matched_key] += 1
+            else:
                 node_to_region[name] = 'OTHERS'
 
         # 2. Filter Active Regions (Threshold > 3 or Fixed Regions)
