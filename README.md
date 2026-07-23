@@ -1,6 +1,7 @@
 # 🚀 MetaFetch Proxy Aggregator
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/)
+[![Telegram Channel](https://img.shields.io/badge/Telegram-频道交流-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/MetaFetchNodes)
 <!-- STATS_BADGE_START -->
 ![Update](https://img.shields.io/badge/Updated-2026-07-23--10%3A07%3A14-green.svg)
 ![Nodes](https://img.shields.io/badge/Valid_Nodes-1084-orange.svg)
@@ -15,29 +16,33 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 
 ## 📥 订阅链接面板
 
+> 📢 **官方 Telegram 频道**：欢迎加入 [MetaFetch 节点发布频道 (t.me/MetaFetchNodes)](https://t.me/MetaFetchNodes) 获取最新节点状态广播与技术交流！
+
 支持 **Clash / Mihomo**、**Sing-box**、**Shadowrocket (小火箭)**、**V2rayN / V2rayNG**、**Quantumult X** 等全平台客户端。
 
 ### 1. 🛡️ Clash / Mihomo 专用订阅 (YAML)
-| 线路类型 | 订阅地址 (复制使用) | 快捷操作 |
+| 线路类型 | 订阅地址 | 快速操作 |
 | :--- | :--- | :---: |
-| **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml` | [<img src="https://img.shields.io/badge/一键导入-Clash-2563eb?style=for-the-badge&logo=clash&logoColor=white" height="24" alt="Import to Clash" />](clash://install-config?url=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.meta.yml&name=MetaFetch) |
-| **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml` | [<img src="https://img.shields.io/badge/一键导入-Clash-475569?style=for-the-badge&logo=clash&logoColor=white" height="24" alt="Import to Clash" />](clash://install-config?url=https%3A%2F%2Fraw.githubusercontent.com%2Flanzm%2FMetaFetch%2Fmaster%2Flist.meta.yml&name=MetaFetch) |
+| **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml` | ![复制](https://img.shields.io/badge/📋-复制链接-10b981?style=flat-square) |
+| **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml` | ![复制](https://img.shields.io/badge/📋-复制链接-64748b?style=flat-square) |
 
-> 💡 支持 **Clash Verge / Mihomo Party / Clash Nyanpasu / Stash / Clash for Windows** 等客户端。
+> 💡 适合 **Clash Verge / Mihomo Party / Clash Nyanpasu / Stash / Clash for Windows** 等客户端。
 
 ### 2. ⚡ Sing-box 专用订阅 (JSON)
-| 线路类型 | 订阅地址 (复制使用) | 适用客户端 |
-| :--- | :--- | :--- |
-| **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.singbox.json` | **Sing-box** (iOS/Android/Windows/Mac) |
-| **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.singbox.json` | **Sing-box / Hiddify / Karing** |
+| 线路类型 | 订阅地址 | 快速操作 |
+| :--- | :--- | :---: |
+| **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.singbox.json` | ![复制](https://img.shields.io/badge/📋-复制链接-10b981?style=flat-square) |
+| **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.singbox.json` | ![复制](https://img.shields.io/badge/📋-复制链接-64748b?style=flat-square) |
+
+> 💡 适合 **Sing-box / Hiddify / Karing** 等 Sing-box 内核客户端。
 
 ### 3. 📱 通用 Base64 / 节点列表订阅 (小火箭 / V2rayN)
-| 格式 | 订阅地址 (复制使用) | 快捷操作 |
+| 线路类型 | 订阅地址 | 快速操作 |
 | :--- | :--- | :---: |
-| **Base64 订阅 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64` | [<img src="https://img.shields.io/badge/一键导入-Shadowrocket-3b82f6?style=for-the-badge&logo=shadowrocket&logoColor=white" height="24" alt="Import to Shadowrocket" />](sub://aHR0cHM6Ly9mYXN0bHkuanNkZWxpdnIubmV0L2doL2xhbnptL01ldGFGZXRjaEBtYXN0ZXIvbGlzdC5iNjQ=) |
-| **明文 URL 节点列表** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt` | 复制在线节点链接 |
+| **Base64 订阅 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64` | ![复制](https://img.shields.io/badge/📋-复制链接-10b981?style=flat-square) |
+| **明文 URL 节点列表** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt` | ![复制](https://img.shields.io/badge/📋-复制链接-64748b?style=flat-square) |
 
-> 💡 适合 **Shadowrocket (小火箭)**、**V2rayN**、**V2rayNG**、**Quantumult X**、**Surfboard** 等常用代理客户端直接添加订阅。
+> 💡 适合 **Shadowrocket (小火箭)**、**V2rayN**、**V2rayNG**、**Quantumult X**、**Surfboard** 等常用代理客户端。
 
 ---
 
