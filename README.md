@@ -2,8 +2,8 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026-07-23--09%3A18%3A22-green.svg)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-1150-orange.svg)
+![Update](https://img.shields.io/badge/Updated-2026-07-23--09%3A26%3A11-green.svg)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-1084-orange.svg)
 ![Sources](https://img.shields.io/badge/Active_Sources-18-blue.svg)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
@@ -53,12 +53,12 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 ## 📊 节点分布统计
 
 <!-- STATS_TABLE_START -->
-> 更新时间：`2026-07-23 09:18:22`
-> 运行分析：从 `18` 个活跃源中抓取 `1471` 个节点，耗时 `3.31s`。去重后保留 `1150` 个有效节点。
+> 更新时间：`2026-07-23 09:26:11`
+> 运行分析：从 `18` 个活跃源中抓取 `1399` 个节点，耗时 `2.92s`。去重后保留 `1084` 个有效节点。
 
-| 地区分布 | 🇭🇰香港 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇫🇷法国 | 🇻🇳越南 | 🇳🇱荷兰 | 🇦🇷阿根廷 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🌍其他 | **总计** |
+| 地区分布 | 🇭🇰香港 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇻🇳越南 | 🇳🇱荷兰 | 🇨🇭瑞士 | 🇦🇷阿根廷 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🌍其他 | **总计** |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 14 | 26 | 59 | 5 | 5 | 859 | 4 | 6 | 55 | 4 | 55 | 7 | 51 | **1150** |
+| **数量** | 12 | 26 | 53 | 9 | 5 | 854 | 6 | 54 | 4 | 4 | 8 | 5 | 44 | **1084** |
 <!-- STATS_TABLE_END -->
 
 ---
