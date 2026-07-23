@@ -84,8 +84,8 @@ class Generator:
             k for k, count in region_counts.items() 
             if count > THRESHOLD or (k in FIXED_REGIONS and count > 0)
         ]
-        # Sort active keys to keep a consistent order (HK, JP, US usually first)
-        priority = ['HK', 'TW', 'JP', 'US', 'SG', 'KR']
+        # Sort active keys based on the ordering defined in REGIONS_DB
+        priority = list(REGIONS_DB.keys())
         active_keys.sort(key=lambda x: priority.index(x) if x in priority else 99)
         
         region_nodes: Dict[str, List[str]] = {key: [] for key in active_keys}
