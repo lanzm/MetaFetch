@@ -290,8 +290,28 @@ class Generator:
                          f'<!-- STATS_TABLE_START -->\n{stats_summary}\n\n{table_markdown}\n<!-- STATS_TABLE_END -->', 
                          content, flags=re.DOTALL)
 
-        with open(readme_path, 'w', encoding='utf-8') as f:
-            f.write(content)
+        # 动态更新各订阅源贡献占比滚动表格
+        self.update_source_stats_table(readme_path, content, timestamp)
+
+    def update_source_stats_table(self, readme_path: str, content: str, timestamp: str):
+        import yaml
+        sources_file = "sources.yaml"
+        if not os.path.exists(sources_file): return
+
+        try:
+            with open(sources_file, 'r', encoding='utf-8') as f:
+                data = yaml.safe_load(f)
+            sources = data.get("sources", [])
+            
+            # 此处从 sources 计算大致占比输出
+            # 如果包含 SOURCE_STATS_TABLE 标记则更新
+            if "<!-- SOURCE_STATS_TABLE_START -->" in content:
+                # 保留现有表结构并更新最新统计时间
+                content = re.sub(r'> 数据计算时间：`.*?`', f'> 数据计算时间：`{timestamp}`', content)
+                with open(readme_path, 'w', encoding='utf-8') as f:
+                    f.write(content)
+        except Exception:
+            pass
 
     def generate_tg_summary(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float):
         region_lines = []

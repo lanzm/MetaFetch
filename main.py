@@ -87,6 +87,13 @@ async def main():
         elapsed_time = time.time() - start_time
         generator = Generator(TEMPLATE_FILE)
         generator.generate(processed_nodes, OUTPUT_FILE, active_source_count, raw_count, elapsed_time)
+        
+        # 5. Update README Source Contribution Table
+        try:
+            from utils.stats import update_readme_source_stats
+            await update_readme_source_stats()
+        except Exception as e:
+            print(f"Warning: Failed to update README source stats table: {e}")
     
     print(f"\n[OK] All done! Generated: {OUTPUT_FILE}")
 
