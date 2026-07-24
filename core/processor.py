@@ -121,6 +121,13 @@ class NodeProcessor:
             elif n_type == 'trojan':
                 if not n_data.get('password'):
                     continue
+            elif n_type in ('hysteria2', 'hy2'):
+                if not n_data.get('password'):
+                    continue
+                # 校验 obfs 完整性：有 obfs 但无 obfs-password 时剔除孤立的 obfs 字段
+                obfs = n_data.get('obfs')
+                if obfs and obfs != 'none' and not n_data.get('obfs-password'):
+                    n_data.pop('obfs', None)
             
             valid_nodes.append(node)
         return valid_nodes

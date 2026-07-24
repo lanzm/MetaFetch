@@ -226,8 +226,15 @@ class Node:
             if parsed.query:
                 params = dict(parse_qsl(parsed.query))
                 if 'sni' in params: self.data['sni'] = params['sni']
-                if 'obfs' in params: self.data['obfs'] = params['obfs']
-                if 'obfs-password' in params: self.data['obfs-password'] = params['obfs-password']
+                
+                # 只有当 obfs 存在且 obfs-password 不为空时才保留 obfs 混淆设置
+                # 避免产生有 obfs 但无 obfs-password 的缺陷节点导致 Clash 抛出 missing obfs password 错误
+                obfs_type = params.get('obfs')
+                if obfs_type and obfs_type != 'none':
+                    obfs_pwd = params.get('obfs-password') or params.get('obfs_password')
+                    if obfs_pwd:
+                        self.data['obfs'] = obfs_type
+                        self.data['obfs-password'] = obfs_pwd
         except Exception:
             pass
 
