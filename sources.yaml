@@ -6,10 +6,6 @@ sources:
     url: "https://raw.githubusercontent.com/ripaojiedian/freenode/main/sub"
     note: "产量极高，全球覆盖"
 
-  - name: "🔥🔥🔥 Snakem 24059 精选"
-    url: "https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml"
-    note: "包含 0019 系列高质节点"
-
   - name: "📡 Huibq 聚合"
     url: "https://raw.githubusercontent.com/Huibq/TrojanLinks/master/links/vmess"
     note: "Trojan/VLESS 主力"
@@ -17,22 +13,13 @@ sources:
   - name: "📡 Zhangkai 系列"
     url: "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
 
-  - name: "🔬 Mksshare 实验室"
-    url: "https://raw.githubusercontent.com/mksshare/mksshare.github.io/main/README.md"
-    recursive: true
-    note: "自动提取链接"
-
-  - name: "🔬 Abshare 实验室"
-    url: "https://raw.githubusercontent.com/abshare/abshare.github.io/main/README.md"
-    recursive: true
-
-  - name: "[仓库/失效/归档] hy2"
+  - name: "[长效备份] hy2 节点"
     url: "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hy2"
 
-  - name: "[仓库/失效/归档] hysteria2"
+  - name: "[长效备份] hysteria2 节点"
     url: "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hysteria2"
 
-  - name: "[仓库/失效/归档] peasoft"
+  - name: "[长效备份] peasoft 精选"
     url: "https://gist.githubusercontent.com/peasoft/7907a8ee2a4fa5e80cd1bd006664442c/raw/"
     recursive: true
 
