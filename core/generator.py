@@ -107,9 +107,10 @@ class Generator:
         test_tolerance = 20
 
         for key in active_keys:
-            nodes_in_region = region_nodes[key]
             group_name = REGION_NAMES[key]
             auto_name = f"⚡ 自动选择 | {group_name}"
+            # 防御: 排除与组名冲突的成员,避免 Clash 循环引用
+            nodes_in_region = [n for n in region_nodes[key] if n != group_name and n != auto_name]
             
             dynamic_groups.append({
                 'name': auto_name, 'type': 'url-test', 'url': test_url,
@@ -125,6 +126,7 @@ class Generator:
         if others:
             others_group_name = '🌍 其他地区'
             others_auto_name = f"⚡ 自动选择 | {others_group_name}"
+            others = [n for n in others if n != others_group_name and n != others_auto_name]
             dynamic_groups.append({
                 'name': others_auto_name, 'type': 'url-test', 'url': test_url,
                 'interval': test_interval, 'tolerance': test_tolerance,
@@ -178,7 +180,8 @@ class Generator:
 
         for key in active_keys:
             group_name = REGION_NAMES[key]
-            region_sb_tags = [t for t in region_nodes[key] if t in sb_tag_set]
+            auto_name = f"⚡ 自动选择 | {group_name}"
+            region_sb_tags = [t for t in region_nodes[key] if t in sb_tag_set and t != group_name and t != auto_name]
             if not region_sb_tags: continue
 
             auto_name = f"⚡ 自动选择 | {group_name}"
@@ -193,7 +196,7 @@ class Generator:
             sb_region_menu.append(group_name)
 
         if others:
-            others_sb_tags = [t for t in others if t in sb_tag_set]
+            others_sb_tags = [t for t in others if t in sb_tag_set and t != others_group_name and t != others_auto_name]
             if others_sb_tags:
                 others_group_name = '🌍 其他地区'
                 others_auto_name = f"⚡ 自动选择 | {others_group_name}"

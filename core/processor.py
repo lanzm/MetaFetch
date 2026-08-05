@@ -9,6 +9,11 @@ for code, info in REGIONS_DB.items():
     for kw in info['keywords'] + [code, info['name']]:
         REGION_FLAGS[kw] = info['emoji']
 
+# 动态生成所有组名(地区组 + 自动选择组),防止节点名与组名冲突导致 Clash 循环引用
+GROUP_NAMES = [f"{info['emoji']} {info['name']}" for info in REGIONS_DB.values()]
+GROUP_NAMES += ['🌍 其他地区']
+GROUP_NAMES += [f"⚡ 自动选择 | {name}" for name in GROUP_NAMES]
+
 class NodeProcessor:
     def __init__(self):
         self.used_names = set()
@@ -45,8 +50,6 @@ class NodeProcessor:
             
             # 2. Add emoji flag if missing
             found_flag = False
-            # Common regional group names to avoid clashing with
-            GROUP_NAMES = ['🇭🇰 香港', '🇹🇼 台湾', '🇯🇵 日本', '🇺🇸 美国', '🇸🇬 新加坡', '🇰🇷 韩国', '🌍 其他地区']
             for code, flag in REGION_FLAGS.items():
                 if flag in name:
                     found_flag = True
@@ -66,8 +69,6 @@ class NodeProcessor:
                         break
             
             # 3. Ensure uniqueness and distinctiveness from groups
-            GROUP_NAMES = ['🇭🇰 香港', '🇹🇼 台湾', '🇯🇵 日本', '🇺🇸 美国', '🇸🇬 新加坡', '🇰🇷 韩国', '🌍 其他地区']
-            
             base_name = name
             # If name matches a group exactly, force a suffix to avoid loop
             if name in GROUP_NAMES:
