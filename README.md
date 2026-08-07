@@ -3,8 +3,8 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/)
 [![Telegram Channel](https://img.shields.io/badge/Telegram-频道交流-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/MetaFetchNodes)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026-08-07--15%3A23%3A34-green.svg)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-1866-orange.svg)
+![Update](https://img.shields.io/badge/Updated-2026-08-07--18%3A04%3A45-green.svg)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-1864-orange.svg)
 ![Sources](https://img.shields.io/badge/Active_Sources-19-blue.svg)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
@@ -58,12 +58,12 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 ## 📊 节点分布统计
 
 <!-- STATS_TABLE_START -->
-> 更新时间：`2026-08-07 15:23:34`
-> 运行分析：从 `19` 个活跃源中抓取 `2578` 个节点，耗时 `3.51s`。去重后保留 `1866` 个有效节点。
+> 更新时间：`2026-08-07 18:04:45`
+> 运行分析：从 `19` 个活跃源中抓取 `2580` 个节点，耗时 `3.58s`。去重后保留 `1864` 个有效节点。
 
 | 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇳🇱荷兰 | 🇨🇭瑞士 | 🇮🇳印度 | 🇹🇷土耳其 | 🇪🇸西班牙 | 🇨🇳中国 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🇵🇱波兰 | 🌍其他 | **总计** |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 49 | 12 | 47 | 265 | 34 | 26 | 33 | 28 | 18 | 15 | 20 | 4 | 4 | 12 | 9 | 4 | 60 | 4 | 5 | 1217 | **1866** |
+| **数量** | 50 | 13 | 47 | 263 | 40 | 27 | 31 | 26 | 17 | 14 | 21 | 5 | 4 | 10 | 9 | 4 | 60 | 4 | 6 | 1213 | **1864** |
 <!-- STATS_TABLE_END -->
 
 <br/>
@@ -71,17 +71,17 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 <!-- SOURCE_STATS_TABLE_START -->
 ### 📡 各订阅源贡献度明细
 
-> 数据计算时间：`2026-08-07 15:23:35`
+> 数据计算时间：`2026-08-07 18:04:46`
 
 <div style="width: 100%; max-height: 260px; overflow-y: auto;">
 
 | 排名 | 订阅源名称 | 有效节点数 | 节点贡献占比 |
 | :---: | :--- | :---: | :---: |
-| 1 | `🔥🔥🔥 ClashGitHub` | **1406** 个 | `55.16%` |
-| 2 | `🔥🔥🔥 w1770946466 长期订阅` | **547** 个 | `21.46%` |
+| 1 | `🔥🔥🔥 ClashGitHub` | **1406** 个 | `55.12%` |
+| 2 | `🔥🔥🔥 w1770946466 长期订阅` | **547** 个 | `21.44%` |
 | 3 | `📡 shaoyouvip 每日更新` | **100** 个 | `3.92%` |
-| 4 | `[长效备份] hysteria2 节点` | **80** 个 | `3.14%` |
-| 5 | `[长效备份] hy2 节点` | **70** 个 | `2.75%` |
+| 4 | `[长效备份] hysteria2 节点` | **78** 个 | `3.06%` |
+| 5 | `[长效备份] hy2 节点` | **77** 个 | `3.02%` |
 | 6 | `⚡ Misaka Chromego 聚合池` | **47** 个 | `1.84%` |
 | 7 | `📡 Huibq 聚合` | **43** 个 | `1.69%` |
 | 8 | `[动态日期] NodeFree TXT` | **30** 个 | `1.18%` |
@@ -93,9 +93,9 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 | 14 | `📡 Zhangkai 系列` | **25** 个 | `0.98%` |
 | 15 | `🔥🔥🔥 日抛机场系列` | **14** 个 | `0.55%` |
 | 16 | `📡 FreeFQ 每日福利` | **14** 个 | `0.55%` |
-| 17 | `📱 Pawdroid 免费节点库` | **13** 个 | `0.51%` |
+| 17 | `📱 Pawdroid 免费节点库` | **10** 个 | `0.39%` |
 | 18 | `[长效备份] peasoft 精选` | **10** 个 | `0.39%` |
-| **-** | **总计 (包含跨源重合)** | **2549** 个 | `100.00%` |
+| **-** | **总计 (包含跨源重合)** | **2551** 个 | `100.00%` |
 
 </div>
 <!-- SOURCE_STATS_TABLE_END -->
