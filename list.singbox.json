@@ -16,6 +16,7 @@
         "🇬🇧 英国",
         "🇫🇷 法国",
         "🇷🇺 俄罗斯",
+        "🇨🇦 加拿大",
         "🇳🇱 荷兰",
         "🇨🇭 瑞士",
         "🇮🇳 印度",
@@ -43,6 +44,7 @@
         "🇬🇧 英国",
         "🇫🇷 法国",
         "🇷🇺 俄罗斯",
+        "🇨🇦 加拿大",
         "🇳🇱 荷兰",
         "🇨🇭 瑞士",
         "🇮🇳 印度",
@@ -603,17 +605,24 @@
         "Unknown_vmess_1110",
         "🇬🇧 United Kingdom_Cardiff_ss_1126",
         "🇬🇧 United Kingdom_Ilford_ss_1127",
+        "美国+CloudFlare节点",
+        "立陶宛+V2CROSS.COM",
+        "罗马尼亚+V2CROSS.COM",
         "美国+V2CROSS.COM",
         "美国+V2CROSS.COM #2",
-        "英国+V2CROSS.COM",
-        "美国+CloudFlare节点",
-        "南非+V2CROSS.COM",
-        "欧盟+V2CROSS.COM",
-        "美国+V2CROSS.COM #3",
-        "美国+乔治亚洲亚特兰大Fastly节点",
         "美国+CloudFlare节点 #2",
-        "立陶宛+V2CROSS.COM",
-        "南非+V2CROSS.COM #2",
+        "美国+乔治亚洲亚特兰大Fastly节点",
+        "美国+CloudFlare节点 #3",
+        "美国+V2CROSS.COM #3",
+        "美国+V2CROSS.COM #4",
+        "美国+CloudFlare节点 #4",
+        "美国+CloudFlare节点 #5",
+        "美国+V2CROSS.COM #5",
+        "美国+麻省理工学院",
+        "加拿大+V2CROSS.COM",
+        "美国+V2CROSS.COM #6",
+        "南非+V2CROSS.COM",
+        "美国+V2CROSS.COM #7",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -744,12 +753,11 @@
         "🇩🇪@ShadowFlux2👈🦁🌞A1",
         "🇩🇰@ShadowFlux2👈🦁🌞A5",
         "🇫🇷@ShadowFlux2👈🦁🌞A2",
-        "kurdconfig",
-        "🇫🇮138204 | ⚡️Telegram =",
-        "🇫🇮138204 | ⚡️Telegram = #2",
+        "@ConfigV2RayNG",
+        "🇫🇮ConfigV2RayNG",
         "@MTMVPN 4",
         "@NormanConfig #3",
-        "kurdconfig #2",
+        "kurdconfig",
         "🇱🇻hysteria",
         "👁️‍🗨️16@SHAHSERVER1",
         "未知 SS-01 | free-nodes",
@@ -1327,7 +1335,6 @@
         "未知 VLESS-619 | free-nodes",
         "未知 VLESS-620 | free-nodes",
         "未知 VLESS-621 | free-nodes",
-        "未知 VLESS-622 | free-nodes",
         "未知 VLESS-623 | free-nodes",
         "未知 VLESS-626 | free-nodes",
         "未知 VLESS-627 | free-nodes",
@@ -1343,7 +1350,6 @@
         "未知 VLESS-638 | free-nodes",
         "未知 VLESS-639 | free-nodes",
         "未知 VLESS-640 | free-nodes",
-        "未知 VLESS-641 | free-nodes",
         "未知 VLESS-642 | free-nodes",
         "未知 VLESS-643 | free-nodes",
         "未知 VLESS-644 | free-nodes",
@@ -1828,7 +1834,6 @@
         "🇩🇪DE_4|2.0MB/s",
         "🇩🇪DE_5|2.8MB/s",
         "🇩🇪DE_6|2.0MB/s",
-        "🇳🇱NL_1|2.5MB/s",
         "🇷🇺RU_1|1.1MB/s",
         "🇷🇺RU_2|2.1MB/s",
         "🇷🇺RU_3|1.6MB/s",
@@ -1850,7 +1855,6 @@
         "🇸🇬SG_2|5.1MB/s",
         "🇳🇱NL_10|3.3MB/s",
         "🇺🇸US_21|1.3MB/s",
-        "🇳🇴NO_1|4.5MB/s",
         "🇫🇷FR_2|1.5MB/s",
         "🇩🇪DE_9|1.8MB/s",
         "🇯🇵 免费-日本1-Ver.7",
@@ -2412,17 +2416,24 @@
         "Unknown_vmess_1110",
         "🇬🇧 United Kingdom_Cardiff_ss_1126",
         "🇬🇧 United Kingdom_Ilford_ss_1127",
+        "美国+CloudFlare节点",
+        "立陶宛+V2CROSS.COM",
+        "罗马尼亚+V2CROSS.COM",
         "美国+V2CROSS.COM",
         "美国+V2CROSS.COM #2",
-        "英国+V2CROSS.COM",
-        "美国+CloudFlare节点",
-        "南非+V2CROSS.COM",
-        "欧盟+V2CROSS.COM",
-        "美国+V2CROSS.COM #3",
-        "美国+乔治亚洲亚特兰大Fastly节点",
         "美国+CloudFlare节点 #2",
-        "立陶宛+V2CROSS.COM",
-        "南非+V2CROSS.COM #2",
+        "美国+乔治亚洲亚特兰大Fastly节点",
+        "美国+CloudFlare节点 #3",
+        "美国+V2CROSS.COM #3",
+        "美国+V2CROSS.COM #4",
+        "美国+CloudFlare节点 #4",
+        "美国+CloudFlare节点 #5",
+        "美国+V2CROSS.COM #5",
+        "美国+麻省理工学院",
+        "加拿大+V2CROSS.COM",
+        "美国+V2CROSS.COM #6",
+        "南非+V2CROSS.COM",
+        "美国+V2CROSS.COM #7",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -2553,12 +2564,11 @@
         "🇩🇪@ShadowFlux2👈🦁🌞A1",
         "🇩🇰@ShadowFlux2👈🦁🌞A5",
         "🇫🇷@ShadowFlux2👈🦁🌞A2",
-        "kurdconfig",
-        "🇫🇮138204 | ⚡️Telegram =",
-        "🇫🇮138204 | ⚡️Telegram = #2",
+        "@ConfigV2RayNG",
+        "🇫🇮ConfigV2RayNG",
         "@MTMVPN 4",
         "@NormanConfig #3",
-        "kurdconfig #2",
+        "kurdconfig",
         "🇱🇻hysteria",
         "👁️‍🗨️16@SHAHSERVER1",
         "未知 SS-01 | free-nodes",
@@ -3136,7 +3146,6 @@
         "未知 VLESS-619 | free-nodes",
         "未知 VLESS-620 | free-nodes",
         "未知 VLESS-621 | free-nodes",
-        "未知 VLESS-622 | free-nodes",
         "未知 VLESS-623 | free-nodes",
         "未知 VLESS-626 | free-nodes",
         "未知 VLESS-627 | free-nodes",
@@ -3152,7 +3161,6 @@
         "未知 VLESS-638 | free-nodes",
         "未知 VLESS-639 | free-nodes",
         "未知 VLESS-640 | free-nodes",
-        "未知 VLESS-641 | free-nodes",
         "未知 VLESS-642 | free-nodes",
         "未知 VLESS-643 | free-nodes",
         "未知 VLESS-644 | free-nodes",
@@ -3637,7 +3645,6 @@
         "🇩🇪DE_4|2.0MB/s",
         "🇩🇪DE_5|2.8MB/s",
         "🇩🇪DE_6|2.0MB/s",
-        "🇳🇱NL_1|2.5MB/s",
         "🇷🇺RU_1|1.1MB/s",
         "🇷🇺RU_2|2.1MB/s",
         "🇷🇺RU_3|1.6MB/s",
@@ -3659,7 +3666,6 @@
         "🇸🇬SG_2|5.1MB/s",
         "🇳🇱NL_10|3.3MB/s",
         "🇺🇸US_21|1.3MB/s",
-        "🇳🇴NO_1|4.5MB/s",
         "🇫🇷FR_2|1.5MB/s",
         "🇩🇪DE_9|1.8MB/s",
         "🇯🇵 免费-日本1-Ver.7",
@@ -4221,17 +4227,24 @@
         "Unknown_vmess_1110",
         "🇬🇧 United Kingdom_Cardiff_ss_1126",
         "🇬🇧 United Kingdom_Ilford_ss_1127",
+        "美国+CloudFlare节点",
+        "立陶宛+V2CROSS.COM",
+        "罗马尼亚+V2CROSS.COM",
         "美国+V2CROSS.COM",
         "美国+V2CROSS.COM #2",
-        "英国+V2CROSS.COM",
-        "美国+CloudFlare节点",
-        "南非+V2CROSS.COM",
-        "欧盟+V2CROSS.COM",
-        "美国+V2CROSS.COM #3",
-        "美国+乔治亚洲亚特兰大Fastly节点",
         "美国+CloudFlare节点 #2",
-        "立陶宛+V2CROSS.COM",
-        "南非+V2CROSS.COM #2",
+        "美国+乔治亚洲亚特兰大Fastly节点",
+        "美国+CloudFlare节点 #3",
+        "美国+V2CROSS.COM #3",
+        "美国+V2CROSS.COM #4",
+        "美国+CloudFlare节点 #4",
+        "美国+CloudFlare节点 #5",
+        "美国+V2CROSS.COM #5",
+        "美国+麻省理工学院",
+        "加拿大+V2CROSS.COM",
+        "美国+V2CROSS.COM #6",
+        "南非+V2CROSS.COM",
+        "美国+V2CROSS.COM #7",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -4362,12 +4375,11 @@
         "🇩🇪@ShadowFlux2👈🦁🌞A1",
         "🇩🇰@ShadowFlux2👈🦁🌞A5",
         "🇫🇷@ShadowFlux2👈🦁🌞A2",
-        "kurdconfig",
-        "🇫🇮138204 | ⚡️Telegram =",
-        "🇫🇮138204 | ⚡️Telegram = #2",
+        "@ConfigV2RayNG",
+        "🇫🇮ConfigV2RayNG",
         "@MTMVPN 4",
         "@NormanConfig #3",
-        "kurdconfig #2",
+        "kurdconfig",
         "🇱🇻hysteria",
         "👁️‍🗨️16@SHAHSERVER1",
         "未知 SS-01 | free-nodes",
@@ -4945,7 +4957,6 @@
         "未知 VLESS-619 | free-nodes",
         "未知 VLESS-620 | free-nodes",
         "未知 VLESS-621 | free-nodes",
-        "未知 VLESS-622 | free-nodes",
         "未知 VLESS-623 | free-nodes",
         "未知 VLESS-626 | free-nodes",
         "未知 VLESS-627 | free-nodes",
@@ -4961,7 +4972,6 @@
         "未知 VLESS-638 | free-nodes",
         "未知 VLESS-639 | free-nodes",
         "未知 VLESS-640 | free-nodes",
-        "未知 VLESS-641 | free-nodes",
         "未知 VLESS-642 | free-nodes",
         "未知 VLESS-643 | free-nodes",
         "未知 VLESS-644 | free-nodes",
@@ -5446,7 +5456,6 @@
         "🇩🇪DE_4|2.0MB/s",
         "🇩🇪DE_5|2.8MB/s",
         "🇩🇪DE_6|2.0MB/s",
-        "🇳🇱NL_1|2.5MB/s",
         "🇷🇺RU_1|1.1MB/s",
         "🇷🇺RU_2|2.1MB/s",
         "🇷🇺RU_3|1.6MB/s",
@@ -5468,7 +5477,6 @@
         "🇸🇬SG_2|5.1MB/s",
         "🇳🇱NL_10|3.3MB/s",
         "🇺🇸US_21|1.3MB/s",
-        "🇳🇴NO_1|4.5MB/s",
         "🇫🇷FR_2|1.5MB/s",
         "🇩🇪DE_9|1.8MB/s",
         "🇯🇵 免费-日本1-Ver.7",
@@ -5949,12 +5957,20 @@
         "🇺🇸US-38.68.134.9-0851",
         "🇺🇸US-167.88.61.175-1704",
         "🇺🇸US-38.75.136.21-0862",
+        "美国+CloudFlare节点",
         "美国+V2CROSS.COM",
         "美国+V2CROSS.COM #2",
-        "美国+CloudFlare节点",
-        "美国+V2CROSS.COM #3",
-        "美国+乔治亚洲亚特兰大Fastly节点",
         "美国+CloudFlare节点 #2",
+        "美国+乔治亚洲亚特兰大Fastly节点",
+        "美国+CloudFlare节点 #3",
+        "美国+V2CROSS.COM #3",
+        "美国+V2CROSS.COM #4",
+        "美国+CloudFlare节点 #4",
+        "美国+CloudFlare节点 #5",
+        "美国+V2CROSS.COM #5",
+        "美国+麻省理工学院",
+        "美国+V2CROSS.COM #6",
+        "美国+V2CROSS.COM #7",
         "🇺🇸 US_speednode_0021",
         "🇺🇸 US_speednode_0024",
         "美国3@wxgqlfx#美国",
@@ -6201,12 +6217,20 @@
         "🇺🇸US-38.68.134.9-0851",
         "🇺🇸US-167.88.61.175-1704",
         "🇺🇸US-38.75.136.21-0862",
+        "美国+CloudFlare节点",
         "美国+V2CROSS.COM",
         "美国+V2CROSS.COM #2",
-        "美国+CloudFlare节点",
-        "美国+V2CROSS.COM #3",
-        "美国+乔治亚洲亚特兰大Fastly节点",
         "美国+CloudFlare节点 #2",
+        "美国+乔治亚洲亚特兰大Fastly节点",
+        "美国+CloudFlare节点 #3",
+        "美国+V2CROSS.COM #3",
+        "美国+V2CROSS.COM #4",
+        "美国+CloudFlare节点 #4",
+        "美国+CloudFlare节点 #5",
+        "美国+V2CROSS.COM #5",
+        "美国+麻省理工学院",
+        "美国+V2CROSS.COM #6",
+        "美国+V2CROSS.COM #7",
         "🇺🇸 US_speednode_0021",
         "🇺🇸 US_speednode_0024",
         "美国3@wxgqlfx#美国",
@@ -6502,7 +6526,6 @@
         "🇬🇧GB-77.72.5.150-0762",
         "🇬🇧 United Kingdom_Cardiff_ss_1126",
         "🇬🇧 United Kingdom_Ilford_ss_1127",
-        "英国+V2CROSS.COM",
         "🇬🇧 英国 #1",
         "🇬🇧 英国 #2",
         "🇬🇧英国",
@@ -6533,7 +6556,6 @@
         "🇬🇧GB-77.72.5.150-0762",
         "🇬🇧 United Kingdom_Cardiff_ss_1126",
         "🇬🇧 United Kingdom_Ilford_ss_1127",
-        "英国+V2CROSS.COM",
         "🇬🇧 英国 #1",
         "🇬🇧 英国 #2",
         "🇬🇧英国",
@@ -6644,6 +6666,29 @@
     },
     {
       "type": "urltest",
+      "tag": "⚡ 自动选择 | 🇨🇦 加拿大",
+      "outbounds": [
+        "🇨🇦_CA_加拿大",
+        "🇨🇦_CA_加拿大 #2",
+        "🇨🇦_CA_加拿大 #3",
+        "加拿大+V2CROSS.COM"
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "3m"
+    },
+    {
+      "type": "selector",
+      "tag": "🇨🇦 加拿大",
+      "outbounds": [
+        "⚡ 自动选择 | 🇨🇦 加拿大",
+        "🇨🇦_CA_加拿大",
+        "🇨🇦_CA_加拿大 #2",
+        "🇨🇦_CA_加拿大 #3",
+        "加拿大+V2CROSS.COM"
+      ]
+    },
+    {
+      "type": "urltest",
       "tag": "⚡ 自动选择 | 🇳🇱 荷兰",
       "outbounds": [
         "🇳🇱NL-109.201.152.181-0711",
@@ -6658,7 +6703,6 @@
         "🇳🇱 荷兰 #7",
         "🇳🇱 - NL - @FreeOnlineVPN",
         "🇳🇱_NL_荷兰",
-        "🇳🇱NL_1|2.5MB/s",
         "🇳🇱NL_8|1.6MB/s",
         "🇳🇱NL_9|1.3MB/s",
         "🇳🇱NL_10|3.3MB/s"
@@ -6683,7 +6727,6 @@
         "🇳🇱 荷兰 #7",
         "🇳🇱 - NL - @FreeOnlineVPN",
         "🇳🇱_NL_荷兰",
-        "🇳🇱NL_1|2.5MB/s",
         "🇳🇱NL_8|1.6MB/s",
         "🇳🇱NL_9|1.3MB/s",
         "🇳🇱NL_10|3.3MB/s"
@@ -6808,6 +6851,7 @@
       "tag": "⚡ 自动选择 | 🇷🇴 罗马尼亚",
       "outbounds": [
         "🇷🇴RO-194.14.217.115-0735",
+        "罗马尼亚+V2CROSS.COM",
         "🇷🇴 罗马尼亚 #1",
         "🇷🇴 罗马尼亚 #2",
         "🇷🇴 罗马尼亚 #3",
@@ -6825,6 +6869,7 @@
       "outbounds": [
         "⚡ 自动选择 | 🇷🇴 罗马尼亚",
         "🇷🇴RO-194.14.217.115-0735",
+        "罗马尼亚+V2CROSS.COM",
         "🇷🇴 罗马尼亚 #1",
         "🇷🇴 罗马尼亚 #2",
         "🇷🇴 罗马尼亚 #3",
@@ -6843,8 +6888,7 @@
         "🇫🇮 芬兰 #2",
         "👉🆔@v2ray_configs_pool📡🇫🇮®️Finland©️Helsinki🅿️ping-43.0ms",
         "@KAFING_2",
-        "🇫🇮138204 | ⚡️Telegram =",
-        "🇫🇮138204 | ⚡️Telegram = #2",
+        "🇫🇮ConfigV2RayNG",
         "🇫🇮FI_1|2.3MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
@@ -6860,8 +6904,7 @@
         "🇫🇮 芬兰 #2",
         "👉🆔@v2ray_configs_pool📡🇫🇮®️Finland©️Helsinki🅿️ping-43.0ms",
         "@KAFING_2",
-        "🇫🇮138204 | ⚡️Telegram =",
-        "🇫🇮138204 | ⚡️Telegram = #2",
+        "🇫🇮ConfigV2RayNG",
         "🇫🇮FI_1|2.3MB/s"
       ]
     },
@@ -6953,7 +6996,6 @@
         "_5",
         "🏁RELAY-104.21.51.208-0152",
         "SCP3",
-        "🇨🇦_CA_加拿大",
         "🏁RELAY-195.85.59.154-3833",
         "🏁RELAY-198.41.202.5-0129",
         "_2 #2",
@@ -6971,7 +7013,6 @@
         "🇦🇷AR-190.103.176.29-0770",
         "github.com/freefq - 广东省江门市移动 12",
         "_1 #4",
-        "🇨🇦_CA_加拿大 #2",
         "🇱🇹+LT+立陶宛+5",
         "Node-vmess-cf.openxai.link",
         "🏁RELAY-172.64.134.48-1111",
@@ -7028,7 +7069,6 @@
         "🇸🇪SE-121.127.46.147-0732",
         "🇲🇹+MT+马耳他+70",
         "🇲🇽MX-190.103.179.23-0779",
-        "🇨🇦_CA_加拿大 #3",
         "🇵🇦PA-138.186.142.4-0761",
         "🏁RELAY-172.67.136.244-3852",
         "vmess #4",
@@ -7060,10 +7100,8 @@
         "Unknown_vmess_118",
         "Unknown_vmess_119",
         "Unknown_vmess_1110",
-        "南非+V2CROSS.COM",
-        "欧盟+V2CROSS.COM",
         "立陶宛+V2CROSS.COM",
-        "南非+V2CROSS.COM #2",
+        "南非+V2CROSS.COM",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -7130,10 +7168,10 @@
         "@NormanConfig #2",
         "🇦🇱@ShadowFlux2👈🦁🌞A3",
         "🇩🇰@ShadowFlux2👈🦁🌞A5",
-        "kurdconfig",
+        "@ConfigV2RayNG",
         "@MTMVPN 4",
         "@NormanConfig #3",
-        "kurdconfig #2",
+        "kurdconfig",
         "🇱🇻hysteria",
         "👁️‍🗨️16@SHAHSERVER1",
         "未知 SS-01 | free-nodes",
@@ -7709,7 +7747,6 @@
         "未知 VLESS-619 | free-nodes",
         "未知 VLESS-620 | free-nodes",
         "未知 VLESS-621 | free-nodes",
-        "未知 VLESS-622 | free-nodes",
         "未知 VLESS-623 | free-nodes",
         "未知 VLESS-626 | free-nodes",
         "未知 VLESS-627 | free-nodes",
@@ -7725,7 +7762,6 @@
         "未知 VLESS-638 | free-nodes",
         "未知 VLESS-639 | free-nodes",
         "未知 VLESS-640 | free-nodes",
-        "未知 VLESS-641 | free-nodes",
         "未知 VLESS-642 | free-nodes",
         "未知 VLESS-643 | free-nodes",
         "未知 VLESS-644 | free-nodes",
@@ -8145,8 +8181,7 @@
         "🇨🇿_CZ_捷克",
         "🇲🇰_MK_MK",
         "🇲🇩_MD_摩尔多瓦 #2",
-        "🇰🇿KZ_1|1.2MB/s",
-        "🇳🇴NO_1|4.5MB/s"
+        "🇰🇿KZ_1|1.2MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -8186,7 +8221,6 @@
         "_5",
         "🏁RELAY-104.21.51.208-0152",
         "SCP3",
-        "🇨🇦_CA_加拿大",
         "🏁RELAY-195.85.59.154-3833",
         "🏁RELAY-198.41.202.5-0129",
         "_2 #2",
@@ -8204,7 +8238,6 @@
         "🇦🇷AR-190.103.176.29-0770",
         "github.com/freefq - 广东省江门市移动 12",
         "_1 #4",
-        "🇨🇦_CA_加拿大 #2",
         "🇱🇹+LT+立陶宛+5",
         "Node-vmess-cf.openxai.link",
         "🏁RELAY-172.64.134.48-1111",
@@ -8261,7 +8294,6 @@
         "🇸🇪SE-121.127.46.147-0732",
         "🇲🇹+MT+马耳他+70",
         "🇲🇽MX-190.103.179.23-0779",
-        "🇨🇦_CA_加拿大 #3",
         "🇵🇦PA-138.186.142.4-0761",
         "🏁RELAY-172.67.136.244-3852",
         "vmess #4",
@@ -8293,10 +8325,8 @@
         "Unknown_vmess_118",
         "Unknown_vmess_119",
         "Unknown_vmess_1110",
-        "南非+V2CROSS.COM",
-        "欧盟+V2CROSS.COM",
         "立陶宛+V2CROSS.COM",
-        "南非+V2CROSS.COM #2",
+        "南非+V2CROSS.COM",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -8363,10 +8393,10 @@
         "@NormanConfig #2",
         "🇦🇱@ShadowFlux2👈🦁🌞A3",
         "🇩🇰@ShadowFlux2👈🦁🌞A5",
-        "kurdconfig",
+        "@ConfigV2RayNG",
         "@MTMVPN 4",
         "@NormanConfig #3",
-        "kurdconfig #2",
+        "kurdconfig",
         "🇱🇻hysteria",
         "👁️‍🗨️16@SHAHSERVER1",
         "未知 SS-01 | free-nodes",
@@ -8942,7 +8972,6 @@
         "未知 VLESS-619 | free-nodes",
         "未知 VLESS-620 | free-nodes",
         "未知 VLESS-621 | free-nodes",
-        "未知 VLESS-622 | free-nodes",
         "未知 VLESS-623 | free-nodes",
         "未知 VLESS-626 | free-nodes",
         "未知 VLESS-627 | free-nodes",
@@ -8958,7 +8987,6 @@
         "未知 VLESS-638 | free-nodes",
         "未知 VLESS-639 | free-nodes",
         "未知 VLESS-640 | free-nodes",
-        "未知 VLESS-641 | free-nodes",
         "未知 VLESS-642 | free-nodes",
         "未知 VLESS-643 | free-nodes",
         "未知 VLESS-644 | free-nodes",
@@ -9378,8 +9406,7 @@
         "🇨🇿_CZ_捷克",
         "🇲🇰_MK_MK",
         "🇲🇩_MD_摩尔多瓦 #2",
-        "🇰🇿KZ_1|1.2MB/s",
-        "🇳🇴NO_1|4.5MB/s"
+        "🇰🇿KZ_1|1.2MB/s"
       ]
     },
     {
@@ -15945,8 +15972,182 @@
     },
     {
       "type": "vless",
+      "tag": "美国+CloudFlare节点",
+      "server": "172.64.145.202",
+      "server_port": 2095,
+      "uuid": "86c50e3a-5b87-49dd-bd20-03c7f2735e40"
+    },
+    {
+      "type": "vless",
+      "tag": "立陶宛+V2CROSS.COM",
+      "server": "ddc-chr.astralweb.tech",
+      "server_port": 443,
+      "uuid": "5dc56757-458e-4df2-9e71-2a14ce47e8af",
+      "tls": {
+        "enabled": true,
+        "server_name": "ddc-chr.astralweb.tech"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "罗马尼亚+V2CROSS.COM",
+      "server": "109.163.239.4",
+      "server_port": 443,
+      "uuid": "e9824072-c700-4aa2-bcbb-7e6cc2d895aa",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn9-40.yahoo.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw",
+          "short_id": "2f3e735aedc55aaf"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
       "tag": "美国+V2CROSS.COM",
-      "server": "jdwadgw.cvewfjg.shop",
+      "server": "www.true.th",
+      "server_port": 80,
+      "uuid": "63ae5b68-f6f8-432e-b440-d975053cfbc2",
+      "transport": {
+        "type": "ws",
+        "path": "/than",
+        "headers": {}
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "美国+V2CROSS.COM #2",
+      "server": "de-two.quiet-rogue.site",
+      "server_port": 443,
+      "password": "71cada65-d23e-418c-88e4-a06188d14689",
+      "tls": {
+        "enabled": true,
+        "server_name": "de-two.quiet-rogue.site"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国+CloudFlare节点 #2",
+      "server": "fast.nanniang.top",
+      "server_port": 8443,
+      "uuid": "916e3030-6eac-418b-9402-7508ca7d6280",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {}
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "mo-akile.nanniang.top"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国+乔治亚洲亚特兰大Fastly节点",
+      "server": "151.101.56.6",
+      "server_port": 443,
+      "uuid": "f04c31f7-cfab-4824-d167-4137d836ea82",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {}
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "ssl.fastly.com"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国+CloudFlare节点 #3",
+      "server": "172.64.88.168",
+      "server_port": 8880,
+      "uuid": "b4883d27-3151-4adf-92b1-841c0dccd1ea",
+      "transport": {
+        "type": "ws",
+        "path": "/pyip=ProxyIP.KR.CMLiussss.net",
+        "headers": {}
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国+V2CROSS.COM #3",
+      "server": "45.39.230.145",
+      "server_port": 28759,
+      "uuid": "476be63b-4537-4b05-91b8-066c5e5833e4",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazonaws-china.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "IenQk4fZZepVAEZpqXO-RHOyXH9JrsAEm-fRsBgOFQk",
+          "short_id": "2194495d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国+V2CROSS.COM #4",
+      "server": "www.true.th",
+      "server_port": 443,
+      "uuid": "7ce54bb3-d612-4aa7-be08-089d3c461d53",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {}
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d1yxsk0zprgivr.cloudfront.net"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国+CloudFlare节点 #4",
+      "server": "172.66.3.90",
+      "server_port": 8443,
+      "uuid": "817b61c8-9bf0-4365-8a52-e43dfad274a6",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {}
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "shin-ra.ccwu.cc"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国+CloudFlare节点 #5",
+      "server": "russia.com",
+      "server_port": 443,
+      "uuid": "04c808e2-0b59-47b0-a54b-32fc7ef1c902",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560fp=chrome",
+        "headers": {}
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "misaka.cndyw.ggff.net"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国+V2CROSS.COM #5",
+      "server": "jdwabxe.cvewfjg.shop",
       "server_port": 443,
       "uuid": "711c018e-2692-4aa8-93f3-544d83fcd16c",
       "flow": "xtls-rprx-vision",
@@ -15965,47 +16166,62 @@
       }
     },
     {
-      "type": "hysteria2",
-      "tag": "美国+V2CROSS.COM #2",
-      "server": "de-two.quiet-rogue.site",
-      "server_port": 443,
-      "password": "71cada65-d23e-418c-88e4-a06188d14689",
-      "tls": {
-        "enabled": true,
-        "server_name": "de-two.quiet-rogue.site"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "英国+V2CROSS.COM",
-      "server": "db1.mangshe.xyz",
-      "server_port": 2056,
-      "password": "9d3356a0-c07e-43cc-b30e-450bd50521b8",
-      "tls": {
-        "enabled": true,
-        "server_name": "db1.mangshe.xyz"
-      }
-    },
-    {
       "type": "vless",
-      "tag": "美国+CloudFlare节点",
-      "server": "time.is",
-      "server_port": 443,
-      "uuid": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "tag": "美国+麻省理工学院",
+      "server": "18.239.134.69",
+      "server_port": 80,
+      "uuid": "de27291c-15a9-4256-9ba7-ad517569877e",
       "transport": {
         "type": "ws",
         "path": "/",
         "headers": {}
-      },
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "加拿大+V2CROSS.COM",
+      "server": "jyvlryz.cvewfjg.shop",
+      "server_port": 443,
+      "uuid": "4e0f4e59-3613-4f0c-b824-7348413d20e6",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "azadnet-826.pages.Dev"
+        "server_name": "www.cloudflare.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "UE8hUjH1WYwemxIriq5lvtFCnHTdLF817okXr-u7MGs",
+          "short_id": "250b5976473a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "美国+V2CROSS.COM #6",
+      "server": "45.39.230.145",
+      "server_port": 57500,
+      "uuid": "476be63b-4537-4b05-91b8-066c5e5833e4",
+      "tls": {
+        "enabled": true,
+        "server_name": "aws.amazon.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "IenQk4fZZepVAEZpqXO-RHOyXH9JrsAEm-fRsBgOFQk",
+          "short_id": "2194495d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       }
     },
     {
       "type": "vless",
       "tag": "南非+V2CROSS.COM",
-      "server": "154.197.75.40",
+      "server": "154.197.75.50",
       "server_port": 8880,
       "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d",
       "transport": {
@@ -16016,79 +16232,23 @@
     },
     {
       "type": "vless",
-      "tag": "欧盟+V2CROSS.COM",
-      "server": "45.12.30.30",
-      "server_port": 8880,
-      "uuid": "6202b230-417c-4d8e-b624-0f71afa9c75d",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {}
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+V2CROSS.COM #3",
-      "server": "149.104.104.58",
+      "tag": "美国+V2CROSS.COM #7",
+      "server": "jdvymxi.cvewfjg.shop",
       "server_port": 443,
-      "password": "S.ibYdZshHTF-ne.M+.Fznp_-hyFFnCSix",
-      "tls": {
-        "enabled": true
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "美国+乔治亚洲亚特兰大Fastly节点",
-      "server": "i3.cloud--vpn.site",
-      "server_port": 443,
-      "uuid": "f04c31f7-cfab-4824-d167-4137d836ea82",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {}
-      },
+      "uuid": "711c018e-2692-4aa8-93f3-544d83fcd16c",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "ssl.fastly.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #2",
-      "server": "104.19.64.105",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "立陶宛+V2CROSS.COM",
-      "server": "89.117.112.4",
-      "server_port": 80,
-      "uuid": "424fa201-3f94-479e-b533-d5257cf9a207",
-      "transport": {
-        "type": "ws",
-        "path": "/pyip=Telegram🇨🇳 @VPNine1",
-        "headers": {}
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "南非+V2CROSS.COM #2",
-      "server": "45.192.200.66",
-      "server_port": 8443,
-      "uuid": "cf39fab0-bb85-42cb-9945-2ad69d78e575",
-      "transport": {
-        "type": "ws",
-        "path": "/GOrbEh",
-        "headers": {}
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "rubifen.adaspoloandco.com"
+        "server_name": "www.cloudflare.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "HyVSZ2OyySwXT-xRhTAqoiuYflIaj_b0Jxm7S1Iq9hs",
+          "short_id": "7a76f3c4b9dd"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       }
     },
     {
@@ -17838,7 +17998,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "kurdconfig",
+      "tag": "@ConfigV2RayNG",
       "server": "assets.gateway-stream.com",
       "server_port": 52031,
       "password": "kjq3gpn1xom1ted9",
@@ -17853,23 +18013,8 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮138204 | ⚡️Telegram =",
+      "tag": "🇫🇮ConfigV2RayNG",
       "server": "assets.gateway-stream.com",
-      "server_port": 52056,
-      "password": "kjq3gpn1xom1ted9",
-      "obfs": {
-        "type": "salamander",
-        "password": "pha76a5o7ormjepb"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "assets.gateway-stream.com"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮138204 | ⚡️Telegram = #2",
-      "server": "soskeynets.gateway-stream.com",
       "server_port": 52056,
       "password": "kjq3gpn1xom1ted9",
       "obfs": {
@@ -17913,7 +18058,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "kurdconfig #2",
+      "tag": "kurdconfig",
       "server": "185.253.117.217",
       "server_port": 443,
       "password": "pjyFpMEKFH",
@@ -24016,18 +24161,6 @@
     },
     {
       "type": "vless",
-      "tag": "未知 VLESS-622 | free-nodes",
-      "server": "www.true.th",
-      "server_port": 80,
-      "uuid": "63ae5b68-f6f8-432e-b440-d975053cfbc2",
-      "transport": {
-        "type": "ws",
-        "path": "/than",
-        "headers": {}
-      }
-    },
-    {
-      "type": "vless",
       "tag": "未知 VLESS-623 | free-nodes",
       "server": "x4g-production-1e7a.up.railway.app",
       "server_port": 443,
@@ -24279,22 +24412,6 @@
           "enabled": true,
           "fingerprint": "chrome"
         }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "未知 VLESS-641 | free-nodes",
-      "server": "www.true.th",
-      "server_port": 443,
-      "uuid": "7ce54bb3-d612-4aa7-be08-089d3c461d53",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {}
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "d1yxsk0zprgivr.cloudfront.net"
       }
     },
     {
@@ -31158,17 +31275,6 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱NL_1|2.5MB/s",
-      "server": "ddc-chr.astralweb.tech",
-      "server_port": 443,
-      "uuid": "5dc56757-458e-4df2-9e71-2a14ce47e8af",
-      "tls": {
-        "enabled": true,
-        "server_name": "ddc-chr.astralweb.tech"
-      }
-    },
-    {
-      "type": "vless",
       "tag": "🇷🇺RU_1|1.1MB/s",
       "server": "ru6.ethicsdinnerpave.online",
       "server_port": 443,
@@ -31476,27 +31582,6 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇴NO_1|4.5MB/s",
-      "server": "109.163.239.4",
-      "server_port": 443,
-      "uuid": "e9824072-c700-4aa2-bcbb-7e6cc2d895aa",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "cdn9-40.yahoo.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw",
-          "short_id": "2f3e735aedc55aaf"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
       "tag": "🇫🇷FR_2|1.5MB/s",
       "server": "ir.varnaroleplay.ir",
       "server_port": 8445,
@@ -31533,7 +31618,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本1-Ver.7",
-      "server": "x0cph0f-g06.jp01-nn-vm0.entry.fr0528.art",
+      "server": "x16a12b-g06.jp01-nn-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -31545,7 +31630,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本2-Ver.8",
-      "server": "xv6at0b-g06.jp02-e3-vm0.entry.fr0528.art",
+      "server": "q0yat2d-g06.jp02-e3-vm0.entry.fr0528.art",
       "server_port": 11778,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -31554,7 +31639,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本3-Ver.7",
-      "server": "xo6g80f-g06.jp03-j7-vm0.entry.fr0528.art",
+      "server": "qo6phmd-g06.jp03-j7-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -31566,7 +31651,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本4-Ver.8",
-      "server": "fvcpt0b-g06.jp04-1d-vm0.entry.fr0528.art",
+      "server": "wo1p8md-g06.jp04-1d-vm0.entry.fr0528.art",
       "server_port": 449,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -31575,7 +31660,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本5-Ver.9",
-      "server": "qo1ah0d-g06.jp05-h6-vm0.entry.fr0528.art",
+      "server": "fvcp1md-g06.jp05-h6-vm0.entry.fr0528.art",
       "server_port": 46487,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -31584,7 +31669,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本6-Ver.8",
-      "server": "xv1p1mb-g06.jp06-jz-vm0.entry.fr0528.art",
+      "server": "xoyp8cd-g06.jp06-jz-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -31596,7 +31681,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本7-Ver.2",
-      "server": "wvyp10f-g06.jp07-sh-vm0.entry.fr0528.art",
+      "server": "fv1ahcb-g06.jp07-sh-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
