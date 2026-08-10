@@ -3,8 +3,8 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/)
 [![Telegram Channel](https://img.shields.io/badge/Telegram-频道交流-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/MetaFetchNodes)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026-08-10--10%3A08%3A25-green.svg)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-1807-orange.svg)
+![Update](https://img.shields.io/badge/Updated-2026-08-10--12%3A42%3A19-green.svg)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-1808-orange.svg)
 ![Sources](https://img.shields.io/badge/Active_Sources-19-blue.svg)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
@@ -58,12 +58,12 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 ## 📊 节点分布统计
 
 <!-- STATS_TABLE_START -->
-> 更新时间：`2026-08-10 10:08:25`
-> 运行分析：从 `19` 个活跃源中抓取 `2478` 个节点，耗时 `2.76s`。去重后保留 `1807` 个有效节点。
+> 更新时间：`2026-08-10 12:42:19`
+> 运行分析：从 `19` 个活跃源中抓取 `2478` 个节点，耗时 `2.86s`。去重后保留 `1808` 个有效节点。
 
 | 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇳🇱荷兰 | 🇨🇭瑞士 | 🇮🇳印度 | 🇹🇷土耳其 | 🇪🇸西班牙 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🇵🇱波兰 | 🇦🇹奥地利 | 🌍其他 | **总计** |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 49 | 11 | 46 | 250 | 33 | 26 | 31 | 20 | 17 | 12 | 18 | 5 | 4 | 8 | 9 | 19 | 6 | 5 | 4 | 1234 | **1807** |
+| **数量** | 49 | 11 | 46 | 245 | 33 | 26 | 30 | 21 | 17 | 14 | 18 | 5 | 4 | 8 | 9 | 19 | 7 | 5 | 4 | 1237 | **1808** |
 <!-- STATS_TABLE_END -->
 
 <br/>
@@ -71,7 +71,7 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 <!-- SOURCE_STATS_TABLE_START -->
 ### 📡 各订阅源贡献度明细
 
-> 数据计算时间：`2026-08-10 10:08:26`
+> 数据计算时间：`2026-08-10 12:42:20`
 
 <div style="width: 100%; max-height: 260px; overflow-y: auto;">
 
