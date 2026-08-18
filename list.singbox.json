@@ -26,7 +26,6 @@
         "🇸🇪 瑞典",
         "🇵🇱 波兰",
         "🇦🇹 奥地利",
-        "🇦🇪 阿联酋",
         "🌍 其他地区",
         "direct"
       ]
@@ -55,7 +54,6 @@
         "🇸🇪 瑞典",
         "🇵🇱 波兰",
         "🇦🇹 奥地利",
-        "🇦🇪 阿联酋",
         "🌍 其他地区"
       ]
     },
@@ -72,7 +70,6 @@
         "日本2|@ripaojiedian",
         "日本3|@ripaojiedian",
         "新加坡|@ripaojiedian",
-        "新加坡2|@ripaojiedian",
         "新加坡3|@ripaojiedian",
         "美国|@ripaojiedian",
         "美国2|@ripaojiedian",
@@ -235,7 +232,7 @@
         "🇺🇸_US_美国 #6",
         "🇺🇸+US+美国+19",
         "🇺🇸 美国 CloudFlare节点 #16",
-        "新加坡2|@ripaojiedian #2",
+        "新加坡2|@ripaojiedian",
         "新加坡|@ripaojiedian #2",
         "🏁RELAY-94.140.0.110-0158",
         "🇺🇸 美国 CloudFlare节点 #17",
@@ -584,10 +581,17 @@
         "_3 #3",
         "🇹🇼台湾 02",
         "🇺🇸US-38.75.136.21-0862",
+        "🇭🇰 Hong Kong_None_trojan_103",
         "🇭🇰 Hong Kong_None_trojan_104",
         "🇭🇰 Hong Kong_None_trojan_105",
         "🇭🇰 Hong Kong_None_trojan_106",
+        "🇭🇰 Hong Kong_None_trojan_107",
+        "🇭🇰 Hong Kong_None_trojan_108",
+        "🇵🇱 Poland_None_trojan_109",
+        "🇭🇰 Hong Kong_None_trojan_1010",
         "🇭🇰 Hong Kong_None_trojan_1011",
+        "🇭🇰 Hong Kong_None_trojan_1012",
+        "🇭🇰 Hong Kong_None_trojan_1013",
         "🇭🇰 Hong Kong_None_trojan_1014",
         "🇭🇰 Hong Kong_None_trojan_1016",
         "🇭🇰 Hong Kong_None_trojan_1017",
@@ -608,7 +612,6 @@
         "🇸🇬 Singapore_Singapore_trojan_1129",
         "🇰🇷 South Korea_Incheon_trojan_1130",
         "🇯🇵 Japan_Tokyo_trojan_1131",
-        "美国+V2CROSS.COM",
         "美国+CloudFlare节点",
         "美国+CloudFlare节点 #2",
         "美国+CloudFlare节点 #3",
@@ -618,16 +621,17 @@
         "美国+CloudFlare节点 #7",
         "美国+CloudFlare节点 #8",
         "美国+CloudFlare节点 #9",
+        "日本+V2CROSS.COM",
+        "瑞士+V2CROSS.COM",
         "美国+加州",
-        "乌克兰+V2CROSS.COM",
+        "俄罗斯+V2CROSS.COM",
         "美国+CloudFlare节点 #10",
         "美国+CloudFlare节点 #11",
-        "波兰+V2CROSS.COM",
-        "香港+阿里云",
-        "俄罗斯+V2CROSS.COM",
-        "瑞士+V2CROSS.COM",
         "美国+CloudFlare节点 #12",
-        "立陶宛+V2CROSS.COM",
+        "美国+CloudFlare节点 #13",
+        "美国+CloudFlare节点 #14",
+        "美国+CloudFlare节点 #15",
+        "加拿大+V2CROSS.COM",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -677,6 +681,7 @@
         "🇸🇪 SE_speednode_0116",
         "🇺🇸 US_speednode_0117",
         "🇺🇸 US_speednode_0118",
+        "🇺🇸 US_speednode_0120",
         "🇺🇸 US_speednode_0122",
         "🇺🇸 US_speednode_0123",
         "🇺🇸 US_speednode_0125",
@@ -761,7 +766,7 @@
         "🇸🇪|SE|@wxgqlfx|238",
         "🇸🇪|SE|@wxgqlfx|213",
         "@filembad",
-        "@tootffarangi🍓-3",
+        "@Daily_Configs",
         "🌀49@oneclickvpnkeys",
         "🇬🇧|GB|@wxgqlfx|19",
         "🦁94@oneclickvpnkeys",
@@ -806,18 +811,9 @@
         "🦁17@oneclickvpnkeys",
         "🌀7@oneclickvpnkeys",
         "🇫🇮FI-🚀@VPNine1",
-        "@GozargahAzad|🇫🇮",
-        "@nekopingbot_15460 🌍 ⚡️",
         "@Azaranv2ray",
-        "Node-hysteria2-assets.gateway-stream.com",
-        "🇫🇮FI-🚀@VPNine1 #2",
-        "🇫🇮FI-🚀@VPNine1 #3",
-        "🇫🇮FI-🚀@VPNine1 #4",
-        "🇫🇮FI-🚀@VPNine1 #5",
-        "🇫🇮FI-🚀@VPNine1 #6",
+        "✅  @vistav2ray  👈👈کانال ما ✅",
         "@v2raybaaz ²",
-        "Node-hysteria2-assets.gateway-stream.com #2",
-        "🇫🇮FI-🚀@VPNine1 #7",
         "🦁62@oneclickvpnkeys",
         "防范境外势力渗透",
         "防范境外势力渗透 #2",
@@ -1651,7 +1647,6 @@
         "未知 VLESS-879 | free-nodes",
         "未知 VLESS-880 | free-nodes",
         "未知 VLESS-881 | free-nodes",
-        "未知 VLESS-882 | free-nodes",
         "未知 VLESS-883 | free-nodes",
         "未知 VLESS-884 | free-nodes",
         "未知 VLESS-885 | free-nodes",
@@ -1965,32 +1960,37 @@
         "🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国",
         "🇺🇸_US_美国 #24",
         "🇺🇸_US_美国 #25",
-        "🇩🇪DE_1|1.6MB/s",
-        "🇩🇪DE_2|3.7MB/s",
-        "🇸🇰SK_1|1.4MB/s",
-        "🇰🇷KR_1|1.1MB/s",
-        "🇺🇸US_1|4.2MB/s",
-        "🇬🇧GB_1|2.7MB/s",
-        "🇫🇷FR_1|1.0MB/s",
-        "🇬🇧GB_2|2.9MB/s",
-        "🇺🇸US_13|1007KB/s",
-        "🇦🇪AE_1|1.4MB/s",
-        "🇯🇵JP_2|3.1MB/s",
-        "🇺🇸US_14|4.3MB/s",
-        "🇺🇸US_17|4.1MB/s",
-        "🇺🇸US_18|1.9MB/s",
-        "🇳🇱NL_2|2.8MB/s",
-        "🇳🇱NL_3|3.0MB/s",
-        "🇳🇱NL_4|2.5MB/s",
-        "🇱🇻LV_1|2.4MB/s",
-        "🇫🇷FR_2|1.2MB/s",
-        "🇹🇭TH_1|2.3MB/s",
-        "🇸🇬SG_4|1.8MB/s",
-        "🇷🇺RU_2|1.1MB/s",
+        "🇭🇰HK_1|2.2MB/s",
+        "🇺🇸US_1|1.9MB/s",
+        "🇺🇸US_2|2.1MB/s",
+        "🇫🇷FR_1|3.1MB/s",
+        "🇫🇷FR_2|1.1MB/s",
+        "🇫🇷FR_3|1.9MB/s",
+        "🇫🇷FR_4|1.9MB/s",
+        "🇸🇪SE_1|1.9MB/s",
+        "🇫🇷FR_5|2.3MB/s",
+        "🇫🇷FR_6|3.4MB/s",
+        "🇫🇷FR_7|1.9MB/s",
+        "🇫🇷FR_8|1.1MB/s",
+        "🇰🇷KR_1|3.6MB/s",
+        "🇫🇷FR_9|1.6MB/s",
+        "🇩🇪DE_1|3.5MB/s",
+        "🇺🇸US_12|2.6MB/s",
+        "🇺🇸US_13|2.9MB/s",
+        "❓Other_1|3.0MB/s",
+        "🇫🇷FR_10|1.6MB/s",
+        "🇳🇴NO_1|1.5MB/s",
+        "🇰🇷KR_3|3.8MB/s",
         "🇨🇴CO_1|1.3MB/s",
-        "🇺🇸US_19|3.4MB/s",
-        "🇬🇧GB_3|1.5MB/s",
-        "🇺🇸US_20|2.0MB/s",
+        "🇺🇸US_14|2.1MB/s",
+        "🇰🇿KZ_1|2.5MB/s",
+        "🇬🇧GB_1|1.7MB/s",
+        "🇬🇧GB_2|2.5MB/s",
+        "🇺🇸US_15|3.0MB/s",
+        "🇺🇸US_16|2.9MB/s",
+        "🇺🇸US_17|1.6MB/s",
+        "🇸🇬SG_4|1.2MB/s",
+        "🇫🇮FI_1|1.6MB/s",
         "🇯🇵 免费-日本1-Ver.7",
         "🇯🇵 免费-日本2-Ver.8",
         "🇯🇵 免费-日本3-Ver.7",
@@ -2015,7 +2015,6 @@
         "日本2|@ripaojiedian",
         "日本3|@ripaojiedian",
         "新加坡|@ripaojiedian",
-        "新加坡2|@ripaojiedian",
         "新加坡3|@ripaojiedian",
         "美国|@ripaojiedian",
         "美国2|@ripaojiedian",
@@ -2178,7 +2177,7 @@
         "🇺🇸_US_美国 #6",
         "🇺🇸+US+美国+19",
         "🇺🇸 美国 CloudFlare节点 #16",
-        "新加坡2|@ripaojiedian #2",
+        "新加坡2|@ripaojiedian",
         "新加坡|@ripaojiedian #2",
         "🏁RELAY-94.140.0.110-0158",
         "🇺🇸 美国 CloudFlare节点 #17",
@@ -2527,10 +2526,17 @@
         "_3 #3",
         "🇹🇼台湾 02",
         "🇺🇸US-38.75.136.21-0862",
+        "🇭🇰 Hong Kong_None_trojan_103",
         "🇭🇰 Hong Kong_None_trojan_104",
         "🇭🇰 Hong Kong_None_trojan_105",
         "🇭🇰 Hong Kong_None_trojan_106",
+        "🇭🇰 Hong Kong_None_trojan_107",
+        "🇭🇰 Hong Kong_None_trojan_108",
+        "🇵🇱 Poland_None_trojan_109",
+        "🇭🇰 Hong Kong_None_trojan_1010",
         "🇭🇰 Hong Kong_None_trojan_1011",
+        "🇭🇰 Hong Kong_None_trojan_1012",
+        "🇭🇰 Hong Kong_None_trojan_1013",
         "🇭🇰 Hong Kong_None_trojan_1014",
         "🇭🇰 Hong Kong_None_trojan_1016",
         "🇭🇰 Hong Kong_None_trojan_1017",
@@ -2551,7 +2557,6 @@
         "🇸🇬 Singapore_Singapore_trojan_1129",
         "🇰🇷 South Korea_Incheon_trojan_1130",
         "🇯🇵 Japan_Tokyo_trojan_1131",
-        "美国+V2CROSS.COM",
         "美国+CloudFlare节点",
         "美国+CloudFlare节点 #2",
         "美国+CloudFlare节点 #3",
@@ -2561,16 +2566,17 @@
         "美国+CloudFlare节点 #7",
         "美国+CloudFlare节点 #8",
         "美国+CloudFlare节点 #9",
+        "日本+V2CROSS.COM",
+        "瑞士+V2CROSS.COM",
         "美国+加州",
-        "乌克兰+V2CROSS.COM",
+        "俄罗斯+V2CROSS.COM",
         "美国+CloudFlare节点 #10",
         "美国+CloudFlare节点 #11",
-        "波兰+V2CROSS.COM",
-        "香港+阿里云",
-        "俄罗斯+V2CROSS.COM",
-        "瑞士+V2CROSS.COM",
         "美国+CloudFlare节点 #12",
-        "立陶宛+V2CROSS.COM",
+        "美国+CloudFlare节点 #13",
+        "美国+CloudFlare节点 #14",
+        "美国+CloudFlare节点 #15",
+        "加拿大+V2CROSS.COM",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -2620,6 +2626,7 @@
         "🇸🇪 SE_speednode_0116",
         "🇺🇸 US_speednode_0117",
         "🇺🇸 US_speednode_0118",
+        "🇺🇸 US_speednode_0120",
         "🇺🇸 US_speednode_0122",
         "🇺🇸 US_speednode_0123",
         "🇺🇸 US_speednode_0125",
@@ -2704,7 +2711,7 @@
         "🇸🇪|SE|@wxgqlfx|238",
         "🇸🇪|SE|@wxgqlfx|213",
         "@filembad",
-        "@tootffarangi🍓-3",
+        "@Daily_Configs",
         "🌀49@oneclickvpnkeys",
         "🇬🇧|GB|@wxgqlfx|19",
         "🦁94@oneclickvpnkeys",
@@ -2749,18 +2756,9 @@
         "🦁17@oneclickvpnkeys",
         "🌀7@oneclickvpnkeys",
         "🇫🇮FI-🚀@VPNine1",
-        "@GozargahAzad|🇫🇮",
-        "@nekopingbot_15460 🌍 ⚡️",
         "@Azaranv2ray",
-        "Node-hysteria2-assets.gateway-stream.com",
-        "🇫🇮FI-🚀@VPNine1 #2",
-        "🇫🇮FI-🚀@VPNine1 #3",
-        "🇫🇮FI-🚀@VPNine1 #4",
-        "🇫🇮FI-🚀@VPNine1 #5",
-        "🇫🇮FI-🚀@VPNine1 #6",
+        "✅  @vistav2ray  👈👈کانال ما ✅",
         "@v2raybaaz ²",
-        "Node-hysteria2-assets.gateway-stream.com #2",
-        "🇫🇮FI-🚀@VPNine1 #7",
         "🦁62@oneclickvpnkeys",
         "防范境外势力渗透",
         "防范境外势力渗透 #2",
@@ -3594,7 +3592,6 @@
         "未知 VLESS-879 | free-nodes",
         "未知 VLESS-880 | free-nodes",
         "未知 VLESS-881 | free-nodes",
-        "未知 VLESS-882 | free-nodes",
         "未知 VLESS-883 | free-nodes",
         "未知 VLESS-884 | free-nodes",
         "未知 VLESS-885 | free-nodes",
@@ -3908,32 +3905,37 @@
         "🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国",
         "🇺🇸_US_美国 #24",
         "🇺🇸_US_美国 #25",
-        "🇩🇪DE_1|1.6MB/s",
-        "🇩🇪DE_2|3.7MB/s",
-        "🇸🇰SK_1|1.4MB/s",
-        "🇰🇷KR_1|1.1MB/s",
-        "🇺🇸US_1|4.2MB/s",
-        "🇬🇧GB_1|2.7MB/s",
-        "🇫🇷FR_1|1.0MB/s",
-        "🇬🇧GB_2|2.9MB/s",
-        "🇺🇸US_13|1007KB/s",
-        "🇦🇪AE_1|1.4MB/s",
-        "🇯🇵JP_2|3.1MB/s",
-        "🇺🇸US_14|4.3MB/s",
-        "🇺🇸US_17|4.1MB/s",
-        "🇺🇸US_18|1.9MB/s",
-        "🇳🇱NL_2|2.8MB/s",
-        "🇳🇱NL_3|3.0MB/s",
-        "🇳🇱NL_4|2.5MB/s",
-        "🇱🇻LV_1|2.4MB/s",
-        "🇫🇷FR_2|1.2MB/s",
-        "🇹🇭TH_1|2.3MB/s",
-        "🇸🇬SG_4|1.8MB/s",
-        "🇷🇺RU_2|1.1MB/s",
+        "🇭🇰HK_1|2.2MB/s",
+        "🇺🇸US_1|1.9MB/s",
+        "🇺🇸US_2|2.1MB/s",
+        "🇫🇷FR_1|3.1MB/s",
+        "🇫🇷FR_2|1.1MB/s",
+        "🇫🇷FR_3|1.9MB/s",
+        "🇫🇷FR_4|1.9MB/s",
+        "🇸🇪SE_1|1.9MB/s",
+        "🇫🇷FR_5|2.3MB/s",
+        "🇫🇷FR_6|3.4MB/s",
+        "🇫🇷FR_7|1.9MB/s",
+        "🇫🇷FR_8|1.1MB/s",
+        "🇰🇷KR_1|3.6MB/s",
+        "🇫🇷FR_9|1.6MB/s",
+        "🇩🇪DE_1|3.5MB/s",
+        "🇺🇸US_12|2.6MB/s",
+        "🇺🇸US_13|2.9MB/s",
+        "❓Other_1|3.0MB/s",
+        "🇫🇷FR_10|1.6MB/s",
+        "🇳🇴NO_1|1.5MB/s",
+        "🇰🇷KR_3|3.8MB/s",
         "🇨🇴CO_1|1.3MB/s",
-        "🇺🇸US_19|3.4MB/s",
-        "🇬🇧GB_3|1.5MB/s",
-        "🇺🇸US_20|2.0MB/s",
+        "🇺🇸US_14|2.1MB/s",
+        "🇰🇿KZ_1|2.5MB/s",
+        "🇬🇧GB_1|1.7MB/s",
+        "🇬🇧GB_2|2.5MB/s",
+        "🇺🇸US_15|3.0MB/s",
+        "🇺🇸US_16|2.9MB/s",
+        "🇺🇸US_17|1.6MB/s",
+        "🇸🇬SG_4|1.2MB/s",
+        "🇫🇮FI_1|1.6MB/s",
         "🇯🇵 免费-日本1-Ver.7",
         "🇯🇵 免费-日本2-Ver.8",
         "🇯🇵 免费-日本3-Ver.7",
@@ -3958,7 +3960,6 @@
         "日本2|@ripaojiedian",
         "日本3|@ripaojiedian",
         "新加坡|@ripaojiedian",
-        "新加坡2|@ripaojiedian",
         "新加坡3|@ripaojiedian",
         "美国|@ripaojiedian",
         "美国2|@ripaojiedian",
@@ -4121,7 +4122,7 @@
         "🇺🇸_US_美国 #6",
         "🇺🇸+US+美国+19",
         "🇺🇸 美国 CloudFlare节点 #16",
-        "新加坡2|@ripaojiedian #2",
+        "新加坡2|@ripaojiedian",
         "新加坡|@ripaojiedian #2",
         "🏁RELAY-94.140.0.110-0158",
         "🇺🇸 美国 CloudFlare节点 #17",
@@ -4470,10 +4471,17 @@
         "_3 #3",
         "🇹🇼台湾 02",
         "🇺🇸US-38.75.136.21-0862",
+        "🇭🇰 Hong Kong_None_trojan_103",
         "🇭🇰 Hong Kong_None_trojan_104",
         "🇭🇰 Hong Kong_None_trojan_105",
         "🇭🇰 Hong Kong_None_trojan_106",
+        "🇭🇰 Hong Kong_None_trojan_107",
+        "🇭🇰 Hong Kong_None_trojan_108",
+        "🇵🇱 Poland_None_trojan_109",
+        "🇭🇰 Hong Kong_None_trojan_1010",
         "🇭🇰 Hong Kong_None_trojan_1011",
+        "🇭🇰 Hong Kong_None_trojan_1012",
+        "🇭🇰 Hong Kong_None_trojan_1013",
         "🇭🇰 Hong Kong_None_trojan_1014",
         "🇭🇰 Hong Kong_None_trojan_1016",
         "🇭🇰 Hong Kong_None_trojan_1017",
@@ -4494,7 +4502,6 @@
         "🇸🇬 Singapore_Singapore_trojan_1129",
         "🇰🇷 South Korea_Incheon_trojan_1130",
         "🇯🇵 Japan_Tokyo_trojan_1131",
-        "美国+V2CROSS.COM",
         "美国+CloudFlare节点",
         "美国+CloudFlare节点 #2",
         "美国+CloudFlare节点 #3",
@@ -4504,16 +4511,17 @@
         "美国+CloudFlare节点 #7",
         "美国+CloudFlare节点 #8",
         "美国+CloudFlare节点 #9",
+        "日本+V2CROSS.COM",
+        "瑞士+V2CROSS.COM",
         "美国+加州",
-        "乌克兰+V2CROSS.COM",
+        "俄罗斯+V2CROSS.COM",
         "美国+CloudFlare节点 #10",
         "美国+CloudFlare节点 #11",
-        "波兰+V2CROSS.COM",
-        "香港+阿里云",
-        "俄罗斯+V2CROSS.COM",
-        "瑞士+V2CROSS.COM",
         "美国+CloudFlare节点 #12",
-        "立陶宛+V2CROSS.COM",
+        "美国+CloudFlare节点 #13",
+        "美国+CloudFlare节点 #14",
+        "美国+CloudFlare节点 #15",
+        "加拿大+V2CROSS.COM",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -4563,6 +4571,7 @@
         "🇸🇪 SE_speednode_0116",
         "🇺🇸 US_speednode_0117",
         "🇺🇸 US_speednode_0118",
+        "🇺🇸 US_speednode_0120",
         "🇺🇸 US_speednode_0122",
         "🇺🇸 US_speednode_0123",
         "🇺🇸 US_speednode_0125",
@@ -4647,7 +4656,7 @@
         "🇸🇪|SE|@wxgqlfx|238",
         "🇸🇪|SE|@wxgqlfx|213",
         "@filembad",
-        "@tootffarangi🍓-3",
+        "@Daily_Configs",
         "🌀49@oneclickvpnkeys",
         "🇬🇧|GB|@wxgqlfx|19",
         "🦁94@oneclickvpnkeys",
@@ -4692,18 +4701,9 @@
         "🦁17@oneclickvpnkeys",
         "🌀7@oneclickvpnkeys",
         "🇫🇮FI-🚀@VPNine1",
-        "@GozargahAzad|🇫🇮",
-        "@nekopingbot_15460 🌍 ⚡️",
         "@Azaranv2ray",
-        "Node-hysteria2-assets.gateway-stream.com",
-        "🇫🇮FI-🚀@VPNine1 #2",
-        "🇫🇮FI-🚀@VPNine1 #3",
-        "🇫🇮FI-🚀@VPNine1 #4",
-        "🇫🇮FI-🚀@VPNine1 #5",
-        "🇫🇮FI-🚀@VPNine1 #6",
+        "✅  @vistav2ray  👈👈کانال ما ✅",
         "@v2raybaaz ²",
-        "Node-hysteria2-assets.gateway-stream.com #2",
-        "🇫🇮FI-🚀@VPNine1 #7",
         "🦁62@oneclickvpnkeys",
         "防范境外势力渗透",
         "防范境外势力渗透 #2",
@@ -5537,7 +5537,6 @@
         "未知 VLESS-879 | free-nodes",
         "未知 VLESS-880 | free-nodes",
         "未知 VLESS-881 | free-nodes",
-        "未知 VLESS-882 | free-nodes",
         "未知 VLESS-883 | free-nodes",
         "未知 VLESS-884 | free-nodes",
         "未知 VLESS-885 | free-nodes",
@@ -5851,32 +5850,37 @@
         "🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国",
         "🇺🇸_US_美国 #24",
         "🇺🇸_US_美国 #25",
-        "🇩🇪DE_1|1.6MB/s",
-        "🇩🇪DE_2|3.7MB/s",
-        "🇸🇰SK_1|1.4MB/s",
-        "🇰🇷KR_1|1.1MB/s",
-        "🇺🇸US_1|4.2MB/s",
-        "🇬🇧GB_1|2.7MB/s",
-        "🇫🇷FR_1|1.0MB/s",
-        "🇬🇧GB_2|2.9MB/s",
-        "🇺🇸US_13|1007KB/s",
-        "🇦🇪AE_1|1.4MB/s",
-        "🇯🇵JP_2|3.1MB/s",
-        "🇺🇸US_14|4.3MB/s",
-        "🇺🇸US_17|4.1MB/s",
-        "🇺🇸US_18|1.9MB/s",
-        "🇳🇱NL_2|2.8MB/s",
-        "🇳🇱NL_3|3.0MB/s",
-        "🇳🇱NL_4|2.5MB/s",
-        "🇱🇻LV_1|2.4MB/s",
-        "🇫🇷FR_2|1.2MB/s",
-        "🇹🇭TH_1|2.3MB/s",
-        "🇸🇬SG_4|1.8MB/s",
-        "🇷🇺RU_2|1.1MB/s",
+        "🇭🇰HK_1|2.2MB/s",
+        "🇺🇸US_1|1.9MB/s",
+        "🇺🇸US_2|2.1MB/s",
+        "🇫🇷FR_1|3.1MB/s",
+        "🇫🇷FR_2|1.1MB/s",
+        "🇫🇷FR_3|1.9MB/s",
+        "🇫🇷FR_4|1.9MB/s",
+        "🇸🇪SE_1|1.9MB/s",
+        "🇫🇷FR_5|2.3MB/s",
+        "🇫🇷FR_6|3.4MB/s",
+        "🇫🇷FR_7|1.9MB/s",
+        "🇫🇷FR_8|1.1MB/s",
+        "🇰🇷KR_1|3.6MB/s",
+        "🇫🇷FR_9|1.6MB/s",
+        "🇩🇪DE_1|3.5MB/s",
+        "🇺🇸US_12|2.6MB/s",
+        "🇺🇸US_13|2.9MB/s",
+        "❓Other_1|3.0MB/s",
+        "🇫🇷FR_10|1.6MB/s",
+        "🇳🇴NO_1|1.5MB/s",
+        "🇰🇷KR_3|3.8MB/s",
         "🇨🇴CO_1|1.3MB/s",
-        "🇺🇸US_19|3.4MB/s",
-        "🇬🇧GB_3|1.5MB/s",
-        "🇺🇸US_20|2.0MB/s",
+        "🇺🇸US_14|2.1MB/s",
+        "🇰🇿KZ_1|2.5MB/s",
+        "🇬🇧GB_1|1.7MB/s",
+        "🇬🇧GB_2|2.5MB/s",
+        "🇺🇸US_15|3.0MB/s",
+        "🇺🇸US_16|2.9MB/s",
+        "🇺🇸US_17|1.6MB/s",
+        "🇸🇬SG_4|1.2MB/s",
+        "🇫🇮FI_1|1.6MB/s",
         "🇯🇵 免费-日本1-Ver.7",
         "🇯🇵 免费-日本2-Ver.8",
         "🇯🇵 免费-日本3-Ver.7",
@@ -5927,18 +5931,24 @@
         "🇭🇰+HK+香港+45",
         "🇭🇰 -HK-Hong Kong9",
         "🇭🇰+HK+香港+8",
+        "🇭🇰 Hong Kong_None_trojan_103",
         "🇭🇰 Hong Kong_None_trojan_104",
         "🇭🇰 Hong Kong_None_trojan_105",
         "🇭🇰 Hong Kong_None_trojan_106",
+        "🇭🇰 Hong Kong_None_trojan_107",
+        "🇭🇰 Hong Kong_None_trojan_108",
+        "🇭🇰 Hong Kong_None_trojan_1010",
         "🇭🇰 Hong Kong_None_trojan_1011",
+        "🇭🇰 Hong Kong_None_trojan_1012",
+        "🇭🇰 Hong Kong_None_trojan_1013",
         "🇭🇰 Hong Kong_None_trojan_1014",
         "🇭🇰 Hong Kong_None_trojan_1016",
         "🇭🇰 Hong Kong_None_trojan_1017",
-        "香港+阿里云",
         "🇭🇰HK",
         "🇭🇰|HK|@wxgqlfx|222",
         "🇭🇰_HK_中国香港",
-        "🇭🇰_HK_中国香港 #2"
+        "🇭🇰_HK_中国香港 #2",
+        "🇭🇰HK_1|2.2MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -5985,18 +5995,24 @@
         "🇭🇰+HK+香港+45",
         "🇭🇰 -HK-Hong Kong9",
         "🇭🇰+HK+香港+8",
+        "🇭🇰 Hong Kong_None_trojan_103",
         "🇭🇰 Hong Kong_None_trojan_104",
         "🇭🇰 Hong Kong_None_trojan_105",
         "🇭🇰 Hong Kong_None_trojan_106",
+        "🇭🇰 Hong Kong_None_trojan_107",
+        "🇭🇰 Hong Kong_None_trojan_108",
+        "🇭🇰 Hong Kong_None_trojan_1010",
         "🇭🇰 Hong Kong_None_trojan_1011",
+        "🇭🇰 Hong Kong_None_trojan_1012",
+        "🇭🇰 Hong Kong_None_trojan_1013",
         "🇭🇰 Hong Kong_None_trojan_1014",
         "🇭🇰 Hong Kong_None_trojan_1016",
         "🇭🇰 Hong Kong_None_trojan_1017",
-        "香港+阿里云",
         "🇭🇰HK",
         "🇭🇰|HK|@wxgqlfx|222",
         "🇭🇰_HK_中国香港",
-        "🇭🇰_HK_中国香港 #2"
+        "🇭🇰_HK_中国香港 #2",
+        "🇭🇰HK_1|2.2MB/s"
       ]
     },
     {
@@ -6080,8 +6096,8 @@
         "🇯🇵 Japan_Tokyo_trojan_1018",
         "🇯🇵 Japan_Tokyo_trojan_1117",
         "🇯🇵 Japan_Tokyo_trojan_1131",
+        "日本+V2CROSS.COM",
         "🇯🇵JP",
-        "🇯🇵JP_2|3.1MB/s",
         "🇯🇵 免费-日本1-Ver.7",
         "🇯🇵 免费-日本2-Ver.8",
         "🇯🇵 免费-日本3-Ver.7",
@@ -6136,8 +6152,8 @@
         "🇯🇵 Japan_Tokyo_trojan_1018",
         "🇯🇵 Japan_Tokyo_trojan_1117",
         "🇯🇵 Japan_Tokyo_trojan_1131",
+        "日本+V2CROSS.COM",
         "🇯🇵JP",
-        "🇯🇵JP_2|3.1MB/s",
         "🇯🇵 免费-日本1-Ver.7",
         "🇯🇵 免费-日本2-Ver.8",
         "🇯🇵 免费-日本3-Ver.7",
@@ -6352,7 +6368,6 @@
         "🇺🇸US-38.68.134.9-0851",
         "🇺🇸US-167.88.61.175-1704",
         "🇺🇸US-38.75.136.21-0862",
-        "美国+V2CROSS.COM",
         "美国+CloudFlare节点",
         "美国+CloudFlare节点 #2",
         "美国+CloudFlare节点 #3",
@@ -6366,8 +6381,12 @@
         "美国+CloudFlare节点 #10",
         "美国+CloudFlare节点 #11",
         "美国+CloudFlare节点 #12",
+        "美国+CloudFlare节点 #13",
+        "美国+CloudFlare节点 #14",
+        "美国+CloudFlare节点 #15",
         "🇺🇸 US_speednode_0117",
         "🇺🇸 US_speednode_0118",
+        "🇺🇸 US_speednode_0120",
         "🇺🇸 US_speednode_0122",
         "🇺🇸 US_speednode_0123",
         "🇺🇸 US_speednode_0125",
@@ -6410,13 +6429,14 @@
         "🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆",
         "🇺🇸_US_美国 #24",
         "🇺🇸_US_美国 #25",
-        "🇺🇸US_1|4.2MB/s",
-        "🇺🇸US_13|1007KB/s",
-        "🇺🇸US_14|4.3MB/s",
-        "🇺🇸US_17|4.1MB/s",
-        "🇺🇸US_18|1.9MB/s",
-        "🇺🇸US_19|3.4MB/s",
-        "🇺🇸US_20|2.0MB/s"
+        "🇺🇸US_1|1.9MB/s",
+        "🇺🇸US_2|2.1MB/s",
+        "🇺🇸US_12|2.6MB/s",
+        "🇺🇸US_13|2.9MB/s",
+        "🇺🇸US_14|2.1MB/s",
+        "🇺🇸US_15|3.0MB/s",
+        "🇺🇸US_16|2.9MB/s",
+        "🇺🇸US_17|1.6MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -6627,7 +6647,6 @@
         "🇺🇸US-38.68.134.9-0851",
         "🇺🇸US-167.88.61.175-1704",
         "🇺🇸US-38.75.136.21-0862",
-        "美国+V2CROSS.COM",
         "美国+CloudFlare节点",
         "美国+CloudFlare节点 #2",
         "美国+CloudFlare节点 #3",
@@ -6641,8 +6660,12 @@
         "美国+CloudFlare节点 #10",
         "美国+CloudFlare节点 #11",
         "美国+CloudFlare节点 #12",
+        "美国+CloudFlare节点 #13",
+        "美国+CloudFlare节点 #14",
+        "美国+CloudFlare节点 #15",
         "🇺🇸 US_speednode_0117",
         "🇺🇸 US_speednode_0118",
+        "🇺🇸 US_speednode_0120",
         "🇺🇸 US_speednode_0122",
         "🇺🇸 US_speednode_0123",
         "🇺🇸 US_speednode_0125",
@@ -6685,13 +6708,14 @@
         "🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆",
         "🇺🇸_US_美国 #24",
         "🇺🇸_US_美国 #25",
-        "🇺🇸US_1|4.2MB/s",
-        "🇺🇸US_13|1007KB/s",
-        "🇺🇸US_14|4.3MB/s",
-        "🇺🇸US_17|4.1MB/s",
-        "🇺🇸US_18|1.9MB/s",
-        "🇺🇸US_19|3.4MB/s",
-        "🇺🇸US_20|2.0MB/s"
+        "🇺🇸US_1|1.9MB/s",
+        "🇺🇸US_2|2.1MB/s",
+        "🇺🇸US_12|2.6MB/s",
+        "🇺🇸US_13|2.9MB/s",
+        "🇺🇸US_14|2.1MB/s",
+        "🇺🇸US_15|3.0MB/s",
+        "🇺🇸US_16|2.9MB/s",
+        "🇺🇸US_17|1.6MB/s"
       ]
     },
     {
@@ -6699,14 +6723,13 @@
       "tag": "⚡ 自动选择 | 🇸🇬 新加坡",
       "outbounds": [
         "新加坡|@ripaojiedian",
-        "新加坡2|@ripaojiedian",
         "新加坡3|@ripaojiedian",
         "🇸🇬SG-103.172.116.103-0795",
         "🇸🇬 -SG-Singapore1",
         "移动用新加坡1",
         "🇸🇬新加坡 02",
         "🇸🇬 新加坡 02",
-        "新加坡2|@ripaojiedian #2",
+        "新加坡2|@ripaojiedian",
         "新加坡|@ripaojiedian #2",
         "🇸🇬+SG+新加坡+51",
         "🇸🇬 -SG-Singapore5",
@@ -6739,7 +6762,7 @@
         "🇸🇬 Singapore_Singapore_trojan_1129",
         "🇸🇬SG",
         "🇸🇬|SG|@wxgqlfx|27",
-        "🇸🇬SG_4|1.8MB/s"
+        "🇸🇬SG_4|1.2MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -6750,14 +6773,13 @@
       "outbounds": [
         "⚡ 自动选择 | 🇸🇬 新加坡",
         "新加坡|@ripaojiedian",
-        "新加坡2|@ripaojiedian",
         "新加坡3|@ripaojiedian",
         "🇸🇬SG-103.172.116.103-0795",
         "🇸🇬 -SG-Singapore1",
         "移动用新加坡1",
         "🇸🇬新加坡 02",
         "🇸🇬 新加坡 02",
-        "新加坡2|@ripaojiedian #2",
+        "新加坡2|@ripaojiedian",
         "新加坡|@ripaojiedian #2",
         "🇸🇬+SG+新加坡+51",
         "🇸🇬 -SG-Singapore5",
@@ -6790,7 +6812,7 @@
         "🇸🇬 Singapore_Singapore_trojan_1129",
         "🇸🇬SG",
         "🇸🇬|SG|@wxgqlfx|27",
-        "🇸🇬SG_4|1.8MB/s"
+        "🇸🇬SG_4|1.2MB/s"
       ]
     },
     {
@@ -6825,7 +6847,8 @@
         "🇰🇷 South Korea_Incheon_trojan_1130",
         "🇰🇷KR",
         "🇰🇷|KR|@wxgqlfx|23",
-        "🇰🇷KR_1|1.1MB/s"
+        "🇰🇷KR_1|3.6MB/s",
+        "🇰🇷KR_3|3.8MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -6863,7 +6886,8 @@
         "🇰🇷 South Korea_Incheon_trojan_1130",
         "🇰🇷KR",
         "🇰🇷|KR|@wxgqlfx|23",
-        "🇰🇷KR_1|1.1MB/s"
+        "🇰🇷KR_1|3.6MB/s",
+        "🇰🇷KR_3|3.8MB/s"
       ]
     },
     {
@@ -6890,8 +6914,7 @@
         "🇩🇪|DE|@wxgqlfx|223",
         "🇩🇪 DE VLESS-1475 | free-nodes",
         "🇩🇪 DE VLESS-1498 | free-nodes",
-        "🇩🇪DE_1|1.6MB/s",
-        "🇩🇪DE_2|3.7MB/s"
+        "🇩🇪DE_1|3.5MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -6921,8 +6944,7 @@
         "🇩🇪|DE|@wxgqlfx|223",
         "🇩🇪 DE VLESS-1475 | free-nodes",
         "🇩🇪 DE VLESS-1498 | free-nodes",
-        "🇩🇪DE_1|1.6MB/s",
-        "🇩🇪DE_2|3.7MB/s"
+        "🇩🇪DE_1|3.5MB/s"
       ]
     },
     {
@@ -6948,9 +6970,8 @@
         "🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚 #2",
         "🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚 #3",
         "🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国",
-        "🇬🇧GB_1|2.7MB/s",
-        "🇬🇧GB_2|2.9MB/s",
-        "🇬🇧GB_3|1.5MB/s"
+        "🇬🇧GB_1|1.7MB/s",
+        "🇬🇧GB_2|2.5MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -6979,9 +7000,8 @@
         "🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚 #2",
         "🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚 #3",
         "🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国",
-        "🇬🇧GB_1|2.7MB/s",
-        "🇬🇧GB_2|2.9MB/s",
-        "🇬🇧GB_3|1.5MB/s"
+        "🇬🇧GB_1|1.7MB/s",
+        "🇬🇧GB_2|2.5MB/s"
       ]
     },
     {
@@ -7005,8 +7025,16 @@
         "🇫🇷 法国 #3",
         "🇫🇷_FR_法国 #2",
         "🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国",
-        "🇫🇷FR_1|1.0MB/s",
-        "🇫🇷FR_2|1.2MB/s"
+        "🇫🇷FR_1|3.1MB/s",
+        "🇫🇷FR_2|1.1MB/s",
+        "🇫🇷FR_3|1.9MB/s",
+        "🇫🇷FR_4|1.9MB/s",
+        "🇫🇷FR_5|2.3MB/s",
+        "🇫🇷FR_6|3.4MB/s",
+        "🇫🇷FR_7|1.9MB/s",
+        "🇫🇷FR_8|1.1MB/s",
+        "🇫🇷FR_9|1.6MB/s",
+        "🇫🇷FR_10|1.6MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -7033,8 +7061,16 @@
         "🇫🇷 法国 #3",
         "🇫🇷_FR_法国 #2",
         "🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国",
-        "🇫🇷FR_1|1.0MB/s",
-        "🇫🇷FR_2|1.2MB/s"
+        "🇫🇷FR_1|3.1MB/s",
+        "🇫🇷FR_2|1.1MB/s",
+        "🇫🇷FR_3|1.9MB/s",
+        "🇫🇷FR_4|1.9MB/s",
+        "🇫🇷FR_5|2.3MB/s",
+        "🇫🇷FR_6|3.4MB/s",
+        "🇫🇷FR_7|1.9MB/s",
+        "🇫🇷FR_8|1.1MB/s",
+        "🇫🇷FR_9|1.6MB/s",
+        "🇫🇷FR_10|1.6MB/s"
       ]
     },
     {
@@ -7046,8 +7082,7 @@
         "俄罗斯+V2CROSS.COM",
         "🇷🇺 俄罗斯 #1",
         "🇷🇺|RU|@wxgqlfx|229",
-        "🇷🇺 RU VLESS-399 | free-nodes",
-        "🇷🇺RU_2|1.1MB/s"
+        "🇷🇺 RU VLESS-399 | free-nodes"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -7062,8 +7097,7 @@
         "俄罗斯+V2CROSS.COM",
         "🇷🇺 俄罗斯 #1",
         "🇷🇺|RU|@wxgqlfx|229",
-        "🇷🇺 RU VLESS-399 | free-nodes",
-        "🇷🇺RU_2|1.1MB/s"
+        "🇷🇺 RU VLESS-399 | free-nodes"
       ]
     },
     {
@@ -7073,6 +7107,7 @@
         "🇨🇦_CA_加拿大",
         "🇨🇦_CA_加拿大 #2",
         "🇨🇦_CA_加拿大 #3",
+        "加拿大+V2CROSS.COM",
         "🇨🇦V2RayyNGvpn🇨🇦"
       ],
       "url": "http://www.gstatic.com/generate_204",
@@ -7086,6 +7121,7 @@
         "🇨🇦_CA_加拿大",
         "🇨🇦_CA_加拿大 #2",
         "🇨🇦_CA_加拿大 #3",
+        "加拿大+V2CROSS.COM",
         "🇨🇦V2RayyNGvpn🇨🇦"
       ]
     },
@@ -7108,10 +7144,7 @@
         "🇳🇱 荷兰 #10",
         "🇳🇱|NL|@wxgqlfx|236",
         "🇳🇱 - NL - @FreeOnlineVPN",
-        "🇳🇱|NL|@wxgqlfx|122",
-        "🇳🇱NL_2|2.8MB/s",
-        "🇳🇱NL_3|3.0MB/s",
-        "🇳🇱NL_4|2.5MB/s"
+        "🇳🇱|NL|@wxgqlfx|122"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -7136,10 +7169,7 @@
         "🇳🇱 荷兰 #10",
         "🇳🇱|NL|@wxgqlfx|236",
         "🇳🇱 - NL - @FreeOnlineVPN",
-        "🇳🇱|NL|@wxgqlfx|122",
-        "🇳🇱NL_2|2.8MB/s",
-        "🇳🇱NL_3|3.0MB/s",
-        "🇳🇱NL_4|2.5MB/s"
+        "🇳🇱|NL|@wxgqlfx|122"
       ]
     },
     {
@@ -7266,13 +7296,7 @@
         "@KAFING_2",
         "🇫🇮|FI|@wxgqlfx|169",
         "🇫🇮FI-🚀@VPNine1",
-        "@GozargahAzad|🇫🇮",
-        "🇫🇮FI-🚀@VPNine1 #2",
-        "🇫🇮FI-🚀@VPNine1 #3",
-        "🇫🇮FI-🚀@VPNine1 #4",
-        "🇫🇮FI-🚀@VPNine1 #5",
-        "🇫🇮FI-🚀@VPNine1 #6",
-        "🇫🇮FI-🚀@VPNine1 #7"
+        "🇫🇮FI_1|1.6MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -7290,13 +7314,7 @@
         "@KAFING_2",
         "🇫🇮|FI|@wxgqlfx|169",
         "🇫🇮FI-🚀@VPNine1",
-        "@GozargahAzad|🇫🇮",
-        "🇫🇮FI-🚀@VPNine1 #2",
-        "🇫🇮FI-🚀@VPNine1 #3",
-        "🇫🇮FI-🚀@VPNine1 #4",
-        "🇫🇮FI-🚀@VPNine1 #5",
-        "🇫🇮FI-🚀@VPNine1 #6",
-        "🇫🇮FI-🚀@VPNine1 #7"
+        "🇫🇮FI_1|1.6MB/s"
       ]
     },
     {
@@ -7308,7 +7326,8 @@
         "🇸🇪 SE_speednode_0116",
         "🇸🇪 瑞典 #1",
         "🇸🇪|SE|@wxgqlfx|238",
-        "🇸🇪|SE|@wxgqlfx|213"
+        "🇸🇪|SE|@wxgqlfx|213",
+        "🇸🇪SE_1|1.9MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -7323,7 +7342,8 @@
         "🇸🇪 SE_speednode_0116",
         "🇸🇪 瑞典 #1",
         "🇸🇪|SE|@wxgqlfx|238",
-        "🇸🇪|SE|@wxgqlfx|213"
+        "🇸🇪|SE|@wxgqlfx|213",
+        "🇸🇪SE_1|1.9MB/s"
       ]
     },
     {
@@ -7331,7 +7351,7 @@
       "tag": "⚡ 自动选择 | 🇵🇱 波兰",
       "outbounds": [
         "🇵🇱 github.com/freefq - 波兰  5",
-        "波兰+V2CROSS.COM",
+        "🇵🇱 Poland_None_trojan_109",
         "🇵🇱 波兰 #1",
         "🇵🇱 波兰 #2",
         "🇵🇱 波兰 #3",
@@ -7349,7 +7369,7 @@
       "outbounds": [
         "⚡ 自动选择 | 🇵🇱 波兰",
         "🇵🇱 github.com/freefq - 波兰  5",
-        "波兰+V2CROSS.COM",
+        "🇵🇱 Poland_None_trojan_109",
         "🇵🇱 波兰 #1",
         "🇵🇱 波兰 #2",
         "🇵🇱 波兰 #3",
@@ -7386,29 +7406,6 @@
         "🇦🇹|AT|@wxgqlfx|225",
         "🇦🇹|AT|@wxgqlfx|224",
         "🇦🇹|AT|@wxgqlfx|221"
-      ]
-    },
-    {
-      "type": "urltest",
-      "tag": "⚡ 自动选择 | 🇦🇪 阿联酋",
-      "outbounds": [
-        "🇦🇪+AE+阿联酋+74",
-        "🇦🇪+AE+阿联酋+6",
-        "🇦🇪 阿联酋 #1",
-        "🇦🇪AE_1|1.4MB/s"
-      ],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "3m"
-    },
-    {
-      "type": "selector",
-      "tag": "🇦🇪 阿联酋",
-      "outbounds": [
-        "⚡ 自动选择 | 🇦🇪 阿联酋",
-        "🇦🇪+AE+阿联酋+74",
-        "🇦🇪+AE+阿联酋+6",
-        "🇦🇪 阿联酋 #1",
-        "🇦🇪AE_1|1.4MB/s"
       ]
     },
     {
@@ -7468,6 +7465,7 @@
         "🇸🇨+SC+塞舌尔+30",
         "vmess",
         "🏁RELAY-172.67.196.110-0130",
+        "🇦🇪+AE+阿联酋+74",
         "vmess #2",
         "🏁RELAY-104.21.46.63-3821",
         "🇲🇺+MU+毛里求斯+20",
@@ -7486,6 +7484,7 @@
         "🇺🇦UA-5.188.6.8-0740",
         "_2 #4",
         "_4",
+        "🇦🇪+AE+阿联酋+6",
         "🏁RELAY-188.114.97.3-0145",
         "Node-ss-e001.panda003.net",
         "🇳🇴NO-185.90.61.153-0816",
@@ -7537,9 +7536,7 @@
         "广东省深圳市+移动",
         "_3 #3",
         "None_None_trojan_1120",
-        "乌克兰+V2CROSS.COM",
         "瑞士+V2CROSS.COM",
-        "立陶宛+V2CROSS.COM",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -7584,6 +7581,7 @@
         "Github搜索TrojanLinks #42",
         "Github搜索TrojanLinks #43",
         "MU_speednode_0015",
+        "🇦🇪 阿联酋 #1",
         "🇩🇰 丹麦 #1",
         "🇱🇹LT",
         "DZ",
@@ -7603,7 +7601,7 @@
         "🌀37@oneclickvpnkeys",
         "MTMVPN 15",
         "@filembad",
-        "@tootffarangi🍓-3",
+        "@Daily_Configs",
         "🌀49@oneclickvpnkeys",
         "🦁94@oneclickvpnkeys",
         "🌀6@oneclickvpnkeys",
@@ -7629,11 +7627,9 @@
         "Proxy_mtm 37",
         "🦁17@oneclickvpnkeys",
         "🌀7@oneclickvpnkeys",
-        "@nekopingbot_15460 🌍 ⚡️",
         "@Azaranv2ray",
-        "Node-hysteria2-assets.gateway-stream.com",
+        "✅  @vistav2ray  👈👈کانال ما ✅",
         "@v2raybaaz ²",
-        "Node-hysteria2-assets.gateway-stream.com #2",
         "🦁62@oneclickvpnkeys",
         "防范境外势力渗透",
         "防范境外势力渗透 #2",
@@ -8465,7 +8461,6 @@
         "未知 VLESS-879 | free-nodes",
         "未知 VLESS-880 | free-nodes",
         "未知 VLESS-881 | free-nodes",
-        "未知 VLESS-882 | free-nodes",
         "未知 VLESS-883 | free-nodes",
         "未知 VLESS-884 | free-nodes",
         "未知 VLESS-885 | free-nodes",
@@ -8741,10 +8736,10 @@
         "未知 VLESS-1504 | free-nodes",
         "未知 VLESS-1505 | free-nodes",
         "未知 VLESS-1518 | free-nodes",
-        "🇸🇰SK_1|1.4MB/s",
-        "🇱🇻LV_1|2.4MB/s",
-        "🇹🇭TH_1|2.3MB/s",
-        "🇨🇴CO_1|1.3MB/s"
+        "❓Other_1|3.0MB/s",
+        "🇳🇴NO_1|1.5MB/s",
+        "🇨🇴CO_1|1.3MB/s",
+        "🇰🇿KZ_1|2.5MB/s"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "3m"
@@ -8807,6 +8802,7 @@
         "🇸🇨+SC+塞舌尔+30",
         "vmess",
         "🏁RELAY-172.67.196.110-0130",
+        "🇦🇪+AE+阿联酋+74",
         "vmess #2",
         "🏁RELAY-104.21.46.63-3821",
         "🇲🇺+MU+毛里求斯+20",
@@ -8825,6 +8821,7 @@
         "🇺🇦UA-5.188.6.8-0740",
         "_2 #4",
         "_4",
+        "🇦🇪+AE+阿联酋+6",
         "🏁RELAY-188.114.97.3-0145",
         "Node-ss-e001.panda003.net",
         "🇳🇴NO-185.90.61.153-0816",
@@ -8876,9 +8873,7 @@
         "广东省深圳市+移动",
         "_3 #3",
         "None_None_trojan_1120",
-        "乌克兰+V2CROSS.COM",
         "瑞士+V2CROSS.COM",
-        "立陶宛+V2CROSS.COM",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -8923,6 +8918,7 @@
         "Github搜索TrojanLinks #42",
         "Github搜索TrojanLinks #43",
         "MU_speednode_0015",
+        "🇦🇪 阿联酋 #1",
         "🇩🇰 丹麦 #1",
         "🇱🇹LT",
         "DZ",
@@ -8942,7 +8938,7 @@
         "🌀37@oneclickvpnkeys",
         "MTMVPN 15",
         "@filembad",
-        "@tootffarangi🍓-3",
+        "@Daily_Configs",
         "🌀49@oneclickvpnkeys",
         "🦁94@oneclickvpnkeys",
         "🌀6@oneclickvpnkeys",
@@ -8968,11 +8964,9 @@
         "Proxy_mtm 37",
         "🦁17@oneclickvpnkeys",
         "🌀7@oneclickvpnkeys",
-        "@nekopingbot_15460 🌍 ⚡️",
         "@Azaranv2ray",
-        "Node-hysteria2-assets.gateway-stream.com",
+        "✅  @vistav2ray  👈👈کانال ما ✅",
         "@v2raybaaz ²",
-        "Node-hysteria2-assets.gateway-stream.com #2",
         "🦁62@oneclickvpnkeys",
         "防范境外势力渗透",
         "防范境外势力渗透 #2",
@@ -9804,7 +9798,6 @@
         "未知 VLESS-879 | free-nodes",
         "未知 VLESS-880 | free-nodes",
         "未知 VLESS-881 | free-nodes",
-        "未知 VLESS-882 | free-nodes",
         "未知 VLESS-883 | free-nodes",
         "未知 VLESS-884 | free-nodes",
         "未知 VLESS-885 | free-nodes",
@@ -10080,10 +10073,10 @@
         "未知 VLESS-1504 | free-nodes",
         "未知 VLESS-1505 | free-nodes",
         "未知 VLESS-1518 | free-nodes",
-        "🇸🇰SK_1|1.4MB/s",
-        "🇱🇻LV_1|2.4MB/s",
-        "🇹🇭TH_1|2.3MB/s",
-        "🇨🇴CO_1|1.3MB/s"
+        "❓Other_1|3.0MB/s",
+        "🇳🇴NO_1|1.5MB/s",
+        "🇨🇴CO_1|1.3MB/s",
+        "🇰🇿KZ_1|2.5MB/s"
       ]
     },
     {
@@ -10106,8 +10099,8 @@
     {
       "type": "trojan",
       "tag": "香港3|@ripaojiedian",
-      "server": "16.163.156.207",
-      "server_port": 14684,
+      "server": "18.162.156.145",
+      "server_port": 50887,
       "password": "6ec301428255a78a1d826988d86cc87e",
       "tls": {
         "enabled": true,
@@ -10118,8 +10111,8 @@
     {
       "type": "trojan",
       "tag": "香港4|@ripaojiedian",
-      "server": "43.198.240.223",
-      "server_port": 29444,
+      "server": "18.163.114.228",
+      "server_port": 7674,
       "password": "BxceQaOe",
       "tls": {
         "enabled": true,
@@ -10130,8 +10123,8 @@
     {
       "type": "trojan",
       "tag": "香港5|@ripaojiedian",
-      "server": "43.198.109.134",
-      "server_port": 14684,
+      "server": "16.162.103.28",
+      "server_port": 7674,
       "password": "BxceQaOe",
       "tls": {
         "enabled": true,
@@ -10142,8 +10135,8 @@
     {
       "type": "trojan",
       "tag": "日本|@ripaojiedian",
-      "server": "16.163.139.175",
-      "server_port": 49811,
+      "server": "54.46.126.133",
+      "server_port": 9408,
       "password": "BxceQaOe",
       "tls": {
         "enabled": true,
@@ -10155,7 +10148,7 @@
       "type": "trojan",
       "tag": "日本2|@ripaojiedian",
       "server": "16.162.109.29",
-      "server_port": 55564,
+      "server_port": 18617,
       "password": "6ec301428255a78a1d826988d86cc87e",
       "tls": {
         "enabled": true,
@@ -10166,8 +10159,8 @@
     {
       "type": "trojan",
       "tag": "日本3|@ripaojiedian",
-      "server": "16.162.192.182",
-      "server_port": 3415,
+      "server": "18.163.114.228",
+      "server_port": 26704,
       "password": "6ec301428255a78a1d826988d86cc87e",
       "tls": {
         "enabled": true,
@@ -10177,24 +10170,13 @@
     {
       "type": "trojan",
       "tag": "新加坡|@ripaojiedian",
-      "server": "95.40.14.234",
+      "server": "16.162.100.124",
       "server_port": 51396,
       "password": "6ec301428255a78a1d826988d86cc87e",
       "tls": {
         "enabled": true,
         "server_name": "www.nintendogames.net",
         "insecure": true
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "新加坡2|@ripaojiedian",
-      "server": "16.162.100.124",
-      "server_port": 7375,
-      "password": "6ec301428255a78a1d826988d86cc87e",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.nintendogames.net"
       }
     },
     {
@@ -10212,8 +10194,8 @@
     {
       "type": "trojan",
       "tag": "美国|@ripaojiedian",
-      "server": "18.163.126.92",
-      "server_port": 28051,
+      "server": "16.162.192.182",
+      "server_port": 39024,
       "password": "6ec301428255a78a1d826988d86cc87e",
       "tls": {
         "enabled": true,
@@ -10224,8 +10206,8 @@
     {
       "type": "trojan",
       "tag": "美国2|@ripaojiedian",
-      "server": "16.162.192.182",
-      "server_port": 28051,
+      "server": "16.162.100.124",
+      "server_port": 39024,
       "password": "6ec301428255a78a1d826988d86cc87e",
       "tls": {
         "enabled": true,
@@ -10236,8 +10218,8 @@
     {
       "type": "trojan",
       "tag": "美国3|@ripaojiedian",
-      "server": "16.163.144.245",
-      "server_port": 39024,
+      "server": "16.162.103.28",
+      "server_port": 53001,
       "password": "BxceQaOe",
       "tls": {
         "enabled": true,
@@ -12222,7 +12204,7 @@
     },
     {
       "type": "shadowsocks",
-      "tag": "新加坡2|@ripaojiedian #2",
+      "tag": "新加坡2|@ripaojiedian",
       "server": "ddns.olucloud.subapi.cc",
       "server_port": 50001,
       "method": "chacha20-ietf-poly1305",
@@ -16481,6 +16463,13 @@
     },
     {
       "type": "trojan",
+      "tag": "🇭🇰 Hong Kong_None_trojan_103",
+      "server": "16.163.156.207",
+      "server_port": 14684,
+      "password": "6ec301428255a78a1d826988d86cc87e"
+    },
+    {
+      "type": "trojan",
       "tag": "🇭🇰 Hong Kong_None_trojan_104",
       "server": "43.198.240.223",
       "server_port": 29444,
@@ -16502,10 +16491,52 @@
     },
     {
       "type": "trojan",
+      "tag": "🇭🇰 Hong Kong_None_trojan_107",
+      "server": "16.162.109.29",
+      "server_port": 55564,
+      "password": "6ec301428255a78a1d826988d86cc87e"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 Hong Kong_None_trojan_108",
+      "server": "16.162.192.182",
+      "server_port": 3415,
+      "password": "6ec301428255a78a1d826988d86cc87e"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇵🇱 Poland_None_trojan_109",
+      "server": "95.40.14.234",
+      "server_port": 51396,
+      "password": "6ec301428255a78a1d826988d86cc87e"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 Hong Kong_None_trojan_1010",
+      "server": "16.162.100.124",
+      "server_port": 7375,
+      "password": "6ec301428255a78a1d826988d86cc87e"
+    },
+    {
+      "type": "trojan",
       "tag": "🇭🇰 Hong Kong_None_trojan_1011",
       "server": "16.163.139.175",
       "server_port": 26704,
       "password": "BxceQaOe"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 Hong Kong_None_trojan_1012",
+      "server": "18.163.126.92",
+      "server_port": 28051,
+      "password": "6ec301428255a78a1d826988d86cc87e"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰 Hong Kong_None_trojan_1013",
+      "server": "16.162.192.182",
+      "server_port": 28051,
+      "password": "6ec301428255a78a1d826988d86cc87e"
     },
     {
       "type": "trojan",
@@ -16689,69 +16720,8 @@
       "password": "PQ05174892"
     },
     {
-      "type": "vless",
-      "tag": "美国+V2CROSS.COM",
-      "server": "www.true.th",
-      "server_port": 443,
-      "uuid": "7ce54bb3-d612-4aa7-be08-089d3c461d53",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {}
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "d1yxsk0zprgivr.cloudfront.net"
-      }
-    },
-    {
       "type": "trojan",
       "tag": "美国+CloudFlare节点",
-      "server": "104.18.152.73",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #2",
-      "server": "104.18.152.133",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #3",
-      "server": "104.18.152.187",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #4",
-      "server": "104.16.174.37",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com",
-        "insecure": true
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #5",
       "server": "104.18.152.179",
       "server_port": 443,
       "password": "humanity",
@@ -16762,8 +16732,8 @@
     },
     {
       "type": "trojan",
-      "tag": "美国+CloudFlare节点 #6",
-      "server": "104.18.12.149",
+      "tag": "美国+CloudFlare节点 #2",
+      "server": "104.18.23.63",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -16772,25 +16742,64 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "美国+CloudFlare节点 #7",
-      "server": "172.64.53.227",
-      "server_port": 2087,
-      "uuid": "77777777-8a3e-6666-b6d1-a9c5f0e8b3a2",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {}
-      },
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #3",
+      "server": "104.18.152.133",
+      "server_port": 443,
+      "password": "humanity",
       "tls": {
         "enabled": true,
-        "server_name": "faxf32gkfzoxqv.fx6hsv0.ccwu.cc"
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #4",
+      "server": "104.16.174.121",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #5",
+      "server": "198.41.223.96",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #6",
+      "server": "104.18.152.143",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #7",
+      "server": "104.16.174.72",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
       }
     },
     {
       "type": "trojan",
       "tag": "美国+CloudFlare节点 #8",
-      "server": "104.18.152.175",
+      "server": "104.18.152.155",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -16801,7 +16810,7 @@
     {
       "type": "trojan",
       "tag": "美国+CloudFlare节点 #9",
-      "server": "104.18.152.108",
+      "server": "104.20.6.134",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -16811,105 +16820,20 @@
     },
     {
       "type": "trojan",
-      "tag": "美国+加州",
-      "server": "216.24.57.1",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "乌克兰+V2CROSS.COM",
-      "server": "85.90.197.131",
-      "server_port": 443,
-      "uuid": "423b1d79-08c4-403f-9d5e-c541f791b55f",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "eu-central.cendora.ru",
-        "reality": {
-          "enabled": true,
-          "public_key": "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI",
-          "short_id": "00bca5982f82d083"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #10",
-      "server": "104.17.111.4",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #11",
-      "server": "104.16.174.36",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "波兰+V2CROSS.COM",
+      "tag": "日本+V2CROSS.COM",
       "server": "2c.fast9988.com",
       "server_port": 50887,
       "password": "6ec301428255a78a1d826988d86cc87e",
       "tls": {
         "enabled": true,
-        "server_name": "www.nintendogames.net"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "香港+阿里云",
-      "server": "8-210-142-69.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "c2601f6c59ed832f9129533608eea8eb",
-      "tls": {
-        "enabled": true,
-        "server_name": "8-210-142-69.liao.kdns.fr"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "俄罗斯+V2CROSS.COM",
-      "server": "212.118.43.237",
-      "server_port": 443,
-      "uuid": "9aff0732-7ce4-4b34-ba20-e67c6df64fdd",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "nl2.panel11.ru",
-        "reality": {
-          "enabled": true,
-          "public_key": "2Kh1mMFvchFolXGaTJSjwtUpIiTDuIp9Oy2tDr-hogY",
-          "short_id": "be45c0fe845d5128"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
+        "server_name": "www.nintendogames.net",
+        "insecure": true
       }
     },
     {
       "type": "vless",
       "tag": "瑞士+V2CROSS.COM",
-      "server": "169.40.42.229",
+      "server": "169.40.42.104",
       "server_port": 443,
       "uuid": "d65cc14c-f53f-4fe2-b262-97856601319c",
       "flow": "xtls-rprx-vision",
@@ -16929,8 +16853,8 @@
     },
     {
       "type": "trojan",
-      "tag": "美国+CloudFlare节点 #12",
-      "server": "172.67.221.242",
+      "tag": "美国+加州",
+      "server": "216.24.57.1",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -16940,22 +16864,100 @@
     },
     {
       "type": "vless",
-      "tag": "立陶宛+V2CROSS.COM",
-      "server": "91.132.161.245",
-      "server_port": 18456,
-      "uuid": "042a4a95-68f5-4179-89b3-69475a5d4908",
+      "tag": "俄罗斯+V2CROSS.COM",
+      "server": "78.159.247.253",
+      "server_port": 2027,
+      "uuid": "851ed0d8-a37b-452d-8ef2-5b6c2d28a060",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "shop-eu-de.amd.com",
+        "server_name": "storage.yandex.net",
         "reality": {
           "enabled": true,
-          "public_key": "XmOcGjsWDWRVvRTF7rV77kRp63qwIYbQ_s-YK3U7FkM",
-          "short_id": "09"
+          "public_key": "ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo",
+          "short_id": "dc8109baf0f607ea"
         },
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #10",
+      "server": "172.67.149.60",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #11",
+      "server": "www.speedtest.org",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #12",
+      "server": "104.18.152.77",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #13",
+      "server": "104.18.152.233",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #14",
+      "server": "104.18.152.159",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "美国+CloudFlare节点 #15",
+      "server": "104.18.12.149",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "加拿大+V2CROSS.COM",
+      "server": "130.250.137.171",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
       }
     },
     {
@@ -17796,6 +17798,24 @@
       "tls": {
         "enabled": true,
         "server_name": "josni.hoyes.cloudns.ch"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸 US_speednode_0120",
+      "server": "www.true.th",
+      "server_port": 443,
+      "uuid": "7ce54bb3-d612-4aa7-be08-089d3c461d53",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d1yxsk0zprgivr.cloudfront.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d1yxsk0zprgivr.cloudfront.net"
       }
     },
     {
@@ -18812,7 +18832,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "@tootffarangi🍓-3",
+      "tag": "@Daily_Configs",
       "server": "fiproxy1.lockdwn.com",
       "server_port": 443,
       "password": "6aab8efdf13945829ae3699c342be406",
@@ -19373,35 +19393,6 @@
       "type": "hysteria2",
       "tag": "🇫🇮FI-🚀@VPNine1",
       "server": "assets.gateway-stream.com",
-      "server_port": 52008,
-      "password": "t8t2qojzsykqazfu",
-      "obfs": {
-        "type": "salamander",
-        "password": "93lc6r07zfx4crct"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "assets.gateway-stream.com"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "@GozargahAzad|🇫🇮",
-      "server": "assets.gateway-stream.com",
-      "server_port": 52009,
-      "password": "t8t2qojzsykqazfu",
-      "obfs": {
-        "type": "salamander",
-        "password": "kf1lypzqidy6pimt"
-      },
-      "tls": {
-        "enabled": true
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "@nekopingbot_15460 🌍 ⚡️",
-      "server": "assets.gateway-stream.com",
       "server_port": 52009,
       "password": "t8t2qojzsykqazfu",
       "obfs": {
@@ -19430,87 +19421,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "Node-hysteria2-assets.gateway-stream.com",
-      "server": "assets.gateway-stream.com",
-      "server_port": 52026,
-      "password": "t8t2qojzsykqazfu",
-      "obfs": {
-        "type": "salamander",
-        "password": "d6pv15sghiq1onts"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "assets.gateway-stream.com@freenettir ¹"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮FI-🚀@VPNine1 #2",
-      "server": "assets.gateway-stream.com",
-      "server_port": 52029,
-      "password": "t8t2qojzsykqazfu",
-      "obfs": {
-        "type": "salamander",
-        "password": "v8h63irhnay97090"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "assets.gateway-stream.com"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮FI-🚀@VPNine1 #3",
+      "tag": "✅  @vistav2ray  👈👈کانال ما ✅",
       "server": "assets.gateway-stream.com",
       "server_port": 52040,
       "password": "t8t2qojzsykqazfu",
       "obfs": {
         "type": "salamander",
         "password": "7206pa46enqqdnmt"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "assets.gateway-stream.com"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮FI-🚀@VPNine1 #4",
-      "server": "assets.gateway-stream.com",
-      "server_port": 52040,
-      "password": "t8t2qojzsykqazfu",
-      "obfs": {
-        "type": "salamander",
-        "password": "7206pa46enqqdnmt"
-      },
-      "tls": {
-        "enabled": true
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮FI-🚀@VPNine1 #5",
-      "server": "assets.gateway-stream.com",
-      "server_port": 52045,
-      "password": "t8t2qojzsykqazfu",
-      "obfs": {
-        "type": "salamander",
-        "password": "jg5vvom5svs9rmnx"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "assets.gateway-stream.com"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮FI-🚀@VPNine1 #6",
-      "server": "assets.gateway-stream.com",
-      "server_port": 52049,
-      "password": "t8t2qojzsykqazfu",
-      "obfs": {
-        "type": "salamander",
-        "password": "phos93w1zi0nj6uv"
       },
       "tls": {
         "enabled": true,
@@ -19526,36 +19443,6 @@
       "obfs": {
         "type": "salamander",
         "password": "fd3olglr2bmimgje"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "assets.gateway-stream.com"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "Node-hysteria2-assets.gateway-stream.com #2",
-      "server": "assets.gateway-stream.com",
-      "server_port": 52061,
-      "password": "t8t2qojzsykqazfu",
-      "obfs": {
-        "type": "salamander",
-        "password": "fd3olglr2bmimgje"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "assets.gateway-stream.com@freenettir ²"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮FI-🚀@VPNine1 #7",
-      "server": "assets.gateway-stream.com",
-      "server_port": 52067,
-      "password": "t8t2qojzsykqazfu",
-      "obfs": {
-        "type": "salamander",
-        "password": "txwr28j1lntoy0sj"
       },
       "tls": {
         "enabled": true,
@@ -29022,27 +28909,6 @@
     },
     {
       "type": "vless",
-      "tag": "未知 VLESS-882 | free-nodes",
-      "server": "169.40.42.104",
-      "server_port": 443,
-      "uuid": "d65cc14c-f53f-4fe2-b262-97856601319c",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "yahoo.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
-          "short_id": "c39cc7310a"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
       "tag": "未知 VLESS-883 | free-nodes",
       "server": "89.125.124.178",
       "server_port": 8443,
@@ -33281,42 +33147,26 @@
       "password": "4f4d1167-ef14-4304-9bce-0740472503ef"
     },
     {
-      "type": "vless",
-      "tag": "🇩🇪DE_1|1.6MB/s",
-      "server": "ss.1010101.vip",
-      "server_port": 2096,
-      "uuid": "53b7fdec-4ccb-481a-8d98-83aa19509330",
-      "transport": {
-        "type": "grpc",
-        "service_name": "vless-grpc-reality"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "id.vk.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "safari"
-        }
-      }
+      "type": "trojan",
+      "tag": "🇭🇰HK_1|2.2MB/s",
+      "server": "glad-roughy.rooster465.autos",
+      "server_port": 443,
+      "password": "PQ05174892"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪DE_2|3.7MB/s",
-      "server": "78.159.247.253",
-      "server_port": 2027,
-      "uuid": "851ed0d8-a37b-452d-8ef2-5b6c2d28a060",
+      "tag": "🇺🇸US_1|1.9MB/s",
+      "server": "usrv2.sushi-node.uk",
+      "server_port": 9443,
+      "uuid": "eef702e3-840a-461a-89e7-44720b0bef5e",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "storage.yandex.net",
+        "server_name": "download-porter.hoyoverse.com",
         "reality": {
           "enabled": true,
-          "public_key": "ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo",
-          "short_id": "dc8109baf0f607ea"
+          "public_key": "IuNWoEP1jFflRBiNsM3FZpRtHmWTQmazXUan9r5cb1g",
+          "short_id": "fc7b"
         },
         "utls": {
           "enabled": true,
@@ -33326,54 +33176,17 @@
     },
     {
       "type": "vless",
-      "tag": "🇸🇰SK_1|1.4MB/s",
-      "server": "185.112.249.201",
-      "server_port": 8443,
-      "uuid": "9b18ccef-b9e0-41d1-8990-9d970569e142",
-      "transport": {
-        "type": "ws",
-        "path": "/proxyip=bpb.yousef.isegaro.comfp=chrome",
-        "headers": {
-          "Host": "web-socket.tgdaosheng.ggff.net"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "web-socket.tgdaosheng.ggff.net"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇰🇷KR_1|1.1MB/s",
-      "server": "139.162.100.58",
-      "server_port": 49755,
-      "password": "a196faa4-403e-4a8b-987a-d1789f379685"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸US_1|4.2MB/s",
-      "server": "69.46.46.107",
+      "tag": "🇺🇸US_2|2.1MB/s",
+      "server": "2.26.194.15",
       "server_port": 443,
-      "uuid": "b6fbfc7e-2ab5-c52d-a4ed-7d2b62c0eb8a",
+      "uuid": "0a54534f-8a65-42f7-ae91-573ae0bf09b7",
       "tls": {
         "enabled": true,
-        "server_name": "rvg-production-2aea.up.railway.app"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇬🇧GB_1|2.7MB/s",
-      "server": "195.184.247.223",
-      "server_port": 443,
-      "uuid": "b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "savesafe.co",
+        "server_name": "www.intel.com",
         "reality": {
           "enabled": true,
-          "public_key": "6z3YcVP0f2pK3iANKIkBUZOgNeErDjxY83mHZG5jrnI",
-          "short_id": "f63805c3ecc7a483"
+          "public_key": "vqxKvKPwdM4NB1EnIAy90LSglZM9oTRx995mUQIW2Rg",
+          "short_id": "6bd15a"
         },
         "utls": {
           "enabled": true,
@@ -33383,143 +33196,32 @@
     },
     {
       "type": "trojan",
-      "tag": "🇫🇷FR_1|1.0MB/s",
-      "server": "104.18.23.63",
+      "tag": "🇫🇷FR_1|3.1MB/s",
+      "server": "188.114.97.7",
       "server_port": 443,
       "password": "humanity"
     },
     {
-      "type": "vmess",
-      "tag": "🇬🇧GB_2|2.9MB/s",
-      "server": "192.248.163.148",
-      "server_port": 53224,
-      "uuid": "647c2dc6-fd48-4a84-9b59-163df19ad6f9",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/647c2dc6-fd48-4a84-9b59-163df19ad6f9",
-        "headers": {}
-      }
+      "type": "trojan",
+      "tag": "🇫🇷FR_2|1.1MB/s",
+      "server": "render.com",
+      "server_port": 443,
+      "password": "humanity"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸US_13|1007KB/s",
-      "server": "144.31.242.1",
-      "server_port": 443,
-      "uuid": "423b1d79-08c4-403f-9d5e-c541f791b55f",
+      "tag": "🇫🇷FR_3|1.9MB/s",
+      "server": "djuc1.rapidmesh.ir",
+      "server_port": 2096,
+      "uuid": "16569657-116c-46ed-8920-758ab8abaac4",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "eu-central.cendora.ru",
+        "server_name": "yahoo.com",
         "reality": {
           "enabled": true,
-          "public_key": "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI",
-          "short_id": "00bca5982f82d083"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "edge"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇦🇪AE_1|1.4MB/s",
-      "server": "ge-20b81e.atlanta-api.com",
-      "server_port": 443,
-      "uuid": "74099b9e-52fd-4540-b642-b8d60f3b5a2a",
-      "transport": {
-        "type": "grpc",
-        "service_name": "vlgrpc"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "ge-20b81e.atlanta-api.com"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇯🇵JP_2|3.1MB/s",
-      "server": "162-141-131-59.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "ad6bc66062dbd395a02061c842c0978c",
-      "tls": {
-        "enabled": true,
-        "server_name": "162-141-131-59.liao.kdns.fr"
-      }
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇺🇸US_14|4.3MB/s",
-      "server": "18.191.198.248",
-      "server_port": 443,
-      "method": "aes-256-cfb",
-      "password": "amazonskr05"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸US_17|4.1MB/s",
-      "server": "216.167.54.75",
-      "server_port": 47212,
-      "uuid": "cd477134-ffce-473a-8dca-8ce5fc6eb3eb"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸US_18|1.9MB/s",
-      "server": "spider-panel-production-c21d.up.railway.app",
-      "server_port": 443,
-      "uuid": "aeb8b162-0fb7-469b-94f2-611d1a23ff53",
-      "transport": {
-        "type": "ws",
-        "path": "/ws/aeb8b162-0fb7-469b-94f2-611d1a23ff53",
-        "headers": {
-          "Host": "spider-panel-production-c21d.up.railway.app",
-          "User-Agent": "Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "spider-panel-production-c21d.up.railway.app"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱NL_2|2.8MB/s",
-      "server": "144.31.54.118",
-      "server_port": 2053,
-      "uuid": "16ab4d4a-fd81-4535-9b7b-346677226ce8",
-      "transport": {
-        "type": "grpc",
-        "service_name": "ni.cryptoofarm.com"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "ni.cryptoofarm.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "0DYv-zQp_9zz2MoLjwLSqOyhWRU7DcC8c_pvq6sLjkg",
-          "short_id": "8b97509663"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱NL_3|3.0MB/s",
-      "server": "85.155.226.195",
-      "server_port": 443,
-      "uuid": "39c42b0a-b823-4c93-bb99-74b4183e518d",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "getsavesafe.net",
-        "reality": {
-          "enabled": true,
-          "public_key": "5Z6PwoPSNBLPIsX8lZtHM7-Y-psMMR1vz5Pit0EVISs",
-          "short_id": "82f5d3a1e9c0b661"
+          "public_key": "jqDgERbgQ5DVnJvw4p_j8XnM4GXUSXvPEn2t0TOtMms",
+          "short_id": "c2b19b0e0e625d01"
         },
         "utls": {
           "enabled": true,
@@ -33528,83 +33230,65 @@
       }
     },
     {
+      "type": "trojan",
+      "tag": "🇫🇷FR_4|1.9MB/s",
+      "server": "104.16.73.213",
+      "server_port": 443,
+      "password": "humanity"
+    },
+    {
       "type": "vless",
-      "tag": "🇳🇱NL_4|2.5MB/s",
-      "server": "150.241.94.59",
-      "server_port": 13443,
-      "uuid": "423b1d79-08c4-403f-9d5e-c541f791b55f",
-      "flow": "xtls-rprx-vision",
+      "tag": "🇸🇪SE_1|1.9MB/s",
+      "server": "se.morinsq.su",
+      "server_port": 443,
+      "uuid": "93fab704-cea7-4ca4-a9ac-5bb46aef263c",
       "tls": {
         "enabled": true,
-        "server_name": "auto.cendora.ru",
+        "server_name": "se.morinsq.su",
         "reality": {
           "enabled": true,
-          "public_key": "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM",
-          "short_id": "a7f3c91b2e6d84c0"
+          "public_key": "uag6mQ8Nj62hZYzJhhd4ZZ-0GOGA42khyC6XtRbEnAg",
+          "short_id": "77ca514a4493ae52"
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "qq"
+          "fingerprint": "chrome"
         }
       }
     },
     {
-      "type": "vless",
-      "tag": "🇱🇻LV_1|2.4MB/s",
-      "server": "195.123.210.168",
-      "server_port": 13443,
-      "uuid": "423b1d79-08c4-403f-9d5e-c541f791b55f",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "auto.cendora.ru",
-        "reality": {
-          "enabled": true,
-          "public_key": "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM",
-          "short_id": "a7f3c91b2e6d84c0"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇷FR_2|1.2MB/s",
-      "server": "hope.tutdesignstudio.site",
+      "type": "trojan",
+      "tag": "🇫🇷FR_5|2.3MB/s",
+      "server": "104.18.12.149",
       "server_port": 443,
-      "uuid": "493dea8b-0d8d-42bf-b96b-1efee4d5102a",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "hope.tutdesignstudio.site"
-      }
+      "password": "humanity"
     },
     {
-      "type": "vless",
-      "tag": "🇹🇭TH_1|2.3MB/s",
-      "server": "www.visa.cn",
+      "type": "trojan",
+      "tag": "🇫🇷FR_6|3.4MB/s",
+      "server": "104.18.152.159",
       "server_port": 443,
-      "uuid": "65c56e1f-5c41-40bc-b0b5-9346772476ca",
-      "transport": {
-        "type": "ws",
-        "path": "/assets/dist/app-update-payload.dat",
-        "headers": {
-          "Host": "tl.520783.xyz",
-          "User-Agent": "Mozilla/5.0 (Linux; Android 7.1.2; Redmi Note 5A Build/N2G47H; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/63.0.3239.111 Mobile Safari/537.36"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "tl.520783.xyz"
-      }
+      "password": "humanity"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷FR_7|1.9MB/s",
+      "server": "104.16.174.46",
+      "server_port": 443,
+      "password": "humanity"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷FR_8|1.1MB/s",
+      "server": "104.18.152.229",
+      "server_port": 443,
+      "password": "humanity"
     },
     {
       "type": "vless",
-      "tag": "🇸🇬SG_4|1.8MB/s",
-      "server": "13.212.89.97",
-      "server_port": 10039,
+      "tag": "🇰🇷KR_1|3.6MB/s",
+      "server": "kr4-r.link-t7.com",
+      "server_port": 10049,
       "uuid": "88DA9CA6-5E68-4687-A748-961B612DCED5",
       "transport": {
         "type": "grpc",
@@ -33612,7 +33296,138 @@
       },
       "tls": {
         "enabled": true,
-        "server_name": "d1.awsstatic.com",
+        "server_name": "s0.awsstatic.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+          "short_id": "686c0ef0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇫🇷FR_9|1.6MB/s",
+      "server": "62.210.7.139",
+      "server_port": 60111,
+      "password": "github.com/Alvin9999-newpac/fanqiang",
+      "tls": {
+        "enabled": true,
+        "server_name": "bing.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪DE_1|3.5MB/s",
+      "server": "2.59.223.72",
+      "server_port": 667,
+      "uuid": "76fd8cd7-cff8-42fa-9b65-d10532536ae7"
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸US_12|2.6MB/s",
+      "server": "69.46.46.15",
+      "server_port": 443,
+      "uuid": "a390d188-091b-4644-9804-14a2539ad6c7",
+      "transport": {
+        "type": "ws",
+        "path": "/ws/vless/a390d188-091b-4644-9804-14a2539ad6c7?ed=2048",
+        "headers": {
+          "Host": "web-production-878d1.up.railway.app",
+          "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "web-production-878d1.up.railway.app"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸US_13|2.9MB/s",
+      "server": "140.99.223.174",
+      "server_port": 443,
+      "uuid": "b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "savesafe.run",
+        "reality": {
+          "enabled": true,
+          "public_key": "wx4B5IBeGc_0h6XZW6714G7951zLUYILv6eNRSgPDl8",
+          "short_id": "e4f6a3446ac34a24"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "❓Other_1|3.0MB/s",
+      "server": "176.108.242.191",
+      "server_port": 443,
+      "password": "HaZLUMP__fVySm7WzxFcnk7Nm8-f1CCK"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷FR_10|1.6MB/s",
+      "server": "57.131.138.129",
+      "server_port": 2096,
+      "uuid": "16569657-116c-46ed-8920-758ab8abaac4",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "yahoo.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "jqDgERbgQ5DVnJvw4p_j8XnM4GXUSXvPEn2t0TOtMms",
+          "short_id": "c2b19b0e0e625d01"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇴NO_1|1.5MB/s",
+      "server": "46.29.238.139",
+      "server_port": 40443,
+      "uuid": "8384341b-cd89-4a21-a022-cc4bd4e648ca",
+      "tls": {
+        "enabled": true,
+        "server_name": "deepl.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "7i4Y7v80NVAIi_4_9roDkqcXmexIHli87dfZuFaQMUI",
+          "short_id": "68da"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇰🇷KR_3|3.8MB/s",
+      "server": "43.202.41.225",
+      "server_port": 10049,
+      "uuid": "88DA9CA6-5E68-4687-A748-961B612DCED5",
+      "transport": {
+        "type": "grpc",
+        "service_name": "update"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "s0.awsstatic.com",
         "reality": {
           "enabled": true,
           "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
@@ -33626,35 +33441,15 @@
     },
     {
       "type": "vless",
-      "tag": "🇷🇺RU_2|1.1MB/s",
-      "server": "178.130.46.253",
-      "server_port": 8443,
-      "uuid": "8ed7f5e6-806f-4e18-8721-32f9fede9e3e",
-      "tls": {
-        "enabled": true,
-        "server_name": "dl.google.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "cUkI5Y0ZtOZz-ZHO9xTa88y0FtlHH-HECAobmpRaix0",
-          "short_id": "969c405a"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
       "tag": "🇨🇴CO_1|1.3MB/s",
-      "server": "157.137.219.126",
+      "server": "149.130.171.126",
       "server_port": 62145,
       "uuid": "8fb65472-5957-4f64-ba2d-b5812b2f155a"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸US_19|3.4MB/s",
-      "server": "140.99.223.61",
+      "tag": "🇺🇸US_14|2.1MB/s",
+      "server": "140.99.223.72",
       "server_port": 443,
       "uuid": "b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb",
       "flow": "xtls-rprx-vision",
@@ -33674,8 +33469,29 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧GB_3|1.5MB/s",
-      "server": "195.184.247.239",
+      "tag": "🇰🇿KZ_1|2.5MB/s",
+      "server": "194.32.141.119",
+      "server_port": 443,
+      "uuid": "b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "savesafe.kz",
+        "reality": {
+          "enabled": true,
+          "public_key": "_-iZt_zsuSnYKNldfwXQlnH6SqbLJILP4qApHbaKax0",
+          "short_id": "3e70d5cbb01bddfd"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧GB_1|1.7MB/s",
+      "server": "195.184.247.249",
       "server_port": 443,
       "uuid": "b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb",
       "flow": "xtls-rprx-vision",
@@ -33695,18 +33511,18 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸US_20|2.0MB/s",
-      "server": "savesafe.run",
+      "tag": "🇬🇧GB_2|2.5MB/s",
+      "server": "195.184.247.250",
       "server_port": 443,
       "uuid": "b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "savesafe.run",
+        "server_name": "savesafe.co",
         "reality": {
           "enabled": true,
-          "public_key": "wx4B5IBeGc_0h6XZW6714G7951zLUYILv6eNRSgPDl8",
-          "short_id": "e4f6a3446ac34a24"
+          "public_key": "6z3YcVP0f2pK3iANKIkBUZOgNeErDjxY83mHZG5jrnI",
+          "short_id": "f63805c3ecc7a483"
         },
         "utls": {
           "enabled": true,
@@ -33715,9 +33531,114 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "🇺🇸US_15|3.0MB/s",
+      "server": "savesafe.co",
+      "server_port": 443,
+      "uuid": "b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "6z3YcVP0f2pK3iANKIkBUZOgNeErDjxY83mHZG5jrnI",
+          "short_id": "f63805c3ecc7a483"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸US_16|2.9MB/s",
+      "server": "69.46.46.25",
+      "server_port": 443,
+      "uuid": "c82678cc-57d3-0c94-3fb6-5299f1a59843",
+      "transport": {
+        "type": "ws",
+        "path": "/ws/c82678cc-57d3-0c94-3fb6-5299f1a59843",
+        "headers": {
+          "Host": "rvg-production-398a.up.railway.app",
+          "User-Agent": "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "rvg-production-398a.up.railway.app"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸US_17|1.6MB/s",
+      "server": "169.40.42.223",
+      "server_port": 443,
+      "uuid": "d65cc14c-f53f-4fe2-b262-97856601319c",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "yahoo.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+          "short_id": "c39cc7310a"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬SG_4|1.2MB/s",
+      "server": "163.128.99.246",
+      "server_port": 443,
+      "uuid": "f3ed1945-dc1e-478a-b067-12b71badbea9",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "ZMYQqRPgpITMElFSEMesSocBj7jvhhw3JGGzWEfyrBk",
+          "short_id": "693f679d3294f967"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮FI_1|1.6MB/s",
+      "server": "85.192.61.16",
+      "server_port": 8445,
+      "uuid": "fd6011da-5c16-463d-8aaf-ff35c1b95a74",
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "reels.frkn.org",
+        "reality": {
+          "enabled": true,
+          "public_key": "ZXvgBIvhN87thoELQot4o6b6Fe9n_wATxfobHRAwgys",
+          "short_id": "0498897564df"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本1-Ver.7",
-      "server": "wocphcb-g06.jp01-nn-vm0.entry.fr0528.art",
+      "server": "xocg12d-g06.jp01-nn-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -33729,7 +33650,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本2-Ver.8",
-      "server": "f11at0b-g06.jp02-e3-vm0.entry.fr0528.art",
+      "server": "wvcg80b-g06.jp02-e3-vm0.entry.fr0528.art",
       "server_port": 11778,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -33738,7 +33659,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本3-Ver.7",
-      "server": "wv1ph2d-g06.jp03-j7-vm0.entry.fr0528.art",
+      "server": "q06ahmf-g06.jp03-j7-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -33750,7 +33671,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本4-Ver.8",
-      "server": "f0cah0f-g06.jp04-1d-vm0.entry.fr0528.art",
+      "server": "x0cp10b-g06.jp04-1d-vm0.entry.fr0528.art",
       "server_port": 449,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -33759,7 +33680,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本5-Ver.9",
-      "server": "focptmd-g06.jp05-h6-vm0.entry.fr0528.art",
+      "server": "x06gt0f-g06.jp05-h6-vm0.entry.fr0528.art",
       "server_port": 46487,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -33768,7 +33689,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本6-Ver.8",
-      "server": "x0ca12b-g06.jp06-jz-vm0.entry.fr0528.art",
+      "server": "qvyg8cb-g06.jp06-jz-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -33780,7 +33701,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本7-Ver.2",
-      "server": "xv6ph0b-g06.jp07-sh-vm0.entry.fr0528.art",
+      "server": "xo1a80d-g06.jp07-sh-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
