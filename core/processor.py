@@ -119,6 +119,51 @@ class NodeProcessor:
             elif n_type == 'ss':
                 if not n_data.get('cipher') or not n_data.get('password'):
                     continue
+                # 校验 Shadowsocks plugin
+                plugin = n_data.get('plugin')
+                if plugin:
+                    if plugin in ('obfs-local', 'simple-obfs'):
+                        plugin = 'obfs'
+                    
+                    opts = n_data.get('plugin-opts')
+                    if not isinstance(opts, dict):
+                        opts = {}
+
+                    if plugin == 'obfs':
+                        mode = str(opts.get('mode', '')).lower()
+                        if mode in ('http', 'tls'):
+                            opts['mode'] = mode
+                            n_data['plugin'] = 'obfs'
+                            n_data['plugin-opts'] = opts
+                        elif mode == 'websocket':
+                            # websocket 属于 v2ray-plugin 模式，自动纠正
+                            n_data['plugin'] = 'v2ray-plugin'
+                            opts['mode'] = 'websocket'
+                            n_data['plugin-opts'] = opts
+                        else:
+                            # 非法 obfs mode，移除插件属性降级为普通 ss
+                            n_data.pop('plugin', None)
+                            n_data.pop('plugin-opts', None)
+
+                    if n_data.get('plugin') == 'v2ray-plugin':
+                        opts = n_data.get('plugin-opts', {})
+                        mode = str(opts.get('mode', 'websocket')).lower()
+                        if mode not in ('websocket', 'http', 'quic'):
+                            mode = 'websocket'
+                        opts['mode'] = mode
+                        for bool_key in ('mux', 'tls', 'skip-cert-verify'):
+                            if bool_key in opts:
+                                val = opts[bool_key]
+                                if isinstance(val, str):
+                                    opts[bool_key] = (val.lower() in ('true', '1', 'yes') or (bool_key == 'mux' and val not in ('0', 'false', 'no', '')))
+                                elif isinstance(val, int):
+                                    opts[bool_key] = bool(val)
+                        n_data['plugin'] = 'v2ray-plugin'
+                        n_data['plugin-opts'] = opts
+                    elif n_data.get('plugin') not in ('obfs', 'v2ray-plugin', 'shadow-tls', 'restls'):
+                        # 其他不支持的第三方插件，移除插件属性降级为普通 ss
+                        n_data.pop('plugin', None)
+                        n_data.pop('plugin-opts', None)
             elif n_type == 'trojan':
                 if not n_data.get('password'):
                     continue

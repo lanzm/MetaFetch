@@ -159,16 +159,41 @@ class Node:
                         'udp': True
                     })
                     
-                    # 支持 SIP003 插件解析（如 obfs）
+                    # 支持 SIP003 插件解析（如 v2ray-plugin / obfs）
                     if 'plugin' in query_params:
-                        plugin_val = query_params['plugin']
-                        if ';' in plugin_val:
-                            p_name, p_opts_str = plugin_val.split(';', 1)
-                            p_opts = dict(parse_qsl(p_opts_str.replace(';', '&')))
-                            self.data['plugin'] = p_name
-                            self.data['plugin-opts'] = p_opts
+                        plugin_raw = query_params['plugin']
+                        if ';' in plugin_raw:
+                            parts = plugin_raw.split(';')
+                            p_name = parts[0].strip()
+                            if p_name in ('obfs-local', 'simple-obfs'):
+                                p_name = 'obfs'
+                            
+                            p_opts = {}
+                            for part in parts[1:]:
+                                if not part: continue
+                                if '=' in part:
+                                    k, v = part.split('=', 1)
+                                    k, v = k.strip(), v.strip()
+                                    if k in ('tls', 'skip-cert-verify', 'mux'):
+                                        p_opts[k] = (v.lower() in ('1', 'true', 'yes') or (k == 'mux' and v not in ('0', 'false', 'no', '')))
+                                    else:
+                                        p_opts[k] = v
+                                else:
+                                    flag = part.strip()
+                                    if flag in ('tls', 'skip-cert-verify', 'mux'):
+                                        p_opts[flag] = True
+                                    elif flag:
+                                        p_opts['mode'] = flag
+                                        
+                            if p_name:
+                                self.data['plugin'] = p_name
+                                if p_opts:
+                                    self.data['plugin-opts'] = p_opts
                         else:
-                            self.data['plugin'] = plugin_val
+                            p_name = plugin_raw.strip()
+                            if p_name in ('obfs-local', 'simple-obfs'):
+                                p_name = 'obfs'
+                            self.data['plugin'] = p_name
         except Exception:
             pass
 
