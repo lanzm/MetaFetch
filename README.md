@@ -3,8 +3,8 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/)
 [![Telegram Channel](https://img.shields.io/badge/Telegram-频道交流-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/MetaFetchNodes)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026-08-19--14%3A51%3A37-green.svg)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-2113-orange.svg)
+![Update](https://img.shields.io/badge/Updated-2026-08-19--15%3A35%3A18-green.svg)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-2111-orange.svg)
 ![Sources](https://img.shields.io/badge/Active_Sources-19-blue.svg)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
@@ -92,12 +92,12 @@ https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
 ## 📊 节点分布统计
 
 <!-- STATS_TABLE_START -->
-> 更新时间：`2026-08-19 14:51:37`
-> 运行分析：从 `19` 个活跃源中抓取 `2750` 个节点，耗时 `3.94s`。去重后保留 `2113` 个有效节点。
+> 更新时间：`2026-08-19 15:35:18`
+> 运行分析：从 `19` 个活跃源中抓取 `2755` 个节点，耗时 `3.40s`。去重后保留 `2111` 个有效节点。
 
-| 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇨🇦加拿大 | 🇳🇱荷兰 | 🇮🇳印度 | 🇹🇷土耳其 | 🇪🇸西班牙 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🇸🇪瑞典 | 🌍其他 | **总计** |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 53 | 11 | 58 | 288 | 39 | 29 | 20 | 30 | 18 | 11 | 5 | 18 | 4 | 7 | 7 | 93 | 5 | 5 | 1412 | **2113** |
+| 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇳🇱荷兰 | 🇹🇷土耳其 | 🇪🇸西班牙 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🇸🇪瑞典 | 🌍其他 | **总计** |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **数量** | 53 | 11 | 59 | 289 | 39 | 29 | 20 | 30 | 18 | 11 | 18 | 7 | 7 | 93 | 6 | 5 | 1416 | **2111** |
 <!-- STATS_TABLE_END -->
 
 <br/>
@@ -105,7 +105,7 @@ https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
 <!-- SOURCE_STATS_TABLE_START -->
 ### 📡 各订阅源贡献度明细
 
-> 数据计算时间：`2026-08-19 14:51:38`
+> 数据计算时间：`2026-08-19 15:35:19`
 
 <table width="100%"><tr><td>
 
@@ -113,11 +113,11 @@ https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
 
 | 排名 | 订阅源名称 | 有效节点数 | 节点贡献占比 |
 | :---: | :--- | :---: | :---: |
-| 1 | `🔥🔥🔥 ClashGitHub` | **1566** 个 | `57.53%` |
-| 2 | `🔥🔥🔥 w1770946466 长期订阅` | **547** 个 | `20.10%` |
-| 3 | `📡 Zhangkai 系列` | **159** 个 | `5.84%` |
-| 4 | `[长效备份] hysteria2 节点` | **120** 个 | `4.41%` |
-| 5 | `⚡ Misaka Chromego 聚合池` | **59** 个 | `2.17%` |
+| 1 | `🔥🔥🔥 ClashGitHub` | **1566** 个 | `57.43%` |
+| 2 | `🔥🔥🔥 w1770946466 长期订阅` | **547** 个 | `20.06%` |
+| 3 | `📡 Zhangkai 系列` | **159** 个 | `5.83%` |
+| 4 | `[长效备份] hysteria2 节点` | **125** 个 | `4.58%` |
+| 5 | `⚡ Misaka Chromego 聚合池` | **59** 个 | `2.16%` |
 | 6 | `[长效备份] hy2 节点` | **49** 个 | `1.80%` |
 | 7 | `📡 Huibq 聚合` | **43** 个 | `1.58%` |
 | 8 | `📡 shaoyouvip 每日更新` | **37** 个 | `1.36%` |
@@ -131,7 +131,7 @@ https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
 | 16 | `[动态日期] oneClash TXT` | **14** 个 | `0.51%` |
 | 17 | `[动态日期] oneClash YAML` | **14** 个 | `0.51%` |
 | 18 | `[长效备份] peasoft 精选` | **10** 个 | `0.37%` |
-| **-** | **总计 (包含跨源重合)** | **2722** 个 | `100.00%` |
+| **-** | **总计 (包含跨源重合)** | **2727** 个 | `100.00%` |
 
 </div>
 
