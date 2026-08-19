@@ -11,9 +11,6 @@
 
 MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生成免费订阅链接，全球地区自动识别分流的高性能全自动化代理订阅引擎。支持 Clash / Mihomo、Sing-box、Shadowrocket (小火箭) 等全平台客户端。
 
-> [!IMPORTANT]
-> **声明：** 本项目由 [peasoft/NoMoreWalls](https://github.com/peasoft/NoMoreWalls) 改造而来，并在此基础上进行了深度定制化开发，增强了异步抓取、YAML 配置管理与地区自动分组逻辑。
-
 ## 📥 订阅链接面板
 
 > 📢 **官方 Telegram 频道**：欢迎加入 [MetaFetch 节点发布频道 (t.me/MetaFetchNodes)](https://t.me/MetaFetchNodes) 获取最新节点状态广播与技术交流！
@@ -21,28 +18,65 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 支持 **Clash / Mihomo**、**Sing-box**、**Shadowrocket (小火箭)**、**V2rayN / V2rayNG**、**Quantumult X** 等全平台客户端。
 
 ### 1. 🛡️ Clash / Mihomo 专用订阅 (YAML)
-| 线路类型 | 订阅地址 | 快速操作 |
-| :--- | :--- | :---: |
-| **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml` | ![复制](https://img.shields.io/badge/📋-复制链接-10b981?style=flat-square) |
-| **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml` | ![复制](https://img.shields.io/badge/📋-复制链接-64748b?style=flat-square) |
 
 > 💡 适合 **Clash Verge / Mihomo Party / Clash Nyanpasu / Stash / Clash for Windows** 等客户端。
 
+**📡 CDN 加速 (推荐)**
+```
+https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml
+```
+**🔗 GitHub 直连**
+```
+https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml
+```
+
+<details><summary>📱 扫码订阅 (点击二维码可放大)</summary>
+<table><tr>
+<td align="center"><b>CDN 加速</b><br><a href="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.meta.yml"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.meta.yml" width="150"></a></td>
+<td align="center"><b>GitHub 直连</b><br><a href="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Fraw.githubusercontent.com%2Flanzm%2FMetaFetch%2Fmaster%2Flist.meta.yml"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fraw.githubusercontent.com%2Flanzm%2FMetaFetch%2Fmaster%2Flist.meta.yml" width="150"></a></td>
+</tr></table>
+</details>
+
 ### 2. ⚡ Sing-box 专用订阅 (JSON)
-| 线路类型 | 订阅地址 | 快速操作 |
-| :--- | :--- | :---: |
-| **CDN 加速 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.singbox.json` | ![复制](https://img.shields.io/badge/📋-复制链接-10b981?style=flat-square) |
-| **GitHub 直连** | `https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.singbox.json` | ![复制](https://img.shields.io/badge/📋-复制链接-64748b?style=flat-square) |
 
 > 💡 适合 **Sing-box / Hiddify / Karing** 等 Sing-box 内核客户端。
 
+**📡 CDN 加速 (推荐)**
+```
+https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.singbox.json
+```
+**🔗 GitHub 直连**
+```
+https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.singbox.json
+```
+
+<details><summary>📱 扫码订阅 (点击二维码可放大)</summary>
+<table><tr>
+<td align="center"><b>CDN 加速</b><br><a href="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.singbox.json"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.singbox.json" width="150"></a></td>
+<td align="center"><b>GitHub 直连</b><br><a href="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Fraw.githubusercontent.com%2Flanzm%2FMetaFetch%2Fmaster%2Flist.singbox.json"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fraw.githubusercontent.com%2Flanzm%2FMetaFetch%2Fmaster%2Flist.singbox.json" width="150"></a></td>
+</tr></table>
+</details>
+
 ### 3. 📱 通用 Base64 / 节点列表订阅 (小火箭 / V2rayN)
-| 线路类型 | 订阅地址 | 快速操作 |
-| :--- | :--- | :---: |
-| **Base64 订阅 (推荐)** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64` | ![复制](https://img.shields.io/badge/📋-复制链接-10b981?style=flat-square) |
-| **明文 URL 节点列表** | `https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt` | ![复制](https://img.shields.io/badge/📋-复制链接-64748b?style=flat-square) |
 
 > 💡 适合 **Shadowrocket (小火箭)**、**V2rayN**、**V2rayNG**、**Quantumult X**、**Surfboard** 等常用代理客户端。
+
+**📡 Base64 订阅 (推荐)**
+```
+https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64
+```
+**📄 明文 URL 节点列表**
+```
+https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
+```
+
+<details><summary>📱 扫码订阅 (点击二维码可放大)</summary>
+<table><tr>
+<td align="center"><b>Base64 订阅</b><br><a href="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.b64"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.b64" width="150"></a></td>
+<td align="center"><b>明文节点列表</b><br><a href="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.txt"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.txt" width="150"></a></td>
+</tr></table>
+</details>
+
 
 ---
 
@@ -73,7 +107,9 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 
 > 数据计算时间：`2026-08-19 14:51:38`
 
-<div style="width: 100%; max-height: 260px; overflow-y: auto;">
+<table width="100%"><tr><td>
+
+<div style="max-height: 260px; overflow-y: auto;">
 
 | 排名 | 订阅源名称 | 有效节点数 | 节点贡献占比 |
 | :---: | :--- | :---: | :---: |
@@ -98,6 +134,8 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 | **-** | **总计 (包含跨源重合)** | **2722** 个 | `100.00%` |
 
 </div>
+
+</td></tr></table>
 <!-- SOURCE_STATS_TABLE_END -->
 
 ---
@@ -136,5 +174,4 @@ MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生�
 5. **严禁商业用途**：项目代码属于完全免费的开源代码，作者从未授权任何个人和组织将本项目的产出或代码用于任何商业牟利行为。
 
 ---
-感谢原项目作者 [peasoft](https://github.com/peasoft) 的杰出贡献。
 *Generated & Updated Automatically by **MetaFetch Engine***

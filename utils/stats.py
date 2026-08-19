@@ -58,7 +58,9 @@ async def update_readme_source_stats():
     lines.append("")
     lines.append(f"> 数据计算时间：`{now.strftime('%Y-%m-%d %H:%M:%S')}`")
     lines.append("")
-    lines.append('<div style="width: 100%; max-height: 260px; overflow-y: auto;">')
+    lines.append('<table width="100%"><tr><td>')
+    lines.append("")
+    lines.append('<div style="max-height: 260px; overflow-y: auto;">')
     lines.append("")
     lines.append("| 排名 | 订阅源名称 | 有效节点数 | 节点贡献占比 |")
     lines.append("| :---: | :--- | :---: | :---: |")
@@ -70,6 +72,8 @@ async def update_readme_source_stats():
     lines.append(f"| **-** | **总计 (包含跨源重合)** | **{total_valid}** 个 | `100.00%` |")
     lines.append("")
     lines.append("</div>")
+    lines.append("")
+    lines.append("</td></tr></table>")
     
     table_content = "\n".join(lines)
     
