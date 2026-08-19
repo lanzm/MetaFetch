@@ -1,7 +1,7 @@
 import httpx
 import yaml
 import asyncio
-from typing import List, Dict, Any, Union
+from typing import List, Dict, Any, Union, Tuple
 from core.parser import Node
 from utils.common import b64decodes
 
@@ -163,15 +163,28 @@ class Fetcher:
         
         return nodes
 
-async def parallel_fetch(source_infos: List[Dict[str, Any]]) -> List[Node]:
+async def parallel_fetch(source_infos: List[Dict[str, Any]]) -> Tuple[List[Node], List[Dict[str, Any]]]:
     """
-    接收格式化的 source_info 列表，包含 url 和 filters
+    接收格式化的 source_info 列表，包含 name, url 和 filters
+    返回 (全量节点列表, 按源归类的明细列表)
     """
     fetcher = Fetcher()
     tasks = [fetcher.fetch_nodes(info['url'], info.get('filters')) for info in source_infos]
-    results = await asyncio.gather(*tasks)
+    results = await asyncio.gather(*tasks, return_exceptions=True)
     
     all_nodes = []
-    for res in results:
-        all_nodes.extend(res)
-    return all_nodes
+    source_results = []
+    for info, res in zip(source_infos, results):
+        s_name = info.get('name', '未命名源')
+        if isinstance(res, Exception) or not res:
+            source_results.append({
+                'name': s_name,
+                'nodes': []
+            })
+        else:
+            all_nodes.extend(res)
+            source_results.append({
+                'name': s_name,
+                'nodes': res
+            })
+    return all_nodes, source_results

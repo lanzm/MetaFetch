@@ -120,26 +120,55 @@ class Node:
             pass
 
     def _load_ss(self, url: str, dt: str):
-        # Format: ss://base64(cipher:password)@server:port#name
+        # Format 1: ss://base64(cipher:password)@server:port#name
+        # Format 2: ss://base64(cipher:password@server:port)[?plugin=...]#name (SIP002)
         try:
             if '#' in dt:
                 dt, name = dt.split('#', 1)
                 self.data['name'] = unquote(name)
             
+            # 解析 query 参数（如 plugin）
+            query_params = {}
+            if '?' in dt:
+                dt, query = dt.split('?', 1)
+                query_params = dict(parse_qsl(query))
+
+            # 如果未解码前不含 @，尝试整串 Base64 解码 (SIP002 标准)
+            if '@' not in dt:
+                decoded = b64decodes_safe(dt)
+                if '@' in decoded:
+                    dt = decoded
+
             if '@' in dt:
                 userinfo, serverinfo = dt.split('@', 1)
                 if ':' not in userinfo:
                     userinfo = b64decodes_safe(userinfo)
-                cipher, password = userinfo.split(':', 1)
-                server, port = serverinfo.split(':', 1)
-                self.data.update({
-                    'type': 'ss',
-                    'server': server,
-                    'port': int(port),
-                    'cipher': cipher,
-                    'password': password,
-                    'udp': True
-                })
+                
+                if ':' in userinfo and ':' in serverinfo:
+                    cipher, password = userinfo.split(':', 1)
+                    # 处理可能带端口的 serverinfo（支持 IPv6 [::1]:port）
+                    server, port_str = serverinfo.rsplit(':', 1)
+                    server = server.strip('[]')
+                    
+                    self.data.update({
+                        'type': 'ss',
+                        'server': server,
+                        'port': int(port_str),
+                        'cipher': cipher,
+                        'password': password,
+                        'udp': True
+                    })
+                    
+                    # 支持 SIP003 插件解析（如 obfs）
+                    if 'plugin' in query_params:
+                        plugin_val = query_params['plugin']
+                        if ';' in plugin_val:
+                            p_name, p_opts_str = plugin_val.split(';', 1)
+                            p_opts = dict(parse_qsl(p_opts_str.replace(';', '&')))
+                            self.data['plugin'] = p_name
+                            self.data['plugin-opts'] = p_opts
+                        else:
+                            self.data['plugin'] = plugin_val
         except Exception:
             pass
 

@@ -1,16 +1,16 @@
 import asyncio
+import datetime
 import os
+import time
 import yaml
-from typing import List
+
 from core.fetcher import parallel_fetch
 from core.processor import NodeProcessor
 from core.generator import Generator
+from utils.stats import render_and_update_readme_source_stats
 
-SOURCES_FILE = "sources.list"
 TEMPLATE_FILE = "config.yaml"
 OUTPUT_FILE = "list.meta.yml"
-
-import datetime
 
 async def main():
     # 1. Load Sources from YAML
@@ -40,6 +40,7 @@ async def main():
         if isinstance(s, dict):
             url = s.get('url')
             if not url: continue
+            name = s.get('name', '未命名源')
             
             # Handle date placeholders in URL
             url = url.replace('%Y', now.strftime('%Y'))
@@ -54,6 +55,7 @@ async def main():
             filters = {'ignore': ignore} if ignore else {}
             
             source_infos.append({
+                'name': name,
                 'url': url,
                 'filters': filters
             })
@@ -62,15 +64,14 @@ async def main():
         print("No active sources found.")
         return
 
-    import time
     start_time = time.time()
     
     # 获取来源数量用于统计
     active_source_count = len(source_infos)
     print(f"Starting fetching from {active_source_count} active sources...")
     
-    # 2. Parallel fetching
-    all_raw_nodes = await parallel_fetch(source_infos)
+    # 2. Parallel fetching (单次全异步并发抓取，同时获取各源节点明细)
+    all_raw_nodes, raw_source_results = await parallel_fetch(source_infos)
     raw_count = len(all_raw_nodes)
     print(f"Fetched {raw_count} raw nodes.")
     
@@ -88,10 +89,16 @@ async def main():
         generator = Generator(TEMPLATE_FILE)
         generator.generate(processed_nodes, OUTPUT_FILE, active_source_count, raw_count, elapsed_time)
         
-        # 5. Update README Source Contribution Table
+        # 5. Update README Source Contribution Table (零二次网络开销，纯内存计算)
         try:
-            from utils.stats import update_readme_source_stats
-            await update_readme_source_stats()
+            source_stats = []
+            for item in raw_source_results:
+                valid_nodes = processor.filter_invalid(item.get('nodes', []))
+                source_stats.append({
+                    'name': item.get('name', '未命名源'),
+                    'valid_count': len(valid_nodes)
+                })
+            render_and_update_readme_source_stats(source_stats, now)
         except Exception as e:
             print(f"Warning: Failed to update README source stats table: {e}")
     
