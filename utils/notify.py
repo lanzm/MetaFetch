@@ -52,7 +52,7 @@ def send_tg_notification():
         }).encode('utf-8')
         req = urllib.request.Request(edit_url, data=data, headers={'Content-Type': 'application/json'})
         try:
-            with urllib.request.urlopen(req) as resp:
+            with urllib.request.urlopen(req, timeout=15) as resp:
                 result = json.loads(resp.read().decode('utf-8'))
                 if result.get('ok'):
                     print(f"[OK] Telegram dashboard message (ID: {msg_id}) updated successfully via editMessageText!")
@@ -78,7 +78,7 @@ def send_tg_notification():
         }).encode('utf-8')
         req = urllib.request.Request(send_url, data=data, headers={'Content-Type': 'application/json'})
         try:
-            with urllib.request.urlopen(req) as resp:
+            with urllib.request.urlopen(req, timeout=15) as resp:
                 result = json.loads(resp.read().decode('utf-8'))
                 if result.get('ok'):
                     new_msg_id = result.get('result', {}).get('message_id')

@@ -1,36 +1,71 @@
+import asyncio
+import re
+from typing import List, Dict, Any, Optional, Tuple
 import httpx
 import yaml
-import asyncio
-from typing import List, Dict, Any, Union, Tuple
+
 from core.parser import Node
 from utils.common import b64decodes
 
+# 模块级预编译正则
+GITHUB_RAW_PATTERN = re.compile(r'https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/(.*)')
+URL_EXTRACT_PATTERN = re.compile(r'https?://[^\s)\]]+')
+YAML_FALLBACK_PATTERN = re.compile(r'-\s*(\{.*?name:.*?\})', re.DOTALL)
+ALLOWED_PROTOCOLS = ('vmess://', 'vless://', 'ss://', 'trojan://', 'hy2://', 'hysteria2://')
+
+DEFAULT_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+    "Referer": "https://github.com/",
+    "Sec-Ch-Ua": '"Not A(Brand";v="8", "Chromium";v="140", "Google Chrome";v="140"',
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": '"Windows"',
+    "Upgrade-Insecure-Requests": "1"
+}
+
+EXCLUDE_RECURSIVE_KEYWORDS = (
+    'github.com/peasoft', 'license', 'readme', 'rules', 't.me/',
+    'twitter.com', 'youtube.com', 'facebook.com', 't.cn', 'j.mp'
+)
+
 class Fetcher:
-    def __init__(self, timeout: int = 30, max_concurrent: int = 10):
+    def __init__(self, timeout: int = 30, max_concurrent: int = 15, client: Optional[httpx.AsyncClient] = None):
         self.timeout = timeout
         self.semaphore = asyncio.Semaphore(max_concurrent)
-        self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x464) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-            "Cache-Control": "no-cache",
-            "Pragma": "no-cache",
-            "Referer": "https://github.com/",
-            "Sec-Ch-Ua": '"Not A(Brand";v="8", "Chromium";v="140", "Google Chrome";v="140"',
-            "Sec-Ch-Ua-Mobile": "?0",
-            "Sec-Ch-Ua-Platform": '"Windows"',
-            "Upgrade-Insecure-Requests": "1"
-        }
+        self.headers = DEFAULT_HEADERS
+        self._external_client = client is not None
+        self.client = client
 
-    async def fetch_nodes(self, url: str, filters: Dict[str, Any] = None) -> List[Node]:
+    async def __aenter__(self):
+        if self.client is None:
+            # 复用连接池、开启 Keep-Alive 与连接限制
+            limits = httpx.Limits(max_keepalive_connections=20, max_connections=30)
+            self.client = httpx.AsyncClient(
+                headers=self.headers,
+                verify=False,
+                follow_redirects=True,
+                trust_env=True,
+                limits=limits,
+                timeout=self.timeout
+            )
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        if not self._external_client and self.client:
+            await self.client.aclose()
+            self.client = None
+
+    async def fetch_nodes(self, url: str, filters: Optional[Dict[str, Any]] = None) -> List[Node]:
         is_recursive = url.startswith('*')
         if is_recursive:
             url = url[1:]
-        
+
         # 更加健壮的 GitHub 镜像生成逻辑
         targets = [url]
-        import re
-        gh_match = re.match(r'https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/(.*)', url)
+        gh_match = GITHUB_RAW_PATTERN.match(url)
         if gh_match:
             user, repo, branch, path = gh_match.groups()
             # 备选镜像 1: jsDelivr (极速稳定)
@@ -38,39 +73,44 @@ class Fetcher:
             # 备选镜像 2: gh-proxy (通用代理)
             targets.append(f"https://gh-proxy.com/{url}")
 
+        content = None
         async with self.semaphore:
-            content = None
-            for target_url in targets:
-                try:
-                    print(f"Fetching: {target_url}")
-                    async with httpx.AsyncClient(headers=self.headers, verify=False, follow_redirects=True) as client:
+            # 确保 client 实例可用
+            client = self.client
+            close_client_after = False
+            if client is None:
+                client = httpx.AsyncClient(headers=self.headers, verify=False, follow_redirects=True, timeout=self.timeout)
+                close_client_after = True
+
+            try:
+                for target_url in targets:
+                    try:
+                        print(f"Fetching: {target_url}")
                         response = await client.get(target_url, timeout=self.timeout)
                         if response.status_code == 200:
                             content = response.content.decode('utf-8', errors='ignore')
                             break
                         else:
                             print(f"  - Error HTTP {response.status_code} on {target_url}")
-                except Exception as e:
-                    print(f"  - Request Exception on {target_url}: {e}")
-            
+                    except Exception as e:
+                        print(f"  - Request Exception on {target_url}: {e}")
+            finally:
+                if close_client_after:
+                    await client.aclose()
+
             if not content:
                 print(f"  - Failed to get any content for {url}")
                 return []
-        
+
         if is_recursive:
-            import re
-            found_urls = re.findall(r'https?://[^\s)\]]+', content)
+            found_urls = URL_EXTRACT_PATTERN.findall(content)
             sub_urls = []
-            exclude_keywords = [
-                'github.com/peasoft', 'license', 'readme', 'rules', 't.me/', 
-                'twitter.com', 'youtube.com', 'facebook.com', 't.cn', 'j.mp'
-            ]
             for u in found_urls:
                 u_lower = u.lower()
-                if any(x in u_lower for x in exclude_keywords):
+                if any(x in u_lower for x in EXCLUDE_RECURSIVE_KEYWORDS):
                     continue
                 sub_urls.append(u)
-            
+
             if sub_urls:
                 sub_urls = list(dict.fromkeys(sub_urls))
                 print(f"  - Found {len(sub_urls)} sub-urls in {url}")
@@ -80,29 +120,25 @@ class Fetcher:
                 for res in results:
                     all_nodes.extend(res)
                 return all_nodes
-        
+
         # 解析内容
         nodes = self.parse_content(content)
-        
+
         # 协议过滤
         if filters and 'ignore' in filters:
             ignore_types = [t.strip().lower() for t in filters['ignore'].split(',')]
-            original_count = len(nodes)
             nodes = [n for n in nodes if n.type.lower() not in ignore_types]
-            if len(nodes) < original_count:
-                # print(f"  - Filtered {original_count - len(nodes)} nodes (ignore={filters['ignore']}) from {url}")
-                pass
-        
+
         if nodes:
             print(f"  - Successfully parsed {len(nodes)} nodes from {url}")
         else:
             print(f"  - No nodes found in {url}")
-            
+
         return nodes
 
     def parse_content(self, content: str) -> List[Node]:
         nodes = []
-        
+
         # 0. 预检查：如果是 HTML 网页，直接跳过（防止报错）
         if '<!DOCTYPE' in content.upper() or '<HTML' in content.upper():
             print("  - Warning: Content looks like HTML/Webpage, skipping parser.")
@@ -110,7 +146,6 @@ class Fetcher:
 
         # 1. Try to parse as YAML (Clash style)
         try:
-            # 尝试全文安全解析
             data = yaml.safe_load(content)
             if isinstance(data, dict):
                 plist = data.get("proxies") or data.get("Proxy")
@@ -119,7 +154,6 @@ class Fetcher:
                         if isinstance(p, dict):
                             nodes.append(Node(p))
             elif isinstance(data, list):
-                # 某些源直接返回一个列表
                 for p in data:
                     if isinstance(p, dict):
                         nodes.append(Node(p))
@@ -128,17 +162,16 @@ class Fetcher:
 
         # 2. 如果 YAML 整体解析失败或节点太少，尝试正则表达式提取 (保底方案)
         if len(nodes) < 5:
-            import re
-            found_lines = re.findall(r'-\s*(\{.*?name:.*?\})', content, re.DOTALL)
+            found_lines = YAML_FALLBACK_PATTERN.findall(content)
             for line in found_lines:
                 try:
                     clean_line = line.replace('\n', ' ').replace('\r', '')
                     p_data = yaml.safe_load(clean_line)
                     if isinstance(p_data, dict) and 'server' in p_data:
                         nodes.append(Node(p_data))
-                except:
+                except Exception:
                     continue
-        
+
         if nodes:
             return nodes
 
@@ -149,42 +182,42 @@ class Fetcher:
                 if decoded:
                     lines = decoded.splitlines()
                     for line in lines:
-                        if line.strip():
-                            nodes.append(Node(line.strip()))
-            except:
+                        line_s = line.strip()
+                        if line_s:
+                            nodes.append(Node(line_s))
+            except Exception:
                 pass
-                
+
         # 4. Try to parse as raw list (one URL per line)
-        allowed_protocols = ('vmess://', 'vless://', 'ss://', 'trojan://', 'hy2://', 'hysteria2://')
         for line in content.splitlines():
-            line = line.strip()
-            if line.startswith(allowed_protocols):
-                nodes.append(Node(line))
-        
+            line_s = line.strip()
+            if line_s.startswith(ALLOWED_PROTOCOLS):
+                nodes.append(Node(line_s))
+
         return nodes
 
 async def parallel_fetch(source_infos: List[Dict[str, Any]]) -> Tuple[List[Node], List[Dict[str, Any]]]:
     """
     接收格式化的 source_info 列表，包含 name, url 和 filters
-    返回 (全量节点列表, 按源归类的明细列表)
+    使用全局连接池高效并行抓取，返回 (全量节点列表, 按源归类的明细列表)
     """
-    fetcher = Fetcher()
-    tasks = [fetcher.fetch_nodes(info['url'], info.get('filters')) for info in source_infos]
-    results = await asyncio.gather(*tasks, return_exceptions=True)
-    
-    all_nodes = []
-    source_results = []
-    for info, res in zip(source_infos, results):
-        s_name = info.get('name', '未命名源')
-        if isinstance(res, Exception) or not res:
-            source_results.append({
-                'name': s_name,
-                'nodes': []
-            })
-        else:
-            all_nodes.extend(res)
-            source_results.append({
-                'name': s_name,
-                'nodes': res
-            })
-    return all_nodes, source_results
+    async with Fetcher() as fetcher:
+        tasks = [fetcher.fetch_nodes(info['url'], info.get('filters')) for info in source_infos]
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        all_nodes = []
+        source_results = []
+        for info, res in zip(source_infos, results):
+            s_name = info.get('name', '未命名源')
+            if isinstance(res, Exception) or not res:
+                source_results.append({
+                    'name': s_name,
+                    'nodes': []
+                })
+            else:
+                all_nodes.extend(res)
+                source_results.append({
+                    'name': s_name,
+                    'nodes': res
+                })
+        return all_nodes, source_results

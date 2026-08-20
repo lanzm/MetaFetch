@@ -18,6 +18,14 @@ REGION_NAMES = {
 }
 
 
+# 预编译短代码边界安全匹配正则（如 "DE", "RO", "HK", "US"）
+PRECOMPILED_SHORT_KW_PATTERNS = [
+    (key, re.compile(rf'(?<![a-zA-Z]){re.escape(kw)}(?![a-zA-Z])'))
+    for key, info in REGIONS_DB.items()
+    for kw in info['keywords']
+    if len(kw) <= 2
+]
+
 FIXED_REGIONS = ['HK', 'JP', 'US']
 
 class Generator:
@@ -61,16 +69,12 @@ class Generator:
                             break
                     if matched_key: break
 
-            # Level 4: 短代码边界安全匹配（如 "DE", "RO", "HK", "US"，前后不能紧跟英文字母，防止匹配到 Node 中的 de）
+            # Level 4: 短代码边界安全匹配（如 "DE", "RO", "HK", "US"，使用预编译正则）
             if not matched_key:
-                for key, info in REGIONS_DB.items():
-                    for kw in info['keywords']:
-                        if len(kw) <= 2:
-                            pattern = rf'(?<![a-zA-Z]){re.escape(kw)}(?![a-zA-Z])'
-                            if re.search(pattern, name):
-                                matched_key = key
-                                break
-                    if matched_key: break
+                for key, pattern in PRECOMPILED_SHORT_KW_PATTERNS:
+                    if pattern.search(name):
+                        matched_key = key
+                        break
 
             if matched_key:
                 node_to_region[name] = matched_key

@@ -1,4 +1,5 @@
 import re
+from collections import defaultdict
 from typing import List, Set, Dict, Any
 from core.parser import Node
 from utils.regions import REGIONS_DB
@@ -9,14 +10,34 @@ for code, info in REGIONS_DB.items():
     for kw in info['keywords'] + [code, info['name']]:
         REGION_FLAGS[kw] = info['emoji']
 
+# 按照关键词长度倒序排列，预先编译好所有地区的正则匹配器，避免在几千个节点的循环中重复排序和编译
+_sorted_codes = sorted(REGION_FLAGS.keys(), key=len, reverse=True)
+PRECOMPILED_REGION_PATTERNS = [
+    (re.compile(rf"(?i)(^|[\s_\-（(]){re.escape(code)}([\s_\-）)]|$)"), REGION_FLAGS[code])
+    for code in _sorted_codes
+]
+
+# 清理广告与多余链接的预编译正则
+CLEAN_AD_REGEXES = [
+    re.compile(r'(?i)(tg频道|订阅|加入|获取|联系|Telegram|tg|Channel)[\s:：]*@\S+'),
+    re.compile(r'(?i)(t\.me/\S+|https?://\S+)')
+]
+
 # 动态生成所有组名(地区组 + 自动选择组),防止节点名与组名冲突导致 Clash 循环引用
-GROUP_NAMES = [f"{info['emoji']} {info['name']}" for info in REGIONS_DB.values()]
-GROUP_NAMES += ['🌍 其他地区']
-GROUP_NAMES += [f"⚡ 自动选择 | {name}" for name in GROUP_NAMES]
+GROUP_NAMES = set([f"{info['emoji']} {info['name']}" for info in REGIONS_DB.values()])
+GROUP_NAMES.add('🌍 其他地区')
+GROUP_NAMES.update([f"⚡ 自动选择 | {name}" for name in list(GROUP_NAMES)])
+
+# 无效与回环 server 过滤黑名单
+INVALID_SERVERS = {
+    '0.0.0.0', '127.0.0.1', 'localhost', '::1', '1.1.1.1',
+    'example.com', 'test.com', 'none', 'null', 'undefined'
+}
 
 class NodeProcessor:
     def __init__(self):
-        self.used_names = set()
+        self.used_names: Set[str] = set()
+        self.name_counter: Dict[str, int] = defaultdict(int)
 
     def deduplicate(self, nodes: List[Node]) -> List[Node]:
         seen = set()
@@ -30,59 +51,50 @@ class NodeProcessor:
 
     def clean_and_rename(self, nodes: List[Node]):
         self.used_names.clear()
+        self.name_counter.clear()
+
         for node in nodes:
             name = node.data.get('name', 'node')
-            # 1. Basic cleaning (Removing Ads / YAML-unsafe char / Telegram links)
-            # Remove Telegram channels, group names, join links
-            name = re.sub(r'(?i)(tg频道|订阅|加入|获取|联系|Telegram|tg|Channel)[\s:：]*@\S+', '', name)
-            name = re.sub(r'(?i)(t\.me/\S+|https?://\S+)', '', name)
-            
-            # YAML Safety: Replace characters that often break naming references or YAML parsing
+            # 1. 基础清理 (广告、Telegram 频道、不安全字符)
+            for reg in CLEAN_AD_REGEXES:
+                name = reg.sub('', name)
+
+            # YAML Safety: 替换破坏 YAML 结构或引用的特殊字符
             name = name.replace(':', '-').replace('[', '').replace(']', '')
-            
-            # Keep original parts but remove specific junk tags
-            name = name.replace('not found', '').replace('Unnamed', '')
-            name = name.strip()
-            
-            # If name is empty or too short, use a fallback
+            name = name.replace('not found', '').replace('Unnamed', '').strip()
+
+            # 如果节点名称为空，使用保底名称
             if not name:
                 name = f"Node-{node.type}-{node.data.get('server', 'unknown')}"
-            
-            # 2. Add emoji flag if missing
-            found_flag = False
-            for code, flag in REGION_FLAGS.items():
-                if flag in name:
-                    found_flag = True
-                    break
-            
+
+            # 2. 检查并补充缺失的国旗 Emoji
+            found_flag = any(info.get('emoji', '') in name for info in REGIONS_DB.values() if info.get('emoji'))
+
             if not found_flag:
-                # 按照长度倒序排列，优先匹配长的关键词（如 Hong Kong 优先于 HK）
-                sorted_codes = sorted(REGION_FLAGS.keys(), key=len, reverse=True)
-                for code in sorted_codes:
-                    flag = REGION_FLAGS[code]
-                    # 使用正则匹配：要求关键词前后是边界（空格、下划线、短杠或字符串起止）
-                    # 这样可以避免 speednode 里的 'de' 匹配到德国
-                    pattern = rf"(?i)(^|[\s_\-（(]){re.escape(code)}([\s_\-）)]|$)"
-                    if re.search(pattern, name):
+                # 使用预编译的正则进行快速边界匹配
+                for pattern, flag in PRECOMPILED_REGION_PATTERNS:
+                    if pattern.search(name):
                         name = f"{flag} {name}"
                         found_flag = True
                         break
-            
-            # 3. Ensure uniqueness and distinctiveness from groups
-            base_name = name
-            # If name matches a group exactly, force a suffix to avoid loop
+
+            # 3. 避免与 Clash Policy Group 组名完全重名导致内核循环引用
             if name in GROUP_NAMES:
-                name = f"{base_name} #1"
-            
-            # Now handle duplicates within nodes
-            if name in self.used_names:
-                counter = 2
-                new_name = f"{base_name} #{counter}"
+                name = f"{name} #1"
+
+            # 4. O(1) 重复节点命名计数分配
+            base_name = name
+            if base_name in self.used_names:
+                count = max(2, self.name_counter[base_name] + 1)
+                new_name = f"{base_name} #{count}"
                 while new_name in self.used_names or new_name in GROUP_NAMES:
-                    counter += 1
-                    new_name = f"{base_name} #{counter}"
+                    count += 1
+                    new_name = f"{base_name} #{count}"
+                self.name_counter[base_name] = count
                 name = new_name
-            
+            else:
+                self.name_counter[base_name] = 1
+
             self.used_names.add(name)
             node.data['name'] = name
 
@@ -91,13 +103,17 @@ class NodeProcessor:
         for node in nodes:
             n_data = node.data
             n_type = n_data.get('type', 'unknown')
-            n_server = n_data.get('server')
+            n_server = str(n_data.get('server', '')).strip()
             n_port = n_data.get('port')
-            
+
             # 1. 基础字段验证：type, server 不能为空
             if n_type == 'unknown' or not n_server:
                 continue
-            
+
+            # 过滤回环、占位或非法 server 地址
+            if n_server.lower() in INVALID_SERVERS or any(c in n_server for c in (' ', '\n', '\r', '\t')):
+                continue
+
             # 2. 验证 port 必须为有效端口 (1-65535)
             if n_port is None:
                 continue
@@ -108,7 +124,7 @@ class NodeProcessor:
                 n_data['port'] = port_val
             except (ValueError, TypeError):
                 continue
-            
+
             # 3. 协议特定必要字段验证
             if n_type == 'vmess':
                 if not n_data.get('uuid'):
@@ -124,7 +140,7 @@ class NodeProcessor:
                 if plugin:
                     if plugin in ('obfs-local', 'simple-obfs'):
                         plugin = 'obfs'
-                    
+
                     opts = n_data.get('plugin-opts')
                     if not isinstance(opts, dict):
                         opts = {}
@@ -174,7 +190,7 @@ class NodeProcessor:
                 obfs = n_data.get('obfs')
                 if obfs and obfs != 'none' and not n_data.get('obfs-password'):
                     n_data.pop('obfs', None)
-            
+
             valid_nodes.append(node)
         return valid_nodes
 

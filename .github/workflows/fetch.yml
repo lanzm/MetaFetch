@@ -11,19 +11,28 @@ on:
 permissions:
   contents: write
 
+# 限制单任务运行，防止定时调度与代码提交产生冲突
+concurrency:
+  group: meta-fetch-sync
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       TZ: Asia/Shanghai
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.11'
+          cache: 'pip'
 
       - name: Install Dependencies
         run: |
@@ -48,4 +57,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add list.meta.yml list.singbox.json list.b64 list.txt README.md tg_msg_id.txt
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Update: $(date +'%Y-%m-%d %H:%M:%S')" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Update: $(date +'%Y-%m-%d %H:%M:%S')" && git pull --rebase origin master && git push origin master)
