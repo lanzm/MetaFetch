@@ -266,9 +266,9 @@ class Generator:
         with open(readme_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        badge_content = (f"![Update](https://img.shields.io/badge/Updated-{timestamp.replace(' ', '--').replace(':', '%3A')}-green.svg)\n"
-                         f"![Nodes](https://img.shields.io/badge/Valid_Nodes-{total_nodes}-orange.svg)\n"
-                         f"![Sources](https://img.shields.io/badge/Active_Sources-{source_count}-blue.svg)")
+        badge_content = (f"![Update](https://img.shields.io/badge/Updated-{timestamp.replace(' ', '--').replace(':', '%3A')}-green.svg?style=flat-square)\n"
+                         f"![Nodes](https://img.shields.io/badge/Valid_Nodes-{total_nodes}-orange.svg?style=flat-square)\n"
+                         f"![Sources](https://img.shields.io/badge/Active_Sources-{source_count}-blue.svg?style=flat-square)")
         
         content = re.sub(r'<!-- STATS_BADGE_START -->.*?<!-- STATS_BADGE_END -->', 
                          f'<!-- STATS_BADGE_START -->\n{badge_content}\n<!-- STATS_BADGE_END -->', 
@@ -290,7 +290,7 @@ class Generator:
         header_row.append("**总计**")
         value_row.append(f"**{total_nodes}**")
         
-        table_markdown = f"| {' | '.join(header_row)} |\n| {' | '.join([':---:']*len(header_row))} |\n| {' | '.join(value_row)} |"
+        table_markdown = f"<div style=\"overflow-x: auto;\">\n\n| {' | '.join(header_row)} |\n| {' | '.join([':---:']*len(header_row))} |\n| {' | '.join(value_row)} |\n\n</div>"
         stats_summary = f"> 更新时间：`{timestamp}`\n> 运行分析：从 `{source_count}` 个活跃源中抓取 `{raw_count}` 个节点，耗时 `{elapsed_time:.2f}s`。去重后保留 `{total_nodes}` 个有效节点。"
 
         content = re.sub(r'<!-- STATS_TABLE_START -->.*?<!-- STATS_TABLE_END -->', 

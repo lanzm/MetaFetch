@@ -1,21 +1,30 @@
-# 🚀 MetaFetch Proxy Aggregator
+# 🚀 MetaFetch - 高性能全自动代理节点聚合与免费订阅引擎
 
-[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/)
+<div align="center">
+
+[![Auto Update](https://img.shields.io/github/actions/workflow/status/lanzm/MetaFetch/fetch.yml?branch=master&style=flat-square&logo=githubactions&logoColor=white&label=Auto%20Update)](https://github.com/lanzm/MetaFetch/actions)
+[![GitHub Stars](https://img.shields.io/github/stars/lanzm/MetaFetch?style=flat-square&logo=github)](https://github.com/lanzm/MetaFetch/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/lanzm/MetaFetch?style=flat-square&logo=github)](https://github.com/lanzm/MetaFetch/network/members)
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![Telegram Channel](https://img.shields.io/badge/Telegram-频道交流-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/MetaFetchNodes)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026-08-20--15%3A32%3A10-green.svg)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-2104-orange.svg)
-![Sources](https://img.shields.io/badge/Active_Sources-19-blue.svg)
+![Update](https://img.shields.io/badge/Updated-2026-08-20--15%3A32%3A10-green.svg?style=flat-square)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-2104-orange.svg?style=flat-square)
+![Sources](https://img.shields.io/badge/Active_Sources-19-blue.svg?style=flat-square)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
 
-MetaFetch 是基于 Python 异步极速并发，每天抓取免费节点，生成免费订阅链接，全球地区自动识别分流的高性能全自动化代理订阅引擎。支持 Clash / Mihomo、Sing-box、Shadowrocket (小火箭) 等全平台客户端。
+<p align="center">
+  <b>极速并发抓取 · 智能解包清洗 · 全球地区识别分流 · 2000+ 免费节点全自动化聚合</b>
+</p>
+
+</div>
+
+---
 
 ## 📥 订阅链接面板
 
 > 📢 **官方 Telegram 频道**：欢迎加入 [MetaFetch 节点发布频道 (t.me/MetaFetchNodes)](https://t.me/MetaFetchNodes) 获取最新节点状态广播与技术交流！
-
-支持 **Clash / Mihomo**、**Sing-box**、**Shadowrocket (小火箭)**、**V2rayN / V2rayNG**、**Quantumult X** 等全平台客户端。
 
 ### 1. 🛡️ Clash / Mihomo 专用订阅 (YAML)
 
@@ -59,7 +68,7 @@ https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.singbox.json
 
 ### 3. 📱 通用 Base64 / 节点列表订阅 (小火箭 / V2rayN)
 
-> 💡 适合 **Shadowrocket (小火箭)**、**V2rayN**、**V2rayNG**、**Quantumult X**、**Surfboard** 等常用代理客户端。
+> 💡 适合 **Shadowrocket (小火箭)**、**V2rayN**、**V2rayNG**、**Quantumult X**、**Surfboard** 等常用客户端。
 
 **📡 Base64 订阅 (推荐)**
 ```
@@ -77,15 +86,52 @@ https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
 </tr></table>
 </details>
 
+---
+
+## 📋 客户端格式速查表
+
+| 客户端 / 平台 | 推荐订阅类型 | 推荐订阅格式 | 支持协议 |
+| :--- | :--- | :--- | :--- |
+| **Clash Verge / Mihomo Party / Flclash** (Win / Mac / Linux) | 🛡️ Clash / Mihomo 配置 | `list.meta.yml` | VMess, VLESS, SS, Trojan, Hysteria2 |
+| **Sing-box / Hiddify / Karing** (全平台) | ⚡ Sing-box 格式 | `list.singbox.json` | VMess, VLESS, SS, Trojan, Hysteria2 |
+| **Shadowrocket (小火箭)** (iOS) | 📱 通用 Base64 / Clash | `list.b64` 或 `list.meta.yml` | 全部主流协议 |
+| **V2rayN / V2rayNG** (Win / Android) | 📱 通用 Base64 订阅 | `list.b64` / `list.txt` | VMess, VLESS, SS, Trojan |
+| **Quantumult X / Loon / Surge** (iOS / Mac) | 🛡️ Clash 订阅或 Base64 | `list.meta.yml` / `list.b64` | 常用协议 |
+
+---
+
+## ⚡ 1 分钟快速上手
+
+1. **复制订阅**：根据上方的客户端速查表，复制对应的 **📡 CDN 加速** 链接。
+2. **导入配置**：
+   - **Clash / Mihomo / Verge**：打开客户端 → 进入「订阅 / Profiles」→ 粘贴链接并点击「保存 / 下载」。
+   - **Shadowrocket (小火箭)**：打开 App → 点击右上角 `+` → 类型选择 `Subscribe` → 粘贴链接并保存。
+   - **Sing-box / Hiddify**：进入配置管理 → 点击「添加订阅」→ 粘贴 JSON 格式链接。
+3. **选择节点**：建议选中 **「🔰 延迟最低」** 或 **「♻️ 自动选择」** 策略组，客户端会自动测速并切换至优质可用节点。
+
+---
+
+## 🏗️ 架构与处理流程
+
+```mermaid
+graph LR
+    A[📡 多源并行抓取<br/>HTTP / GitHub / Gist] --> B[🔓 智能解包引擎<br/>Base64 / YAML / URI]
+    B --> C[🛡️ 安全过滤与去重<br/>SHA256 去重 / 黑名单清洗]
+    C --> D[🗺️ 智能地区归类<br/>Emoji / 国家代码 / 正则边界]
+    D --> E[📦 多格式配置生成<br/>Clash Meta / Sing-box / Base64]
+    E --> F[🤖 GitHub Actions<br/>全自动化 CI 构建与分发]
+    E --> G[📢 Telegram Channel<br/>实时健康看板广播]
+```
 
 ---
 
 ## ✨ 核心特性
-- **⚡ 极速异步抓取**：基于 `httpx` & `asyncio` 的全异步并发抓取，抓取上百个源仅需数秒。
-- **🛠️ 结构化配置**：使用简洁的 `sources.yaml` 管理订阅源。
-- **🌍 智能地区分类**：自动归类 🇯🇵 日本、🇺🇸 美国、🇭🇰 香港、🇩🇪 德国等。
-- **🏁 旗帜增强**：自动补全缺失 Emoji 的节点旗帜。
-- **📅 每日动态源**：支持 `%Y%m%d` 日期占位符。
+
+- **⚡ 极速异步引擎**：基于 `httpx` 连接池复用 & `asyncio` 全异步高并发，数十个数据源全量抓取仅需数秒。
+- **🛡️ 严格合法性过滤**：自动清洗非法/回环 Server（`0.0.0.0`, `127.0.0.1` 等），智能修正 Shadowsocks 插件参数。
+- **🌍 智能地区分类**：支持 🇯🇵 日本、🇺🇸 美国、🇭🇰 香港、🇸🇬 新加坡、🇩🇪 德国、🇬🇧 英国 等全球地区自动精准归类。
+- **🏁 旗帜 Emoji 自动补全**：根据节点名称特征与国家代码，自动补齐国旗标识。
+- **📅 每日动态源支持**：内置 `%Y%m%d` 等动态日期占位符与 GitHub 镜像智能降级机制。
 
 ---
 
@@ -95,9 +141,13 @@ https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
 > 更新时间：`2026-08-20 15:32:10`
 > 运行分析：从 `19` 个活跃源中抓取 `2713` 个节点，耗时 `2.67s`。去重后保留 `2104` 个有效节点。
 
+<div style="overflow-x: auto;">
+
 | 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇳🇱荷兰 | 🇮🇳印度 | 🇹🇷土耳其 | 🇪🇸西班牙 | 🇨🇳中国 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🇸🇪瑞典 | 🇵🇱波兰 | 🇦🇹奥地利 | 🌍其他 | **总计** |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 53 | 12 | 55 | 262 | 36 | 28 | 25 | 23 | 15 | 15 | 22 | 4 | 13 | 7 | 9 | 123 | 7 | 6 | 7 | 4 | 1378 | **2104** |
+| **数量** | 53 | 12 | 57 | 262 | 36 | 28 | 25 | 25 | 14 | 14 | 22 | 4 | 13 | 7 | 9 | 122 | 7 | 6 | 7 | 4 | 1379 | **2106** |
+
+</div>
 <!-- STATS_TABLE_END -->
 
 <br/>
@@ -141,37 +191,54 @@ https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
 
 ---
 
-## 🚀 私有化部署与使用
+## 🚀 私有化部署与 Fork 指南
 
-如果你想添加自己的私密源或修改分流规则，可以按照以下步骤操作：
+如果你想拥有专属的私有订阅源聚合池，可以轻松 Fork 本项目免费部署在 GitHub Actions 上：
 
-1. **环境准备**：
-   > 💡 **提示：** 由于项目每天自动抓取并提交更新，包含非常多的历史 commit。强烈建议克隆时加上 `--depth=1` 以进行浅克隆，节省下载时间与空间。
+1. **Fork 本仓库**：点击右上角 `Fork` 到个人账号下。
+2. **配置私密源 (可选)**：进入仓库 `Settings` → `Secrets and variables` → `Actions`，添加 `PRIVATE_SOURCES`（支持填入每行一个私密订阅链接）。
+3. **开启 Actions**：在 `Actions` 标签页中点击 `I understand my workflows, go ahead and enable them` 激活自动每 3 小时定时抓取。
+4. **本地运行**：
    ```bash
    git clone --depth=1 https://github.com/lanzm/MetaFetch.git
    cd MetaFetch
    pip install -r requirements.txt
-   ```
-
-2. **添加自定义源**：
-   在 `sources.yaml` 中加入你的订阅链接。支持普通文本、Base64 或 Clash YAML 格式。
-
-3. **开始运行**：
-   ```bash
    python main.py
    ```
 
-4. **成果检查**：
-   生成的配置文件为 `list.meta.yml`，可直接导入 Clash Meta (Mihomo) 使用。
+---
+
+## ❓ 常见问题 (FAQ)
+
+<details>
+<summary><b>Q1: 为什么部分节点测试显示超时或无法连接？</b></summary>
+<p>本项目聚合的是互联网公开的免费节点，节点活性会随网络环境和提供方动态变化。建议在客户端中选择<b>「🔰 延迟最低」</b>或<b>「♻️ 自动选择」</b>策略组，客户端会在测速后自动接入可用节点。</p>
+</details>
+
+<details>
+<summary><b>Q2: CDN 加速链接与 GitHub 直连链接有什么区别？</b></summary>
+<p><b>CDN 加速链接</b>（jsDelivr）在国内网络环境下下载更快更稳，但通常存在几分钟的边缘缓存；<b>GitHub 直连链接</b>保证秒级最新数据，但在部分网络环境下需要梯子环境访问。</p>
+</details>
+
+<details>
+<summary><b>Q3: 免费节点安全吗？可以用来登录个人账号吗？</b></summary>
+<p><b>严禁</b>使用任何公开免费代理节点登录网上银行、支付软件、个人邮箱等涉及重要隐私的账号！公开节点仅供学术研究、资料检索与开发调试使用。</p>
+</details>
+
+---
+
+## 📈 Star 历史趋势
+
+[![Star History Chart](https://api.star-history.com/svg?repos=lanzm/MetaFetch&type=Date)](https://star-history.com/#lanzm/MetaFetch&Date)
 
 ---
 
 ## ⚠️ 免责声明
 
 1. **仅供学习与交流使用**：本项目（包括所有相关代码、脚本及文档）仅供进行计算机网络测试、学术交流及科研学习之最终目的。
-2. **不对资源的安全性负责**：本项目提供的所有节点数据均系按照自动化程序爬取自互联网公开渠道。**开发者对任何节点的安全性、可用性、隐私性或网速不提供任何哪怕是默示的担保**。
-3. **数据隐私风险提示**：由于节点来源不受控，强烈建议使用者**切莫**使用本项目的代理环境进行涉及网银、个人隐私、敏感信息的账户操作！否则流量可能随时遭到中间人攻击窃听或日志记录。
-4. **法律与合规指引**：使用者在获取或使用本项目等内容时，必须严格遵守当地的所有适用法律法规。任何因非法滥用、或不当使用本项目工具/节点所引发的一切违法违规行为及相关法律后果，均由使用者本人自行全部承担。开发者不负任何连带责任。
+2. **不对资源的安全性负责**：本项目提供的所有节点数据均系按照自动化程序爬取自互联网公开渠道。**开发者对任何节点的安全性、可用性、隐私性或网速不提供任何担保**。
+3. **数据隐私风险提示**：强烈建议使用者**切莫**使用本项目的代理环境进行涉及网银、个人隐私、敏感信息的账户操作！
+4. **法律与合规指引**：使用者在获取或使用本项目等内容时，必须严格遵守当地的所有适用法律法规。任何因非法滥用本项目工具/节点所引发的一切违法违规行为及相关法律后果，均由使用者本人自行全部承担。开发者不负任何连带责任。
 5. **严禁商业用途**：项目代码属于完全免费的开源代码，作者从未授权任何个人和组织将本项目的产出或代码用于任何商业牟利行为。
 
 ---
