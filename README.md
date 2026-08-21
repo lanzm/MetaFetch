@@ -8,8 +8,8 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![Telegram Channel](https://img.shields.io/badge/Telegram-频道交流-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/MetaFetchNodes)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026-08-21--23%3A37%3A43-green.svg?style=flat-square)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-2120-orange.svg?style=flat-square)
+![Update](https://img.shields.io/badge/Updated-2026-08-22--02%3A42%3A16-green.svg?style=flat-square)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-2146-orange.svg?style=flat-square)
 ![Sources](https://img.shields.io/badge/Active_Sources-19-blue.svg?style=flat-square)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
@@ -138,14 +138,14 @@ graph LR
 ## 📊 节点分布统计
 
 <!-- STATS_TABLE_START -->
-> 更新时间：`2026-08-21 23:37:43`
-> 运行分析：从 `19` 个活跃源中抓取 `2737` 个节点，耗时 `4.69s`。去重后保留 `2120` 个有效节点。
+> 更新时间：`2026-08-22 02:42:16`
+> 运行分析：从 `19` 个活跃源中抓取 `2787` 个节点，耗时 `2.38s`。去重后保留 `2146` 个有效节点。
 
 <div style="overflow-x: auto;">
 
 | 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇻🇳越南 | 🇳🇱荷兰 | 🇮🇳印度 | 🇹🇷土耳其 | 🇪🇸西班牙 | 🇨🇳中国 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🇸🇪瑞典 | 🇵🇱波兰 | 🇦🇹奥地利 | 🌍其他 | **总计** |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 55 | 14 | 57 | 260 | 36 | 33 | 24 | 23 | 14 | 16 | 6 | 26 | 7 | 15 | 8 | 6 | 123 | 4 | 6 | 4 | 4 | 1379 | **2120** |
+| **数量** | 55 | 13 | 54 | 261 | 41 | 29 | 25 | 18 | 12 | 17 | 6 | 26 | 4 | 14 | 8 | 25 | 123 | 5 | 5 | 4 | 4 | 1397 | **2146** |
 
 </div>
 <!-- STATS_TABLE_END -->
@@ -155,7 +155,7 @@ graph LR
 <!-- SOURCE_STATS_TABLE_START -->
 ### 📡 各订阅源贡献度明细
 
-> 数据计算时间：`2026-08-21 23:37:38`
+> 数据计算时间：`2026-08-22 02:42:14`
 
 <table width="100%"><tr><td>
 
@@ -163,26 +163,26 @@ graph LR
 
 | 排名 | 订阅源名称 | 有效节点数 | 节点贡献占比 |
 | :---: | :--- | :---: | :---: |
-| 1 | `🔥🔥🔥 ClashGitHub` | **1609** 个 | `59.26%` |
-| 2 | `🔥🔥🔥 w1770946466 长期订阅` | **550** 个 | `20.26%` |
-| 3 | `📡 Zhangkai 系列` | **144** 个 | `5.30%` |
-| 4 | `[长效备份] hysteria2 节点` | **53** 个 | `1.95%` |
-| 5 | `[长效备份] hy2 节点` | **52** 个 | `1.92%` |
-| 6 | `📡 Huibq 聚合` | **43** 个 | `1.58%` |
-| 7 | `📡 shaoyouvip 每日更新` | **33** 个 | `1.22%` |
-| 8 | `[动态日期] NodeFree YAML` | **30** 个 | `1.10%` |
-| 9 | `[动态日期] v2rayShare YAML` | **30** 个 | `1.10%` |
-| 10 | `[动态日期] oneClash YAML` | **30** 个 | `1.10%` |
-| 11 | `[动态日期] NodeFree TXT` | **23** 个 | `0.85%` |
-| 12 | `[动态日期] v2rayShare TXT` | **23** 个 | `0.85%` |
-| 13 | `[动态日期] oneClash TXT` | **23** 个 | `0.85%` |
-| 14 | `⚡ Misaka Chromego 聚合池` | **15** 个 | `0.55%` |
-| 15 | `🔥🔥🔥 日抛机场系列` | **14** 个 | `0.52%` |
-| 16 | `📡 FreeFQ 每日福利` | **14** 个 | `0.52%` |
-| 17 | `📱 Pawdroid 免费节点库` | **12** 个 | `0.44%` |
-| 18 | `[长效备份] peasoft 精选` | **10** 个 | `0.37%` |
-| 19 | `我的私密机场 1` | **7** 个 | `0.26%` |
-| **-** | **总计 (包含跨源重合)** | **2715** 个 | `100.00%` |
+| 1 | `🔥🔥🔥 ClashGitHub` | **1629** 个 | `58.92%` |
+| 2 | `🔥🔥🔥 w1770946466 长期订阅` | **550** 个 | `19.89%` |
+| 3 | `📡 Zhangkai 系列` | **144** 个 | `5.21%` |
+| 4 | `⚡ Misaka Chromego 聚合池` | **60** 个 | `2.17%` |
+| 5 | `[长效备份] hy2 节点` | **52** 个 | `1.88%` |
+| 6 | `[长效备份] hysteria2 节点` | **50** 个 | `1.81%` |
+| 7 | `📡 Huibq 聚合` | **43** 个 | `1.56%` |
+| 8 | `[动态日期] NodeFree YAML` | **30** 个 | `1.08%` |
+| 9 | `[动态日期] v2rayShare YAML` | **30** 个 | `1.08%` |
+| 10 | `[动态日期] oneClash YAML` | **30** 个 | `1.08%` |
+| 11 | `[动态日期] NodeFree TXT` | **23** 个 | `0.83%` |
+| 12 | `[动态日期] v2rayShare TXT` | **23** 个 | `0.83%` |
+| 13 | `[动态日期] oneClash TXT` | **23** 个 | `0.83%` |
+| 14 | `📡 shaoyouvip 每日更新` | **20** 个 | `0.72%` |
+| 15 | `🔥🔥🔥 日抛机场系列` | **14** 个 | `0.51%` |
+| 16 | `📡 FreeFQ 每日福利` | **14** 个 | `0.51%` |
+| 17 | `📱 Pawdroid 免费节点库` | **13** 个 | `0.47%` |
+| 18 | `[长效备份] peasoft 精选` | **10** 个 | `0.36%` |
+| 19 | `我的私密机场 1` | **7** 个 | `0.25%` |
+| **-** | **总计 (包含跨源重合)** | **2765** 个 | `100.00%` |
 
 </div>
 
