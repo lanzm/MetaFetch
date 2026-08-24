@@ -106,8 +106,9 @@ class Generator:
         dynamic_groups = []
         region_list_for_menu = []
         
-        test_url = "http://www.google.com/generate_204"
-        test_interval = 300
+        test_url = "http://cp.cloudflare.com/generate_204"
+        test_interval = 60
+        test_timeout = 2000
         test_tolerance = 20
 
         for key in active_keys:
@@ -118,8 +119,8 @@ class Generator:
             
             dynamic_groups.append({
                 'name': auto_name, 'type': 'url-test', 'url': test_url,
-                'interval': test_interval, 'tolerance': test_tolerance,
-                'hidden': True, 'proxies': nodes_in_region
+                'interval': test_interval, 'timeout': test_timeout, 'tolerance': test_tolerance,
+                'lazy': False, 'hidden': True, 'proxies': nodes_in_region
             })
             dynamic_groups.append({
                 'name': group_name, 'type': 'select',
@@ -133,8 +134,8 @@ class Generator:
             others = [n for n in others if n != others_group_name and n != others_auto_name]
             dynamic_groups.append({
                 'name': others_auto_name, 'type': 'url-test', 'url': test_url,
-                'interval': test_interval, 'tolerance': test_tolerance,
-                'hidden': True, 'proxies': others
+                'interval': test_interval, 'timeout': test_timeout, 'tolerance': test_tolerance,
+                'lazy': False, 'hidden': True, 'proxies': others
             })
             dynamic_groups.append({
                 'name': others_group_name, 'type': 'select',
@@ -142,12 +143,18 @@ class Generator:
             })
             region_list_for_menu.append(others_group_name)
 
-        # 4. Fill Template Groups
+        # 4. Fill Template Groups (自动选择与延迟最低彻底排除 CN 中国节点，防止翻墙流量回流国内)
+        oversea_nodes = [n for n in node_names if node_to_region.get(n) != 'CN' and not n.startswith('🇨🇳')]
+        if not oversea_nodes:
+            oversea_nodes = node_names
+
         template_groups = config.get('proxy-groups', [])
         for g in template_groups:
             if g['name'] == '🗺️ 选择地区':
                 g['proxies'] = region_list_for_menu if region_list_for_menu else ['DIRECT']
-            elif g['name'] in ('♻️ 自动选择', '🔰 延迟最低', '✅ 手动选择'):
+            elif g['name'] in ('♻️ 自动选择', '🔰 延迟最低'):
+                g['proxies'] = oversea_nodes if oversea_nodes else ['DIRECT']
+            elif g['name'] == '✅ 手动选择':
                 g['proxies'] = node_names if node_names else ['DIRECT']
         
         config['proxy-groups'] = template_groups + dynamic_groups
@@ -179,6 +186,11 @@ class Generator:
         sb_tags = [n['tag'] for n in sb_nodes]
         sb_tag_set = set(sb_tags)
 
+        # Sing-box 自动选择同样排除 CN 节点
+        oversea_sb_tags = [t for t in sb_tags if node_to_region.get(t) != 'CN' and not t.startswith('🇨🇳')]
+        if not oversea_sb_tags:
+            oversea_sb_tags = sb_tags
+
         sb_dynamic_groups = []
         sb_region_menu = []
 
@@ -188,10 +200,9 @@ class Generator:
             region_sb_tags = [t for t in region_nodes[key] if t in sb_tag_set and t != group_name and t != auto_name]
             if not region_sb_tags: continue
 
-            auto_name = f"⚡ 自动选择 | {group_name}"
             sb_dynamic_groups.append({
                 "type": "urltest", "tag": auto_name, "outbounds": region_sb_tags,
-                "url": "http://www.gstatic.com/generate_204", "interval": "3m"
+                "url": "http://cp.cloudflare.com/generate_204", "interval": "1m"
             })
             sb_dynamic_groups.append({
                 "type": "selector", "tag": group_name,
@@ -206,7 +217,7 @@ class Generator:
                 others_auto_name = f"⚡ 自动选择 | {others_group_name}"
                 sb_dynamic_groups.append({
                     "type": "urltest", "tag": others_auto_name, "outbounds": others_sb_tags,
-                    "url": "http://www.gstatic.com/generate_204", "interval": "3m"
+                    "url": "http://cp.cloudflare.com/generate_204", "interval": "1m"
                 })
                 sb_dynamic_groups.append({
                     "type": "selector", "tag": others_group_name,
@@ -229,16 +240,16 @@ class Generator:
                 {
                     "type": "urltest",
                     "tag": "♻️ 自动选择",
-                    "outbounds": sb_tags,
-                    "url": "http://www.gstatic.com/generate_204",
-                    "interval": "3m"
+                    "outbounds": oversea_sb_tags,
+                    "url": "http://cp.cloudflare.com/generate_204",
+                    "interval": "1m"
                 },
                 {
                     "type": "urltest",
                     "tag": "🔰 延迟最低",
-                    "outbounds": sb_tags,
-                    "url": "http://www.gstatic.com/generate_204",
-                    "interval": "3m"
+                    "outbounds": oversea_sb_tags,
+                    "url": "http://cp.cloudflare.com/generate_204",
+                    "interval": "1m"
                 },
                 {
                     "type": "selector",
