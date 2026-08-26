@@ -8,6 +8,7 @@ from core.fetcher import parallel_fetch
 from core.processor import NodeProcessor
 from core.generator import Generator
 from utils.stats import render_and_update_readme_source_stats
+from utils.logger import logger
 
 TEMPLATE_FILE = "config.yaml"
 OUTPUT_FILE = "list.meta.yml"
@@ -16,7 +17,7 @@ async def main():
     # 1. Load Sources from YAML
     sources_file = "sources.yaml"
     if not os.path.exists(sources_file):
-        print(f"Error: {sources_file} not found.")
+        logger.error(f"{sources_file} not found.")
         return
 
     now = datetime.datetime.now()
@@ -68,12 +69,12 @@ async def main():
     
     # 获取来源数量用于统计
     active_source_count = len(source_infos)
-    print(f"Starting fetching from {active_source_count} active sources...")
+    logger.info(f"Starting fetching from {active_source_count} active sources...")
     
     # 2. Parallel fetching (单次全异步并发抓取，同时获取各源节点明细)
     all_raw_nodes, raw_source_results = await parallel_fetch(source_infos)
     raw_count = len(all_raw_nodes)
-    print(f"Fetched {raw_count} raw nodes.")
+    logger.info(f"Fetched {raw_count} raw nodes.")
     
     # 3. Processing (Deduplicate, Clean Names, Emoji Flags)
     processor = NodeProcessor()
@@ -81,7 +82,7 @@ async def main():
     
     # 4. Generate Output (Merge with template)
     if not os.path.exists(TEMPLATE_FILE):
-        print(f"Warning: {TEMPLATE_FILE} not found. Using node list only.")
+        logger.warning(f"{TEMPLATE_FILE} not found. Using node list only.")
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             yaml.dump({"proxies": [n.to_clash() for n in processed_nodes]}, f, allow_unicode=True)
     else:
@@ -100,9 +101,9 @@ async def main():
                 })
             render_and_update_readme_source_stats(source_stats, now)
         except Exception as e:
-            print(f"Warning: Failed to update README source stats table: {e}")
+            logger.warning(f"Failed to update README source stats table: {e}")
     
-    print(f"\n[OK] All done! Generated: {OUTPUT_FILE}")
+    logger.info(f"All done! Generated: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     asyncio.run(main())

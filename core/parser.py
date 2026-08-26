@@ -1,15 +1,8 @@
 import json
 import yaml
-import traceback
-from typing import Dict, Any, List, Union, Optional
+from typing import Dict, Any, Union, Optional, List
 from urllib.parse import urlparse, unquote, quote, parse_qsl
-from utils.common import b64decodes, b64decodes_safe, b64encodes, b64encodes_safe
-
-DEFAULT_UUID = '8' * 8 + '-8888' * 3 + '-' + '8' * 12
-VMESS_TEMPLATE = {
-    "v": "2", "ps": "", "add": "0.0.0.0", "port": "0", "aid": "0", "scy": "auto",
-    "net": "tcp", "type": "none", "tls": "", "id": DEFAULT_UUID
-}
+from utils.common import b64decodes, b64decodes_safe, b64encodes
 
 class Node:
     def __init__(self, data: Union[Dict[str, Any], str]):

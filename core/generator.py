@@ -6,12 +6,6 @@ from typing import List, Dict, Any
 from core.parser import Node
 from utils.regions import REGIONS_DB
 
-# Region categorization mapping
-REGIONS = {
-    code: info['keywords'] + [info['name'], info['emoji']]
-    for code, info in REGIONS_DB.items()
-}
-
 REGION_NAMES = {
     code: f"{info['emoji']} {info['name']}"
     for code, info in REGIONS_DB.items()
@@ -82,11 +76,10 @@ class Generator:
             else:
                 node_to_region[name] = 'OTHERS'
 
-        # 2. Filter Active Regions (Threshold > 3 or Fixed Regions)
-        THRESHOLD = 3
+        # 2. Filter Active Regions (只要节点数 > 0 即可独立建组)
         active_keys = [
             k for k, count in region_counts.items() 
-            if count > THRESHOLD or (k in FIXED_REGIONS and count > 0)
+            if count > 0
         ]
         # Sort active keys based on the ordering defined in REGIONS_DB
         priority = list(REGIONS_DB.keys())
@@ -103,23 +96,47 @@ class Generator:
                 others.append(name)
 
         # 3. Create Dynamic Region Groups
+        # 3. 质量评分函数 (实测带宽 > speednode > hy2 > 普通)
+        name_to_node = {node.name: node for node in nodes}
+
+        def get_node_quality_score(name: str) -> float:
+            score = 10.0
+            m_mb = re.search(r'(\d+\.?\d*)\s*mb/s', name.lower())
+            if m_mb:
+                try:
+                    score = 100.0 + float(m_mb.group(1))
+                except:
+                    score = 100.0
+            elif re.search(r'(\d+\.?\d*)\s*kb/s', name.lower()):
+                score = 95.0
+            elif 'speednode' in name.lower():
+                score = 90.0
+            else:
+                node_obj = name_to_node.get(name)
+                if node_obj and getattr(node_obj, 'type', '') in ('hysteria2', 'hy2'):
+                    score = 80.0
+                elif 'hy2' in name.lower() or 'hysteria' in name.lower():
+                    score = 80.0
+            return score
+
+        # 4. Create Dynamic Region Groups (地区内自动选择同样采用 fallback 故障转移模式，并按质量排序)
         dynamic_groups = []
         region_list_for_menu = []
         
         test_url = "http://cp.cloudflare.com/generate_204"
         test_interval = 60
         test_timeout = 2000
-        test_tolerance = 20
 
         for key in active_keys:
             group_name = REGION_NAMES[key]
             auto_name = f"⚡ 自动选择 | {group_name}"
             # 防御: 排除与组名冲突的成员,避免 Clash 循环引用
-            nodes_in_region = [n for n in region_nodes[key] if n != group_name and n != auto_name]
+            raw_region_nodes = [n for n in region_nodes[key] if n != group_name and n != auto_name]
+            nodes_in_region = sorted(raw_region_nodes, key=get_node_quality_score, reverse=True)
             
             dynamic_groups.append({
-                'name': auto_name, 'type': 'url-test', 'url': test_url,
-                'interval': test_interval, 'timeout': test_timeout, 'tolerance': test_tolerance,
+                'name': auto_name, 'type': 'fallback', 'url': test_url,
+                'interval': test_interval, 'timeout': test_timeout,
                 'lazy': False, 'hidden': True, 'proxies': nodes_in_region
             })
             dynamic_groups.append({
@@ -131,10 +148,11 @@ class Generator:
         if others:
             others_group_name = '🌍 其他地区'
             others_auto_name = f"⚡ 自动选择 | {others_group_name}"
-            others = [n for n in others if n != others_group_name and n != others_auto_name]
+            raw_others = [n for n in others if n != others_group_name and n != others_auto_name]
+            others = sorted(raw_others, key=get_node_quality_score, reverse=True)
             dynamic_groups.append({
-                'name': others_auto_name, 'type': 'url-test', 'url': test_url,
-                'interval': test_interval, 'timeout': test_timeout, 'tolerance': test_tolerance,
+                'name': others_auto_name, 'type': 'fallback', 'url': test_url,
+                'interval': test_interval, 'timeout': test_timeout,
                 'lazy': False, 'hidden': True, 'proxies': others
             })
             dynamic_groups.append({
@@ -143,23 +161,50 @@ class Generator:
             })
             region_list_for_menu.append(others_group_name)
 
-        # 4. Fill Template Groups (自动选择与延迟最低彻底排除 CN 中国节点，防止翻墙流量回流国内)
-        oversea_nodes = [n for n in node_names if node_to_region.get(n) != 'CN' and not n.startswith('🇨🇳')]
-        if not oversea_nodes:
-            oversea_nodes = node_names
+        # 5. 构建雨露均沾智能精选池 (Smart Pool Extractor)
 
+        MAX_PER_REGION = 6
+        smart_pool_nodes = []
+
+        for key in active_keys:
+            if key == 'CN': continue  # 彻底排除国内
+            candidates = [n for n in region_nodes[key] if not n.startswith('🇨🇳')]
+            if not candidates: continue
+            candidates_sorted = sorted(candidates, key=get_node_quality_score, reverse=True)
+            smart_pool_nodes.extend(candidates_sorted[:MAX_PER_REGION])
+
+        if others:
+            other_candidates = [n for n in others if not n.startswith('🇨🇳') and '中国' not in n]
+            if other_candidates:
+                other_sorted = sorted(other_candidates, key=get_node_quality_score, reverse=True)
+                smart_pool_nodes.extend(other_sorted[:MAX_PER_REGION])
+
+        # 兜底保障：若精选节点数少于 20 个，从全量非 CN 节点中按分数补充至 30 个
+        oversea_nodes = [n for n in node_names if node_to_region.get(n) != 'CN' and not n.startswith('🇨🇳')]
+        if len(smart_pool_nodes) < 20 and oversea_nodes:
+            fallback_sorted = sorted(oversea_nodes, key=get_node_quality_score, reverse=True)
+            for fn in fallback_sorted:
+                if fn not in smart_pool_nodes:
+                    smart_pool_nodes.append(fn)
+                if len(smart_pool_nodes) >= 30:
+                    break
+
+        if not smart_pool_nodes:
+            smart_pool_nodes = oversea_nodes if oversea_nodes else node_names
+
+        # 5. Fill Template Groups
         template_groups = config.get('proxy-groups', [])
         for g in template_groups:
             if g['name'] == '🗺️ 选择地区':
                 g['proxies'] = region_list_for_menu if region_list_for_menu else ['DIRECT']
             elif g['name'] in ('♻️ 自动选择', '🔰 延迟最低'):
-                g['proxies'] = oversea_nodes if oversea_nodes else ['DIRECT']
+                g['proxies'] = smart_pool_nodes if smart_pool_nodes else ['DIRECT']
             elif g['name'] == '✅ 手动选择':
                 g['proxies'] = node_names if node_names else ['DIRECT']
         
         config['proxy-groups'] = template_groups + dynamic_groups
 
-        # 5. Save YAML (Clash Meta)
+        # 6. Save YAML (Clash Meta)
         now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(f"# Generated by MetaFetch\n# Updated at: {now_str}\n")
@@ -168,7 +213,7 @@ class Generator:
             yaml_content = re.sub(r'public-key:\s*([^\s"\']+)', r'public-key: "\1"', yaml_content)
             f.write(yaml_content)
         
-        # 6. Save Universal Links (Base64 & Plain TXT)
+        # 7. Save Universal Links (Base64 & Plain TXT)
         node_urls = [node.to_url() for node in nodes if node.to_url()]
         raw_urls_str = "\n".join(node_urls)
         
@@ -181,15 +226,17 @@ class Generator:
         with open(b64_path, 'w', encoding='utf-8') as f:
             f.write(b64encodes(raw_urls_str))
 
-        # 7. Save Sing-box JSON (list.singbox.json)
+        # 8. Save Sing-box JSON (list.singbox.json)
         sb_nodes = [node.to_singbox() for node in nodes if node.to_singbox()]
         sb_tags = [n['tag'] for n in sb_nodes]
         sb_tag_set = set(sb_tags)
 
-        # Sing-box 自动选择同样排除 CN 节点
-        oversea_sb_tags = [t for t in sb_tags if node_to_region.get(t) != 'CN' and not t.startswith('🇨🇳')]
-        if not oversea_sb_tags:
-            oversea_sb_tags = sb_tags
+        # Sing-box 自动选择同样注入智能精选池
+        smart_pool_sb_tags = [t for t in smart_pool_nodes if t in sb_tag_set]
+        if not smart_pool_sb_tags:
+            smart_pool_sb_tags = [t for t in sb_tags if node_to_region.get(t) != 'CN' and not t.startswith('🇨🇳')]
+        if not smart_pool_sb_tags:
+            smart_pool_sb_tags = sb_tags
 
         sb_dynamic_groups = []
         sb_region_menu = []
@@ -197,8 +244,9 @@ class Generator:
         for key in active_keys:
             group_name = REGION_NAMES[key]
             auto_name = f"⚡ 自动选择 | {group_name}"
-            region_sb_tags = [t for t in region_nodes[key] if t in sb_tag_set and t != group_name and t != auto_name]
-            if not region_sb_tags: continue
+            raw_region_sb_tags = [t for t in region_nodes[key] if t in sb_tag_set and t != group_name and t != auto_name]
+            if not raw_region_sb_tags: continue
+            region_sb_tags = sorted(raw_region_sb_tags, key=get_node_quality_score, reverse=True)
 
             sb_dynamic_groups.append({
                 "type": "urltest", "tag": auto_name, "outbounds": region_sb_tags,
@@ -211,8 +259,9 @@ class Generator:
             sb_region_menu.append(group_name)
 
         if others:
-            others_sb_tags = [t for t in others if t in sb_tag_set and t != others_group_name and t != others_auto_name]
-            if others_sb_tags:
+            raw_others_sb_tags = [t for t in others if t in sb_tag_set and t != others_group_name and t != others_auto_name]
+            if raw_others_sb_tags:
+                others_sb_tags = sorted(raw_others_sb_tags, key=get_node_quality_score, reverse=True)
                 others_group_name = '🌍 其他地区'
                 others_auto_name = f"⚡ 自动选择 | {others_group_name}"
                 sb_dynamic_groups.append({
@@ -240,14 +289,14 @@ class Generator:
                 {
                     "type": "urltest",
                     "tag": "♻️ 自动选择",
-                    "outbounds": oversea_sb_tags,
+                    "outbounds": smart_pool_sb_tags,
                     "url": "http://cp.cloudflare.com/generate_204",
                     "interval": "1m"
                 },
                 {
                     "type": "urltest",
                     "tag": "🔰 延迟最低",
-                    "outbounds": oversea_sb_tags,
+                    "outbounds": smart_pool_sb_tags,
                     "url": "http://cp.cloudflare.com/generate_204",
                     "interval": "1m"
                 },

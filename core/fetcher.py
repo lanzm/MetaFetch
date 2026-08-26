@@ -6,6 +6,7 @@ import yaml
 
 from core.parser import Node
 from utils.common import b64decodes
+from utils.logger import logger
 
 # 模块级预编译正则
 GITHUB_RAW_PATTERN = re.compile(r'https://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/(.*)')
@@ -59,6 +60,10 @@ class Fetcher:
             self.client = None
 
     async def fetch_nodes(self, url: str, filters: Optional[Dict[str, Any]] = None) -> List[Node]:
+        async with self.semaphore:
+            return await self._fetch_nodes_internal(url, filters)
+
+    async def _fetch_nodes_internal(self, url: str, filters: Optional[Dict[str, Any]] = None) -> List[Node]:
         is_recursive = url.startswith('*')
         if is_recursive:
             url = url[1:]
@@ -74,33 +79,32 @@ class Fetcher:
             targets.append(f"https://gh-proxy.com/{url}")
 
         content = None
-        async with self.semaphore:
-            # 确保 client 实例可用
-            client = self.client
-            close_client_after = False
-            if client is None:
-                client = httpx.AsyncClient(headers=self.headers, verify=False, follow_redirects=True, timeout=self.timeout)
-                close_client_after = True
+        # 确保 client 实例可用
+        client = self.client
+        close_client_after = False
+        if client is None:
+            client = httpx.AsyncClient(headers=self.headers, verify=False, follow_redirects=True, timeout=self.timeout)
+            close_client_after = True
 
-            try:
-                for target_url in targets:
-                    try:
-                        print(f"Fetching: {target_url}")
-                        response = await client.get(target_url, timeout=self.timeout)
-                        if response.status_code == 200:
-                            content = response.content.decode('utf-8', errors='ignore')
-                            break
-                        else:
-                            print(f"  - Error HTTP {response.status_code} on {target_url}")
-                    except Exception as e:
-                        print(f"  - Request Exception on {target_url}: {e}")
-            finally:
-                if close_client_after:
-                    await client.aclose()
+        try:
+            for target_url in targets:
+                try:
+                    logger.debug(f"Fetching: {target_url}")
+                    response = await client.get(target_url, timeout=self.timeout)
+                    if response.status_code == 200:
+                        content = response.content.decode('utf-8', errors='ignore')
+                        break
+                    else:
+                        logger.debug(f"  - Error HTTP {response.status_code} on {target_url}")
+                except Exception as e:
+                    logger.debug(f"  - Request Exception on {target_url}: {e}")
+        finally:
+            if close_client_after:
+                await client.aclose()
 
-            if not content:
-                print(f"  - Failed to get any content for {url}")
-                return []
+        if not content:
+            logger.warning(f"  - Failed to get any content for {url}")
+            return []
 
         if is_recursive:
             found_urls = URL_EXTRACT_PATTERN.findall(content)
@@ -113,7 +117,7 @@ class Fetcher:
 
             if sub_urls:
                 sub_urls = list(dict.fromkeys(sub_urls))
-                print(f"  - Found {len(sub_urls)} sub-urls in {url}")
+                logger.info(f"  - Found {len(sub_urls)} sub-urls in {url}")
                 tasks = [self.fetch_nodes(u, filters) for u in sub_urls]
                 results = await asyncio.gather(*tasks)
                 all_nodes = []
@@ -130,9 +134,9 @@ class Fetcher:
             nodes = [n for n in nodes if n.type.lower() not in ignore_types]
 
         if nodes:
-            print(f"  - Successfully parsed {len(nodes)} nodes from {url}")
+            logger.info(f"  - Successfully parsed {len(nodes)} nodes from {url}")
         else:
-            print(f"  - No nodes found in {url}")
+            logger.warning(f"  - No nodes found in {url}")
 
         return nodes
 
@@ -141,7 +145,7 @@ class Fetcher:
 
         # 0. 预检查：如果是 HTML 网页，直接跳过（防止报错）
         if '<!DOCTYPE' in content.upper() or '<HTML' in content.upper():
-            print("  - Warning: Content looks like HTML/Webpage, skipping parser.")
+            logger.debug("  - Warning: Content looks like HTML/Webpage, skipping parser.")
             return []
 
         # 1. Try to parse as YAML (Clash style)
