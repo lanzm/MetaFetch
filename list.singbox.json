@@ -91,9 +91,9 @@
       "outbounds": [
         "🇭🇰 香港 #1",
         "🇭🇰HK",
+        "🇭🇰 HK",
         "🇭🇰 -HK-Hong Kong8",
         "🇭🇰HK-47.76.35.246-0787",
-        "🇭🇰+HK+香港+65",
         "-TW3",
         "🇹🇼+TW+台湾+55",
         "🇹🇼+TW+台湾+41",
@@ -110,10 +110,10 @@
         "🇺🇸 US_speednode_0132",
         "🇸🇬SG_1|4.6MB/s",
         "移动用新加坡1",
+        "🇸🇬SG",
+        "🇸🇬SG #2",
         "🇸🇬 SG",
         "🇸🇬 新加坡 #1",
-        "🇸🇬 新加坡 #1 #2",
-        "🇸🇬 新加坡 #1 #3",
         "🇰🇷+KR+韩国+44",
         "🇰🇷KR-152.67.218.38-0746",
         "🇰🇷+KR+韩国+53",
@@ -126,10 +126,10 @@
         "🇩🇪 德国 #1 #3",
         "🇩🇪 德国 #1 #4",
         "🇩🇪 德国 #1 #5",
-        "🇬🇧GB_2|1.9MB/s",
         "🇬🇧GB_1|1016KB/s",
         "🇬🇧 UK",
         "🇬🇧 英国 #1",
+        "🇬🇧GB",
         "🇬🇧 英国 #1 #2",
         "🇬🇧UK",
         "🇫🇷 法国 #1",
@@ -220,9 +220,9 @@
       "outbounds": [
         "🇭🇰 香港 #1",
         "🇭🇰HK",
+        "🇭🇰 HK",
         "🇭🇰 -HK-Hong Kong8",
         "🇭🇰HK-47.76.35.246-0787",
-        "🇭🇰+HK+香港+65",
         "-TW3",
         "🇹🇼+TW+台湾+55",
         "🇹🇼+TW+台湾+41",
@@ -239,10 +239,10 @@
         "🇺🇸 US_speednode_0132",
         "🇸🇬SG_1|4.6MB/s",
         "移动用新加坡1",
+        "🇸🇬SG",
+        "🇸🇬SG #2",
         "🇸🇬 SG",
         "🇸🇬 新加坡 #1",
-        "🇸🇬 新加坡 #1 #2",
-        "🇸🇬 新加坡 #1 #3",
         "🇰🇷+KR+韩国+44",
         "🇰🇷KR-152.67.218.38-0746",
         "🇰🇷+KR+韩国+53",
@@ -255,10 +255,10 @@
         "🇩🇪 德国 #1 #3",
         "🇩🇪 德国 #1 #4",
         "🇩🇪 德国 #1 #5",
-        "🇬🇧GB_2|1.9MB/s",
         "🇬🇧GB_1|1016KB/s",
         "🇬🇧 UK",
         "🇬🇧 英国 #1",
+        "🇬🇧GB",
         "🇬🇧 英国 #1 #2",
         "🇬🇧UK",
         "🇫🇷 法国 #1",
@@ -880,11 +880,13 @@
         "🇩🇪 德国 #1",
         "🇵🇱 波兰 #1",
         "🇸🇪 瑞典 #1",
+        "🇸🇬SG",
         "🇧🇬 保加利亚 #1",
         "🇫🇷 法国 #1",
         "🇬🇧 英国 #1",
         "🇫🇮 芬兰 #1",
         "🇵🇱 波兰 #1 #2",
+        "🇬🇧GB",
         "🇩🇪 德国 #1 #2",
         "🇮🇳 IN",
         "🇹🇷 土耳其 #1 #2",
@@ -899,6 +901,7 @@
         "🇳🇱 荷兰 #1 #3",
         "🇳🇱 荷兰 #1 #4",
         "🇺🇸 美国 #1",
+        "🇸🇬SG #2",
         "🇵🇱 波兰 #1 #3",
         "🇸🇬 SG",
         "🇩🇪 德国 #1 #5",
@@ -913,6 +916,7 @@
         "🇩🇪 德国 #1 #6",
         "🇩🇪 德国 #1 #7",
         "🇯🇵 日本 #1 #2",
+        "🇭🇰 HK",
         "🇺🇸 美国 #1 #3",
         "🇬🇧UK",
         "🇬🇧 英国 #1 #3",
@@ -1082,7 +1086,6 @@
         "🇷🇺RU_1|1.3MB/s",
         "🇬🇧GB_1|1016KB/s",
         "🇧🇷BR_1|3.2MB/s",
-        "🇬🇧GB_2|1.9MB/s",
         "🇯🇵 免费-日本1-Ver.7",
         "🇯🇵 免费-日本2-Ver.8",
         "🇯🇵 免费-日本3-Ver.7",
@@ -1098,6 +1101,7 @@
       "outbounds": [
         "🇭🇰 香港 #1",
         "🇭🇰HK",
+        "🇭🇰 HK",
         "🇭🇰 -HK-Hong Kong8",
         "🇭🇰HK-47.76.35.246-0787",
         "🇭🇰+HK+香港+65",
@@ -1145,6 +1149,7 @@
         "⚡ 自动选择 | 🇭🇰 香港",
         "🇭🇰 香港 #1",
         "🇭🇰HK",
+        "🇭🇰 HK",
         "🇭🇰 -HK-Hong Kong8",
         "🇭🇰HK-47.76.35.246-0787",
         "🇭🇰+HK+香港+65",
@@ -1824,6 +1829,8 @@
       "outbounds": [
         "🇸🇬SG_1|4.6MB/s",
         "移动用新加坡1",
+        "🇸🇬SG",
+        "🇸🇬SG #2",
         "🇸🇬 SG",
         "🇸🇬 新加坡 #1",
         "🇸🇬 新加坡 #1 #2",
@@ -1866,6 +1873,8 @@
         "⚡ 自动选择 | 🇸🇬 新加坡",
         "🇸🇬SG_1|4.6MB/s",
         "移动用新加坡1",
+        "🇸🇬SG",
+        "🇸🇬SG #2",
         "🇸🇬 SG",
         "🇸🇬 新加坡 #1",
         "🇸🇬 新加坡 #1 #2",
@@ -2017,10 +2026,10 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇬🇧 英国",
       "outbounds": [
-        "🇬🇧GB_2|1.9MB/s",
         "🇬🇧GB_1|1016KB/s",
         "🇬🇧 UK",
         "🇬🇧 英国 #1",
+        "🇬🇧GB",
         "🇬🇧 英国 #1 #2",
         "🇬🇧UK",
         "🇬🇧 英国 #1 #3",
@@ -2043,10 +2052,10 @@
       "tag": "🇬🇧 英国",
       "outbounds": [
         "⚡ 自动选择 | 🇬🇧 英国",
-        "🇬🇧GB_2|1.9MB/s",
         "🇬🇧GB_1|1016KB/s",
         "🇬🇧 UK",
         "🇬🇧 英国 #1",
+        "🇬🇧GB",
         "🇬🇧 英国 #1 #2",
         "🇬🇧UK",
         "🇬🇧 英国 #1 #3",
@@ -9690,6 +9699,17 @@
     },
     {
       "type": "hysteria2",
+      "tag": "🇸🇬SG",
+      "server": "xjp1.mangshe.xyz",
+      "server_port": 2056,
+      "password": "41f0d6d3-4a45-4635-8225-2abd2284189b",
+      "tls": {
+        "enabled": true,
+        "server_name": "xjp1.mangshe.xyz"
+      }
+    },
+    {
+      "type": "hysteria2",
       "tag": "🇧🇬 保加利亚 #1",
       "server": "bg185.mechvpn.online",
       "server_port": 443,
@@ -9740,6 +9760,17 @@
       "tls": {
         "enabled": true,
         "server_name": "streambox.wwwinternetvideo.click"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇬🇧GB",
+      "server": "31.76.22.210",
+      "server_port": 443,
+      "password": "8674df07-56b3-43ea-b687-aef2b1a20137",
+      "tls": {
+        "enabled": true,
+        "server_name": "crt.ultimagamest.com"
       }
     },
     {
@@ -9898,6 +9929,21 @@
       "tls": {
         "enabled": true,
         "server_name": "hopp-us.yyuyy.com"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇸🇬SG #2",
+      "server": "18.136.199.31",
+      "server_port": 12451,
+      "password": "VL0N0IPJ5Tqj672H7FsxYw==",
+      "obfs": {
+        "type": "salamander",
+        "password": "MBd0Kzj3ZcY3"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "c.hbapp.xyz"
       }
     },
     {
@@ -10064,6 +10110,17 @@
       "tls": {
         "enabled": true,
         "server_name": "jp.cryptoofarm.com"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇭🇰 HK",
+      "server": "h.zz2233.cyou",
+      "server_port": 10444,
+      "password": "f4927789e58bcd24b6f6",
+      "tls": {
+        "enabled": true,
+        "server_name": "h.zz2233.cyou"
       }
     },
     {
@@ -12172,20 +12229,9 @@
       }
     },
     {
-      "type": "hysteria2",
-      "tag": "🇬🇧GB_2|1.9MB/s",
-      "server": "31.76.22.210",
-      "server_port": 443,
-      "password": "8674df07-56b3-43ea-b687-aef2b1a20137",
-      "tls": {
-        "enabled": true,
-        "server_name": "crt.ultimagamest.com"
-      }
-    },
-    {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本1-Ver.7",
-      "server": "w01a10d-g06.jp01-nn-vm0.entry.fr0528.art",
+      "server": "f0cghcb-g06.jp01-nn-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12197,7 +12243,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本2-Ver.8",
-      "server": "qoyg1md-g06.jp02-e3-vm0.entry.fr0528.art",
+      "server": "fvya10d-g06.jp02-e3-vm0.entry.fr0528.art",
       "server_port": 11778,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12206,7 +12252,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本3-Ver.7",
-      "server": "xo6ah2d-g06.jp03-j7-vm0.entry.fr0528.art",
+      "server": "fvya12f-g06.jp03-j7-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12218,7 +12264,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本4-Ver.8",
-      "server": "w06g1mf-g06.jp04-1d-vm0.entry.fr0528.art",
+      "server": "fv1ptcb-g06.jp04-1d-vm0.entry.fr0528.art",
       "server_port": 449,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12227,7 +12273,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本5-Ver.9",
-      "server": "w0cg82f-g06.jp05-h6-vm0.entry.fr0528.art",
+      "server": "x0ygtmf-g06.jp05-h6-vm0.entry.fr0528.art",
       "server_port": 46487,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12236,7 +12282,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本6-Ver.8",
-      "server": "q11p12b-g06.jp06-jz-vm0.entry.fr0528.art",
+      "server": "qo6ahmd-g06.jp06-jz-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12248,7 +12294,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本7-Ver.2",
-      "server": "foyg80f-g06.jp07-sh-vm0.entry.fr0528.art",
+      "server": "wv1gh2d-g06.jp07-sh-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
