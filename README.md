@@ -188,7 +188,7 @@ graph LR
 
 1. **Fork 本仓库**：点击右上角 `Fork` 到个人账号下。
 2. **配置私密源 (可选)**：进入仓库 `Settings` → `Secrets and variables` → `Actions`，添加 `PRIVATE_SOURCES`（支持填入每行一个私密订阅链接）。
-3. **开启 Actions**：在 `Actions` 标签页中点击 `I understand my workflows, go ahead and enable them` 激活自动每 3 小时定时抓取。
+3. **开启 Actions**：在 `Actions` 标签页中点击 `I understand my workflows, go ahead and enable them` 激活自动每 2 小时定时抓取。
 4. **本地运行**：
    ```bash
    git clone --depth=1 https://github.com/lanzm/MetaFetch.git

@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 */3 * * *'  # 每 3 小时运行一次
+    - cron: '37 */2 * * *'  # 每 2 小时的第 37 分运行一次（冷门质数分钟，避开全球排队拥堵）
   workflow_dispatch:      # 支持手动触发
 
 permissions:
