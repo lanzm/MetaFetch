@@ -22,6 +22,7 @@
         "🇮🇳 印度",
         "🇹🇷 土耳其",
         "🇦🇺 澳大利亚",
+        "🇵🇭 菲律宾",
         "🇧🇷 巴西",
         "🇦🇷 阿根廷",
         "🇲🇽 墨西哥",
@@ -37,6 +38,8 @@
         "🇨🇾 塞浦路斯",
         "🇺🇦 乌克兰",
         "🇳🇴 挪威",
+        "🇩🇰 丹麦",
+        "🇵🇹 葡萄牙",
         "🇧🇬 保加利亚",
         "🇿🇦 南非",
         "🌍 其他地区",
@@ -63,6 +66,7 @@
         "🇮🇳 印度",
         "🇹🇷 土耳其",
         "🇦🇺 澳大利亚",
+        "🇵🇭 菲律宾",
         "🇧🇷 巴西",
         "🇦🇷 阿根廷",
         "🇲🇽 墨西哥",
@@ -78,6 +82,8 @@
         "🇨🇾 塞浦路斯",
         "🇺🇦 乌克兰",
         "🇳🇴 挪威",
+        "🇩🇰 丹麦",
+        "🇵🇹 葡萄牙",
         "🇧🇬 保加利亚",
         "🇿🇦 南非",
         "🌍 其他地区"
@@ -87,69 +93,67 @@
       "type": "urltest",
       "tag": "♻️ 自动选择",
       "outbounds": [
+        "🇭🇰HK_3|5.7MB/s",
+        "🇭🇰HK_4|5.2MB/s",
+        "🇭🇰HK_2|4.2MB/s",
+        "🇭🇰HK_5|2.4MB/s",
         "🇭🇰 HK",
         "🇭🇰 -HK-Hong Kong8",
-        "🇭🇰HK-47.76.35.246-0787",
-        "🇭🇰+HK+香港+65",
-        "🇭🇰 -HK-Hong Kong5",
-        "🇭🇰 -HK-Hong Kong1",
         "-TW3",
         "🇹🇼+TW+台湾+55",
         "🇹🇼+TW+台湾+41",
         "-TW1",
         "🇹🇼+TW+台湾+15",
         "-TW2",
+        "🇯🇵JP_3|5.2MB/s",
+        "🇯🇵JP_2|4.0MB/s",
         "联通用日本2",
         "🇯🇵 日本 #1",
         "🇯🇵 日本 #1 #2",
         "dc-udp-🇯🇵 Japan-Tokyo",
-        "日本4|@ripaojiedian",
-        "🇺🇸US_2|1.6MB/s",
-        "🇺🇸US_3|1.6MB/s",
-        "🇺🇸US_1|1.2MB/s",
-        "🇺🇸 US_speednode_0130",
+        "🇸🇬SG_1|4.9MB/s",
+        "🇸🇬SG_3|3.5MB/s",
         "移动用新加坡1",
         "🇸🇬 新加坡 #1",
         "🇸🇬SG",
-        "🇸🇬SG #2",
-        "🇸🇬SG #3",
-        "🇸🇬 新加坡 #1 #2",
-        "🇰🇷KR_1|3.8MB/s",
         "🇰🇷 韩国 #1",
         "🇰🇷+KR+韩国+44",
         "🇰🇷KR-152.67.218.38-0746",
         "🇰🇷+KR+韩国+53",
         "🇰🇷+KR+韩国+46",
-        "🇩🇪 德国 #1",
-        "🇩🇪 德国 #1 #2",
-        "🇩🇪 德国 #1 #3",
-        "🇩🇪 德国 #1 #4",
-        "🇩🇪 德国 #1 #5",
-        "🇬🇧GB_1|1.0MB/s",
-        "🇬🇧 英国 #1",
-        "🇬🇧+GB+英国+3",
-        "🇬🇧 United Kingdom 01 @nodpai",
-        "🇬🇧_GB_英国->🇰🇿_KZ_哈萨克斯坦",
-        "🇬🇧+GB+英国+76",
+        "🇰🇷+KR+韩国+39",
+        "🇩🇪DE_4|4.5MB/s",
+        "🇩🇪DE_7|3.5MB/s",
+        "🇩🇪DE_5|3.3MB/s",
+        "🇩🇪DE_6|1.3MB/s",
+        "🇬🇧GB_2|4.4MB/s",
+        "🇬🇧GB_9|2.6MB/s",
+        "🇫🇷FR_2|4.3MB/s",
+        "🇫🇷FR_3|4.0MB/s",
+        "🇫🇷FR_1|3.2MB/s",
         "🇫🇷 法国 #1",
         "🇫🇷 法国 #1 #2",
         "🇫🇷 法国 #1 #3",
-        "🇫🇷157086 | ⚡️Telegram =",
-        "🇫🇷FR-51.15.27.48-0708",
-        "🇫🇷FR-52.47.174.48-1299",
+        "🇷🇺RU_1|3.4MB/s",
         "Telegram 🆔@cnetvpn 🇷🇺",
         "dc-udp-🇧🇪 Belgium-Brussels",
         "🇷🇺 github.com/freefq - 俄罗斯  1",
         "🇷🇺+RU+俄罗斯联邦+11",
+        "🇷🇺 俄罗斯 V2CROSS.COM",
         "🇨🇦 加拿大 #1",
         "🇨🇦_CA_加拿大",
         "🇨🇦_CA_加拿大 #2",
         "🇨🇦_CA_加拿大 #3",
-        "🇨🇦 Canada_Montreal_ss_1026",
-        "🇨🇭CH_1|1.0MB/s",
+        "🇨🇦 Canada_Toronto_ss_1029",
+        "🇨🇦 Canada_Toronto_ss_1030",
+        "🇳🇱NL_1|4.5MB/s",
+        "🇳🇱NL_4|2.3MB/s",
+        "🇳🇱NL_8|1.1MB/s",
         "🇨🇭 瑞士 #1",
-        "🇨🇭157170 | ⚡️Telegram =",
         "🇨🇭CH-156.146.62.160-0728",
+        "🇮🇳IN_2|4.8MB/s",
+        "🇮🇳IN_1|4.0MB/s",
+        "🇮🇳IN_3|3.5MB/s",
         "🇮🇳 github.com/freefq - 印度  2",
         "🇮🇳 github.com/freefq - 印度  10",
         "🇮🇳 github.com/freefq - 印度  3",
@@ -157,9 +161,11 @@
         "🇹🇷 土耳其 #1 #2",
         "🇹🇷 土耳其 #1 #3",
         "🇹🇷 土耳其 #1 #4",
+        "dc-udp-🇹🇷 Turkey-Istanbul",
         "🇹🇷dc-udp- Turkey-Istanbul",
         "🇦🇺 澳大利亚 #1",
         "🇦🇺澳大利亚 02",
+        "dc-udp-🇵🇭 Philippines-Manila",
         "dc-udp-🇧🇷 Brazil-Fortaleza",
         "巴西圣保罗+CloudFlare节点",
         "dc-udp-🇦🇷 Argentina-Buenos Aires",
@@ -168,21 +174,19 @@
         "dc-udp-🇦🇷 Argentina-Buenos Aires #4",
         "🇦🇷AR-190.103.176.29-0770",
         "🇲🇽MX-190.103.179.23-0779",
+        "🇪🇸 ConfigV2RayNG",
         "🇪🇸ES-5.188.181.201-0768",
         "🇪🇸ES-5.188.181.201-0794",
         "🇪🇸ES-5.188.181.201-0769",
         "🇪🇸+ES+西班牙+9",
-        "🇪🇸ES-5.188.181.201-9157",
-        "🇪🇸ES-5.188.181.201-0802",
         "🇫🇮 芬兰 #1",
         "🇫🇮 芬兰 #1 #2",
         "🇫🇮 芬兰 #1 #3",
         "🇫🇮 芬兰 #1 #4",
-        "🇫🇮157081 | ⚡️Telegram =",
-        "🇫🇮157058 | ⚡️Telegram =",
+        "🇫🇮 ConfigV2RayNG",
+        "🇫🇮 ConfigV2RayNG #2",
         "🇮🇪_IE_爱尔兰",
         "爱尔兰+都柏林Amazon数据中心",
-        "🇸🇪157089 | ⚡️Telegram =",
         "瑞典+V2CROSS.COM",
         "🇸🇪SE-121.127.46.147-0732",
         "🇵🇱 波兰 #1",
@@ -196,14 +200,15 @@
         "🇦🇪+AE+阿联酋+6",
         "dc-udp-🇨🇾 Cyprus-Nicosia",
         "🇨🇾CY-213.169.137.221-0756",
+        "🇺🇦UA_1|3.3MB/s",
         "🇺🇦UA-5.188.6.8-0740",
         "🇺🇦+UA+乌克兰+75",
         "🇳🇴NO-185.90.61.153-0816",
+        "🇩🇰DK_1|2.1MB/s",
+        "dc-udp-🇵🇹 Portugal-Lisbon",
         "🇧🇬dc-udp- Bulgaria-Sofia",
-        "🇿🇦ZA-41.203.4.34-0751",
-        "SCP2",
-        "SCP3",
-        "SCP1"
+        "dc-udp-🇿🇦 South Africa-Johannesburg",
+        "🇿🇦ZA-41.203.4.34-0751"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -212,69 +217,67 @@
       "type": "urltest",
       "tag": "🔰 延迟最低",
       "outbounds": [
+        "🇭🇰HK_3|5.7MB/s",
+        "🇭🇰HK_4|5.2MB/s",
+        "🇭🇰HK_2|4.2MB/s",
+        "🇭🇰HK_5|2.4MB/s",
         "🇭🇰 HK",
         "🇭🇰 -HK-Hong Kong8",
-        "🇭🇰HK-47.76.35.246-0787",
-        "🇭🇰+HK+香港+65",
-        "🇭🇰 -HK-Hong Kong5",
-        "🇭🇰 -HK-Hong Kong1",
         "-TW3",
         "🇹🇼+TW+台湾+55",
         "🇹🇼+TW+台湾+41",
         "-TW1",
         "🇹🇼+TW+台湾+15",
         "-TW2",
+        "🇯🇵JP_3|5.2MB/s",
+        "🇯🇵JP_2|4.0MB/s",
         "联通用日本2",
         "🇯🇵 日本 #1",
         "🇯🇵 日本 #1 #2",
         "dc-udp-🇯🇵 Japan-Tokyo",
-        "日本4|@ripaojiedian",
-        "🇺🇸US_2|1.6MB/s",
-        "🇺🇸US_3|1.6MB/s",
-        "🇺🇸US_1|1.2MB/s",
-        "🇺🇸 US_speednode_0130",
+        "🇸🇬SG_1|4.9MB/s",
+        "🇸🇬SG_3|3.5MB/s",
         "移动用新加坡1",
         "🇸🇬 新加坡 #1",
         "🇸🇬SG",
-        "🇸🇬SG #2",
-        "🇸🇬SG #3",
-        "🇸🇬 新加坡 #1 #2",
-        "🇰🇷KR_1|3.8MB/s",
         "🇰🇷 韩国 #1",
         "🇰🇷+KR+韩国+44",
         "🇰🇷KR-152.67.218.38-0746",
         "🇰🇷+KR+韩国+53",
         "🇰🇷+KR+韩国+46",
-        "🇩🇪 德国 #1",
-        "🇩🇪 德国 #1 #2",
-        "🇩🇪 德国 #1 #3",
-        "🇩🇪 德国 #1 #4",
-        "🇩🇪 德国 #1 #5",
-        "🇬🇧GB_1|1.0MB/s",
-        "🇬🇧 英国 #1",
-        "🇬🇧+GB+英国+3",
-        "🇬🇧 United Kingdom 01 @nodpai",
-        "🇬🇧_GB_英国->🇰🇿_KZ_哈萨克斯坦",
-        "🇬🇧+GB+英国+76",
+        "🇰🇷+KR+韩国+39",
+        "🇩🇪DE_4|4.5MB/s",
+        "🇩🇪DE_7|3.5MB/s",
+        "🇩🇪DE_5|3.3MB/s",
+        "🇩🇪DE_6|1.3MB/s",
+        "🇬🇧GB_2|4.4MB/s",
+        "🇬🇧GB_9|2.6MB/s",
+        "🇫🇷FR_2|4.3MB/s",
+        "🇫🇷FR_3|4.0MB/s",
+        "🇫🇷FR_1|3.2MB/s",
         "🇫🇷 法国 #1",
         "🇫🇷 法国 #1 #2",
         "🇫🇷 法国 #1 #3",
-        "🇫🇷157086 | ⚡️Telegram =",
-        "🇫🇷FR-51.15.27.48-0708",
-        "🇫🇷FR-52.47.174.48-1299",
+        "🇷🇺RU_1|3.4MB/s",
         "Telegram 🆔@cnetvpn 🇷🇺",
         "dc-udp-🇧🇪 Belgium-Brussels",
         "🇷🇺 github.com/freefq - 俄罗斯  1",
         "🇷🇺+RU+俄罗斯联邦+11",
+        "🇷🇺 俄罗斯 V2CROSS.COM",
         "🇨🇦 加拿大 #1",
         "🇨🇦_CA_加拿大",
         "🇨🇦_CA_加拿大 #2",
         "🇨🇦_CA_加拿大 #3",
-        "🇨🇦 Canada_Montreal_ss_1026",
-        "🇨🇭CH_1|1.0MB/s",
+        "🇨🇦 Canada_Toronto_ss_1029",
+        "🇨🇦 Canada_Toronto_ss_1030",
+        "🇳🇱NL_1|4.5MB/s",
+        "🇳🇱NL_4|2.3MB/s",
+        "🇳🇱NL_8|1.1MB/s",
         "🇨🇭 瑞士 #1",
-        "🇨🇭157170 | ⚡️Telegram =",
         "🇨🇭CH-156.146.62.160-0728",
+        "🇮🇳IN_2|4.8MB/s",
+        "🇮🇳IN_1|4.0MB/s",
+        "🇮🇳IN_3|3.5MB/s",
         "🇮🇳 github.com/freefq - 印度  2",
         "🇮🇳 github.com/freefq - 印度  10",
         "🇮🇳 github.com/freefq - 印度  3",
@@ -282,9 +285,11 @@
         "🇹🇷 土耳其 #1 #2",
         "🇹🇷 土耳其 #1 #3",
         "🇹🇷 土耳其 #1 #4",
+        "dc-udp-🇹🇷 Turkey-Istanbul",
         "🇹🇷dc-udp- Turkey-Istanbul",
         "🇦🇺 澳大利亚 #1",
         "🇦🇺澳大利亚 02",
+        "dc-udp-🇵🇭 Philippines-Manila",
         "dc-udp-🇧🇷 Brazil-Fortaleza",
         "巴西圣保罗+CloudFlare节点",
         "dc-udp-🇦🇷 Argentina-Buenos Aires",
@@ -293,21 +298,19 @@
         "dc-udp-🇦🇷 Argentina-Buenos Aires #4",
         "🇦🇷AR-190.103.176.29-0770",
         "🇲🇽MX-190.103.179.23-0779",
+        "🇪🇸 ConfigV2RayNG",
         "🇪🇸ES-5.188.181.201-0768",
         "🇪🇸ES-5.188.181.201-0794",
         "🇪🇸ES-5.188.181.201-0769",
         "🇪🇸+ES+西班牙+9",
-        "🇪🇸ES-5.188.181.201-9157",
-        "🇪🇸ES-5.188.181.201-0802",
         "🇫🇮 芬兰 #1",
         "🇫🇮 芬兰 #1 #2",
         "🇫🇮 芬兰 #1 #3",
         "🇫🇮 芬兰 #1 #4",
-        "🇫🇮157081 | ⚡️Telegram =",
-        "🇫🇮157058 | ⚡️Telegram =",
+        "🇫🇮 ConfigV2RayNG",
+        "🇫🇮 ConfigV2RayNG #2",
         "🇮🇪_IE_爱尔兰",
         "爱尔兰+都柏林Amazon数据中心",
-        "🇸🇪157089 | ⚡️Telegram =",
         "瑞典+V2CROSS.COM",
         "🇸🇪SE-121.127.46.147-0732",
         "🇵🇱 波兰 #1",
@@ -321,14 +324,15 @@
         "🇦🇪+AE+阿联酋+6",
         "dc-udp-🇨🇾 Cyprus-Nicosia",
         "🇨🇾CY-213.169.137.221-0756",
+        "🇺🇦UA_1|3.3MB/s",
         "🇺🇦UA-5.188.6.8-0740",
         "🇺🇦+UA+乌克兰+75",
         "🇳🇴NO-185.90.61.153-0816",
+        "🇩🇰DK_1|2.1MB/s",
+        "dc-udp-🇵🇹 Portugal-Lisbon",
         "🇧🇬dc-udp- Bulgaria-Sofia",
-        "🇿🇦ZA-41.203.4.34-0751",
-        "SCP2",
-        "SCP3",
-        "SCP1"
+        "dc-udp-🇿🇦 South Africa-Johannesburg",
+        "🇿🇦ZA-41.203.4.34-0751"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -903,38 +907,43 @@
         "🇨🇭 瑞士 #1",
         "🇺🇸 美国 #1 #4",
         "🇩🇪 德国 #1 #6",
-        "🇸🇪157089 | ⚡️Telegram =",
-        "🇫🇮157081 | ⚡️Telegram =",
-        "🇫🇮157058 | ⚡️Telegram =",
-        "🇫🇮157059 | ⚡️Telegram =",
-        "🇫🇮157057 | ⚡️Telegram =",
-        "🇫🇮157056 | ⚡️Telegram =",
-        "🇫🇮157055 | ⚡️Telegram =",
-        "🇫🇮157073 | ⚡️Telegram =",
-        "🇫🇮157067 | ⚡️Telegram =",
-        "🇫🇮157064 | ⚡️Telegram =",
-        "🇫🇮157066 | ⚡️Telegram =",
-        "🇫🇮157065 | ⚡️Telegram =",
+        "🇪🇸 ConfigV2RayNG",
+        "🇫🇮 ConfigV2RayNG",
+        "🇫🇷 ConfigV2RayNG",
+        "🇬🇧 ConfigV2RayNG",
+        "🇫🇮 ConfigV2RayNG #2",
+        "dc-udp-🇵🇭 Philippines-Manila",
+        "dc-udp-🇵🇹 Portugal-Lisbon",
+        "dc-udp-🇹🇷 Turkey-Istanbul",
+        "dc-udp-🇺🇸 USA-Kansas City, MO",
+        "dc-udp-🇿🇦 South Africa-Johannesburg",
         "Node-hysteria2-giftcard.gateway-stream.com",
         "@V2ray_Alpha🌎 2",
         "@V2ray_Alpha🌎 3",
         "Node-hysteria2-giftcard.gateway-stream.com #2",
-        "@Begoo_VPN ²⁹⁰",
+        "🪆91@oneclickvpnkeys",
         "Telegram 🆔@cnetvpn 🇷🇺",
         "@FarazV2ray",
         "Telegram 🆔@cnetvpn 🇩🇪",
-        "🇩🇪157038 | ⚡️Telegram =",
-        "🚘19@oneclickvpnkeys",
+        "🪆22@oneclickvpnkeys",
+        "1🪆@oneclickvpnkeys",
         "🇩🇪All⁶ | @BigSmoke_Config",
-        "🇫🇷157086 | ⚡️Telegram =",
-        "🇳🇱157041 | ⚡️Telegram =",
+        "🪆77@oneclickvpnkeys",
+        "🪆27@oneclickvpnkeys",
         "🩵+@Azarakhsh_Proxy+🩷",
+        "🇩🇪157660 | ⚡️Telegram =",
         "Node-hysteria2-31.76.27.23",
         "Node-hysteria2-77.110.96.201",
         "Node-hysteria2-179.61.251.253",
+        "🇺🇸157664 | ⚡️Telegram =",
         "🇳🇱 - NL - @FreeOnlineVPN",
         "@KAFING_2",
         "Node-hysteria2-de1.sferavpn.pro",
+        "@GozargahAzad|🇫🇮",
+        "@v2ray313 کانالمون 🫪",
+        "@tootffarangi🍓-14",
+        "@tootffarangi🍓-12",
+        "@tootffarangi🍓-13",
         "dc-udp-🇦🇱 Albania-Tirana",
         "dc-udp-🇦🇷 Argentina-Buenos Aires",
         "dc-udp-🇦🇹 Austria-Vienna",
@@ -943,24 +952,19 @@
         "@configprxy",
         "@B2Hub #2",
         "@V2ray_Alpha🌇 3",
-        "🇳🇱157093 | ⚡️Telegram =",
         "dc-udp-🇦🇷 Argentina-Buenos Aires #2",
         "🇧🇬dc-udp- Bulgaria-Sofia",
         "🇹🇷dc-udp- Turkey-Istanbul",
         "@v2ray313 کانالمون 🤍",
-        "@meliproxyy",
+        "🇩🇪All⁷ | @BigSmoke_Config",
         "@icv2ray",
         "dc-udp-🇦🇷 Argentina-Buenos Aires #3",
         "dc-udp-🇯🇵 Japan-Tokyo",
         "dc-udp-🇳🇱 Netherlands-Amsterdam",
-        "🇳🇱157168 | ⚡️Telegram =",
         "🪆44@oneclickvpnkeys",
-        "🚘94@oneclickvpnkeys",
         "🇱🇻hysteria",
-        "🚘36@oneclickvpnkeys",
-        "🇨🇭157170 | ⚡️Telegram =",
         "@Azaranv2ray",
-        "🇺🇸157171 | ⚡️Telegram =",
+        "🪆64@oneclickvpnkeys",
         "@v2ray313 کانالمون  🇫🇮",
         "dc-udp-🇦🇱 Albania-Tirana #2",
         "dc-udp-🇦🇷 Argentina-Buenos Aires #4",
@@ -990,13 +994,17 @@
         "🇨🇳 China_None_ss_1022",
         "🇭🇰 Hong Kong_None_trojan_1023",
         "🇨🇳 China_None_ss_1024",
-        "🇨🇦 Canada_Montreal_ss_1026",
-        "🇺🇸 United States_Reston_ss_1027",
-        "🇺🇸 United States_None_ss_1028",
-        "None_None_trojan_1029",
-        "None_None_trojan_1030",
-        "🇬🇧 United Kingdom_Gosport_ss_1031",
-        "🇬🇧 United Kingdom_Gosport_ss_1032",
+        "🇨🇳 China_None_ss_1026",
+        "🇨🇳 China_Chengdu_vmess_1027",
+        "🇰🇷 South Korea_None_ss_1028",
+        "🇨🇦 Canada_Toronto_ss_1029",
+        "🇨🇦 Canada_Toronto_ss_1030",
+        "🇫🇷 France_None_vmess_1031",
+        "🇺🇸 United States_San Jose_ss_1032",
+        "🇫🇷 France_None_vmess_1033",
+        "🇨🇦 Canada_Montreal_ss_1034",
+        "🇺🇸 United States_None_vmess_1035",
+        "🇫🇷 France_None_vmess_1036",
         "香港4|@ripaojiedian #2",
         "香港5|@ripaojiedian #2",
         "日本|@ripaojiedian",
@@ -1046,31 +1054,49 @@
         "Github搜索TrojanLinks #42",
         "Github搜索TrojanLinks #43",
         "美国+CloudFlare节点",
+        "英国+V2CROSS.COM",
         "美国+CloudFlare节点 #2",
         "美国+CloudFlare节点 #3",
         "美国+CloudFlare节点 #4",
-        "美国+CloudFlare节点 #5",
-        "美国+CloudFlare节点 #6",
-        "英国+V2CROSS.COM",
-        "新加坡+Amazon数据中心",
-        "美国+CloudFlare节点 #7",
-        "美国+CloudFlare节点 #8",
-        "美国+CloudFlare节点 #9",
-        "美国+CloudFlare节点 #10",
+        "🇷🇺 俄罗斯 V2CROSS.COM",
+        "广东省广州市+电信IDC机房(校场西)",
+        "伊朗+V2CROSS.COM",
         "巴西圣保罗+CloudFlare节点",
-        "美国+CloudFlare节点 #11",
-        "美国+CloudFlare节点 #12",
-        "美国+CloudFlare节点 #13",
-        "美国+CloudFlare节点 #14",
-        "美国+CloudFlare节点 #15",
-        "美国+乔治亚洲亚特兰大Fastly节点",
-        "美国+CloudFlare节点 #16",
-        "🇰🇷KR_1|3.8MB/s",
-        "🇺🇸US_1|1.2MB/s",
-        "🇺🇸US_2|1.6MB/s",
-        "🇬🇧GB_1|1.0MB/s",
-        "🇺🇸US_3|1.6MB/s",
-        "🇨🇭CH_1|1.0MB/s",
+        "俄罗斯+V2CROSS.COM",
+        "美国+CloudFlare节点 #5",
+        "🇸🇬SG_1|4.9MB/s",
+        "🇺🇸US_1|1.5MB/s",
+        "🇩🇰DK_1|2.1MB/s",
+        "🇩🇪DE_1|1002KB/s",
+        "🇫🇷FR_1|3.2MB/s",
+        "🇷🇺RU_1|3.4MB/s",
+        "🇱🇻LV_1|1.1MB/s",
+        "🇫🇷FR_2|4.3MB/s",
+        "🇳🇱NL_1|4.5MB/s",
+        "🇫🇷FR_3|4.0MB/s",
+        "🇺🇸US_3|3.3MB/s",
+        "🇺🇸US_4|2.3MB/s",
+        "🇸🇬SG_3|3.5MB/s",
+        "🇯🇵JP_2|4.0MB/s",
+        "🇳🇱NL_4|2.3MB/s",
+        "🇬🇧GB_2|4.4MB/s",
+        "🇮🇳IN_1|4.0MB/s",
+        "🇬🇧GB_7|1.8MB/s",
+        "🇭🇰HK_2|4.2MB/s",
+        "🇬🇧GB_9|2.6MB/s",
+        "🇯🇵JP_3|5.2MB/s",
+        "🇩🇪DE_4|4.5MB/s",
+        "🇩🇪DE_5|3.3MB/s",
+        "🇳🇱NL_8|1.1MB/s",
+        "🇭🇰HK_3|5.7MB/s",
+        "🇮🇳IN_2|4.8MB/s",
+        "🇮🇳IN_3|3.5MB/s",
+        "🇩🇪DE_6|1.3MB/s",
+        "🇭🇰HK_4|5.2MB/s",
+        "🇩🇪DE_7|3.5MB/s",
+        "🇺🇦UA_1|3.3MB/s",
+        "🇭🇰HK_5|2.4MB/s",
+        "🇺🇸US_24|3.1MB/s",
         "🇯🇵 免费-日本1-Ver.7",
         "🇯🇵 免费-日本2-Ver.8",
         "🇯🇵 免费-日本3-Ver.7",
@@ -1084,6 +1110,10 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇭🇰 香港",
       "outbounds": [
+        "🇭🇰HK_3|5.7MB/s",
+        "🇭🇰HK_4|5.2MB/s",
+        "🇭🇰HK_2|4.2MB/s",
+        "🇭🇰HK_5|2.4MB/s",
         "🇭🇰 HK",
         "🇭🇰 -HK-Hong Kong8",
         "🇭🇰HK-47.76.35.246-0787",
@@ -1134,6 +1164,10 @@
       "tag": "🇭🇰 香港",
       "outbounds": [
         "⚡ 自动选择 | 🇭🇰 香港",
+        "🇭🇰HK_3|5.7MB/s",
+        "🇭🇰HK_4|5.2MB/s",
+        "🇭🇰HK_2|4.2MB/s",
+        "🇭🇰HK_5|2.4MB/s",
         "🇭🇰 HK",
         "🇭🇰 -HK-Hong Kong8",
         "🇭🇰HK-47.76.35.246-0787",
@@ -1218,6 +1252,8 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇯🇵 日本",
       "outbounds": [
+        "🇯🇵JP_3|5.2MB/s",
+        "🇯🇵JP_2|4.0MB/s",
         "联通用日本2",
         "🇯🇵 日本 #1",
         "🇯🇵 日本 #1 #2",
@@ -1271,6 +1307,8 @@
       "tag": "🇯🇵 日本",
       "outbounds": [
         "⚡ 自动选择 | 🇯🇵 日本",
+        "🇯🇵JP_3|5.2MB/s",
+        "🇯🇵JP_2|4.0MB/s",
         "联通用日本2",
         "🇯🇵 日本 #1",
         "🇯🇵 日本 #1 #2",
@@ -1321,9 +1359,10 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇺🇸 美国",
       "outbounds": [
-        "🇺🇸US_2|1.6MB/s",
-        "🇺🇸US_3|1.6MB/s",
-        "🇺🇸US_1|1.2MB/s",
+        "🇺🇸US_3|3.3MB/s",
+        "🇺🇸US_24|3.1MB/s",
+        "🇺🇸US_4|2.3MB/s",
+        "🇺🇸US_1|1.5MB/s",
         "🇺🇸 US_speednode_0130",
         "🇺🇸 US_speednode_0132",
         "🇺🇸 US_speednode_0135",
@@ -1339,7 +1378,8 @@
         "🇺🇸 美国 #1 #3",
         "🇺🇸139909 | ⚡️Telegram =",
         "🇺🇸 美国 #1 #4",
-        "🇺🇸157171 | ⚡️Telegram =",
+        "dc-udp-🇺🇸 USA-Kansas City, MO",
+        "🇺🇸157664 | ⚡️Telegram =",
         "🇺🇸US-156.146.38.163-1702",
         "🇺🇸_US_美国",
         "🇺🇸US-38.75.136.135-0832",
@@ -1538,26 +1578,14 @@
         "🇺🇸US-167.88.61.175-1704",
         "🇺🇸US-38.75.136.21-0862",
         "🇺🇸 United States_None_ss_1011",
-        "🇺🇸 United States_Reston_ss_1027",
-        "🇺🇸 United States_None_ss_1028",
+        "🇺🇸 United States_San Jose_ss_1032",
+        "🇺🇸 United States_None_vmess_1035",
         "美国3|@ripaojiedian #2",
         "美国+CloudFlare节点",
         "美国+CloudFlare节点 #2",
         "美国+CloudFlare节点 #3",
         "美国+CloudFlare节点 #4",
-        "美国+CloudFlare节点 #5",
-        "美国+CloudFlare节点 #6",
-        "美国+CloudFlare节点 #7",
-        "美国+CloudFlare节点 #8",
-        "美国+CloudFlare节点 #9",
-        "美国+CloudFlare节点 #10",
-        "美国+CloudFlare节点 #11",
-        "美国+CloudFlare节点 #12",
-        "美国+CloudFlare节点 #13",
-        "美国+CloudFlare节点 #14",
-        "美国+CloudFlare节点 #15",
-        "美国+乔治亚洲亚特兰大Fastly节点",
-        "美国+CloudFlare节点 #16"
+        "美国+CloudFlare节点 #5"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -1567,9 +1595,10 @@
       "tag": "🇺🇸 美国",
       "outbounds": [
         "⚡ 自动选择 | 🇺🇸 美国",
-        "🇺🇸US_2|1.6MB/s",
-        "🇺🇸US_3|1.6MB/s",
-        "🇺🇸US_1|1.2MB/s",
+        "🇺🇸US_3|3.3MB/s",
+        "🇺🇸US_24|3.1MB/s",
+        "🇺🇸US_4|2.3MB/s",
+        "🇺🇸US_1|1.5MB/s",
         "🇺🇸 US_speednode_0130",
         "🇺🇸 US_speednode_0132",
         "🇺🇸 US_speednode_0135",
@@ -1585,7 +1614,8 @@
         "🇺🇸 美国 #1 #3",
         "🇺🇸139909 | ⚡️Telegram =",
         "🇺🇸 美国 #1 #4",
-        "🇺🇸157171 | ⚡️Telegram =",
+        "dc-udp-🇺🇸 USA-Kansas City, MO",
+        "🇺🇸157664 | ⚡️Telegram =",
         "🇺🇸US-156.146.38.163-1702",
         "🇺🇸_US_美国",
         "🇺🇸US-38.75.136.135-0832",
@@ -1784,32 +1814,22 @@
         "🇺🇸US-167.88.61.175-1704",
         "🇺🇸US-38.75.136.21-0862",
         "🇺🇸 United States_None_ss_1011",
-        "🇺🇸 United States_Reston_ss_1027",
-        "🇺🇸 United States_None_ss_1028",
+        "🇺🇸 United States_San Jose_ss_1032",
+        "🇺🇸 United States_None_vmess_1035",
         "美国3|@ripaojiedian #2",
         "美国+CloudFlare节点",
         "美国+CloudFlare节点 #2",
         "美国+CloudFlare节点 #3",
         "美国+CloudFlare节点 #4",
-        "美国+CloudFlare节点 #5",
-        "美国+CloudFlare节点 #6",
-        "美国+CloudFlare节点 #7",
-        "美国+CloudFlare节点 #8",
-        "美国+CloudFlare节点 #9",
-        "美国+CloudFlare节点 #10",
-        "美国+CloudFlare节点 #11",
-        "美国+CloudFlare节点 #12",
-        "美国+CloudFlare节点 #13",
-        "美国+CloudFlare节点 #14",
-        "美国+CloudFlare节点 #15",
-        "美国+乔治亚洲亚特兰大Fastly节点",
-        "美国+CloudFlare节点 #16"
+        "美国+CloudFlare节点 #5"
       ]
     },
     {
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇸🇬 新加坡",
       "outbounds": [
+        "🇸🇬SG_1|4.9MB/s",
+        "🇸🇬SG_3|3.5MB/s",
         "移动用新加坡1",
         "🇸🇬 新加坡 #1",
         "🇸🇬SG",
@@ -1845,8 +1865,7 @@
         "🇸🇬 -SG-Singapore4",
         "🇸🇬 -SG-Singapore2",
         "🇸🇬 Singapore_Singapore_trojan_1015",
-        "新加坡3|@ripaojiedian",
-        "新加坡+Amazon数据中心"
+        "新加坡3|@ripaojiedian"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -1856,6 +1875,8 @@
       "tag": "🇸🇬 新加坡",
       "outbounds": [
         "⚡ 自动选择 | 🇸🇬 新加坡",
+        "🇸🇬SG_1|4.9MB/s",
+        "🇸🇬SG_3|3.5MB/s",
         "移动用新加坡1",
         "🇸🇬 新加坡 #1",
         "🇸🇬SG",
@@ -1891,15 +1912,13 @@
         "🇸🇬 -SG-Singapore4",
         "🇸🇬 -SG-Singapore2",
         "🇸🇬 Singapore_Singapore_trojan_1015",
-        "新加坡3|@ripaojiedian",
-        "新加坡+Amazon数据中心"
+        "新加坡3|@ripaojiedian"
       ]
     },
     {
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇰🇷 韩国",
       "outbounds": [
-        "🇰🇷KR_1|3.8MB/s",
         "🇰🇷 韩国 #1",
         "🇰🇷+KR+韩国+44",
         "🇰🇷KR-152.67.218.38-0746",
@@ -1923,7 +1942,8 @@
         "-KR8",
         "韩国特殊|@ripaojiedian",
         "🇰🇷+KR+韩国+47",
-        "🇰🇷+KR+韩国+40"
+        "🇰🇷+KR+韩国+40",
+        "🇰🇷 South Korea_None_ss_1028"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -1933,7 +1953,6 @@
       "tag": "🇰🇷 韩国",
       "outbounds": [
         "⚡ 自动选择 | 🇰🇷 韩国",
-        "🇰🇷KR_1|3.8MB/s",
         "🇰🇷 韩国 #1",
         "🇰🇷+KR+韩国+44",
         "🇰🇷KR-152.67.218.38-0746",
@@ -1957,13 +1976,19 @@
         "-KR8",
         "韩国特殊|@ripaojiedian",
         "🇰🇷+KR+韩国+47",
-        "🇰🇷+KR+韩国+40"
+        "🇰🇷+KR+韩国+40",
+        "🇰🇷 South Korea_None_ss_1028"
       ]
     },
     {
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇩🇪 德国",
       "outbounds": [
+        "🇩🇪DE_4|4.5MB/s",
+        "🇩🇪DE_7|3.5MB/s",
+        "🇩🇪DE_5|3.3MB/s",
+        "🇩🇪DE_6|1.3MB/s",
+        "🇩🇪DE_1|1002KB/s",
         "🇩🇪 德国 #1",
         "🇩🇪 德国 #1 #2",
         "🇩🇪 德国 #1 #3",
@@ -1972,8 +1997,9 @@
         "🇩🇪 - DE - @FreeOnlineVPN",
         "🇩🇪 德国 #1 #6",
         "Telegram 🆔@cnetvpn 🇩🇪",
-        "🇩🇪157038 | ⚡️Telegram =",
         "🇩🇪All⁶ | @BigSmoke_Config",
+        "🇩🇪157660 | ⚡️Telegram =",
+        "🇩🇪All⁷ | @BigSmoke_Config",
         "🇩🇪DE-213.183.44.17-0813",
         "🇩🇪 Node-vmess-de-01.cloudlion.me",
         "🇩🇪DE-194.87.71.23-0109",
@@ -1992,6 +2018,11 @@
       "tag": "🇩🇪 德国",
       "outbounds": [
         "⚡ 自动选择 | 🇩🇪 德国",
+        "🇩🇪DE_4|4.5MB/s",
+        "🇩🇪DE_7|3.5MB/s",
+        "🇩🇪DE_5|3.3MB/s",
+        "🇩🇪DE_6|1.3MB/s",
+        "🇩🇪DE_1|1002KB/s",
         "🇩🇪 德国 #1",
         "🇩🇪 德国 #1 #2",
         "🇩🇪 德国 #1 #3",
@@ -2000,8 +2031,9 @@
         "🇩🇪 - DE - @FreeOnlineVPN",
         "🇩🇪 德国 #1 #6",
         "Telegram 🆔@cnetvpn 🇩🇪",
-        "🇩🇪157038 | ⚡️Telegram =",
         "🇩🇪All⁶ | @BigSmoke_Config",
+        "🇩🇪157660 | ⚡️Telegram =",
+        "🇩🇪All⁷ | @BigSmoke_Config",
         "🇩🇪DE-213.183.44.17-0813",
         "🇩🇪 Node-vmess-de-01.cloudlion.me",
         "🇩🇪DE-194.87.71.23-0109",
@@ -2017,8 +2049,11 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇬🇧 英国",
       "outbounds": [
-        "🇬🇧GB_1|1.0MB/s",
+        "🇬🇧GB_2|4.4MB/s",
+        "🇬🇧GB_9|2.6MB/s",
+        "🇬🇧GB_7|1.8MB/s",
         "🇬🇧 英国 #1",
+        "🇬🇧 ConfigV2RayNG",
         "🇬🇧+GB+英国+3",
         "🇬🇧 United Kingdom 01 @nodpai",
         "🇬🇧_GB_英国->🇰🇿_KZ_哈萨克斯坦",
@@ -2028,8 +2063,6 @@
         "🇬🇧GB-51.143.178.209-1238",
         "🇬🇧+GB+英国+68",
         "🇬🇧GB-77.72.5.150-0762",
-        "🇬🇧 United Kingdom_Gosport_ss_1031",
-        "🇬🇧 United Kingdom_Gosport_ss_1032",
         "英国+V2CROSS.COM"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
@@ -2040,8 +2073,11 @@
       "tag": "🇬🇧 英国",
       "outbounds": [
         "⚡ 自动选择 | 🇬🇧 英国",
-        "🇬🇧GB_1|1.0MB/s",
+        "🇬🇧GB_2|4.4MB/s",
+        "🇬🇧GB_9|2.6MB/s",
+        "🇬🇧GB_7|1.8MB/s",
         "🇬🇧 英国 #1",
+        "🇬🇧 ConfigV2RayNG",
         "🇬🇧+GB+英国+3",
         "🇬🇧 United Kingdom 01 @nodpai",
         "🇬🇧_GB_英国->🇰🇿_KZ_哈萨克斯坦",
@@ -2051,8 +2087,6 @@
         "🇬🇧GB-51.143.178.209-1238",
         "🇬🇧+GB+英国+68",
         "🇬🇧GB-77.72.5.150-0762",
-        "🇬🇧 United Kingdom_Gosport_ss_1031",
-        "🇬🇧 United Kingdom_Gosport_ss_1032",
         "英国+V2CROSS.COM"
       ]
     },
@@ -2060,10 +2094,13 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇫🇷 法国",
       "outbounds": [
+        "🇫🇷FR_2|4.3MB/s",
+        "🇫🇷FR_3|4.0MB/s",
+        "🇫🇷FR_1|3.2MB/s",
         "🇫🇷 法国 #1",
         "🇫🇷 法国 #1 #2",
         "🇫🇷 法国 #1 #3",
-        "🇫🇷157086 | ⚡️Telegram =",
+        "🇫🇷 ConfigV2RayNG",
         "🇫🇷FR-51.15.27.48-0708",
         "🇫🇷FR-52.47.174.48-1299",
         "🇫🇷FR-195.154.185.174-0719",
@@ -2073,7 +2110,10 @@
         "🇫🇷FR-195.154.169.198-0720",
         "法国+OVH机房SAS硬盘BGP主机 #2",
         "🇫🇷 法国 OVH SAS",
-        "法国+OVH机房SAS硬盘BGP主机 #3"
+        "法国+OVH机房SAS硬盘BGP主机 #3",
+        "🇫🇷 France_None_vmess_1031",
+        "🇫🇷 France_None_vmess_1033",
+        "🇫🇷 France_None_vmess_1036"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -2083,10 +2123,13 @@
       "tag": "🇫🇷 法国",
       "outbounds": [
         "⚡ 自动选择 | 🇫🇷 法国",
+        "🇫🇷FR_2|4.3MB/s",
+        "🇫🇷FR_3|4.0MB/s",
+        "🇫🇷FR_1|3.2MB/s",
         "🇫🇷 法国 #1",
         "🇫🇷 法国 #1 #2",
         "🇫🇷 法国 #1 #3",
-        "🇫🇷157086 | ⚡️Telegram =",
+        "🇫🇷 ConfigV2RayNG",
         "🇫🇷FR-51.15.27.48-0708",
         "🇫🇷FR-52.47.174.48-1299",
         "🇫🇷FR-195.154.185.174-0719",
@@ -2096,17 +2139,23 @@
         "🇫🇷FR-195.154.169.198-0720",
         "法国+OVH机房SAS硬盘BGP主机 #2",
         "🇫🇷 法国 OVH SAS",
-        "法国+OVH机房SAS硬盘BGP主机 #3"
+        "法国+OVH机房SAS硬盘BGP主机 #3",
+        "🇫🇷 France_None_vmess_1031",
+        "🇫🇷 France_None_vmess_1033",
+        "🇫🇷 France_None_vmess_1036"
       ]
     },
     {
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇷🇺 俄罗斯",
       "outbounds": [
+        "🇷🇺RU_1|3.4MB/s",
         "Telegram 🆔@cnetvpn 🇷🇺",
         "dc-udp-🇧🇪 Belgium-Brussels",
         "🇷🇺 github.com/freefq - 俄罗斯  1",
-        "🇷🇺+RU+俄罗斯联邦+11"
+        "🇷🇺+RU+俄罗斯联邦+11",
+        "🇷🇺 俄罗斯 V2CROSS.COM",
+        "俄罗斯+V2CROSS.COM"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -2116,10 +2165,13 @@
       "tag": "🇷🇺 俄罗斯",
       "outbounds": [
         "⚡ 自动选择 | 🇷🇺 俄罗斯",
+        "🇷🇺RU_1|3.4MB/s",
         "Telegram 🆔@cnetvpn 🇷🇺",
         "dc-udp-🇧🇪 Belgium-Brussels",
         "🇷🇺 github.com/freefq - 俄罗斯  1",
-        "🇷🇺+RU+俄罗斯联邦+11"
+        "🇷🇺+RU+俄罗斯联邦+11",
+        "🇷🇺 俄罗斯 V2CROSS.COM",
+        "俄罗斯+V2CROSS.COM"
       ]
     },
     {
@@ -2130,7 +2182,9 @@
         "🇨🇦_CA_加拿大",
         "🇨🇦_CA_加拿大 #2",
         "🇨🇦_CA_加拿大 #3",
-        "🇨🇦 Canada_Montreal_ss_1026"
+        "🇨🇦 Canada_Toronto_ss_1029",
+        "🇨🇦 Canada_Toronto_ss_1030",
+        "🇨🇦 Canada_Montreal_ss_1034"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -2144,19 +2198,21 @@
         "🇨🇦_CA_加拿大",
         "🇨🇦_CA_加拿大 #2",
         "🇨🇦_CA_加拿大 #3",
-        "🇨🇦 Canada_Montreal_ss_1026"
+        "🇨🇦 Canada_Toronto_ss_1029",
+        "🇨🇦 Canada_Toronto_ss_1030",
+        "🇨🇦 Canada_Montreal_ss_1034"
       ]
     },
     {
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇳🇱 荷兰",
       "outbounds": [
+        "🇳🇱NL_1|4.5MB/s",
+        "🇳🇱NL_4|2.3MB/s",
+        "🇳🇱NL_8|1.1MB/s",
         "🇳🇱 荷兰 #1",
-        "🇳🇱157041 | ⚡️Telegram =",
         "🇳🇱 - NL - @FreeOnlineVPN",
-        "🇳🇱157093 | ⚡️Telegram =",
         "dc-udp-🇳🇱 Netherlands-Amsterdam",
-        "🇳🇱157168 | ⚡️Telegram =",
         "🇳🇱NL-109.201.152.181-0711",
         "🇳🇱 荷兰 V2CROSS.COM"
       ],
@@ -2168,12 +2224,12 @@
       "tag": "🇳🇱 荷兰",
       "outbounds": [
         "⚡ 自动选择 | 🇳🇱 荷兰",
+        "🇳🇱NL_1|4.5MB/s",
+        "🇳🇱NL_4|2.3MB/s",
+        "🇳🇱NL_8|1.1MB/s",
         "🇳🇱 荷兰 #1",
-        "🇳🇱157041 | ⚡️Telegram =",
         "🇳🇱 - NL - @FreeOnlineVPN",
-        "🇳🇱157093 | ⚡️Telegram =",
         "dc-udp-🇳🇱 Netherlands-Amsterdam",
-        "🇳🇱157168 | ⚡️Telegram =",
         "🇳🇱NL-109.201.152.181-0711",
         "🇳🇱 荷兰 V2CROSS.COM"
       ]
@@ -2182,9 +2238,7 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇨🇭 瑞士",
       "outbounds": [
-        "🇨🇭CH_1|1.0MB/s",
         "🇨🇭 瑞士 #1",
-        "🇨🇭157170 | ⚡️Telegram =",
         "🇨🇭CH-156.146.62.160-0728"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
@@ -2195,9 +2249,7 @@
       "tag": "🇨🇭 瑞士",
       "outbounds": [
         "⚡ 自动选择 | 🇨🇭 瑞士",
-        "🇨🇭CH_1|1.0MB/s",
         "🇨🇭 瑞士 #1",
-        "🇨🇭157170 | ⚡️Telegram =",
         "🇨🇭CH-156.146.62.160-0728"
       ]
     },
@@ -2205,6 +2257,9 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇮🇳 印度",
       "outbounds": [
+        "🇮🇳IN_2|4.8MB/s",
+        "🇮🇳IN_1|4.0MB/s",
+        "🇮🇳IN_3|3.5MB/s",
         "🇮🇳 github.com/freefq - 印度  2",
         "🇮🇳 github.com/freefq - 印度  10",
         "🇮🇳 github.com/freefq - 印度  3"
@@ -2217,6 +2272,9 @@
       "tag": "🇮🇳 印度",
       "outbounds": [
         "⚡ 自动选择 | 🇮🇳 印度",
+        "🇮🇳IN_2|4.8MB/s",
+        "🇮🇳IN_1|4.0MB/s",
+        "🇮🇳IN_3|3.5MB/s",
         "🇮🇳 github.com/freefq - 印度  2",
         "🇮🇳 github.com/freefq - 印度  10",
         "🇮🇳 github.com/freefq - 印度  3"
@@ -2230,6 +2288,7 @@
         "🇹🇷 土耳其 #1 #2",
         "🇹🇷 土耳其 #1 #3",
         "🇹🇷 土耳其 #1 #4",
+        "dc-udp-🇹🇷 Turkey-Istanbul",
         "🇹🇷dc-udp- Turkey-Istanbul",
         "🇹🇷TR-45.89.52.66-0806",
         "🇹🇷TR-45.89.52.66-0812",
@@ -2251,6 +2310,7 @@
         "🇹🇷 土耳其 #1 #2",
         "🇹🇷 土耳其 #1 #3",
         "🇹🇷 土耳其 #1 #4",
+        "dc-udp-🇹🇷 Turkey-Istanbul",
         "🇹🇷dc-udp- Turkey-Istanbul",
         "🇹🇷TR-45.89.52.66-0806",
         "🇹🇷TR-45.89.52.66-0812",
@@ -2278,6 +2338,23 @@
         "⚡ 自动选择 | 🇦🇺 澳大利亚",
         "🇦🇺 澳大利亚 #1",
         "🇦🇺澳大利亚 02"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "⚡ 自动选择 | 🇵🇭 菲律宾",
+      "outbounds": [
+        "dc-udp-🇵🇭 Philippines-Manila"
+      ],
+      "url": "http://cp.cloudflare.com/generate_204",
+      "interval": "1m"
+    },
+    {
+      "type": "selector",
+      "tag": "🇵🇭 菲律宾",
+      "outbounds": [
+        "⚡ 自动选择 | 🇵🇭 菲律宾",
+        "dc-udp-🇵🇭 Philippines-Manila"
       ]
     },
     {
@@ -2345,6 +2422,7 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇪🇸 西班牙",
       "outbounds": [
+        "🇪🇸 ConfigV2RayNG",
         "🇪🇸ES-5.188.181.201-0768",
         "🇪🇸ES-5.188.181.201-0794",
         "🇪🇸ES-5.188.181.201-0769",
@@ -2361,6 +2439,7 @@
       "tag": "🇪🇸 西班牙",
       "outbounds": [
         "⚡ 自动选择 | 🇪🇸 西班牙",
+        "🇪🇸 ConfigV2RayNG",
         "🇪🇸ES-5.188.181.201-0768",
         "🇪🇸ES-5.188.181.201-0794",
         "🇪🇸ES-5.188.181.201-0769",
@@ -2386,7 +2465,9 @@
         "🇨🇳 China_None_ss_1019",
         "🇨🇳 China_None_ss_1021",
         "🇨🇳 China_None_ss_1022",
-        "🇨🇳 China_None_ss_1024"
+        "🇨🇳 China_None_ss_1024",
+        "🇨🇳 China_None_ss_1026",
+        "🇨🇳 China_Chengdu_vmess_1027"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -2408,7 +2489,9 @@
         "🇨🇳 China_None_ss_1019",
         "🇨🇳 China_None_ss_1021",
         "🇨🇳 China_None_ss_1022",
-        "🇨🇳 China_None_ss_1024"
+        "🇨🇳 China_None_ss_1024",
+        "🇨🇳 China_None_ss_1026",
+        "🇨🇳 China_Chengdu_vmess_1027"
       ]
     },
     {
@@ -2438,18 +2521,10 @@
         "🇫🇮 芬兰 #1 #2",
         "🇫🇮 芬兰 #1 #3",
         "🇫🇮 芬兰 #1 #4",
-        "🇫🇮157081 | ⚡️Telegram =",
-        "🇫🇮157058 | ⚡️Telegram =",
-        "🇫🇮157059 | ⚡️Telegram =",
-        "🇫🇮157057 | ⚡️Telegram =",
-        "🇫🇮157056 | ⚡️Telegram =",
-        "🇫🇮157055 | ⚡️Telegram =",
-        "🇫🇮157073 | ⚡️Telegram =",
-        "🇫🇮157067 | ⚡️Telegram =",
-        "🇫🇮157064 | ⚡️Telegram =",
-        "🇫🇮157066 | ⚡️Telegram =",
-        "🇫🇮157065 | ⚡️Telegram =",
+        "🇫🇮 ConfigV2RayNG",
+        "🇫🇮 ConfigV2RayNG #2",
         "@KAFING_2",
+        "@GozargahAzad|🇫🇮",
         "@v2ray313 کانالمون  🇫🇮",
         "🇫🇮FI-37.143.129.230-6000"
       ],
@@ -2465,18 +2540,10 @@
         "🇫🇮 芬兰 #1 #2",
         "🇫🇮 芬兰 #1 #3",
         "🇫🇮 芬兰 #1 #4",
-        "🇫🇮157081 | ⚡️Telegram =",
-        "🇫🇮157058 | ⚡️Telegram =",
-        "🇫🇮157059 | ⚡️Telegram =",
-        "🇫🇮157057 | ⚡️Telegram =",
-        "🇫🇮157056 | ⚡️Telegram =",
-        "🇫🇮157055 | ⚡️Telegram =",
-        "🇫🇮157073 | ⚡️Telegram =",
-        "🇫🇮157067 | ⚡️Telegram =",
-        "🇫🇮157064 | ⚡️Telegram =",
-        "🇫🇮157066 | ⚡️Telegram =",
-        "🇫🇮157065 | ⚡️Telegram =",
+        "🇫🇮 ConfigV2RayNG",
+        "🇫🇮 ConfigV2RayNG #2",
         "@KAFING_2",
+        "@GozargahAzad|🇫🇮",
         "@v2ray313 کانالمون  🇫🇮",
         "🇫🇮FI-37.143.129.230-6000"
       ]
@@ -2504,7 +2571,6 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇸🇪 瑞典",
       "outbounds": [
-        "🇸🇪157089 | ⚡️Telegram =",
         "瑞典+V2CROSS.COM",
         "🇸🇪SE-121.127.46.147-0732"
       ],
@@ -2516,7 +2582,6 @@
       "tag": "🇸🇪 瑞典",
       "outbounds": [
         "⚡ 自动选择 | 🇸🇪 瑞典",
-        "🇸🇪157089 | ⚡️Telegram =",
         "瑞典+V2CROSS.COM",
         "🇸🇪SE-121.127.46.147-0732"
       ]
@@ -2607,6 +2672,7 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇺🇦 乌克兰",
       "outbounds": [
+        "🇺🇦UA_1|3.3MB/s",
         "🇺🇦UA-5.188.6.8-0740",
         "🇺🇦+UA+乌克兰+75"
       ],
@@ -2618,6 +2684,7 @@
       "tag": "🇺🇦 乌克兰",
       "outbounds": [
         "⚡ 自动选择 | 🇺🇦 乌克兰",
+        "🇺🇦UA_1|3.3MB/s",
         "🇺🇦UA-5.188.6.8-0740",
         "🇺🇦+UA+乌克兰+75"
       ]
@@ -2641,6 +2708,40 @@
     },
     {
       "type": "urltest",
+      "tag": "⚡ 自动选择 | 🇩🇰 丹麦",
+      "outbounds": [
+        "🇩🇰DK_1|2.1MB/s"
+      ],
+      "url": "http://cp.cloudflare.com/generate_204",
+      "interval": "1m"
+    },
+    {
+      "type": "selector",
+      "tag": "🇩🇰 丹麦",
+      "outbounds": [
+        "⚡ 自动选择 | 🇩🇰 丹麦",
+        "🇩🇰DK_1|2.1MB/s"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "⚡ 自动选择 | 🇵🇹 葡萄牙",
+      "outbounds": [
+        "dc-udp-🇵🇹 Portugal-Lisbon"
+      ],
+      "url": "http://cp.cloudflare.com/generate_204",
+      "interval": "1m"
+    },
+    {
+      "type": "selector",
+      "tag": "🇵🇹 葡萄牙",
+      "outbounds": [
+        "⚡ 自动选择 | 🇵🇹 葡萄牙",
+        "dc-udp-🇵🇹 Portugal-Lisbon"
+      ]
+    },
+    {
+      "type": "urltest",
       "tag": "⚡ 自动选择 | 🇧🇬 保加利亚",
       "outbounds": [
         "🇧🇬dc-udp- Bulgaria-Sofia"
@@ -2660,6 +2761,7 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🇿🇦 南非",
       "outbounds": [
+        "dc-udp-🇿🇦 South Africa-Johannesburg",
         "🇿🇦ZA-41.203.4.34-0751"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
@@ -2670,6 +2772,7 @@
       "tag": "🇿🇦 南非",
       "outbounds": [
         "⚡ 自动选择 | 🇿🇦 南非",
+        "dc-udp-🇿🇦 South Africa-Johannesburg",
         "🇿🇦ZA-41.203.4.34-0751"
       ]
     },
@@ -2677,6 +2780,7 @@
       "type": "urltest",
       "tag": "⚡ 自动选择 | 🌍 其他地区",
       "outbounds": [
+        "🇱🇻LV_1|1.1MB/s",
         "SCP2",
         "SCP3",
         "SCP1",
@@ -2685,27 +2789,32 @@
         "@V2ray_Alpha🌎 2",
         "@V2ray_Alpha🌎 3",
         "Node-hysteria2-giftcard.gateway-stream.com #2",
-        "@Begoo_VPN ²⁹⁰",
+        "🪆91@oneclickvpnkeys",
         "@FarazV2ray",
-        "🚘19@oneclickvpnkeys",
+        "🪆22@oneclickvpnkeys",
+        "1🪆@oneclickvpnkeys",
+        "🪆77@oneclickvpnkeys",
+        "🪆27@oneclickvpnkeys",
         "🩵+@Azarakhsh_Proxy+🩷",
         "Node-hysteria2-31.76.27.23",
         "Node-hysteria2-77.110.96.201",
         "Node-hysteria2-179.61.251.253",
         "Node-hysteria2-de1.sferavpn.pro",
+        "@v2ray313 کانالمون 🫪",
+        "@tootffarangi🍓-14",
+        "@tootffarangi🍓-12",
+        "@tootffarangi🍓-13",
         "dc-udp-🇦🇱 Albania-Tirana",
         "@B2Hub",
         "@configprxy",
         "@B2Hub #2",
         "@V2ray_Alpha🌇 3",
         "@v2ray313 کانالمون 🤍",
-        "@meliproxyy",
         "@icv2ray",
         "🪆44@oneclickvpnkeys",
-        "🚘94@oneclickvpnkeys",
         "🇱🇻hysteria",
-        "🚘36@oneclickvpnkeys",
         "@Azaranv2ray",
+        "🪆64@oneclickvpnkeys",
         "dc-udp-🇦🇱 Albania-Tirana #2",
         "_1",
         "🏁RELAY-104.21.7.162-3827",
@@ -2824,8 +2933,6 @@
         "Unknown_vmess_108",
         "Unknown_vmess_109",
         "Unknown_vmess_1010",
-        "None_None_trojan_1029",
-        "None_None_trojan_1030",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -2868,7 +2975,9 @@
         "Github搜索TrojanLinks #40",
         "Github搜索TrojanLinks #41",
         "Github搜索TrojanLinks #42",
-        "Github搜索TrojanLinks #43"
+        "Github搜索TrojanLinks #43",
+        "广东省广州市+电信IDC机房(校场西)",
+        "伊朗+V2CROSS.COM"
       ],
       "url": "http://cp.cloudflare.com/generate_204",
       "interval": "1m"
@@ -2878,6 +2987,7 @@
       "tag": "🌍 其他地区",
       "outbounds": [
         "⚡ 自动选择 | 🌍 其他地区",
+        "🇱🇻LV_1|1.1MB/s",
         "SCP2",
         "SCP3",
         "SCP1",
@@ -2886,27 +2996,32 @@
         "@V2ray_Alpha🌎 2",
         "@V2ray_Alpha🌎 3",
         "Node-hysteria2-giftcard.gateway-stream.com #2",
-        "@Begoo_VPN ²⁹⁰",
+        "🪆91@oneclickvpnkeys",
         "@FarazV2ray",
-        "🚘19@oneclickvpnkeys",
+        "🪆22@oneclickvpnkeys",
+        "1🪆@oneclickvpnkeys",
+        "🪆77@oneclickvpnkeys",
+        "🪆27@oneclickvpnkeys",
         "🩵+@Azarakhsh_Proxy+🩷",
         "Node-hysteria2-31.76.27.23",
         "Node-hysteria2-77.110.96.201",
         "Node-hysteria2-179.61.251.253",
         "Node-hysteria2-de1.sferavpn.pro",
+        "@v2ray313 کانالمون 🫪",
+        "@tootffarangi🍓-14",
+        "@tootffarangi🍓-12",
+        "@tootffarangi🍓-13",
         "dc-udp-🇦🇱 Albania-Tirana",
         "@B2Hub",
         "@configprxy",
         "@B2Hub #2",
         "@V2ray_Alpha🌇 3",
         "@v2ray313 کانالمون 🤍",
-        "@meliproxyy",
         "@icv2ray",
         "🪆44@oneclickvpnkeys",
-        "🚘94@oneclickvpnkeys",
         "🇱🇻hysteria",
-        "🚘36@oneclickvpnkeys",
         "@Azaranv2ray",
+        "🪆64@oneclickvpnkeys",
         "dc-udp-🇦🇱 Albania-Tirana #2",
         "_1",
         "🏁RELAY-104.21.7.162-3827",
@@ -3025,8 +3140,6 @@
         "Unknown_vmess_108",
         "Unknown_vmess_109",
         "Unknown_vmess_1010",
-        "None_None_trojan_1029",
-        "None_None_trojan_1030",
         "Github搜索TrojanLinks",
         "Github搜索TrojanLinks #2",
         "Github搜索TrojanLinks #3",
@@ -3069,7 +3182,9 @@
         "Github搜索TrojanLinks #40",
         "Github搜索TrojanLinks #41",
         "Github搜索TrojanLinks #42",
-        "Github搜索TrojanLinks #43"
+        "Github搜索TrojanLinks #43",
+        "广东省广州市+电信IDC机房(校场西)",
+        "伊朗+V2CROSS.COM"
       ]
     },
     {
@@ -10042,33 +10157,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇪157089 | ⚡️Telegram =",
-      "server": "se.allgoodvpn.su",
-      "server_port": 8443,
-      "password": "0db4a6c709ca4a46153af8a401b7138a",
-      "tls": {
-        "enabled": true,
-        "server_name": "se.allgoodvpn.su"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮157081 | ⚡️Telegram =",
-      "server": "giftcard.gateway-stream.com",
-      "server_port": 52005,
-      "password": "1m1xfvpaa5ek4omq",
-      "obfs": {
-        "type": "salamander",
-        "password": "fuw2k1ddrouwxr3u"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "giftcard.gateway-stream.com"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮157058 | ⚡️Telegram =",
+      "tag": "🇪🇸 ConfigV2RayNG",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52026,
       "password": "1m1xfvpaa5ek4omq",
@@ -10083,7 +10172,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮157059 | ⚡️Telegram =",
+      "tag": "🇫🇮 ConfigV2RayNG",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52029,
       "password": "1m1xfvpaa5ek4omq",
@@ -10098,7 +10187,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮157057 | ⚡️Telegram =",
+      "tag": "🇫🇷 ConfigV2RayNG",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52030,
       "password": "1m1xfvpaa5ek4omq",
@@ -10113,7 +10202,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮157056 | ⚡️Telegram =",
+      "tag": "🇬🇧 ConfigV2RayNG",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52033,
       "password": "1m1xfvpaa5ek4omq",
@@ -10128,7 +10217,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮157055 | ⚡️Telegram =",
+      "tag": "🇫🇮 ConfigV2RayNG #2",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52036,
       "password": "1m1xfvpaa5ek4omq",
@@ -10143,7 +10232,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮157073 | ⚡️Telegram =",
+      "tag": "dc-udp-🇵🇭 Philippines-Manila",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52055,
       "password": "1m1xfvpaa5ek4omq",
@@ -10158,7 +10247,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮157067 | ⚡️Telegram =",
+      "tag": "dc-udp-🇵🇹 Portugal-Lisbon",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52057,
       "password": "1m1xfvpaa5ek4omq",
@@ -10173,7 +10262,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮157064 | ⚡️Telegram =",
+      "tag": "dc-udp-🇹🇷 Turkey-Istanbul",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52067,
       "password": "1m1xfvpaa5ek4omq",
@@ -10188,7 +10277,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮157066 | ⚡️Telegram =",
+      "tag": "dc-udp-🇺🇸 USA-Kansas City, MO",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52078,
       "password": "1m1xfvpaa5ek4omq",
@@ -10203,7 +10292,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮157065 | ⚡️Telegram =",
+      "tag": "dc-udp-🇿🇦 South Africa-Johannesburg",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52089,
       "password": "1m1xfvpaa5ek4omq",
@@ -10278,7 +10367,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "@Begoo_VPN ²⁹⁰",
+      "tag": "🪆91@oneclickvpnkeys",
       "server": "91.142.73.159",
       "server_port": 36758,
       "password": "5bcodmhjtyfyyrqh",
@@ -10338,7 +10427,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪157038 | ⚡️Telegram =",
+      "tag": "🪆22@oneclickvpnkeys",
       "server": "162.249.124.112",
       "server_port": 8443,
       "password": "9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z",
@@ -10349,9 +10438,9 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🚘19@oneclickvpnkeys",
-      "server": "162.249.124.118",
-      "server_port": 8443,
+      "tag": "1🪆@oneclickvpnkeys",
+      "server": "162.249.124.120",
+      "server_port": 8080,
       "password": "9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z",
       "tls": {
         "enabled": true,
@@ -10371,18 +10460,18 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇷157086 | ⚡️Telegram =",
-      "server": "51.44.162.6",
+      "tag": "🪆77@oneclickvpnkeys",
+      "server": "31.76.30.97",
       "server_port": 443,
-      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+      "password": "C91FbOXGY9XRymrcEebtax9R1Nj62UizoT8S6kCb7xwey8IE",
       "tls": {
         "enabled": true,
-        "server_name": "vpn-fr-001.fastervpn.world"
+        "server_name": "fast.wwwinternetvideo.click"
       }
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱157041 | ⚡️Telegram =",
+      "tag": "🪆27@oneclickvpnkeys",
       "server": "hysteria.udpgw.com",
       "server_port": 8443,
       "password": "HowdyHysteria2023w0W",
@@ -10408,6 +10497,21 @@
       "tls": {
         "enabled": true,
         "server_name": "179.61.132.96"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇩🇪157660 | ⚡️Telegram =",
+      "server": "hy2-new.aspidnet.xyz",
+      "server_port": 443,
+      "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
+      "obfs": {
+        "type": "salamander",
+        "password": "c1b4086fea89914496c7e10967a419216566"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "hy2-new.aspidnet.xyz"
       }
     },
     {
@@ -10457,6 +10561,17 @@
     },
     {
       "type": "hysteria2",
+      "tag": "🇺🇸157664 | ⚡️Telegram =",
+      "server": "82.38.60.15",
+      "server_port": 8443,
+      "password": "VB92_Ka9qwef143K_L23K1hz3_bF_Hz62uT_Bn1_sC",
+      "tls": {
+        "enabled": true,
+        "server_name": "hopp-us.yyuyy.com"
+      }
+    },
+    {
+      "type": "hysteria2",
       "tag": "🇳🇱 - NL - @FreeOnlineVPN",
       "server": "206.71.158.37",
       "server_port": 35000,
@@ -10498,6 +10613,80 @@
       "tls": {
         "enabled": true,
         "server_name": "de1.sferavpn.pro"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@GozargahAzad|🇫🇮",
+      "server": "giftcard.gateway-stream.com",
+      "server_port": 52021,
+      "password": "clz08qwil91241w7",
+      "obfs": {
+        "type": "salamander",
+        "password": "fuw2k1ddrouwxr3u"
+      },
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@v2ray313 کانالمون 🫪",
+      "server": "giftcard.gateway-stream.com",
+      "server_port": 52021,
+      "password": "clz08qwil91241w7",
+      "obfs": {
+        "type": "salamander",
+        "password": "fuw2k1ddrouwxr3u"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "giftcard.gateway-stream.com"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@tootffarangi🍓-14",
+      "server": "giftcard.gateway-stream.com",
+      "server_port": 52029,
+      "password": "clz08qwil91241w7",
+      "obfs": {
+        "type": "salamander",
+        "password": "fuw2k1ddrouwxr3u"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "giftcard.gateway-stream.com"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@tootffarangi🍓-12",
+      "server": "giftcard.gateway-stream.com",
+      "server_port": 52030,
+      "password": "clz08qwil91241w7",
+      "obfs": {
+        "type": "salamander",
+        "password": "fuw2k1ddrouwxr3u"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "giftcard.gateway-stream.com"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "@tootffarangi🍓-13",
+      "server": "giftcard.gateway-stream.com",
+      "server_port": 52067,
+      "password": "clz08qwil91241w7",
+      "obfs": {
+        "type": "salamander",
+        "password": "fuw2k1ddrouwxr3u"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "giftcard.gateway-stream.com"
       }
     },
     {
@@ -10622,17 +10811,6 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱157093 | ⚡️Telegram =",
-      "server": "144.31.135.204",
-      "server_port": 1935,
-      "password": "hysteria2_fastlane_eoa3x0r8k",
-      "tls": {
-        "enabled": true,
-        "server_name": "nl2.h.fastlanehosting.ru"
-      }
-    },
-    {
-      "type": "hysteria2",
       "tag": "dc-udp-🇦🇷 Argentina-Buenos Aires #2",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52001,
@@ -10685,7 +10863,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "@meliproxyy",
+      "tag": "🇩🇪All⁷ | @BigSmoke_Config",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52029,
       "password": "jbmuokj7p4kg4h4s",
@@ -10756,17 +10934,6 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱157168 | ⚡️Telegram =",
-      "server": "93.183.89.56",
-      "server_port": 1935,
-      "password": "netherlands_3_hysteria2_fastlane_ljut26b2y",
-      "tls": {
-        "enabled": true,
-        "server_name": "nl7.h.fastlanehosting.ru"
-      }
-    },
-    {
-      "type": "hysteria2",
       "tag": "🪆44@oneclickvpnkeys",
       "server": "130.49.161.70",
       "server_port": 443,
@@ -10778,17 +10945,6 @@
       "tls": {
         "enabled": true,
         "server_name": "hy2.aspidnet.xyz"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🚘94@oneclickvpnkeys",
-      "server": "vpn-de-001.fastervpn.world",
-      "server_port": 443,
-      "password": "qQe1z5kU8kN6SlKnDt9Ru3Qp",
-      "tls": {
-        "enabled": true,
-        "server_name": "vpn-de-001.fastervpn.world"
       }
     },
     {
@@ -10808,28 +10964,6 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🚘36@oneclickvpnkeys",
-      "server": "46.229.243.133",
-      "server_port": 8443,
-      "password": "s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z",
-      "tls": {
-        "enabled": true,
-        "server_name": "grape-turbo-fr.roxa.org"
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇨🇭157170 | ⚡️Telegram =",
-      "server": "45.140.205.58",
-      "server_port": 1935,
-      "password": "switzerland_hysteria2_fastlane_8r4fgh8f1",
-      "tls": {
-        "enabled": true,
-        "server_name": "ch3.h.fastlanehosting.ru"
-      }
-    },
-    {
-      "type": "hysteria2",
       "tag": "@Azaranv2ray",
       "server": "assets.gateway-stream.com",
       "server_port": 52026,
@@ -10845,13 +10979,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸157171 | ⚡️Telegram =",
-      "server": "92.118.112.132",
-      "server_port": 1935,
-      "password": "usa_2_hysteria2_fastlane_7xd97qbds",
+      "tag": "🪆64@oneclickvpnkeys",
+      "server": "de.1.22.washing.help",
+      "server_port": 443,
+      "password": "umnDU7jgFYUjpVjVM2sW9HL0rRYLJNgzVwRu2HzWEhyZKkRx",
       "tls": {
         "enabled": true,
-        "server_name": "us3.h.fastlanehosting.ru"
+        "server_name": "germany1.h2corp.local"
       }
     },
     {
@@ -11119,45 +11253,32 @@
     },
     {
       "type": "shadowsocks",
-      "tag": "🇨🇦 Canada_Montreal_ss_1026",
-      "server": "35.182.250.193",
-      "server_port": 443,
+      "tag": "🇨🇳 China_None_ss_1026",
+      "server": "121.46.230.233",
+      "server_port": 65443,
       "method": "aes-256-cfb",
-      "password": "amazonskr05"
+      "password": "7eadc6dbe2ae"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇨🇳 China_Chengdu_vmess_1027",
+      "server": "v45.hdacd.com",
+      "server_port": 30845,
+      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
+      "security": "auto",
+      "alter_id": 2
     },
     {
       "type": "shadowsocks",
-      "tag": "🇺🇸 United States_Reston_ss_1027",
-      "server": "15.204.247.244",
-      "server_port": 4444,
-      "method": "aes-256-gcm",
-      "password": "pKEW8JPByTVTLtM"
+      "tag": "🇰🇷 South Korea_None_ss_1028",
+      "server": "27.255.82.134",
+      "server_port": 2078,
+      "method": "aes-256-cfb",
+      "password": "qwerREWQ@@"
     },
     {
       "type": "shadowsocks",
-      "tag": "🇺🇸 United States_None_ss_1028",
-      "server": "de-server-1.zelnora.ir",
-      "server_port": 1080,
-      "method": "chacha20-ietf-poly1305",
-      "password": "OhGXJG4nEqTN62cDDcD_8_CddrpTHn0u"
-    },
-    {
-      "type": "trojan",
-      "tag": "None_None_trojan_1029",
-      "server": "198.41.223.96",
-      "server_port": 443,
-      "password": "humanity"
-    },
-    {
-      "type": "trojan",
-      "tag": "None_None_trojan_1030",
-      "server": "104.18.152.161",
-      "server_port": 443,
-      "password": "humanity"
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "🇬🇧 United Kingdom_Gosport_ss_1031",
+      "tag": "🇨🇦 Canada_Toronto_ss_1029",
       "server": "cn08.somethingstranges.com",
       "server_port": 8211,
       "method": "chacha20-ietf",
@@ -11165,11 +11286,88 @@
     },
     {
       "type": "shadowsocks",
-      "tag": "🇬🇧 United Kingdom_Gosport_ss_1032",
+      "tag": "🇨🇦 Canada_Toronto_ss_1030",
       "server": "cn07.somethingstranges.com",
       "server_port": 8206,
       "method": "chacha20-ietf",
       "password": "passwd"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇷 France_None_vmess_1031",
+      "server": "m.cnmjin.net",
+      "server_port": 16632,
+      "uuid": "d7e9f3c3-57c6-457e-b10f-df27907ef081",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "18a598fcab3909734096beb9fe7bc5b4.mobgslb.tbcache.com"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇺🇸 United States_San Jose_ss_1032",
+      "server": "3ce8ee8.hb.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇷 France_None_vmess_1033",
+      "server": "m.cnmjin.net",
+      "server_port": 16632,
+      "uuid": "2498a366-dd3c-4f0b-832c-f2df12f7ee27",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "791f9b5b1318471268a2dc21098376cc.mobgslb.tbcache.com"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇨🇦 Canada_Montreal_ss_1034",
+      "server": "35.182.226.121",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸 United States_None_vmess_1035",
+      "server": "jp.6807251.xyz",
+      "server_port": 34228,
+      "uuid": "7aa3a024-e333-4b63-99a2-3db9d3b2054e",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "a.189.cn"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇷 France_None_vmess_1036",
+      "server": "planb.mojcn.com.linuxlh.xin",
+      "server_port": 16617,
+      "uuid": "ca68cf56-7c3c-4127-816e-7442de9176b7",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "7ddc7ef7c7f198c5e7dbed9634157ca7.mobgslb.tbcache.com"
+        }
+      }
     },
     {
       "type": "trojan",
@@ -11951,7 +12149,7 @@
     {
       "type": "trojan",
       "tag": "美国+CloudFlare节点",
-      "server": "104.18.12.149",
+      "server": "www.speedtest.org",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -11960,9 +12158,30 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "英国+V2CROSS.COM",
+      "server": "31.76.69.40",
+      "server_port": 443,
+      "uuid": "423b1d79-08c4-403f-9d5e-c541f791b55f",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "eu-central.cendora.ru",
+        "reality": {
+          "enabled": true,
+          "public_key": "b-Cm9hX-3UHsS1L_lnUB6AMjuKhlN1IDdBbZ506itjI",
+          "short_id": "00bca5982f82d083"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
       "type": "trojan",
       "tag": "美国+CloudFlare节点 #2",
-      "server": "104.16.174.34",
+      "server": "104.20.6.134",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -11973,7 +12192,7 @@
     {
       "type": "trojan",
       "tag": "美国+CloudFlare节点 #3",
-      "server": "104.18.152.179",
+      "server": "172.67.221.242",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -11984,80 +12203,6 @@
     {
       "type": "trojan",
       "tag": "美国+CloudFlare节点 #4",
-      "server": "www.speedtest.org",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #5",
-      "server": "172.67.149.60",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #6",
-      "server": "104.18.152.208",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "英国+V2CROSS.COM",
-      "server": "176.97.66.175",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "shadowsocks",
-      "tag": "新加坡+Amazon数据中心",
-      "server": "m99cygua.4ya21vwd0lw6ngzk.awstrack.vip",
-      "server_port": 16481,
-      "method": "2022-blake3-aes-128-gcm",
-      "password": "MWM4MmJmYzdiNTZjNTUzMA==:MjA3ZmY5MWEtOWE3MC00Mg=="
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #7",
-      "server": "104.16.174.46",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #8",
-      "server": "104.26.14.137",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #9",
       "server": "104.18.152.133",
       "server_port": 443,
       "password": "humanity",
@@ -12067,15 +12212,39 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "美国+CloudFlare节点 #10",
-      "server": "104.18.39.218",
-      "server_port": 80,
-      "uuid": "47fcef29-ab4e-4aa6-932b-d95a18f28a4e",
+      "type": "vmess",
+      "tag": "🇷🇺 俄罗斯 V2CROSS.COM",
+      "server": "renderer-stream-2-62.mirra.now",
+      "server_port": 443,
+      "uuid": "db50a20e-7ff5-4e70-948f-17cc9ca7c154",
+      "security": "auto",
       "transport": {
         "type": "ws",
-        "path": "/?ed=2560security=tls",
-        "headers": {}
+        "path": "/api/v1/gpu-stream/socket",
+        "headers": {
+          "Host": ""
+        }
+      },
+      "tls": {
+        "enabled": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "广东省广州市+电信IDC机房(校场西)",
+      "server": "jp.sofast.live",
+      "server_port": 52683,
+      "uuid": "5aaa5259-f924-4682-a4a3-149d472a9dcc"
+    },
+    {
+      "type": "trojan",
+      "tag": "伊朗+V2CROSS.COM",
+      "server": "2.144.21.112",
+      "server_port": 40443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com"
       }
     },
     {
@@ -12090,53 +12259,30 @@
       }
     },
     {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #11",
-      "server": "104.16.174.148",
+      "type": "vless",
+      "tag": "俄罗斯+V2CROSS.COM",
+      "server": "176.109.88.216",
       "server_port": 443,
-      "password": "humanity",
+      "uuid": "2c7f1414-87ae-4a01-9796-a02c067891a6",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "www.ignitelimit.com"
+        "server_name": "api-maps.yandex.ru",
+        "reality": {
+          "enabled": true,
+          "public_key": "oqRus6Z_Q1jqJaTEPu7ENbRL0-XKOw54K0jwCCGLtEk",
+          "short_id": "a9c4f17e3b62d8"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       }
     },
     {
       "type": "trojan",
-      "tag": "美国+CloudFlare节点 #12",
-      "server": "104.18.152.77",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #13",
-      "server": "104.16.174.143",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #14",
-      "server": "104.17.177.143",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #15",
-      "server": "104.18.152.155",
+      "tag": "美国+CloudFlare节点 #5",
+      "server": "104.18.152.233",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -12146,40 +12292,37 @@
     },
     {
       "type": "vless",
-      "tag": "美国+乔治亚洲亚特兰大Fastly节点",
-      "server": "151.101.56.6",
-      "server_port": 443,
-      "uuid": "d499fa8c-2e14-4bd5-a3ca-73fae7f04cb5",
-      "transport": {
-        "type": "ws",
-        "path": "/?TELEGRAM--IMS--iranian_mathematical_society--imsI",
-        "headers": {}
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "ssl.fastly.com"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "美国+CloudFlare节点 #16",
-      "server": "104.18.152.143",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.ignitelimit.com"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇰🇷KR_1|3.8MB/s",
-      "server": "kr2-r.link-t7.com",
-      "server_port": 10047,
+      "tag": "🇸🇬SG_1|4.9MB/s",
+      "server": "sg4-r.link-t7.com",
+      "server_port": 10039,
       "uuid": "31904E3E-F57B-41D1-BDB2-CB6D3A496232",
       "transport": {
         "type": "grpc",
         "service_name": "update"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d1.awsstatic.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+          "short_id": "686c0ef0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸US_1|1.5MB/s",
+      "server": "us5-r.link-t7.com",
+      "server_port": 10242,
+      "uuid": "31904E3E-F57B-41D1-BDB2-CB6D3A496232",
+      "transport": {
+        "type": "grpc",
+        "service_name": "movie"
       },
       "tls": {
         "enabled": true,
@@ -12197,35 +12340,192 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸US_1|1.2MB/s",
-      "server": "stan-production-19cc.up.railway.app",
-      "server_port": 443,
-      "uuid": "88a2a55b-06b9-4b60-9987-88b45a8db990",
-      "transport": {
-        "type": "ws",
-        "path": "/vl-ws",
-        "headers": {
-          "Host": "stan-production-19cc.up.railway.app",
-          "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36"
-        }
-      },
+      "tag": "🇩🇰DK_1|2.1MB/s",
+      "server": "87.58.206.98",
+      "server_port": 8443,
+      "uuid": "423b1d79-08c4-403f-9d5e-c541f791b55f",
+      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "stan-production-19cc.up.railway.app"
+        "server_name": "auto.cendora.ru",
+        "reality": {
+          "enabled": true,
+          "public_key": "gc9oXe37KCCm3J1dJ03wdGsnxPBdeEkRPOvl_t-vfVM",
+          "short_id": "a7f3c91b2e6d84c0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
       }
     },
     {
       "type": "vless",
-      "tag": "🇺🇸US_2|1.6MB/s",
-      "server": "38.127.121.44",
-      "server_port": 53856,
-      "uuid": "3ab5119a-d0e9-4feb-c748-2b42b7367d21",
+      "tag": "🇩🇪DE_1|1002KB/s",
+      "server": "188.220.67.140",
+      "server_port": 2087,
+      "uuid": "90da514d-8888-4a53-912e-ac2981c8c6ee",
+      "transport": {
+        "type": "ws",
+        "path": "/8f2690e2d016",
+        "headers": {
+          "Host": "",
+          "User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷FR_1|3.2MB/s",
+      "server": "104.18.152.233",
+      "server_port": 443,
+      "password": "humanity"
+    },
+    {
+      "type": "vless",
+      "tag": "🇷🇺RU_1|3.4MB/s",
+      "server": "ru05.abvpn.ru",
+      "server_port": 443,
+      "uuid": "a289a3d3-5833-4b28-8809-ae72898a98d0",
+      "transport": {
+        "type": "ws",
+        "path": "/websocket",
+        "headers": {
+          "Host": "ru05.abvpn.ru",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+        }
+      },
       "tls": {
         "enabled": true,
-        "server_name": "www.speedtest.net",
+        "server_name": "ru05.abvpn.ru"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇱🇻LV_1|1.1MB/s",
+      "server": "195.123.210.168",
+      "server_port": 443,
+      "uuid": "423b1d79-08c4-403f-9d5e-c541f791b55f",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "eu-west.cendora.ru",
         "reality": {
           "enabled": true,
-          "public_key": "rwpbqas_HY8knlW0fFSIeUrjgBXHBzSNboflsLD8elA"
+          "public_key": "m6RDw1b8R4lCaRUIzhHpy6TtX2Dhk6nyby8dWzeQqA0",
+          "short_id": "dd3ff38418d29d22"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷FR_2|4.3MB/s",
+      "server": "172.67.74.2",
+      "server_port": 443,
+      "password": "humanity"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱NL_1|4.5MB/s",
+      "server": "45.82.67.183",
+      "server_port": 443,
+      "uuid": "1a8d3885-d868-49c5-abc4-68ff79a91e09",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "northwaleswildlifetrust.org.uk",
+        "reality": {
+          "enabled": true,
+          "public_key": "daiJkQwpAcBk7oH1iZzRthMj-jAlqovX7vAiwVqfjTU",
+          "short_id": "8880a9f75eb46d91"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷FR_3|4.0MB/s",
+      "server": "45.95.96.225",
+      "server_port": 443,
+      "uuid": "d4cae7df-50a1-428c-bd62-881c8f3bbd90",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "germany.superbuba.top",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs",
+          "short_id": "4fa44664f6a566d3"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸US_3|3.3MB/s",
+      "server": "172.67.169.213",
+      "server_port": 443,
+      "uuid": "7e26fd8f-d75a-473d-84ba-9f4e3f47d086",
+      "transport": {
+        "type": "ws",
+        "path": "/8qMLgNapWf6SBxo8fhQlVPYO",
+        "headers": {
+          "Host": "2-m20.20260721-9dc5-4f76-ad18-12cd86bca954.ccwu.cc"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "2-m20.20260721-9dc5-4f76-ad18-12cd86bca954.ccwu.cc",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸US_4|2.3MB/s",
+      "server": "172.67.138.232",
+      "server_port": 443,
+      "uuid": "a1a6a3be-2bf9-46a2-bc24-328306e49ab7",
+      "transport": {
+        "type": "ws",
+        "path": "/fVs1qv0xm8dxmnwuaPwokxgY4XlP",
+        "headers": {
+          "Host": "8-m17.KAzaKHSTan-LINK.kdnS.Fr"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "8-m17.KAzAkhStaN-LinK.Kdns.FR",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇬SG_3|3.5MB/s",
+      "server": "sg5-r.link-t7.com",
+      "server_port": 10040,
+      "uuid": "C1CE3941-AC6F-4E98-9791-3B33ABBAF64F",
+      "transport": {
+        "type": "grpc",
+        "service_name": "update"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d1.awsstatic.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "wOu-BMrXvk9KX23JZrlpUlF4SMjDcejm0vNECdhy5xE",
+          "short_id": "686c0ef0"
         },
         "utls": {
           "enabled": true,
@@ -12235,37 +12535,87 @@
     },
     {
       "type": "shadowsocks",
-      "tag": "🇬🇧GB_1|1.0MB/s",
-      "server": "18.133.240.229",
+      "tag": "🇯🇵JP_2|4.0MB/s",
+      "server": "cn12.somethingstranges.com",
+      "server_port": 8406,
+      "method": "chacha20-ietf",
+      "password": "passwd"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱NL_4|2.3MB/s",
+      "server": "134.98.129.48",
+      "server_port": 62145,
+      "uuid": "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇬🇧GB_2|4.4MB/s",
+      "server": "35.179.104.254",
       "server_port": 443,
       "method": "aes-256-cfb",
       "password": "amazonskr05"
     },
     {
-      "type": "hysteria2",
-      "tag": "🇺🇸US_3|1.6MB/s",
-      "server": "us4.xiaoliyu.cyou",
-      "server_port": 4433,
-      "password": "19f72087-4591-4d72-930b-2697078ec2be",
-      "tls": {
-        "enabled": true,
-        "server_name": "us4.xiaoliyu.cyou",
-        "insecure": true
+      "type": "vmess",
+      "tag": "🇮🇳IN_1|4.0MB/s",
+      "server": "planb.mojcn.com.linuxlh.xin",
+      "server_port": 16626,
+      "uuid": "302cf141-f8e2-448d-aca5-3ad9e9f1b4c1",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d2c315853d201942b93c6d6de56fec5d.mobgslb.tbcache.com"
+        }
       }
     },
     {
       "type": "vless",
-      "tag": "🇨🇭CH_1|1.0MB/s",
-      "server": "de48.tranzit-net.ru",
-      "server_port": 443,
-      "uuid": "be3c103d-2c93-4f8e-adb9-2631537f80eb",
+      "tag": "🇬🇧GB_7|1.8MB/s",
+      "server": "uk01.vletun.qianmoxingyun.com",
+      "server_port": 10041,
+      "uuid": "d742752c-4231-4695-801e-f06d77f0f277",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "d.tranzit-net.ru",
+        "server_name": "www.apple.com",
+        "insecure": true,
         "reality": {
           "enabled": true,
-          "public_key": "IAdOYYmEMPFAhpVUhqfML58AVtYPdAb71R_HAPf0N0k"
+          "public_key": "O8Av8GXWVqj7FOxUyStmrTLWv5EtvQ1ZnMOVVLb1V3s",
+          "short_id": "1bc2c1ef1c"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇭🇰HK_2|4.2MB/s",
+      "server": "hk03.qianmoip.win",
+      "server_port": 50222,
+      "password": "302cf77d-6fb7-4ac8-ae61-88e286340d59"
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧GB_9|2.6MB/s",
+      "server": "82.145.55.75",
+      "server_port": 443,
+      "uuid": "5c0f54f4-f3e2-4931-a3b9-b1ffc0961d70",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "strapi.io",
+        "insecure": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "SiSky02wHz-S0TDHKFTdYhnrlT8Y3CfRsekZlcdLXDY",
+          "short_id": "fd55b698ee8c3629"
         },
         "utls": {
           "enabled": true,
@@ -12275,8 +12625,201 @@
     },
     {
       "type": "vmess",
+      "tag": "🇯🇵JP_3|5.2MB/s",
+      "server": "01eb6-g01.jp03-7d22-vm0.entry.fr0307a.art",
+      "server_port": 21581,
+      "uuid": "7a6cb59b-fbcd-3f50-b5f2-a2534326c4c8",
+      "security": "auto",
+      "alter_id": 1,
+      "tls": {
+        "enabled": true,
+        "insecure": true
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇩🇪DE_4|4.5MB/s",
+      "server": "130.61.83.100",
+      "server_port": 59924,
+      "method": "2022-blake3-chacha20-poly1305",
+      "password": "EItZd/Xd+cmdmMJ9FLqMrlkRD6D/u/iVR0p1qJZMblQ="
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪DE_5|3.3MB/s",
+      "server": "app4.goonars.com",
+      "server_port": 443,
+      "uuid": "2f600710-9f4e-4eab-8de1-89f60a878e55",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "reality": {
+          "enabled": true,
+          "public_key": "u51rZT5vJj8nO80QBBHVW2-WA5OzzQ1eL6euvszWLQI",
+          "short_id": "09ef88a6"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱NL_8|1.1MB/s",
+      "server": "78.17.38.184",
+      "server_port": 8443,
+      "uuid": "9f57df7b-0a59-4e6b-bbda-e6ce44619869",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cloudflare.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "NPIKgDPGs6rIwTjYaWuxvcekFruIBmdcNnoxvqPb0n4",
+          "short_id": "21cc0615b9aa1ef4"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇭🇰HK_3|5.7MB/s",
+      "server": "planb.mojcn.com.linuxlh.xin",
+      "server_port": 16632,
+      "uuid": "6605fd88-f41c-4c2a-90ee-6777ac0a32a2",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "052977cd32d141678a739f13963d57ac.mobgslb.tbcache.com"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇮🇳IN_2|4.8MB/s",
+      "server": "planb.mojcn.com.linuxlh.xin",
+      "server_port": 16626,
+      "uuid": "4a9bbf17-5684-452c-9b84-ba3743a5b819",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "f2a1fd8cc931919f1ada44cdfa8310e9.mobgslb.tbcache.com"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇮🇳IN_3|3.5MB/s",
+      "server": "planb.mojcn.com.linuxlh.xin",
+      "server_port": 16626,
+      "uuid": "8e48b885-1a50-4c5c-aafa-9051b06bf488",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "f630621db21a916c20751c19fc2358a9.mobgslb.tbcache.com"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇩🇪DE_6|1.3MB/s",
+      "server": "78.31.249.175",
+      "server_port": 65531,
+      "uuid": "7aa3a024-e333-4b63-99a2-3db9d3b2054e",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "gw.alicdn.com"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇭🇰HK_4|5.2MB/s",
+      "server": "planb.mojcn.com.linuxlh.xin",
+      "server_port": 16622,
+      "uuid": "00736f0b-8715-45b7-888b-ced7aaa637bf",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "71863cd408e0a1b6626012d168c0b94e.mobgslb.tbcache.com"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪DE_7|3.5MB/s",
+      "server": "5.83.129.124",
+      "server_port": 443,
+      "uuid": "a9aceeb9-17cc-470e-a03b-b7c3ee0f9f14",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "50gport3.potatosubge20.org"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇦UA_1|3.3MB/s",
+      "server": "pl-xh01.tcp-reset-club.net",
+      "server_port": 443,
+      "uuid": "0678ed07-980a-49c1-9066-05caec654967",
+      "tls": {
+        "enabled": true,
+        "server_name": "s3.netavex.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg",
+          "short_id": "f79448a30d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇭🇰HK_5|2.4MB/s",
+      "server": "212.192.15.178",
+      "server_port": 20210,
+      "method": "aes-256-gcm",
+      "password": "72553320ae6bcc8f"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸US_24|3.1MB/s",
+      "server": "23.236.69.39",
+      "server_port": 24187,
+      "uuid": "12a8ee36-5936-4449-90bd-b5eac6db4c1d",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {}
+      }
+    },
+    {
+      "type": "vmess",
       "tag": "🇯🇵 免费-日本1-Ver.7",
-      "server": "q06p8cd-g06.jp01-nn-vm0.entry.fr0528.art",
+      "server": "xv6gtcd-g06.jp01-nn-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12288,7 +12831,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本2-Ver.8",
-      "server": "f06atmf-g06.jp02-e3-vm0.entry.fr0528.art",
+      "server": "f11ptmb-g06.jp02-e3-vm0.entry.fr0528.art",
       "server_port": 11778,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12297,7 +12840,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本3-Ver.7",
-      "server": "w06p1cd-g06.jp03-j7-vm0.entry.fr0528.art",
+      "server": "xv6ghmf-g06.jp03-j7-vm0.entry.fr0528.art",
       "server_port": 21586,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12309,7 +12852,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本4-Ver.8",
-      "server": "xo1at2d-g06.jp04-1d-vm0.entry.fr0528.art",
+      "server": "x16gt0b-g06.jp04-1d-vm0.entry.fr0528.art",
       "server_port": 449,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12318,7 +12861,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本5-Ver.9",
-      "server": "fv1phcd-g06.jp05-h6-vm0.entry.fr0528.art",
+      "server": "wo1a12f-g06.jp05-h6-vm0.entry.fr0528.art",
       "server_port": 46487,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12327,7 +12870,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本6-Ver.8",
-      "server": "x1yah2d-g06.jp06-jz-vm0.entry.fr0528.art",
+      "server": "f06a10d-g06.jp06-jz-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
@@ -12339,7 +12882,7 @@
     {
       "type": "vmess",
       "tag": "🇯🇵 免费-日本7-Ver.2",
-      "server": "xv6ph2f-g06.jp07-sh-vm0.entry.fr0528.art",
+      "server": "foca12b-g06.jp07-sh-vm0.entry.fr0528.art",
       "server_port": 28788,
       "uuid": "a3b5a6fc-0b92-3b66-beda-eb2a49361a21",
       "security": "auto",
