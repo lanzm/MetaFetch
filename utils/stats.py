@@ -70,8 +70,11 @@ async def update_readme_source_stats():
     if not os.path.exists(sources_file):
         return
 
-    with open(sources_file, "r", encoding="utf-8") as f:
-        data = yaml.safe_load(f)
+    try:
+        with open(sources_file, "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f) or {}
+    except Exception:
+        return
 
     sources = data.get("sources", [])
     fetcher = Fetcher(timeout=15)
@@ -79,13 +82,15 @@ async def update_readme_source_stats():
 
     source_results = []
     for s in sources:
+        if s.get('enabled') is False:
+            continue
         raw_url = s.get('url', '')
         name = s.get('name', '未命名源')
         if not raw_url:
             continue
 
-        url = now.strftime(raw_url)
-        if s.get('recursive'):
+        url = raw_url.replace('%Y', now.strftime('%Y')).replace('%m', now.strftime('%m')).replace('%d', now.strftime('%d'))
+        if s.get('recursive') and not url.startswith('*'):
             url = '*' + url
         ignore = s.get('ignore')
         filters = {'ignore': ignore} if ignore else {}

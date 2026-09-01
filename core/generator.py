@@ -124,24 +124,36 @@ class Generator:
 
         # 5. 构建雨露均沾智能精选池 (Smart Pool Extractor)
 
+        def is_china_node(name: str) -> bool:
+            """判断是否为中国境内节点，对 CN2-GIA / IPLC 等海外中转线路进行白名单豁免"""
+            reg = node_to_region.get(name, '')
+            if reg == 'CN' or name.startswith('🇨🇳') or '中国' in name:
+                # 线路标签豁免: 如 HK-CN2-GIA, US-CN-Transit 等海外优化节点
+                upper_name = name.upper()
+                if any(tag in upper_name for tag in ('CN2', 'CNIX', 'CN-TRANSIT', 'IPLC', 'BGP-CN')):
+                    if any(flag in name for flag in ('🇭🇰', '🇯🇵', '🇺🇸', '🇸🇬', '🇰🇷', '🇩🇪', '🇬🇧', 'HK', 'JP', 'US', 'SG', 'TW')):
+                        return False
+                return True
+            return False
+
         MAX_PER_REGION = 6
         smart_pool_nodes = []
 
         for key in active_keys:
-            if key == 'CN': continue  # 彻底排除国内
-            candidates = [n for n in region_nodes[key] if not n.startswith('🇨🇳')]
+            if key == 'CN': continue  # 排除纯国内组
+            candidates = [n for n in region_nodes[key] if not is_china_node(n)]
             if not candidates: continue
             candidates_sorted = sorted(candidates, key=get_node_quality_score, reverse=True)
             smart_pool_nodes.extend(candidates_sorted[:MAX_PER_REGION])
 
         if others:
-            other_candidates = [n for n in others if not n.startswith('🇨🇳') and '中国' not in n]
+            other_candidates = [n for n in others if not is_china_node(n)]
             if other_candidates:
                 other_sorted = sorted(other_candidates, key=get_node_quality_score, reverse=True)
                 smart_pool_nodes.extend(other_sorted[:MAX_PER_REGION])
 
         # 兜底保障：若精选节点数少于 20 个，从全量非 CN 节点中按分数补充至 30 个
-        oversea_nodes = [n for n in node_names if node_to_region.get(n) != 'CN' and not n.startswith('🇨🇳')]
+        oversea_nodes = [n for n in node_names if not is_china_node(n)]
         if len(smart_pool_nodes) < 20 and oversea_nodes:
             fallback_sorted = sorted(oversea_nodes, key=get_node_quality_score, reverse=True)
             for fn in fallback_sorted:

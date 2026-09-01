@@ -379,40 +379,57 @@ class Node:
 
         return ""
 
-    def __hash__(self):
-        # 建立更精细的唯一标识 (Identity)，防止误删同 IP 不同路径的节点
-        ident_parts = [
-            str(self.type),
-            str(self.data.get('server', '')),
-            str(self.data.get('port', ''))
-        ]
+    def get_identity(self) -> str:
+        """建立精确且不区分大小写的唯一标识 (Identity)，防止误删或漏去重"""
+        server = str(self.data.get('server', '')).strip().lower()
+        port = str(self.data.get('port', '')).strip()
+        t = str(self.type).strip().lower()
         
-        # 1. 认证信息 (UUID / Password)
-        auth = self.data.get('uuid') or self.data.get('password')
-        if auth: ident_parts.append(str(auth))
+        ident_parts = [t, server, port]
         
-        # 2. 传输层路径 (WS Path / gRPC Service Name)
-        ws_path = self.data.get('ws-opts', {}).get('path')
-        if ws_path: ident_parts.append(f"ws:{ws_path}")
+        # 1. 认证信息 (UUID 转小写, Password 保持原样)
+        if self.data.get('uuid'):
+            ident_parts.append(str(self.data['uuid']).strip().lower())
+        elif self.data.get('password'):
+            ident_parts.append(str(self.data['password']).strip())
+            
+        # 2. 加密方式 (针对 Shadowsocks 等)
+        if self.data.get('cipher'):
+            ident_parts.append(f"cipher:{str(self.data['cipher']).lower()}")
+        
+        # 3. 传输层路径与 Host 标头 (区分共享 CDN IP 的不同节点)
+        ws_opts = self.data.get('ws-opts', {})
+        if ws_opts.get('path'):
+            ident_parts.append(f"ws:{ws_opts['path']}")
+        ws_host = ws_opts.get('headers', {}).get('Host') or ws_opts.get('headers', {}).get('host')
+        if ws_host:
+            ident_parts.append(f"wshost:{str(ws_host).lower()}")
         
         grpc_service = self.data.get('grpc-opts', {}).get('grpc-service-name')
-        if grpc_service: ident_parts.append(f"grpc:{grpc_service}")
+        if grpc_service:
+            ident_parts.append(f"grpc:{grpc_service}")
         
-        # 3. 域名识别 (SNI / Host)
+        # 4. 域名识别 (SNI / servername 统一转小写)
         sni = self.data.get('sni') or self.data.get('servername')
-        if sni: ident_parts.append(f"sni:{sni}")
+        if sni:
+            ident_parts.append(f"sni:{str(sni).lower()}")
         
-        # 4. Reality 公钥 (如果有)
+        # 5. Reality 公钥 (如果有)
         pbk = self.data.get('reality-opts', {}).get('public-key')
-        if pbk: ident_parts.append(f"pbk:{pbk}")
+        if pbk:
+            ident_parts.append(f"pbk:{pbk}")
         
-        # 5. 流控信息 (flow: xtls-rprx-vision) - 非常关键，决定了性能差异
+        # 6. 流控信息 (flow: xtls-rprx-vision)
         flow = self.data.get('flow')
-        if flow: ident_parts.append(f"flow:{flow}")
+        if flow:
+            ident_parts.append(f"flow:{flow}")
 
-        identity = ":".join(ident_parts)
-        return hash(identity)
+        return ":".join(ident_parts)
+
+    def __hash__(self):
+        return hash(self.get_identity())
 
     def __eq__(self, other):
-        if not isinstance(other, Node): return False
-        return hash(self) == hash(other)
+        if not isinstance(other, Node):
+            return False
+        return self.get_identity() == other.get_identity()

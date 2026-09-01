@@ -20,9 +20,10 @@ class TestProcessor(unittest.TestCase):
 
     def test_processor_deduplicate(self):
         processor = NodeProcessor()
-        node1 = Node({"name": "NodeA", "type": "ss", "server": "1.2.3.4", "port": 8388, "cipher": "aes-256-gcm", "password": "pwd"})
-        node2 = Node({"name": "NodeA_dup", "type": "ss", "server": "1.2.3.4", "port": 8388, "cipher": "aes-256-gcm", "password": "pwd"})
-        node3 = Node({"name": "NodeB_diff_port", "type": "ss", "server": "1.2.3.4", "port": 8389, "cipher": "aes-256-gcm", "password": "pwd"})
+        node1 = Node({"name": "NodeA", "type": "ss", "server": "example.com", "port": 8388, "cipher": "aes-256-gcm", "password": "pwd"})
+        # 大小写域名与重复节点
+        node2 = Node({"name": "NodeA_dup_upper", "type": "ss", "server": "EXAMPLE.COM", "port": 8388, "cipher": "aes-256-gcm", "password": "pwd"})
+        node3 = Node({"name": "NodeB_diff_port", "type": "ss", "server": "example.com", "port": 8389, "cipher": "aes-256-gcm", "password": "pwd"})
 
         deduped = processor.deduplicate([node1, node2, node3])
         self.assertEqual(len(deduped), 2)
