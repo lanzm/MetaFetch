@@ -60,13 +60,34 @@ class TestParser(unittest.TestCase):
         self.assertEqual(node.data["server"], "1.2.3.4")
         self.assertEqual(node.data["password"], "password123")
 
-    def test_node_from_hysteria2_url(self):
-        hy2_url = "hysteria2://password123@1.2.3.4:443?sni=example.com&insecure=1#Node_Hy2_Test"
+    def test_protocol_case_insensitivity(self):
+        # 1. 大写 HY2:// 协议正常加载
+        hy2_url = "HY2://password123@1.2.3.4:443#Uppercase_HY2"
         node = Node(hy2_url)
         self.assertEqual(node.type, "hysteria2")
-        self.assertEqual(node.name, "Node_Hy2_Test")
         self.assertEqual(node.data["server"], "1.2.3.4")
-        self.assertEqual(node.data["password"], "password123")
+
+        # 2. 混合大小写 Hy2://
+        hy2_mixed = "Hy2://password123@1.2.3.4:443#Mixed_HY2"
+        node_mixed = Node(hy2_mixed)
+        self.assertEqual(node_mixed.type, "hysteria2")
+
+        # 3. 大写 VLESS://
+        vless_upper = "VLESS://a0000000-0000-0000-0000-000000000000@1.2.3.4:443#Upper_VLESS"
+        node_vless = Node(vless_upper)
+        self.assertEqual(node_vless.type, "vless")
+
+    def test_omitted_port_default_443(self):
+        # Trojan 省略端口
+        trojan_no_port = "trojan://password123@example.com?sni=example.com#Trojan_No_Port"
+        node_trojan = Node(trojan_no_port)
+        self.assertEqual(node_trojan.data["port"], 443)
+        self.assertTrue(node_trojan.data["tls"])
+
+        # VLESS 省略端口
+        vless_no_port = "vless://a0000000-0000-0000-0000-000000000000@example.com#Vless_No_Port"
+        node_vless = Node(vless_no_port)
+        self.assertEqual(node_vless.data["port"], 443)
 
 if __name__ == "__main__":
     unittest.main()

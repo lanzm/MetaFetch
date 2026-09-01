@@ -30,14 +30,15 @@ class Node:
             return
         
         protocol, dt = url.split("://", 1)
+        protocol = protocol.strip().lower()
         if protocol == 'hy2': protocol = 'hysteria2'
         
         # 严格过滤非法协议（如 HTML 标签内嵌的 https 链接）
-        allowed = ('vmess', 'vless', 'ss', 'trojan', 'hysteria2', 'ssr')
-        if protocol.lower() not in allowed:
+        allowed = ('vmess', 'vless', 'ss', 'trojan', 'hysteria2')
+        if protocol not in allowed:
             return
 
-        self.type = protocol.lower()
+        self.type = protocol
         loader = getattr(self, f'_load_{self.type}', None)
         if loader:
             loader(url, dt)
@@ -196,9 +197,10 @@ class Node:
             self.data = {
                 'name': unquote(parsed.fragment),
                 'server': parsed.hostname,
-                'port': parsed.port,
+                'port': parsed.port or 443,
                 'type': 'trojan',
                 'password': unquote(parsed.username or ""),
+                'tls': True,
                 'udp': True
             }
             # Query params
@@ -207,7 +209,9 @@ class Node:
                 if 'sni' in params: self.data['sni'] = params['sni']
                 if 'allowInsecure' in params: self.data['skip-cert-verify'] = params['allowInsecure'] == '1'
                 if 'security' in params:
-                    if params['security'] in ('tls', 'reality'):
+                    if params['security'] == 'none':
+                        self.data['tls'] = False
+                    elif params['security'] in ('tls', 'reality'):
                         self.data['tls'] = True
                 if 'fp' in params: self.data['client-fingerprint'] = params['fp']
                 if 'type' in params: self.data['network'] = params['type']
@@ -228,7 +232,7 @@ class Node:
             self.data = {
                 'name': unquote(parsed.fragment),
                 'server': parsed.hostname,
-                'port': parsed.port,
+                'port': parsed.port or 443,
                 'type': 'vless',
                 'uuid': unquote(parsed.username or ""),
                 'tls': False,
