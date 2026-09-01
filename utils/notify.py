@@ -1,8 +1,12 @@
+import sys
 import os
 import re
 import json
 import urllib.request
 import urllib.error
+
+# 确保独立执行脚本时能正确导入项目根目录模块
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.logger import logger
 
 def send_tg_notification():

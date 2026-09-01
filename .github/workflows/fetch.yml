@@ -50,6 +50,7 @@ jobs:
           python main.py
 
       - name: Send Telegram Notification
+        continue-on-error: true
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
