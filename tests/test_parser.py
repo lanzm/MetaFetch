@@ -33,11 +33,6 @@ class TestParser(unittest.TestCase):
         self.assertEqual(clash_cfg["server"], "1.2.3.4")
         self.assertEqual(clash_cfg["uuid"], "a0000000-0000-0000-0000-000000000000")
 
-        # Sing-box 格式导出
-        sb_cfg = node.to_singbox()
-        self.assertEqual(sb_cfg["tag"], "Node_Vmess_Test")
-        self.assertEqual(sb_cfg["type"], "vmess")
-
     def test_node_from_vless_url(self):
         vless_url = "vless://a0000000-0000-0000-0000-000000000000@1.2.3.4:443?encryption=none&security=reality&sni=yahoo.com&fp=chrome&pbk=123456&type=tcp#Node_Vless_Test"
         node = Node(vless_url)

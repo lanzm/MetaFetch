@@ -226,98 +226,9 @@ class Generator:
         with open(b64_path, 'w', encoding='utf-8') as f:
             f.write(b64encodes(raw_urls_str))
 
-        # 8. Save Sing-box JSON (list.singbox.json)
-        sb_nodes = [node.to_singbox() for node in nodes if node.to_singbox()]
-        sb_tags = [n['tag'] for n in sb_nodes]
-        sb_tag_set = set(sb_tags)
-
-        # Sing-box 自动选择同样注入智能精选池
-        smart_pool_sb_tags = [t for t in smart_pool_nodes if t in sb_tag_set]
-        if not smart_pool_sb_tags:
-            smart_pool_sb_tags = [t for t in sb_tags if node_to_region.get(t) != 'CN' and not t.startswith('🇨🇳')]
-        if not smart_pool_sb_tags:
-            smart_pool_sb_tags = sb_tags
-
-        sb_dynamic_groups = []
-        sb_region_menu = []
-
-        for key in active_keys:
-            group_name = REGION_NAMES[key]
-            auto_name = f"⚡ 自动选择 | {group_name}"
-            raw_region_sb_tags = [t for t in region_nodes[key] if t in sb_tag_set and t != group_name and t != auto_name]
-            if not raw_region_sb_tags: continue
-            region_sb_tags = sorted(raw_region_sb_tags, key=get_node_quality_score, reverse=True)
-
-            sb_dynamic_groups.append({
-                "type": "urltest", "tag": auto_name, "outbounds": region_sb_tags,
-                "url": "http://cp.cloudflare.com/generate_204", "interval": "1m"
-            })
-            sb_dynamic_groups.append({
-                "type": "selector", "tag": group_name,
-                "outbounds": [auto_name] + region_sb_tags
-            })
-            sb_region_menu.append(group_name)
-
-        if others:
-            raw_others_sb_tags = [t for t in others if t in sb_tag_set and t != others_group_name and t != others_auto_name]
-            if raw_others_sb_tags:
-                others_sb_tags = sorted(raw_others_sb_tags, key=get_node_quality_score, reverse=True)
-                others_group_name = '🌍 其他地区'
-                others_auto_name = f"⚡ 自动选择 | {others_group_name}"
-                sb_dynamic_groups.append({
-                    "type": "urltest", "tag": others_auto_name, "outbounds": others_sb_tags,
-                    "url": "http://cp.cloudflare.com/generate_204", "interval": "1m"
-                })
-                sb_dynamic_groups.append({
-                    "type": "selector", "tag": others_group_name,
-                    "outbounds": [others_auto_name] + others_sb_tags
-                })
-                sb_region_menu.append(others_group_name)
-
-        singbox_config = {
-            "outbounds": [
-                {
-                    "type": "selector",
-                    "tag": "🚀 选择代理",
-                    "outbounds": ["♻️ 自动选择", "🗺️ 选择地区"] + sb_region_menu + ["direct"]
-                },
-                {
-                    "type": "selector",
-                    "tag": "🗺️ 选择地区",
-                    "outbounds": sb_region_menu if sb_region_menu else ["direct"]
-                },
-                {
-                    "type": "urltest",
-                    "tag": "♻️ 自动选择",
-                    "outbounds": smart_pool_sb_tags,
-                    "url": "http://cp.cloudflare.com/generate_204",
-                    "interval": "1m"
-                },
-                {
-                    "type": "urltest",
-                    "tag": "🔰 延迟最低",
-                    "outbounds": smart_pool_sb_tags,
-                    "url": "http://cp.cloudflare.com/generate_204",
-                    "interval": "1m"
-                },
-                {
-                    "type": "selector",
-                    "tag": "✅ 手动选择",
-                    "outbounds": sb_tags
-                }
-            ] + sb_dynamic_groups + sb_nodes + [
-                {"type": "direct", "tag": "direct"},
-                {"type": "block", "tag": "block"}
-            ]
-        }
-        sb_path = "list.singbox.json"
-        import json
-        with open(sb_path, 'w', encoding='utf-8') as f:
-            json.dump(singbox_config, f, ensure_ascii=False, indent=2)
-
         self.update_readme(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
         self.generate_tg_summary(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
-        print(f"Successfully generated {len(nodes)} nodes across multi-formats ({output_path}, {sb_path}, {b64_path}, {txt_path})")
+        print(f"Successfully generated {len(nodes)} nodes across formats ({output_path}, {b64_path}, {txt_path})")
 
     def update_readme(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float):
         readme_path = "README.md"

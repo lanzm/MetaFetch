@@ -8,9 +8,9 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![Telegram Channel](https://img.shields.io/badge/Telegram-频道交流-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/MetaFetchNodes)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026-09-01--07%3A00%3A56-green.svg?style=flat-square)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-951-orange.svg?style=flat-square)
-![Sources](https://img.shields.io/badge/Active_Sources-10-blue.svg?style=flat-square)
+![Update](https://img.shields.io/badge/Updated-2026-09-01--09%3A52%3A19-green.svg?style=flat-square)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-962-orange.svg?style=flat-square)
+![Sources](https://img.shields.io/badge/Active_Sources-9-blue.svg?style=flat-square)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
 
@@ -46,27 +46,7 @@ https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml
 </tr></table>
 </details>
 
-### 2. ⚡ Sing-box 专用订阅 (JSON)
-
-> 💡 适合 **Sing-box / Hiddify / Karing** 等 Sing-box 内核客户端。
-
-**📡 CDN 加速 (推荐)**
-```
-https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.singbox.json
-```
-**🔗 GitHub 直连**
-```
-https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.singbox.json
-```
-
-<details><summary>📱 扫码订阅 (点击二维码可放大)</summary>
-<table><tr>
-<td align="center"><b>CDN 加速</b><br><a href="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.singbox.json"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Ffastly.jsdelivr.net%2Fgh%2Flanzm%2FMetaFetch%40master%2Flist.singbox.json" width="150"></a></td>
-<td align="center"><b>GitHub 直连</b><br><a href="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Fraw.githubusercontent.com%2Flanzm%2FMetaFetch%2Fmaster%2Flist.singbox.json"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fraw.githubusercontent.com%2Flanzm%2FMetaFetch%2Fmaster%2Flist.singbox.json" width="150"></a></td>
-</tr></table>
-</details>
-
-### 3. 📱 通用 Base64 / 节点列表订阅 (小火箭 / V2rayN)
+### 2. 📱 通用 Base64 / 节点列表订阅 (小火箭 / V2rayN)
 
 > 💡 适合 **Shadowrocket (小火箭)**、**V2rayN**、**V2rayNG**、**Quantumult X**、**Surfboard** 等常用客户端。
 
@@ -93,9 +73,9 @@ https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
 | 客户端 / 平台 | 推荐订阅类型 | 推荐订阅格式 | 支持协议 |
 | :--- | :--- | :--- | :--- |
 | **Clash Verge / Mihomo Party / Flclash** (Win / Mac / Linux) | 🛡️ Clash / Mihomo 配置 | `list.meta.yml` | VMess, VLESS, SS, Trojan, Hysteria2 |
-| **Sing-box / Hiddify / Karing** (全平台) | ⚡ Sing-box 格式 | `list.singbox.json` | VMess, VLESS, SS, Trojan, Hysteria2 |
 | **Shadowrocket (小火箭)** (iOS) | 📱 通用 Base64 / Clash | `list.b64` 或 `list.meta.yml` | 全部主流协议 |
 | **V2rayN / V2rayNG** (Win / Android) | 📱 通用 Base64 订阅 | `list.b64` / `list.txt` | VMess, VLESS, SS, Trojan |
+| **Sing-box / Hiddify / Karing** (全平台) | 🛡️ Clash 配置 (内核兼容) | `list.meta.yml` | VMess, VLESS, SS, Trojan, Hysteria2 |
 | **Quantumult X / Loon / Surge** (iOS / Mac) | 🛡️ Clash 订阅或 Base64 | `list.meta.yml` / `list.b64` | 常用协议 |
 
 ---
@@ -106,7 +86,7 @@ https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.txt
 2. **导入配置**：
    - **Clash / Mihomo / Verge**：打开客户端 → 进入「订阅 / Profiles」→ 粘贴链接并点击「保存 / 下载」。
    - **Shadowrocket (小火箭)**：打开 App → 点击右上角 `+` → 类型选择 `Subscribe` → 粘贴链接并保存。
-   - **Sing-box / Hiddify**：进入配置管理 → 点击「添加订阅」→ 粘贴 JSON 格式链接。
+   - **Sing-box / Hiddify**：直接导入 `list.meta.yml`（支持 Clash 格式解析）或使用 Base64 订阅。
 3. **选择节点**：建议选中 **「🔰 延迟最低」** 或 **「♻️ 自动选择」** 策略组，客户端会自动测速并切换至优质可用节点。
 
 ---
@@ -118,7 +98,7 @@ graph LR
     A[📡 优质多源并发抓取<br/>Speedtest实测源 / Hy2专属 / 聚合池] --> B[🔓 智能解包清洗<br/>Base64 / YAML / URI / 垃圾过滤]
     B --> C[🗺️ 全球地区精准归类<br/>count>0即建组 / Emoji国旗补全]
     C --> D[👑 雨露均沾智能精选<br/>每国上限6节点 / 实测标记优先]
-    D --> E[📦 多格式高可用生成<br/>Clash Meta / Sing-box / 2s快速熔断]
+    D --> E[📦 多格式高可用生成<br/>Clash Meta / 2s快速熔断]
     E --> F[🤖 GitHub Actions<br/>全自动化 CI 构建与分发]
     E --> G[📢 Telegram Channel<br/>实时健康看板广播]
 ```
@@ -138,14 +118,14 @@ graph LR
 ## 📊 节点分布统计
 
 <!-- STATS_TABLE_START -->
-> 更新时间：`2026-09-01 07:00:56`
-> 运行分析：从 `10` 个活跃源中抓取 `1137` 个节点，耗时 `2.00s`。去重后保留 `951` 个有效节点。
+> 更新时间：`2026-09-01 09:52:19`
+> 运行分析：从 `9` 个活跃源中抓取 `1155` 个节点，耗时 `6.11s`。去重后保留 `962` 个有效节点。
 
 <div style="overflow-x: auto;">
 
-| 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇨🇦加拿大 | 🇳🇱荷兰 | 🇨🇭瑞士 | 🇮🇳印度 | 🇹🇷土耳其 | 🇦🇺澳大利亚 | 🇵🇭菲律宾 | 🇧🇷巴西 | 🇦🇷阿根廷 | 🇲🇽墨西哥 | 🇮🇹意大利 | 🇪🇸西班牙 | 🇨🇳中国 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🇮🇪爱尔兰 | 🇸🇪瑞典 | 🇵🇱波兰 | 🇨🇿捷克 | 🇦🇹奥地利 | 🇦🇪阿联酋 | 🇨🇾塞浦路斯 | 🇺🇦乌克兰 | 🇳🇴挪威 | 🇩🇰丹麦 | 🇵🇹葡萄牙 | 🇧🇬保加利亚 | 🇿🇦南非 | 🌍其他 | **总计** |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 45 | 11 | 46 | 252 | 39 | 25 | 27 | 20 | 20 | 7 | 7 | 18 | 5 | 6 | 13 | 3 | 1 | 3 | 5 | 2 | 2 | 9 | 15 | 124 | 10 | 2 | 4 | 4 | 1 | 5 | 2 | 2 | 3 | 1 | 1 | 3 | 1 | 2 | 205 | **951** |
+| 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇨🇦加拿大 | 🇳🇱荷兰 | 🇨🇭瑞士 | 🇮🇳印度 | 🇹🇷土耳其 | 🇦🇺澳大利亚 | 🇵🇭菲律宾 | 🇲🇾马来西亚 | 🇧🇷巴西 | 🇦🇷阿根廷 | 🇲🇽墨西哥 | 🇮🇹意大利 | 🇪🇸西班牙 | 🇨🇳中国 | 🇷🇴罗马尼亚 | 🇫🇮芬兰 | 🇮🇪爱尔兰 | 🇸🇪瑞典 | 🇵🇱波兰 | 🇦🇹奥地利 | 🇦🇪阿联酋 | 🇨🇾塞浦路斯 | 🇺🇦乌克兰 | 🇳🇴挪威 | 🇵🇹葡萄牙 | 🇧🇬保加利亚 | 🇿🇦南非 | 🌍其他 | **总计** |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **数量** | 47 | 12 | 38 | 263 | 39 | 27 | 32 | 18 | 28 | 5 | 8 | 18 | 3 | 3 | 17 | 2 | 1 | 1 | 2 | 5 | 1 | 1 | 9 | 15 | 127 | 12 | 2 | 7 | 4 | 4 | 2 | 2 | 3 | 1 | 1 | 1 | 3 | 198 | **962** |
 
 </div>
 <!-- STATS_TABLE_END -->
@@ -155,7 +135,7 @@ graph LR
 <!-- SOURCE_STATS_TABLE_START -->
 ### 📡 各订阅源贡献度明细
 
-> 数据计算时间：`2026-09-01 07:00:54`
+> 数据计算时间：`2026-09-01 09:52:13`
 
 <table width="100%"><tr><td>
 
@@ -163,17 +143,16 @@ graph LR
 
 | 排名 | 订阅源名称 | 有效节点数 | 节点贡献占比 |
 | :---: | :--- | :---: | :---: |
-| 1 | `🔥🔥🔥 w1770946466 长期订阅` | **550** 个 | `49.15%` |
-| 2 | `📡 Zhangkai 系列 (speednodes)` | **144** 个 | `12.87%` |
-| 3 | `[长效备份] hysteria2 节点` | **136** 个 | `12.15%` |
-| 4 | `📡 shaoyouvip 每日更新` | **100** 个 | `8.94%` |
-| 5 | `⚡ Misaka Chromego 聚合池` | **72** 个 | `6.43%` |
-| 6 | `📡 Huibq 聚合` | **43** 个 | `3.84%` |
-| 7 | `[长效备份] hy2 节点` | **42** 个 | `3.75%` |
-| 8 | `🔥🔥🔥 日抛机场系列` | **14** 个 | `1.25%` |
-| 9 | `📱 Pawdroid 免费节点库` | **11** 个 | `0.98%` |
-| 10 | `我的私密机场 1` | **7** 个 | `0.63%` |
-| **-** | **总计 (包含跨源重合)** | **1119** 个 | `100.00%` |
+| 1 | `🔥🔥🔥 w1770946466 长期订阅` | **550** 个 | `48.37%` |
+| 2 | `[长效备份] hysteria2 节点` | **152** 个 | `13.37%` |
+| 3 | `📡 Zhangkai 系列 (speednodes)` | **144** 个 | `12.66%` |
+| 4 | `📡 shaoyouvip 每日更新` | **100** 个 | `8.80%` |
+| 5 | `⚡ Misaka Chromego 聚合池` | **72** 个 | `6.33%` |
+| 6 | `📡 Huibq 聚合` | **43** 个 | `3.78%` |
+| 7 | `[长效备份] hy2 节点` | **42** 个 | `3.69%` |
+| 8 | `📱 Pawdroid 免费节点库` | **20** 个 | `1.76%` |
+| 9 | `🔥🔥🔥 日抛机场系列` | **14** 个 | `1.23%` |
+| **-** | **总计 (包含跨源重合)** | **1137** 个 | `100.00%` |
 
 </div>
 

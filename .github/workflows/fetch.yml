@@ -56,5 +56,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add list.meta.yml list.singbox.json list.b64 list.txt README.md tg_msg_id.txt
+          git add list.meta.yml list.b64 list.txt README.md tg_msg_id.txt
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto Update: $(date +'%Y-%m-%d %H:%M:%S')" && git pull --rebase origin master && git push origin master)
