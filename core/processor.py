@@ -1,21 +1,8 @@
 import re
 from collections import defaultdict
-from typing import List, Set, Dict, Any
+from typing import List, Set, Dict
 from core.parser import Node
-from utils.regions import REGIONS_DB
-
-# Region mapping for Emoji flags
-REGION_FLAGS = {}
-for code, info in REGIONS_DB.items():
-    for kw in info['keywords'] + [code, info['name']]:
-        REGION_FLAGS[kw] = info['emoji']
-
-# 按照关键词长度倒序排列，预先编译好所有地区的正则匹配器，避免在几千个节点的循环中重复排序和编译
-_sorted_codes = sorted(REGION_FLAGS.keys(), key=len, reverse=True)
-PRECOMPILED_REGION_PATTERNS = [
-    (re.compile(rf"(?i)(^|[\s_\-（(]){re.escape(code)}([\s_\-）)]|$)"), REGION_FLAGS[code])
-    for code in _sorted_codes
-]
+from utils.regions import REGIONS_DB, match_region
 
 # 清理广告与多余链接的预编译正则
 CLEAN_AD_REGEXES = [
@@ -67,16 +54,13 @@ class NodeProcessor:
             if not name:
                 name = f"Node-{node.type}-{node.data.get('server', 'unknown')}"
 
-            # 2. 检查并补充缺失的国旗 Emoji
-            found_flag = any(info.get('emoji', '') in name for info in REGIONS_DB.values() if info.get('emoji'))
-
-            if not found_flag:
-                # 使用预编译的正则进行快速边界匹配
-                for pattern, flag in PRECOMPILED_REGION_PATTERNS:
-                    if pattern.search(name):
-                        name = f"{flag} {name}"
-                        found_flag = True
-                        break
+            # 2. 统一地区识别与国旗 Emoji 补全 (并持久化 _region 属性供下游直接使用)
+            region_code = match_region(name)
+            if region_code:
+                node.data['_region'] = region_code
+                flag = REGIONS_DB[region_code]['emoji']
+                if flag not in name:
+                    name = f"{flag} {name}"
 
             # 3. 避免与 Clash Policy Group 组名完全重名导致内核循环引用
             if name in GROUP_NAMES:

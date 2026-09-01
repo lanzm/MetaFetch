@@ -22,9 +22,13 @@ async def main():
 
     now = datetime.datetime.now()
     source_infos = []
-    with open(sources_file, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
-        sources_data = data.get('sources', [])
+    try:
+        with open(sources_file, 'r', encoding='utf-8') as f:
+            data = yaml.safe_load(f) or {}
+            sources_data = data.get('sources', [])
+    except Exception as e:
+        logger.error(f"Failed to read {sources_file}: {e}")
+        return
         
     # Append private sources from Environment Variable (GitHub Secrets)
     private_sources = os.getenv('PRIVATE_SOURCES')
@@ -33,14 +37,17 @@ async def main():
             private_data = yaml.safe_load(private_sources)
             if isinstance(private_data, list):
                 sources_data.extend(private_data)
-                print(f"Loaded {len(private_data)} private sources from Secrets.")
+                logger.info(f"Loaded {len(private_data)} private sources from Secrets.")
         except Exception as e:
-            print(f"Failed to parse PRIVATE_SOURCES: {e}")
+            logger.warning(f"Failed to parse PRIVATE_SOURCES: {e}")
             
     for s in sources_data:
         if isinstance(s, dict):
+            if s.get('enabled') is False:
+                continue
             url = s.get('url')
-            if not url: continue
+            if not url or not isinstance(url, str):
+                continue
             name = s.get('name', '未命名源')
             
             # Handle date placeholders in URL
@@ -49,7 +56,7 @@ async def main():
             url = url.replace('%d', now.strftime('%d'))
             
             # Translate recursive flag to * prefix
-            if s.get('recursive'):
+            if s.get('recursive') and not url.startswith('*'):
                 url = '*' + url
             
             ignore = s.get('ignore')
@@ -62,7 +69,7 @@ async def main():
             })
     
     if not source_infos:
-        print("No active sources found.")
+        logger.warning("No active sources found.")
         return
 
     start_time = time.time()

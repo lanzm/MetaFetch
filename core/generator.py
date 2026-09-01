@@ -2,75 +2,36 @@ import yaml
 import datetime
 import re
 import os
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from core.parser import Node
-from utils.regions import REGIONS_DB
+from utils.regions import REGIONS_DB, match_region
+from utils.common import b64encodes
 
 REGION_NAMES = {
     code: f"{info['emoji']} {info['name']}"
     for code, info in REGIONS_DB.items()
 }
 
-
-# 预编译短代码边界安全匹配正则（如 "DE", "RO", "HK", "US"）
-PRECOMPILED_SHORT_KW_PATTERNS = [
-    (key, re.compile(rf'(?<![a-zA-Z]){re.escape(kw)}(?![a-zA-Z])'))
-    for key, info in REGIONS_DB.items()
-    for kw in info['keywords']
-    if len(kw) <= 2
-]
-
-FIXED_REGIONS = ['HK', 'JP', 'US']
-
 class Generator:
     def __init__(self, template_path: str):
         with open(template_path, 'r', encoding='utf-8') as f:
-            self.template = yaml.safe_load(f)
+            self.template = yaml.safe_load(f) or {}
 
     def generate(self, nodes: List[Node], output_path: str, source_count: int = 0, raw_count: int = 0, elapsed_time: float = 0):
         config = self.template.copy()
         clash_proxies = [node.to_clash() for node in nodes]
-        node_names = [node.name for node in nodes]
         
         config['proxies'] = clash_proxies
         
-        # 1. Multi-level precise region identification
+        # 1. 直接读取 processor 持久化的 _region 属性 (零重复计算)
         node_to_region = {}
         region_counts = {key: 0 for key in REGIONS_DB}
 
-        for name in node_names:
-            matched_key = None
-            
-            # Level 1: Emoji 匹配（最高精准度）
-            for key, info in REGIONS_DB.items():
-                if info['emoji'] in name:
-                    matched_key = key
-                    break
-
-            # Level 2: 中文名称匹配（如 "香港", "德国", "罗马尼亚"）
-            if not matched_key:
-                for key, info in REGIONS_DB.items():
-                    if info['name'] in name:
-                        matched_key = key
-                        break
-
-            # Level 3: 长英文关键词匹配（如 "Germany", "Hong Kong", "Romania"）
-            if not matched_key:
-                for key, info in REGIONS_DB.items():
-                    for kw in info['keywords']:
-                        if len(kw) > 2 and kw.lower() in name.lower():
-                            matched_key = key
-                            break
-                    if matched_key: break
-
-            # Level 4: 短代码边界安全匹配（如 "DE", "RO", "HK", "US"，使用预编译正则）
-            if not matched_key:
-                for key, pattern in PRECOMPILED_SHORT_KW_PATTERNS:
-                    if pattern.search(name):
-                        matched_key = key
-                        break
-
-            if matched_key:
+        node_names = [node.name for node in nodes]
+        for node in nodes:
+            name = node.name
+            matched_key = node.data.get('_region') or match_region(name)
+            if matched_key and matched_key in REGIONS_DB:
                 node_to_region[name] = matched_key
                 region_counts[matched_key] += 1
             else:
@@ -105,7 +66,7 @@ class Generator:
             if m_mb:
                 try:
                     score = 100.0 + float(m_mb.group(1))
-                except:
+                except (ValueError, TypeError):
                     score = 100.0
             elif re.search(r'(\d+\.?\d*)\s*kb/s', name.lower()):
                 score = 95.0
@@ -248,7 +209,6 @@ class Generator:
         header_row = ["地区分布"]
         value_row = ["**数量**"]
         
-        # Only include regions that are in the dynamic region_nodes (already filtered by THRESHOLD)
         for key in region_nodes:
             count = len(region_nodes[key])
             header_row.append(REGION_NAMES[key].replace(' ', ''))
@@ -268,28 +228,8 @@ class Generator:
                          f'<!-- STATS_TABLE_START -->\n{stats_summary}\n\n{table_markdown}\n<!-- STATS_TABLE_END -->', 
                          content, flags=re.DOTALL)
 
-        # 动态更新各订阅源贡献占比滚动表格
-        self.update_source_stats_table(readme_path, content, timestamp)
-
-    def update_source_stats_table(self, readme_path: str, content: str, timestamp: str):
-        import yaml
-        sources_file = "sources.yaml"
-        if not os.path.exists(sources_file): return
-
-        try:
-            with open(sources_file, 'r', encoding='utf-8') as f:
-                data = yaml.safe_load(f)
-            sources = data.get("sources", [])
-            
-            # 此处从 sources 计算大致占比输出
-            # 如果包含 SOURCE_STATS_TABLE 标记则更新
-            if "<!-- SOURCE_STATS_TABLE_START -->" in content:
-                # 保留现有表结构并更新最新统计时间
-                content = re.sub(r'> 数据计算时间：`.*?`', f'> 数据计算时间：`{timestamp}`', content)
-                with open(readme_path, 'w', encoding='utf-8') as f:
-                    f.write(content)
-        except Exception:
-            pass
+        with open(readme_path, 'w', encoding='utf-8') as f:
+            f.write(content)
 
     def generate_tg_summary(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float):
         region_lines = []
@@ -312,7 +252,6 @@ class Generator:
             f"{region_str}\n\n"
             f"📥 <b>快捷订阅地址 (点击链接直连复制)：</b>\n"
             f"• <b>Clash / Mihomo:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml</code>\n"
-            f"• <b>Sing-box:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.singbox.json</code>\n"
             f"• <b>Shadowrocket / Base64:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64</code>\n\n"
             f"⭐ <b>GitHub 仓库：</b> <a href=\"https://github.com/lanzm/MetaFetch\">lanzm/MetaFetch</a>"
         )

@@ -2,7 +2,8 @@ import os
 import re
 import json
 import urllib.request
-import urllib.parse
+import urllib.error
+from utils.logger import logger
 
 def send_tg_notification():
     raw_token = os.environ.get('TG_BOT_TOKEN', '')
@@ -17,11 +18,11 @@ def send_tg_notification():
         token = token[3:]
         
     if not token or not chat_id:
-        print("[WARNING] TG_BOT_TOKEN or TG_CHAT_ID is missing in environment variables. Skipping Telegram notification.")
+        logger.warning("TG_BOT_TOKEN or TG_CHAT_ID is missing in environment variables. Skipping Telegram notification.")
         return
         
     if not os.path.exists("tg_summary.txt"):
-        print("[WARNING] tg_summary.txt not found. Skipping Telegram notification.")
+        logger.warning("tg_summary.txt not found. Skipping Telegram notification.")
         return
 
     with open("tg_summary.txt", "r", encoding="utf-8") as f:
@@ -55,17 +56,17 @@ def send_tg_notification():
             with urllib.request.urlopen(req, timeout=15) as resp:
                 result = json.loads(resp.read().decode('utf-8'))
                 if result.get('ok'):
-                    print(f"[OK] Telegram dashboard message (ID: {msg_id}) updated successfully via editMessageText!")
+                    logger.info(f"Telegram dashboard message (ID: {msg_id}) updated successfully via editMessageText!")
                     success = True
         except urllib.error.HTTPError as e:
             err_msg = e.read().decode('utf-8') if e.fp else str(e)
             # 内容无变化时 Telegram 会报 "message is not modified"，视为成功无需重发
             if "message is not modified" in err_msg.lower():
-                print(f"[OK] Telegram dashboard message (ID: {msg_id}) content is unchanged.")
+                logger.info(f"Telegram dashboard message (ID: {msg_id}) content is unchanged.")
                 return
-            print(f"[INFO] editMessageText failed ({e.code}: {err_msg}), will create a new message.")
+            logger.info(f"editMessageText failed ({e.code}: {err_msg}), will create a new message.")
         except Exception as e:
-            print(f"[WARNING] Failed to edit message: {e}, will fallback to sending a new message.")
+            logger.warning(f"Failed to edit message: {e}, will fallback to sending a new message.")
 
     # 2. 若无历史 message_id 或编辑失败（如原消息被删），则发送新消息并记录 ID
     if not success:
@@ -82,15 +83,15 @@ def send_tg_notification():
                 result = json.loads(resp.read().decode('utf-8'))
                 if result.get('ok'):
                     new_msg_id = result.get('result', {}).get('message_id')
-                    print(f"[OK] New Telegram dashboard message created! Message ID: {new_msg_id}")
+                    logger.info(f"New Telegram dashboard message created! Message ID: {new_msg_id}")
                     if new_msg_id:
                         with open(msg_id_file, "w", encoding="utf-8") as f:
                             f.write(str(new_msg_id))
         except urllib.error.HTTPError as e:
             err_msg = e.read().decode('utf-8') if e.fp else str(e)
-            print(f"[ERROR] Telegram API HTTP Error {e.code}: {err_msg}")
+            logger.error(f"Telegram API HTTP Error {e.code}: {err_msg}")
         except Exception as e:
-            print(f"[ERROR] Failed to send Telegram notification: {e}")
+            logger.error(f"Failed to send Telegram notification: {e}")
 
 if __name__ == "__main__":
     send_tg_notification()

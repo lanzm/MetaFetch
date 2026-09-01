@@ -33,7 +33,7 @@ EXCLUDE_RECURSIVE_KEYWORDS = (
 )
 
 class Fetcher:
-    def __init__(self, timeout: int = 30, max_concurrent: int = 15, client: Optional[httpx.AsyncClient] = None):
+    def __init__(self, timeout: int = 10, max_concurrent: int = 15, client: Optional[httpx.AsyncClient] = None):
         self.timeout = timeout
         self.semaphore = asyncio.Semaphore(max_concurrent)
         self.headers = DEFAULT_HEADERS
