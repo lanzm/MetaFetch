@@ -1,6 +1,5 @@
 import json
-import yaml
-from typing import Dict, Any, Union, Optional, List
+from typing import Dict, Any, Union, Optional
 from urllib.parse import urlparse, unquote, quote, parse_qsl
 from utils.common import b64decodes, b64decodes_safe, b64encodes
 
@@ -9,7 +8,7 @@ class Node:
         self.data: Dict[str, Any] = {}
         if isinstance(data, dict):
             self.data = data.copy()
-            self.type = data.get('type', 'unknown')
+            self.type = self.data.get('type', 'unknown')
             self._clean_dict_fields()
         elif isinstance(data, str):
             self.load_url(data)
@@ -42,11 +41,6 @@ class Node:
         loader = getattr(self, f'_load_{self.type}', None)
         if loader:
             loader(url, dt)
-        else:
-            # Fallback for recognized but not explicitly loaded protocols
-            self.data['type'] = self.type
-            if '#' in dt:
-                self.data['name'] = unquote(dt.split('#')[-1])
 
     def _validate_short_id(self, sid: str) -> Optional[str]:
         if not sid: return None
@@ -90,13 +84,18 @@ class Node:
             cipher = str(v.get('scy') or '').strip().lower()
             if cipher not in ('auto', 'aes-128-gcm', 'chacha20-poly1305', 'none', 'zero'):
                 cipher = 'auto'
+            port_raw = v.get('port')
+            port_val = int(port_raw) if port_raw not in (None, '') else 0
+            aid_raw = v.get('aid')
+            aid_val = int(aid_raw) if aid_raw not in (None, '') else 0
+
             self.data = {
                 'name': v.get('ps', 'vmess'),
                 'server': v.get('add'),
-                'port': int(v.get('port', 0)),
+                'port': port_val,
                 'type': 'vmess',
                 'uuid': v.get('id'),
-                'alterId': int(v.get('aid', 0)),
+                'alterId': aid_val,
                 'cipher': cipher,
                 'network': v.get('net', 'tcp'),
                 'tls': v.get('tls') == 'tls',
@@ -290,7 +289,7 @@ class Node:
             pass
 
     def to_clash(self) -> Dict[str, Any]:
-        return self.data.copy()
+        return {k: v for k, v in self.data.items() if not k.startswith('_')}
 
     def to_url(self) -> str:
         t = self.type.lower()
@@ -305,6 +304,10 @@ class Node:
             return f"ss://{userinfo}@{server}:{port}#{tag}"
 
         elif t == 'vmess':
+            ws_opts = self.data.get('ws-opts') or {}
+            ws_headers = ws_opts.get('headers') or {}
+            grpc_opts = self.data.get('grpc-opts') or {}
+
             v_json = {
                 "v": "2",
                 "ps": self.name,
@@ -315,8 +318,8 @@ class Node:
                 "scy": self.data.get('cipher', 'auto'),
                 "net": self.data.get('network', 'tcp'),
                 "type": "none",
-                "host": self.data.get('ws-opts', {}).get('headers', {}).get('Host', '') or self.data.get('sni', '') or '',
-                "path": self.data.get('ws-opts', {}).get('path', '') or self.data.get('grpc-opts', {}).get('grpc-service-name', '') or '',
+                "host": ws_headers.get('Host', '') or self.data.get('sni', '') or '',
+                "path": ws_opts.get('path', '') or grpc_opts.get('grpc-service-name', '') or '',
                 "tls": "tls" if self.data.get('tls') else "",
                 "sni": self.data.get('sni') or self.data.get('servername', '') or ''
             }
@@ -335,13 +338,15 @@ class Node:
                 query.append("flow=" + str(self.data.get('flow')))
             if self.data.get('client-fingerprint'):
                 query.append("fp=" + str(self.data.get('client-fingerprint')))
-            ws_path = self.data.get('ws-opts', {}).get('path')
+            ws_opts = self.data.get('ws-opts') or {}
+            ws_path = ws_opts.get('path')
             if ws_path:
                 query.append("path=" + quote(ws_path))
-            grpc_service = self.data.get('grpc-opts', {}).get('grpc-service-name')
+            grpc_opts = self.data.get('grpc-opts') or {}
+            grpc_service = grpc_opts.get('grpc-service-name')
             if grpc_service:
                 query.append("path=" + quote(grpc_service))
-            ropts = self.data.get('reality-opts')
+            ropts = self.data.get('reality-opts') or {}
             if ropts:
                 if ropts.get('public-key'): query.append("pbk=" + quote(str(ropts['public-key'])))
                 if ropts.get('short-id'): query.append("sid=" + quote(str(ropts['short-id'])))
@@ -357,7 +362,7 @@ class Node:
                 query.append("type=" + str(self.data.get('network')))
             if self.data.get('skip-cert-verify'):
                 query.append("allowInsecure=1")
-            ropts = self.data.get('reality-opts')
+            ropts = self.data.get('reality-opts') or {}
             if ropts:
                 query.append("security=reality")
                 if ropts.get('public-key'): query.append("pbk=" + quote(str(ropts['public-key'])))
@@ -398,14 +403,16 @@ class Node:
             ident_parts.append(f"cipher:{str(self.data['cipher']).lower()}")
         
         # 3. 传输层路径与 Host 标头 (区分共享 CDN IP 的不同节点)
-        ws_opts = self.data.get('ws-opts', {})
+        ws_opts = self.data.get('ws-opts') or {}
         if ws_opts.get('path'):
             ident_parts.append(f"ws:{ws_opts['path']}")
-        ws_host = ws_opts.get('headers', {}).get('Host') or ws_opts.get('headers', {}).get('host')
+        ws_headers = ws_opts.get('headers') or {}
+        ws_host = ws_headers.get('Host') or ws_headers.get('host')
         if ws_host:
             ident_parts.append(f"wshost:{str(ws_host).lower()}")
         
-        grpc_service = self.data.get('grpc-opts', {}).get('grpc-service-name')
+        grpc_opts = self.data.get('grpc-opts') or {}
+        grpc_service = grpc_opts.get('grpc-service-name')
         if grpc_service:
             ident_parts.append(f"grpc:{grpc_service}")
         
@@ -415,7 +422,8 @@ class Node:
             ident_parts.append(f"sni:{str(sni).lower()}")
         
         # 5. Reality 公钥 (如果有)
-        pbk = self.data.get('reality-opts', {}).get('public-key')
+        ropts = self.data.get('reality-opts') or {}
+        pbk = ropts.get('public-key')
         if pbk:
             ident_parts.append(f"pbk:{pbk}")
         

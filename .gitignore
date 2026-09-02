@@ -29,3 +29,11 @@ tg_summary.txt
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# 测试与构建产物
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/

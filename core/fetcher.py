@@ -92,7 +92,7 @@ class Fetcher:
                     logger.debug(f"Fetching: {target_url}")
                     response = await client.get(target_url, timeout=self.timeout)
                     if response.status_code == 200:
-                        content = response.content.decode('utf-8', errors='ignore')
+                        content = response.content.decode('utf-8-sig', errors='ignore')
                         break
                     else:
                         logger.debug(f"  - Error HTTP {response.status_code} on {target_url}")
@@ -119,10 +119,11 @@ class Fetcher:
                 sub_urls = list(dict.fromkeys(sub_urls))
                 logger.info(f"  - Found {len(sub_urls)} sub-urls in {url}")
                 tasks = [self.fetch_nodes(u, filters) for u in sub_urls]
-                results = await asyncio.gather(*tasks)
+                results = await asyncio.gather(*tasks, return_exceptions=True)
                 all_nodes = []
                 for res in results:
-                    all_nodes.extend(res)
+                    if isinstance(res, list):
+                        all_nodes.extend(res)
                 return all_nodes
 
         # 解析内容
@@ -130,7 +131,21 @@ class Fetcher:
 
         # 协议过滤
         if filters and 'ignore' in filters:
-            ignore_types = [t.strip().lower() for t in filters['ignore'].split(',')]
+            raw_ignore = filters['ignore']
+            if isinstance(raw_ignore, list):
+                raw_types = raw_ignore
+            else:
+                raw_types = str(raw_ignore).split(',')
+            
+            ignore_types = set()
+            for t in raw_types:
+                t_clean = str(t).strip().lower()
+                ignore_types.add(t_clean)
+                if t_clean == 'hy2':
+                    ignore_types.add('hysteria2')
+                elif t_clean == 'hysteria2':
+                    ignore_types.add('hy2')
+
             nodes = [n for n in nodes if n.type.lower() not in ignore_types]
 
         if nodes:
@@ -164,8 +179,8 @@ class Fetcher:
         except Exception:
             pass
 
-        # 2. 如果 YAML 整体解析失败或节点太少，尝试正则表达式提取 (保底方案)
-        if len(nodes) < 5:
+        # 2. 如果 YAML 整体解析失败，尝试正则表达式提取保底
+        if not nodes:
             found_lines = YAML_FALLBACK_PATTERN.findall(content)
             for line in found_lines:
                 try:
@@ -192,10 +207,13 @@ class Fetcher:
             except Exception:
                 pass
 
+        if nodes:
+            return nodes
+
         # 4. Try to parse as raw list (one URL per line)
         for line in content.splitlines():
             line_s = line.strip()
-            if line_s.startswith(ALLOWED_PROTOCOLS):
+            if line_s.lower().startswith(ALLOWED_PROTOCOLS):
                 nodes.append(Node(line_s))
 
         return nodes

@@ -89,5 +89,34 @@ class TestParser(unittest.TestCase):
         node_vless = Node(vless_no_port)
         self.assertEqual(node_vless.data["port"], 443)
 
+    def test_none_nested_dicts_and_empty_port_strings(self):
+        # 1. 节点字典中显式包含 null 嵌套字典
+        raw_dict = {
+            "name": "Node_Null_Opts",
+            "type": "vmess",
+            "server": "1.2.3.4",
+            "port": 443,
+            "uuid": "a0000000-0000-0000-0000-000000000000",
+            "ws-opts": None,
+            "grpc-opts": None,
+            "reality-opts": None
+        }
+        node = Node(raw_dict)
+        self.assertEqual(node.type, "vmess")
+        # 验证 to_url 和 get_identity 不会抛出 AttributeError
+        url = node.to_url()
+        self.assertTrue(url.startswith("vmess://"))
+        ident = node.get_identity()
+        self.assertIn("vmess", ident)
+
+        # 2. VMess JSON 中的 port / aid 为空字符串
+        vmess_empty_port = {
+            "v": "2", "ps": "VMess_Empty", "add": "1.2.3.4",
+            "port": "", "id": "a0000000-0000-0000-0000-000000000000", "aid": ""
+        }
+        node_empty = Node("vmess://" + b64encodes(json.dumps(vmess_empty_port)))
+        self.assertEqual(node_empty.data["port"], 0)
+        self.assertEqual(node_empty.data["alterId"], 0)
+
 if __name__ == "__main__":
     unittest.main()

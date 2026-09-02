@@ -1,11 +1,13 @@
+import copy
 import yaml
 import datetime
 import re
 import os
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 from core.parser import Node
 from utils.regions import REGIONS_DB, match_region
 from utils.common import b64encodes
+from utils.logger import logger
 
 REGION_NAMES = {
     code: f"{info['emoji']} {info['name']}"
@@ -18,7 +20,7 @@ class Generator:
             self.template = yaml.safe_load(f) or {}
 
     def generate(self, nodes: List[Node], output_path: str, source_count: int = 0, raw_count: int = 0, elapsed_time: float = 0):
-        config = self.template.copy()
+        config = copy.deepcopy(self.template)
         clash_proxies = [node.to_clash() for node in nodes]
         
         config['proxies'] = clash_proxies
@@ -91,18 +93,17 @@ class Generator:
         for key in active_keys:
             group_name = REGION_NAMES[key]
             auto_name = f"⚡ 自动选择 | {group_name}"
-            # 防御: 排除与组名冲突的成员,避免 Clash 循环引用
             raw_region_nodes = [n for n in region_nodes[key] if n != group_name and n != auto_name]
             nodes_in_region = sorted(raw_region_nodes, key=get_node_quality_score, reverse=True)
-            
+            fallback_proxies = nodes_in_region if nodes_in_region else ['DIRECT']
             dynamic_groups.append({
                 'name': auto_name, 'type': 'fallback', 'url': test_url,
                 'interval': test_interval, 'timeout': test_timeout,
-                'lazy': False, 'hidden': True, 'proxies': nodes_in_region
+                'lazy': False, 'hidden': True, 'proxies': fallback_proxies
             })
             dynamic_groups.append({
                 'name': group_name, 'type': 'select',
-                'proxies': [auto_name] + nodes_in_region
+                'proxies': ([auto_name] + nodes_in_region) if nodes_in_region else ['DIRECT']
             })
             region_list_for_menu.append(group_name)
 
@@ -111,14 +112,15 @@ class Generator:
             others_auto_name = f"⚡ 自动选择 | {others_group_name}"
             raw_others = [n for n in others if n != others_group_name and n != others_auto_name]
             others = sorted(raw_others, key=get_node_quality_score, reverse=True)
+            others_fallback_proxies = others if others else ['DIRECT']
             dynamic_groups.append({
                 'name': others_auto_name, 'type': 'fallback', 'url': test_url,
                 'interval': test_interval, 'timeout': test_timeout,
-                'lazy': False, 'hidden': True, 'proxies': others
+                'lazy': False, 'hidden': True, 'proxies': others_fallback_proxies
             })
             dynamic_groups.append({
                 'name': others_group_name, 'type': 'select',
-                'proxies': [others_auto_name] + others
+                'proxies': ([others_auto_name] + others) if others else ['DIRECT']
             })
             region_list_for_menu.append(others_group_name)
 
@@ -127,12 +129,16 @@ class Generator:
         def is_china_node(name: str) -> bool:
             """判断是否为中国境内节点，对 CN2-GIA / IPLC 等海外中转线路进行白名单豁免"""
             reg = node_to_region.get(name, '')
-            if reg == 'CN' or name.startswith('🇨🇳') or '中国' in name:
-                # 线路标签豁免: 如 HK-CN2-GIA, US-CN-Transit 等海外优化节点
+            if reg == 'CN' or name.startswith('🇨🇳'):
                 upper_name = name.upper()
                 if any(tag in upper_name for tag in ('CN2', 'CNIX', 'CN-TRANSIT', 'IPLC', 'BGP-CN')):
                     if any(flag in name for flag in ('🇭🇰', '🇯🇵', '🇺🇸', '🇸🇬', '🇰🇷', '🇩🇪', '🇬🇧', 'HK', 'JP', 'US', 'SG', 'TW')):
                         return False
+                return True
+            elif '中国' in name:
+                # 若明确识别为海外地区（如 HK, JP, US 等），说明是海外节点的运营商优化线路，不判定为国内
+                if reg in REGIONS_DB and reg != 'CN':
+                    return False
                 return True
             return False
 
@@ -195,13 +201,12 @@ class Generator:
             f.write(raw_urls_str)
             
         b64_path = "list.b64"
-        from utils.common import b64encodes
         with open(b64_path, 'w', encoding='utf-8') as f:
             f.write(b64encodes(raw_urls_str))
 
         self.update_readme(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
         self.generate_tg_summary(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
-        print(f"Successfully generated {len(nodes)} nodes across formats ({output_path}, {b64_path}, {txt_path})")
+        logger.info(f"Successfully generated {len(nodes)} nodes across formats ({output_path}, {b64_path}, {txt_path})")
 
     def update_readme(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float):
         readme_path = "README.md"

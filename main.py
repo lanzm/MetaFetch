@@ -38,6 +38,11 @@ async def main():
             if isinstance(private_data, list):
                 sources_data.extend(private_data)
                 logger.info(f"Loaded {len(private_data)} private sources from Secrets.")
+            elif isinstance(private_data, dict):
+                p_sources = private_data.get('sources', [])
+                if isinstance(p_sources, list):
+                    sources_data.extend(p_sources)
+                    logger.info(f"Loaded {len(p_sources)} private sources from Secrets dict.")
         except Exception as e:
             logger.warning(f"Failed to parse PRIVATE_SOURCES: {e}")
             

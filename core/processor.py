@@ -10,10 +10,11 @@ CLEAN_AD_REGEXES = [
     re.compile(r'(?i)(t\.me/\S+|https?://\S+)')
 ]
 
-# 动态生成所有组名(地区组 + 自动选择组),防止节点名与组名冲突导致 Clash 循环引用
-GROUP_NAMES = set([f"{info['emoji']} {info['name']}" for info in REGIONS_DB.values()])
+# 动态生成所有组名(地区组 + 自动选择组 + 模板静态组),防止节点名与组名冲突导致 Clash 循环引用
+GROUP_NAMES = {f"{info['emoji']} {info['name']}" for info in REGIONS_DB.values()}
 GROUP_NAMES.add('🌍 其他地区')
 GROUP_NAMES.update([f"⚡ 自动选择 | {name}" for name in list(GROUP_NAMES)])
+GROUP_NAMES.update({'🚀 选择代理', '🗺️ 选择地区', '♻️ 自动选择', '🔰 延迟最低', '✅ 手动选择', 'DIRECT', 'REJECT', 'PASS'})
 
 # 无效与回环 server 过滤黑名单
 INVALID_SERVERS = {
@@ -30,9 +31,9 @@ class NodeProcessor:
         seen = set()
         deduped = []
         for node in nodes:
-            h = hash(node)
-            if h not in seen:
-                seen.add(h)
+            ident = node.get_identity()
+            if ident not in seen:
+                seen.add(ident)
                 deduped.append(node)
         return deduped
 
@@ -41,12 +42,13 @@ class NodeProcessor:
         self.name_counter.clear()
 
         for node in nodes:
-            name = node.data.get('name', 'node')
+            name = str(node.data.get('name') or 'node')
             # 1. 基础清理 (广告、Telegram 频道、不安全字符)
             for reg in CLEAN_AD_REGEXES:
                 name = reg.sub('', name)
 
-            # YAML Safety: 替换破坏 YAML 结构或引用的特殊字符
+            # YAML Safety: 替换破坏 YAML 结构或引用的特殊字符及换行
+            name = name.replace('\r', ' ').replace('\n', ' ')
             name = name.replace(':', '-').replace('[', '').replace(']', '')
             name = name.replace('not found', '').replace('Unnamed', '').strip()
 
@@ -62,22 +64,17 @@ class NodeProcessor:
                 if flag not in name:
                     name = f"{flag} {name}"
 
-            # 3. 避免与 Clash Policy Group 组名完全重名导致内核循环引用
-            if name in GROUP_NAMES:
-                name = f"{name} #1"
-
-            # 4. O(1) 重复节点命名计数分配
-            base_name = name
-            if base_name in self.used_names:
-                count = max(2, self.name_counter[base_name] + 1)
-                new_name = f"{base_name} #{count}"
+            # 3. 避免与 Clash Policy Group 组名完全重名导致内核循环引用，并处理重名编号
+            if name in GROUP_NAMES or name in self.used_names:
+                count = max(1 if name in GROUP_NAMES else 2, self.name_counter[name] + 1)
+                new_name = f"{name} #{count}"
                 while new_name in self.used_names or new_name in GROUP_NAMES:
                     count += 1
-                    new_name = f"{base_name} #{count}"
-                self.name_counter[base_name] = count
+                    new_name = f"{name} #{count}"
+                self.name_counter[name] = count
                 name = new_name
             else:
-                self.name_counter[base_name] = 1
+                self.name_counter[name] = 1
 
             self.used_names.add(name)
             node.data['name'] = name
