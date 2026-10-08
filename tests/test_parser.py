@@ -1,7 +1,7 @@
 import json
 import unittest
 from core.parser import Node
-from utils.common import b64encodes
+from utils.common import b64encodes, b64decodes
 
 class TestParser(unittest.TestCase):
     def test_node_from_vmess_url(self):
@@ -117,6 +117,34 @@ class TestParser(unittest.TestCase):
         node_empty = Node("vmess://" + b64encodes(json.dumps(vmess_empty_port)))
         self.assertEqual(node_empty.data["port"], 0)
         self.assertEqual(node_empty.data["alterId"], 0)
+
+    def test_node_type_normalization(self):
+        # 验证大写与变体协议自动归一化
+        node_vmess = Node({"name": "Test1", "type": "VMESS", "server": "1.1.1.1", "port": 443})
+        self.assertEqual(node_vmess.type, "vmess")
+        self.assertEqual(node_vmess.data["type"], "vmess")
+
+        node_hy2 = Node({"name": "Test2", "type": "Hy2", "server": "1.1.1.1", "port": 443})
+        self.assertEqual(node_hy2.type, "hysteria2")
+        self.assertEqual(node_hy2.data["type"], "hysteria2")
+
+    def test_vmess_to_url_none_fields(self):
+        node = Node({"name": "Vmess_None", "type": "vmess", "server": "1.1.1.1", "port": None, "alterId": None})
+        url = node.to_url()
+        self.assertTrue(url.startswith("vmess://"))
+        payload = json.loads(b64decodes(url[8:]))
+        self.assertEqual(payload["port"], "443")
+        self.assertEqual(payload["aid"], "0")
+        self.assertNotEqual(payload["aid"], "None")
+
+    def test_region_matching_expanded_cities(self):
+        from utils.regions import match_region
+        self.assertEqual(match_region("Seattle-01"), "US")
+        self.assertEqual(match_region("HongKong_高速01"), "HK")
+        self.assertEqual(match_region("JP-Nagoya-1"), "JP")
+        self.assertEqual(match_region("DE 柏林 机房"), "DE")
+        self.assertEqual(match_region("UnitedStates-02"), "US")
+
 
 if __name__ == "__main__":
     unittest.main()

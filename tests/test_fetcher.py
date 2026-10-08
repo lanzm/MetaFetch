@@ -38,5 +38,13 @@ proxies:
         self.assertEqual(len(nodes), 1)
         self.assertEqual(nodes[0].name, "YAML_Node_1")
 
+    def test_fetcher_timeout_config(self):
+        f = Fetcher(timeout=12.0, connect_timeout=4.0)
+        self.assertEqual(f.timeout, 12.0)
+        self.assertEqual(f.connect_timeout, 4.0)
+        self.assertEqual(f.req_timeout.connect, 4.0)
+        self.assertEqual(f.req_timeout.read, 12.0)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -33,8 +33,10 @@ EXCLUDE_RECURSIVE_KEYWORDS = (
 )
 
 class Fetcher:
-    def __init__(self, timeout: int = 10, max_concurrent: int = 15, client: Optional[httpx.AsyncClient] = None):
+    def __init__(self, timeout: float = 10.0, connect_timeout: float = 5.0, max_concurrent: int = 15, client: Optional[httpx.AsyncClient] = None):
         self.timeout = timeout
+        self.connect_timeout = connect_timeout
+        self.req_timeout = httpx.Timeout(timeout=timeout, connect=min(connect_timeout, timeout))
         self.semaphore = asyncio.Semaphore(max_concurrent)
         self.headers = DEFAULT_HEADERS
         self._external_client = client is not None
@@ -50,7 +52,7 @@ class Fetcher:
                 follow_redirects=True,
                 trust_env=True,
                 limits=limits,
-                timeout=self.timeout
+                timeout=self.req_timeout
             )
         return self
 
@@ -87,14 +89,14 @@ class Fetcher:
         client = self.client
         close_client_after = False
         if client is None:
-            client = httpx.AsyncClient(headers=self.headers, verify=False, follow_redirects=True, timeout=self.timeout)
+            client = httpx.AsyncClient(headers=self.headers, verify=False, follow_redirects=True, timeout=self.req_timeout)
             close_client_after = True
 
         try:
             for target_url in targets:
                 try:
                     logger.debug(f"Fetching: {target_url}")
-                    response = await client.get(target_url, timeout=self.timeout)
+                    response = await client.get(target_url, timeout=self.req_timeout)
                     if response.status_code == 200:
                         text = response.content.decode('utf-8-sig', errors='ignore')
                         # 识别假 200（如反代 404/502 HTML、Cloudflare 质询页）
@@ -156,7 +158,7 @@ class Fetcher:
                 elif t_clean == 'hysteria2':
                     ignore_types.add('hy2')
 
-            nodes = [n for n in nodes if n.type.lower() not in ignore_types]
+            nodes = [n for n in nodes if str(getattr(n, 'type', '')).lower() not in ignore_types]
 
         if nodes:
             logger.info(f"  - Successfully parsed {len(nodes)} nodes from {url}")
@@ -228,12 +230,12 @@ class Fetcher:
 
         return nodes
 
-async def parallel_fetch(source_infos: List[Dict[str, Any]]) -> Tuple[List[Node], List[Dict[str, Any]]]:
+async def parallel_fetch(source_infos: List[Dict[str, Any]], timeout: float = 10.0, connect_timeout: float = 5.0) -> Tuple[List[Node], List[Dict[str, Any]]]:
     """
     接收格式化的 source_info 列表，包含 name, url 和 filters
     使用全局连接池高效并行抓取，返回 (全量节点列表, 按源归类的明细列表)
     """
-    async with Fetcher() as fetcher:
+    async with Fetcher(timeout=timeout, connect_timeout=connect_timeout) as fetcher:
         tasks = [fetcher.fetch_nodes(info['url'], info.get('filters')) for info in source_infos]
         results = await asyncio.gather(*tasks, return_exceptions=True)
 

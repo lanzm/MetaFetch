@@ -8,7 +8,11 @@ class Node:
         self.data: Dict[str, Any] = {}
         if isinstance(data, dict):
             self.data = data.copy()
-            self.type = self.data.get('type', 'unknown')
+            raw_type = str(self.data.get('type') or 'unknown').strip().lower()
+            if raw_type == 'hy2':
+                raw_type = 'hysteria2'
+            self.data['type'] = raw_type
+            self.type = raw_type
             self._clean_dict_fields()
         elif isinstance(data, str):
             self.load_url(data)
@@ -18,7 +22,11 @@ class Node:
             self.data['name'] = "Unnamed"
         
         # Standardize type
-        self.type = self.data.get('type', 'unknown')
+        raw_type = str(self.data.get('type') or 'unknown').strip().lower()
+        if raw_type == 'hy2':
+            raw_type = 'hysteria2'
+        self.data['type'] = raw_type
+        self.type = raw_type
 
     @property
     def name(self):
@@ -142,11 +150,15 @@ class Node:
                     # 处理可能带端口的 serverinfo（支持 IPv6 [::1]:port）
                     server, port_str = serverinfo.rsplit(':', 1)
                     server = server.strip('[]')
+                    try:
+                        port_val = int(port_str)
+                    except (ValueError, TypeError):
+                        port_val = 0
                     
                     self.data.update({
                         'type': 'ss',
                         'server': server,
-                        'port': int(port_str),
+                        'port': port_val,
                         'cipher': cipher,
                         'password': password,
                         'udp': True
@@ -308,15 +320,22 @@ class Node:
             ws_headers = ws_opts.get('headers') or {}
             grpc_opts = self.data.get('grpc-opts') or {}
 
+            aid_val = self.data.get('alterId')
+            if aid_val is None:
+                aid_val = 0
+            port_val = self.data.get('port')
+            if port_val is None:
+                port_val = 443
+
             v_json = {
                 "v": "2",
                 "ps": self.name,
                 "add": server,
-                "port": str(port),
+                "port": str(port_val),
                 "id": self.data.get('uuid', ''),
-                "aid": str(self.data.get('alterId', 0)),
-                "scy": self.data.get('cipher', 'auto'),
-                "net": self.data.get('network', 'tcp'),
+                "aid": str(aid_val),
+                "scy": self.data.get('cipher', 'auto') or 'auto',
+                "net": self.data.get('network', 'tcp') or 'tcp',
                 "type": "none",
                 "host": ws_headers.get('Host', '') or self.data.get('sni', '') or '',
                 "path": ws_opts.get('path', '') or grpc_opts.get('grpc-service-name', '') or '',
