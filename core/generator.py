@@ -11,6 +11,9 @@ from utils.logger import logger
 
 _MB_SPEED_RE = re.compile(r'(\d+\.?\d*)\s*mb/s', re.IGNORECASE)
 _KB_SPEED_RE = re.compile(r'(\d+\.?\d*)\s*kb/s', re.IGNORECASE)
+_YAML_SAFE_CONTROL_REGEX = re.compile(
+    r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f\u200b-\u200f\u2028-\u202f\u2060-\u206f\ufeff]'
+)
 
 REGION_NAMES = {
     code: f"{info['emoji']} {info['name']}"
@@ -218,6 +221,7 @@ class Generator:
             yaml_content = yaml.safe_dump(config, allow_unicode=True, default_flow_style=False, sort_keys=False)
             yaml_content = re.sub(r'short-id:\s*([^\s"\']+)', r'short-id: "\1"', yaml_content)
             yaml_content = re.sub(r'public-key:\s*([^\s"\']+)', r'public-key: "\1"', yaml_content)
+            yaml_content = _YAML_SAFE_CONTROL_REGEX.sub('', yaml_content)
             f.write(yaml_content)
         
         # 7. Save Universal Links (Base64 & Plain TXT)

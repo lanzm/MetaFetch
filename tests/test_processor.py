@@ -38,5 +38,25 @@ class TestProcessor(unittest.TestCase):
         self.assertTrue(processed[0].name.startswith("🇺🇸"))
         self.assertTrue(processed[1].name.startswith("🇯🇵"))
 
+    def test_processor_strip_control_characters(self):
+        processor = NodeProcessor()
+        # 包含 \u200d, \u200e, \ufe0f, \x00 等控制字符
+        bad_name = "US\u200d\u200e\ufe0f Fast\x00 Server\t"
+        node = Node({"name": bad_name, "type": "vmess", "server": "1.2.3.4", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
+        processed = processor.process_all([node])
+        self.assertEqual(len(processed), 1)
+        # 控制字符应该被完全清除
+        for bad_ch in ('\u200d', '\u200e', '\x00'):
+            self.assertNotIn(bad_ch, processed[0].name)
+
+    def test_processor_filter_notice_nodes(self):
+        processor = NodeProcessor()
+        node_ad1 = Node({"name": "飞机群-官方通知", "type": "vmess", "server": "1.2.3.4", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
+        node_ad2 = Node({"name": "节点不可用请更新订阅", "type": "vmess", "server": "1.2.3.5", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
+        node_ok = Node({"name": "US Normal Node", "type": "vmess", "server": "1.2.3.6", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
+        processed = processor.process_all([node_ad1, node_ad2, node_ok])
+        self.assertEqual(len(processed), 1)
+        self.assertIn("US Normal Node", processed[0].name)
+
 if __name__ == "__main__":
     unittest.main()

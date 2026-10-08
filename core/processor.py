@@ -10,6 +10,17 @@ CLEAN_AD_REGEXES = [
     re.compile(r'(?i)(t\.me/\S+|https?://\S+)')
 ]
 
+# 清理 ANSI 终端转义、所有 C0/C1 控制字符、零宽字符、方向控制符、格式字符
+CONTROL_CHARS_REGEX = re.compile(
+    r'[\x00-\x1f\x7f-\x9f\u200b-\u200f\u2028-\u202f\u2060-\u206f\ufeff]'
+)
+
+# 提示/公告/失效假节点过滤关键词
+NOTICE_NODE_KEYWORDS = (
+    '更新订阅', '节点不可用', '请更新', '到期时间', '剩余流量', '套餐到期',
+    '官网', '发布页', '飞机群', '电报群', '官方群', '客服', '禁止测速', '请勿测速'
+)
+
 # 动态生成所有组名(地区组 + 自动选择组 + 模板静态组),防止节点名与组名冲突导致 Clash 循环引用
 GROUP_NAMES = {f"{info['emoji']} {info['name']}" for info in REGIONS_DB.values()}
 GROUP_NAMES.add('🌍 其他地区')
@@ -42,13 +53,18 @@ class NodeProcessor:
         self.name_counter.clear()
 
         for node in nodes:
+            # 清理所有 string 字段中的隐藏控制字符
+            for k, v in list(node.data.items()):
+                if isinstance(v, str):
+                    node.data[k] = CONTROL_CHARS_REGEX.sub('', v)
+
             name = str(node.data.get('name') or 'node')
             # 1. 基础清理 (广告、Telegram 频道、不安全字符)
             for reg in CLEAN_AD_REGEXES:
                 name = reg.sub('', name)
 
-            # YAML Safety: 替换破坏 YAML 结构或引用的特殊字符及换行
-            name = name.replace('\r', ' ').replace('\n', ' ')
+            # YAML Safety: 彻底清除控制字符、破坏 YAML 结构或引用的特殊字符及换行
+            name = CONTROL_CHARS_REGEX.sub('', name)
             name = name.replace(':', '-').replace('[', '').replace(']', '')
             name = name.replace('not found', '').replace('Unnamed', '').strip()
 
@@ -83,6 +99,12 @@ class NodeProcessor:
         valid_nodes = []
         for node in nodes:
             n_data = node.data
+            n_name = str(n_data.get('name', ''))
+
+            # 过滤包含明显提示信息/公告/失效关键词的假节点
+            if any(kw in n_name for kw in NOTICE_NODE_KEYWORDS):
+                continue
+
             n_type = n_data.get('type', 'unknown')
             n_server = str(n_data.get('server', '')).strip()
             n_port = n_data.get('port')
