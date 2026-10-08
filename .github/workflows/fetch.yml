@@ -46,16 +46,10 @@ jobs:
       - name: Run Fetch Task
         env:
           PRIVATE_SOURCES: ${{ secrets.PRIVATE_SOURCES }}
-        run: |
-          python main.py
-
-      - name: Send Telegram Notification
-        continue-on-error: true
-        env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: |
-          python utils/notify.py
+          python main.py
 
       - name: Commit and Push Changes
         run: |

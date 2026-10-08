@@ -9,7 +9,7 @@ import urllib.error
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.logger import logger
 
-def send_tg_notification():
+def send_tg_notification(text: str = None) -> bool:
     raw_token = os.environ.get('TG_BOT_TOKEN', '')
     raw_chat_id = os.environ.get('TG_CHAT_ID', '')
     
@@ -22,15 +22,19 @@ def send_tg_notification():
         token = token[3:]
         
     if not token or not chat_id:
-        logger.warning("TG_BOT_TOKEN or TG_CHAT_ID is missing in environment variables. Skipping Telegram notification.")
-        return
+        logger.info("TG_BOT_TOKEN or TG_CHAT_ID is missing in environment variables. Skipping Telegram notification.")
+        return False
         
-    if not os.path.exists("tg_summary.txt"):
-        logger.warning("tg_summary.txt not found. Skipping Telegram notification.")
-        return
-
-    with open("tg_summary.txt", "r", encoding="utf-8") as f:
-        text = f.read()
+    if not text:
+        if os.path.exists("tg_summary.txt"):
+            try:
+                with open("tg_summary.txt", "r", encoding="utf-8") as f:
+                    text = f.read()
+            except Exception:
+                text = ""
+        if not text:
+            logger.info("No notification text provided. Skipping Telegram notification.")
+            return False
 
     msg_id_file = "tg_msg_id.txt"
     msg_id = None
@@ -67,7 +71,7 @@ def send_tg_notification():
             # 内容无变化时 Telegram 会报 "message is not modified"，视为成功无需重发
             if "message is not modified" in err_msg.lower():
                 logger.info(f"Telegram dashboard message (ID: {msg_id}) content is unchanged.")
-                return
+                return True
             logger.info(f"editMessageText failed ({e.code}: {err_msg}), will create a new message.")
         except Exception as e:
             logger.warning(f"Failed to edit message: {e}, will fallback to sending a new message.")
@@ -91,11 +95,14 @@ def send_tg_notification():
                     if new_msg_id:
                         with open(msg_id_file, "w", encoding="utf-8") as f:
                             f.write(str(new_msg_id))
+                    success = True
         except urllib.error.HTTPError as e:
             err_msg = e.read().decode('utf-8') if e.fp else str(e)
             logger.error(f"Telegram API HTTP Error {e.code}: {err_msg}")
         except Exception as e:
             logger.error(f"Failed to send Telegram notification: {e}")
+
+    return success
 
 if __name__ == "__main__":
     send_tg_notification()

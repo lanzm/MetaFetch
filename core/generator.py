@@ -311,8 +311,9 @@ class Generator:
             f.write(b64encodes(raw_urls_str))
 
         self.update_readme(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
-        self.generate_tg_summary(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
+        tg_summary = self.generate_tg_summary(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
         logger.info(f"Successfully generated {len(nodes)} nodes across formats ({output_path}, {b64_path}, {txt_path})")
+        return tg_summary
 
     def update_readme(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float):
         readme_path = "README.md"
@@ -354,7 +355,7 @@ class Generator:
         with open(readme_path, 'w', encoding='utf-8') as f:
             f.write(content)
 
-    def generate_tg_summary(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float):
+    def generate_tg_summary(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float) -> str:
         region_lines = []
         for key in region_nodes:
             count = len(region_nodes[key])
@@ -378,6 +379,4 @@ class Generator:
             f"• <b>Shadowrocket / Base64:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64</code>\n\n"
             f"⭐ <b>GitHub 仓库：</b> <a href=\"https://github.com/lanzm/MetaFetch\">lanzm/MetaFetch</a>"
         )
-        
-        with open("tg_summary.txt", "w", encoding="utf-8") as f:
-            f.write(message)
+        return message

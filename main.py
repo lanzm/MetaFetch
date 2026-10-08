@@ -8,6 +8,7 @@ from core.fetcher import parallel_fetch
 from core.processor import NodeProcessor
 from core.generator import Generator
 from utils.stats import render_and_update_readme_source_stats
+from utils.notify import send_tg_notification
 from utils.logger import logger
 
 TEMPLATE_FILE = "config.yaml"
@@ -100,7 +101,7 @@ async def main():
     else:
         elapsed_time = time.time() - start_time
         generator = Generator(TEMPLATE_FILE)
-        generator.generate(processed_nodes, OUTPUT_FILE, active_source_count, raw_count, elapsed_time)
+        tg_summary_text = generator.generate(processed_nodes, OUTPUT_FILE, active_source_count, raw_count, elapsed_time)
         
         # 5. Update README Source Contribution Table (零二次网络开销，纯内存计算)
         try:
@@ -114,6 +115,13 @@ async def main():
             render_and_update_readme_source_stats(source_stats, now)
         except Exception as e:
             logger.warning(f"Failed to update README source stats table: {e}")
+
+        # 6. Telegram Notification (直接内存传参，静默容错保护)
+        if tg_summary_text:
+            try:
+                send_tg_notification(tg_summary_text)
+            except Exception as e:
+                logger.warning(f"Failed to send Telegram notification: {e}")
     
     logger.info(f"All done! Generated: {OUTPUT_FILE}")
 

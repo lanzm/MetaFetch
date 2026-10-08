@@ -1,12 +1,7 @@
-import asyncio
 import datetime
-import yaml
-import sys
 import os
 import re
 from typing import List, Dict, Any
-
-sys.path.insert(0, os.getcwd())
 
 def render_and_update_readme_source_stats(source_results: List[Dict[str, Any]], now: datetime.datetime = None):
     """
@@ -57,58 +52,3 @@ def render_and_update_readme_source_stats(source_results: List[Dict[str, Any]], 
         new_readme = re.sub(pattern, replacement, readme)
         with open(readme_path, "w", encoding="utf-8") as f:
             f.write(new_readme)
-
-async def update_readme_source_stats():
-    """
-    独立运行 fallback：当直接运行 stats.py 时自动读取 sources.yaml 抓取并更新
-    """
-    from core.fetcher import Fetcher
-    from core.processor import NodeProcessor
-
-    now = datetime.datetime.now()
-    sources_file = "sources.yaml"
-    if not os.path.exists(sources_file):
-        return
-
-    try:
-        with open(sources_file, "r", encoding="utf-8") as f:
-            data = yaml.safe_load(f) or {}
-    except Exception:
-        return
-
-    sources = data.get("sources", [])
-    processor = NodeProcessor()
-    source_results = []
-
-    async with Fetcher(timeout=15) as fetcher:
-        for s in sources:
-            if s.get('enabled') is False:
-                continue
-            raw_url = s.get('url', '')
-            name = s.get('name', '未命名源')
-            if not raw_url:
-                continue
-
-            url = raw_url.replace('%Y', now.strftime('%Y')).replace('%m', now.strftime('%m')).replace('%d', now.strftime('%d'))
-            if s.get('recursive') and not url.startswith('*'):
-                url = '*' + url
-            ignore = s.get('ignore')
-            filters = {'ignore': ignore} if ignore else {}
-
-            try:
-                nodes = await fetcher.fetch_nodes(url, filters)
-                valid_nodes = processor.filter_invalid(nodes)
-                source_results.append({
-                    "name": name,
-                    "valid_count": len(valid_nodes)
-                })
-            except Exception:
-                source_results.append({
-                    "name": name,
-                    "valid_count": 0
-                })
-
-    render_and_update_readme_source_stats(source_results, now)
-
-if __name__ == "__main__":
-    asyncio.run(update_readme_source_stats())
