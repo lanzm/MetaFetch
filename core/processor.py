@@ -1,6 +1,6 @@
 import re
 from collections import defaultdict
-from typing import List, Set, Dict
+from typing import List, Set, Dict, Any
 from core.parser import Node
 from utils.regions import REGIONS_DB, match_region
 
@@ -12,8 +12,23 @@ CLEAN_AD_REGEXES = [
 
 # 清理 ANSI 终端转义、所有 C0/C1 控制字符、零宽字符、方向控制符、格式字符
 CONTROL_CHARS_REGEX = re.compile(
-    r'[\x00-\x1f\x7f-\x9f\u200b-\u200f\u2028-\u202f\u2060-\u206f\ufeff]'
+    r'[\x00-\x1f\x7f-\x9f\u200b-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufffe\uffff]'
 )
+
+
+def deep_sanitize(data: Any) -> Any:
+    """递归清理字典、列表或字符串中的非法控制字符与不可见字符。"""
+    if isinstance(data, str):
+        return CONTROL_CHARS_REGEX.sub('', data)
+    elif isinstance(data, dict):
+        return {
+            (CONTROL_CHARS_REGEX.sub('', k) if isinstance(k, str) else k): deep_sanitize(v)
+            for k, v in data.items()
+        }
+    elif isinstance(data, list):
+        return [deep_sanitize(item) for item in data]
+    return data
+
 
 # 提示/公告/失效假节点过滤关键词
 NOTICE_NODE_KEYWORDS = (
@@ -53,10 +68,8 @@ class NodeProcessor:
         self.name_counter.clear()
 
         for node in nodes:
-            # 清理所有 string 字段中的隐藏控制字符
-            for k, v in list(node.data.items()):
-                if isinstance(v, str):
-                    node.data[k] = CONTROL_CHARS_REGEX.sub('', v)
+            # 递归彻底清理节点所有属性（包括 plugin-opts, server, password, sni 等）中的控制字符
+            node.data = deep_sanitize(node.data)
 
             name = str(node.data.get('name') or 'node')
             # 1. 基础清理 (广告、Telegram 频道、不安全字符)
