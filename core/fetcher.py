@@ -75,7 +75,11 @@ class Fetcher:
             user, repo, branch, path = gh_match.groups()
             # 备选镜像 1: jsDelivr (极速稳定)
             targets.append(f"https://fastly.jsdelivr.net/gh/{user}/{repo}@{branch}/{path}")
-            # 备选镜像 2: gh-proxy (通用代理)
+            # 备选镜像 2: raw.gitmirror.com (直连加速镜像)
+            targets.append(f"https://raw.gitmirror.com/{user}/{repo}/{branch}/{path}")
+            # 备选镜像 3: ghfast.top (稳定通用代理)
+            targets.append(f"https://ghfast.top/{url}")
+            # 备选镜像 4: gh-proxy (兜底代理)
             targets.append(f"https://gh-proxy.com/{url}")
 
         content = None
@@ -92,7 +96,13 @@ class Fetcher:
                     logger.debug(f"Fetching: {target_url}")
                     response = await client.get(target_url, timeout=self.timeout)
                     if response.status_code == 200:
-                        content = response.content.decode('utf-8-sig', errors='ignore')
+                        text = response.content.decode('utf-8-sig', errors='ignore')
+                        # 识别假 200（如反代 404/502 HTML、Cloudflare 质询页）
+                        head_sample = text[:500].upper()
+                        if '<!DOCTYPE' in head_sample or '<HTML' in head_sample:
+                            logger.debug(f"  - Target {target_url} returned HTML webpage instead of raw data, trying next mirror.")
+                            continue
+                        content = text
                         break
                     else:
                         logger.debug(f"  - Error HTTP {response.status_code} on {target_url}")

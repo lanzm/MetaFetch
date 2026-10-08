@@ -80,6 +80,8 @@ class NodeProcessor:
             name = CONTROL_CHARS_REGEX.sub('', name)
             name = name.replace(':', '-').replace('[', '').replace(']', '')
             name = name.replace('not found', '').replace('Unnamed', '').strip()
+            # 清理广告剥离后残留的首尾孤立标点符号 (如 "|", "-", "_", " / " 等)
+            name = re.sub(r'^[\s\-_|/\\·:]+|[\s\-_|/\\·:]+$', '', name).strip()
 
             # 如果节点名称为空，使用保底名称
             if not name:

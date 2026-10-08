@@ -58,5 +58,37 @@ class TestProcessor(unittest.TestCase):
         self.assertEqual(len(processed), 1)
         self.assertIn("US Normal Node", processed[0].name)
 
+    def test_processor_deep_sanitize_nested_attributes(self):
+        processor = NodeProcessor()
+        # 模拟包含 C1 控制字符 (0x9F, 0x87) 的深层嵌套字段 (如 Shadowsocks obfs host)
+        node = Node({
+            "name": "US Fast SS",
+            "type": "ss",
+            "server": "88.210.36.106",
+            "port": 2377,
+            "cipher": "chacha20-ietf-poly1305",
+            "password": "pwd",
+            "plugin": "obfs",
+            "plugin-opts": {
+                "mode": "tls",
+                "host": "(Telegram\x9F\x87 @WangCai2)f6e348d:70852"
+            }
+        })
+        processed = processor.process_all([node])
+        self.assertEqual(len(processed), 1)
+        host_val = processed[0].data.get("plugin-opts", {}).get("host", "")
+        self.assertNotIn("\x9F", host_val)
+        self.assertNotIn("\x87", host_val)
+        self.assertIn("@WangCai2", host_val)
+
+    def test_processor_trim_orphan_punctuation(self):
+        processor = NodeProcessor()
+        node1 = Node({"name": "🇺🇸 美国_1|", "type": "vmess", "server": "1.2.3.4", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
+        node2 = Node({"name": " - 🇯🇵 日本 - ", "type": "vmess", "server": "1.2.3.5", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
+        processed = processor.process_all([node1, node2])
+        self.assertEqual(len(processed), 2)
+        self.assertFalse(processed[0].name.endswith("|"))
+        self.assertFalse(processed[1].name.endswith("-"))
+
 if __name__ == "__main__":
     unittest.main()

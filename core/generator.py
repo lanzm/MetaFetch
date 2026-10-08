@@ -150,12 +150,15 @@ class Generator:
                 others.append(name)
 
         # 3. Create Dynamic Region Groups
-        # 3. 质量评分函数 (实测带宽 > speednode > hy2 > 普通)
+        # 3. 质量评分函数 (实测带宽 > speednode > Hysteria2 > Reality > VLESS/Trojan > 普通)
         name_to_node = {node.name: node for node in nodes}
 
         def get_node_quality_score(name: str) -> float:
             score = 10.0
             name_lower = name.lower()
+            node_obj = name_to_node.get(name)
+            node_type = getattr(node_obj, 'type', '').lower() if node_obj else ''
+
             m_mb = _MB_SPEED_RE.search(name)
             if m_mb:
                 try:
@@ -166,19 +169,25 @@ class Generator:
                 score = 95.0
             elif 'speednode' in name_lower:
                 score = 90.0
+            elif node_type in ('hysteria2', 'hy2') or 'hy2' in name_lower or 'hysteria' in name_lower:
+                score = 80.0
+            elif node_obj and (node_obj.data.get('reality-opts') or 'reality' in name_lower):
+                score = 75.0
+            elif node_type == 'vless':
+                score = 60.0
+            elif node_type == 'trojan':
+                score = 50.0
+            elif node_type == 'ss':
+                score = 40.0
             else:
-                node_obj = name_to_node.get(name)
-                if node_obj and getattr(node_obj, 'type', '') in ('hysteria2', 'hy2'):
-                    score = 80.0
-                elif 'hy2' in name_lower or 'hysteria' in name_lower:
-                    score = 80.0
+                score = 30.0
             return score
 
         # 4. Create Dynamic Region Groups (地区内自动选择同样采用 fallback 故障转移模式，并按质量排序)
         dynamic_groups = []
         region_list_for_menu = []
         
-        test_url = "http://cp.cloudflare.com/generate_204"
+        test_url = "https://cp.cloudflare.com/generate_204"
         test_interval = 60
         test_timeout = 2000
 
@@ -234,7 +243,8 @@ class Generator:
                 return True
             return False
 
-        MAX_PER_REGION = 6
+        # 核心主流地区（港、日、美、新）适当倾斜配置名额
+        CORE_REGIONS = {'HK', 'JP', 'US', 'SG'}
         smart_pool_nodes = []
 
         for key in active_keys:
@@ -242,13 +252,14 @@ class Generator:
             candidates = [n for n in region_nodes[key] if not is_china_node(n)]
             if not candidates: continue
             candidates_sorted = sorted(candidates, key=get_node_quality_score, reverse=True)
-            smart_pool_nodes.extend(candidates_sorted[:MAX_PER_REGION])
+            max_limit = 8 if key in CORE_REGIONS else 4
+            smart_pool_nodes.extend(candidates_sorted[:max_limit])
 
         if others:
             other_candidates = [n for n in others if not is_china_node(n)]
             if other_candidates:
                 other_sorted = sorted(other_candidates, key=get_node_quality_score, reverse=True)
-                smart_pool_nodes.extend(other_sorted[:MAX_PER_REGION])
+                smart_pool_nodes.extend(other_sorted[:4])
 
         # 兜底保障：若精选节点数少于 20 个，从全量非 CN 节点中按分数补充至 30 个
         oversea_nodes = [n for n in node_names if not is_china_node(n)]

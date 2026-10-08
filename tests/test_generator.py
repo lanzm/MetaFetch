@@ -74,5 +74,40 @@ class TestGenerator(unittest.TestCase):
             manual_proxies = groups["✅ 手动选择"]["proxies"]
             self.assertTrue("⚠️ 本组仅作展示·请勿选择" in manual_proxies[0])
 
+    def test_generator_safedumper_quotes_and_deep_sanitize(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            template_path = os.path.join(tmpdir, "config.yaml")
+            output_path = os.path.join(tmpdir, "output.yaml")
+            with open(template_path, "w", encoding="utf-8") as f:
+                yaml.safe_dump(self.template_data, f)
+
+            # 包含纯数字密码、布尔伪装字符串以及深层控制字符
+            node = Node({
+                "name": "Special_Quote_Node",
+                "type": "ss",
+                "server": "1.2.3.4",
+                "port": 443,
+                "cipher": "aes-128-gcm",
+                "password": "true",
+                "plugin": "obfs",
+                "plugin-opts": {
+                    "mode": "tls",
+                    "host": "evil\x9f\x87host.com"
+                }
+            })
+
+            generator = Generator(template_path)
+            generator.generate([node], output_path)
+
+            with open(output_path, "r", encoding="utf-8") as f:
+                raw_yaml = f.read()
+
+            # 1. 验证 password: "true" 带有双引号，防止被 Go 解析为布尔值
+            self.assertIn('password: "true"', raw_yaml)
+            # 2. 验证控制字符被完全清洗
+            self.assertNotIn("\x9f", raw_yaml)
+            self.assertNotIn("\x87", raw_yaml)
+            self.assertIn("evilhost.com", raw_yaml)
+
 if __name__ == "__main__":
     unittest.main()

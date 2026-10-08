@@ -35,7 +35,7 @@ proxy-groups:
 
   - name: ♻️ 自动选择
     type: fallback
-    url: http://cp.cloudflare.com/generate_204
+    url: https://cp.cloudflare.com/generate_204
     interval: 60
     timeout: 2000
     lazy: false
@@ -43,7 +43,7 @@ proxy-groups:
 
   - name: 🔰 延迟最低
     type: url-test
-    url: http://cp.cloudflare.com/generate_204
+    url: https://cp.cloudflare.com/generate_204
     interval: 60
     timeout: 2000
     tolerance: 50
