@@ -52,6 +52,11 @@ REGIONS_DB: Dict[str, Dict[str, Any]] = {
 }
 
 # 预编译多级匹配规则（模块级单例缓存，极速匹配）
+REGION_NAMES: Dict[str, str] = {
+    code: f"{info['emoji']} {info['name']}"
+    for code, info in REGIONS_DB.items()
+}
+
 _EMOJI_MAP = {info['emoji']: key for key, info in REGIONS_DB.items() if info.get('emoji')}
 _NAME_MAP = {info['name']: key for key, info in REGIONS_DB.items() if info.get('name')}
 

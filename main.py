@@ -101,9 +101,9 @@ async def main():
     else:
         elapsed_time = time.time() - start_time
         generator = Generator(TEMPLATE_FILE)
-        tg_summary_text = generator.generate(processed_nodes, OUTPUT_FILE, active_source_count, raw_count, elapsed_time)
+        gen_stats = generator.generate(processed_nodes, OUTPUT_FILE, active_source_count, raw_count, elapsed_time)
         
-        # 5. Update README Source Contribution Table (零二次网络开销，纯内存计算)
+        # 5. Update README (统一更新顶部徽章、地区统计表与各源贡献度明细)
         try:
             source_stats = []
             for item in raw_source_results:
@@ -112,14 +112,15 @@ async def main():
                     'name': item.get('name', '未命名源'),
                     'valid_count': len(valid_nodes)
                 })
-            render_and_update_readme_source_stats(source_stats, now)
+            from utils.stats import update_readme_all
+            update_readme_all(gen_stats, source_stats, now=now)
         except Exception as e:
-            logger.warning(f"Failed to update README source stats table: {e}")
+            logger.warning(f"Failed to update README stats table: {e}")
 
         # 6. Telegram Notification (直接内存传参，静默容错保护)
-        if tg_summary_text:
+        if gen_stats:
             try:
-                send_tg_notification(tg_summary_text)
+                send_tg_notification(gen_stats)
             except Exception as e:
                 logger.warning(f"Failed to send Telegram notification: {e}")
     

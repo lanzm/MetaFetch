@@ -4,27 +4,70 @@ import re
 import json
 import urllib.request
 import urllib.error
+from typing import Dict, Any, Union
 
 # 确保独立执行脚本时能正确导入项目根目录模块
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from utils.regions import REGION_NAMES
 from utils.logger import logger
 
-def send_tg_notification(text: str = None) -> bool:
+def format_tg_summary(gen_stats: Dict[str, Any]) -> str:
+    """根据统计字典格式化 Telegram 消息看板文案"""
+    region_nodes = gen_stats.get('region_nodes', {})
+    others = gen_stats.get('others', [])
+    timestamp = gen_stats.get('timestamp', '')
+    source_count = gen_stats.get('source_count', 0)
+    raw_count = gen_stats.get('raw_count', 0)
+    total_nodes = gen_stats.get('total_nodes', 0)
+    elapsed_time = gen_stats.get('elapsed_time', 0.0)
+
+    region_lines = []
+    for key, nodes in region_nodes.items():
+        name = REGION_NAMES.get(key, key)
+        region_lines.append(f"{name} {len(nodes)}")
+    if others:
+        region_lines.append(f"🌍 其他 {len(others)}")
+
+    region_str = " | ".join(region_lines)
+
+    message = (
+        f"🚀 <b>MetaFetch 节点自动抓取更新通知</b>\n\n"
+        f"⏰ <b>更新时间：</b> <code>{timestamp}</code>\n"
+        f"📡 <b>活跃源：</b> {source_count} 个\n"
+        f"📦 <b>抓取节点：</b> {raw_count} 个\n"
+        f"✅ <b>保留有效节点：</b> <b>{total_nodes}</b> 个 (耗时 {elapsed_time:.2f}s)\n\n"
+        f"🌍 <b>节点地区分布：</b>\n"
+        f"{region_str}\n\n"
+        f"📥 <b>快捷订阅地址 (点击链接直连复制)：</b>\n"
+        f"• <b>Clash / Mihomo:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml</code>\n"
+        f"• <b>Shadowrocket / Base64:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64</code>\n\n"
+        f"⭐ <b>GitHub 仓库：</b> <a href=\"https://github.com/lanzm/MetaFetch\">lanzm/MetaFetch</a>"
+    )
+    return message
+
+
+def send_tg_notification(summary_or_text: Union[Dict[str, Any], str] = None) -> bool:
     raw_token = os.environ.get('TG_BOT_TOKEN', '')
     raw_chat_id = os.environ.get('TG_CHAT_ID', '')
-    
+
     # 彻底过滤多余空格、换行符等控制字符
     token = re.sub(r'\s+', '', raw_token)
     chat_id = re.sub(r'\s+', '', raw_chat_id)
-    
+
     # 自动切除可能误多复制的 'bot' 前缀
     if token.lower().startswith('bot'):
         token = token[3:]
-        
+
     if not token or not chat_id:
         logger.info("TG_BOT_TOKEN or TG_CHAT_ID is missing in environment variables. Skipping Telegram notification.")
         return False
-        
+
+    text = ""
+    if isinstance(summary_or_text, dict):
+        text = format_tg_summary(summary_or_text)
+    elif isinstance(summary_or_text, str):
+        text = summary_or_text
+
     if not text:
         if os.path.exists("tg_summary.txt"):
             try:

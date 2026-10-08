@@ -5,7 +5,7 @@ import re
 import os
 from typing import List, Dict, Any
 from core.parser import Node
-from utils.regions import REGIONS_DB, match_region
+from utils.regions import REGIONS_DB, match_region, REGION_NAMES
 from utils.common import b64encodes
 from utils.logger import logger
 
@@ -77,10 +77,6 @@ def _represent_str(dumper, data):
 
 SafeDumper.add_representer(str, _represent_str)
 
-REGION_NAMES = {
-    code: f"{info['emoji']} {info['name']}"
-    for code, info in REGIONS_DB.items()
-}
 
 class Generator:
     def __init__(self, template_path: str):
@@ -302,81 +298,22 @@ class Generator:
         node_urls = [url for node in nodes if (url := node.to_url())]
         raw_urls_str = "\n".join(node_urls)
         
-        txt_path = "list.txt"
+        output_dir = os.path.dirname(output_path)
+        txt_path = os.path.join(output_dir, "list.txt") if output_dir else "list.txt"
         with open(txt_path, 'w', encoding='utf-8') as f:
             f.write(raw_urls_str)
             
-        b64_path = "list.b64"
+        b64_path = os.path.join(output_dir, "list.b64") if output_dir else "list.b64"
         with open(b64_path, 'w', encoding='utf-8') as f:
             f.write(b64encodes(raw_urls_str))
 
-        self.update_readme(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
-        tg_summary = self.generate_tg_summary(len(nodes), region_nodes, others, now_str, source_count, raw_count, elapsed_time)
         logger.info(f"Successfully generated {len(nodes)} nodes across formats ({output_path}, {b64_path}, {txt_path})")
-        return tg_summary
-
-    def update_readme(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float):
-        readme_path = "README.md"
-        if not os.path.exists(readme_path): return
-
-        with open(readme_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        badge_content = (f"![Update](https://img.shields.io/badge/Updated-{timestamp.replace(' ', '--').replace(':', '%3A')}-green.svg?style=flat-square)\n"
-                         f"![Nodes](https://img.shields.io/badge/Valid_Nodes-{total_nodes}-orange.svg?style=flat-square)\n"
-                         f"![Sources](https://img.shields.io/badge/Active_Sources-{source_count}-blue.svg?style=flat-square)")
-        
-        content = re.sub(r'<!-- STATS_BADGE_START -->.*?<!-- STATS_BADGE_END -->', 
-                         f'<!-- STATS_BADGE_START -->\n{badge_content}\n<!-- STATS_BADGE_END -->', 
-                         content, flags=re.DOTALL)
-
-        header_row = ["地区分布"]
-        value_row = ["**数量**"]
-        
-        for key in region_nodes:
-            count = len(region_nodes[key])
-            header_row.append(REGION_NAMES[key].replace(' ', ''))
-            value_row.append(str(count))
-        
-        if others:
-            header_row.append("🌍其他")
-            value_row.append(str(len(others)))
-            
-        header_row.append("**总计**")
-        value_row.append(f"**{total_nodes}**")
-        
-        table_markdown = f"<div style=\"overflow-x: auto;\">\n\n| {' | '.join(header_row)} |\n| {' | '.join([':---:']*len(header_row))} |\n| {' | '.join(value_row)} |\n\n</div>"
-        stats_summary = f"> 更新时间：`{timestamp}`\n> 运行分析：从 `{source_count}` 个活跃源中抓取 `{raw_count}` 个节点，耗时 `{elapsed_time:.2f}s`。去重后保留 `{total_nodes}` 个有效节点。"
-
-        content = re.sub(r'<!-- STATS_TABLE_START -->.*?<!-- STATS_TABLE_END -->', 
-                         f'<!-- STATS_TABLE_START -->\n{stats_summary}\n\n{table_markdown}\n<!-- STATS_TABLE_END -->', 
-                         content, flags=re.DOTALL)
-
-        with open(readme_path, 'w', encoding='utf-8') as f:
-            f.write(content)
-
-    def generate_tg_summary(self, total_nodes: int, region_nodes: Dict[str, List[str]], others: List[str], timestamp: str, source_count: int, raw_count: int, elapsed_time: float) -> str:
-        region_lines = []
-        for key in region_nodes:
-            count = len(region_nodes[key])
-            name = REGION_NAMES[key]
-            region_lines.append(f"{name} {count}")
-        if others:
-            region_lines.append(f"🌍 其他 {len(others)}")
-            
-        region_str = " | ".join(region_lines)
-        
-        message = (
-            f"🚀 <b>MetaFetch 节点自动抓取更新通知</b>\n\n"
-            f"⏰ <b>更新时间：</b> <code>{timestamp}</code>\n"
-            f"📡 <b>活跃源：</b> {source_count} 个\n"
-            f"📦 <b>抓取节点：</b> {raw_count} 个\n"
-            f"✅ <b>保留有效节点：</b> <b>{total_nodes}</b> 个 (耗时 {elapsed_time:.2f}s)\n\n"
-            f"🌍 <b>节点地区分布：</b>\n"
-            f"{region_str}\n\n"
-            f"📥 <b>快捷订阅地址 (点击链接直连复制)：</b>\n"
-            f"• <b>Clash / Mihomo:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml</code>\n"
-            f"• <b>Shadowrocket / Base64:</b>\n<code>https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64</code>\n\n"
-            f"⭐ <b>GitHub 仓库：</b> <a href=\"https://github.com/lanzm/MetaFetch\">lanzm/MetaFetch</a>"
-        )
-        return message
+        return {
+            'total_nodes': len(nodes),
+            'region_nodes': region_nodes,
+            'others': others,
+            'timestamp': now_str,
+            'source_count': source_count,
+            'raw_count': raw_count,
+            'elapsed_time': elapsed_time
+        }
