@@ -7,7 +7,7 @@ import yaml
 from core.fetcher import parallel_fetch
 from core.processor import NodeProcessor
 from core.generator import Generator
-from utils.stats import render_and_update_readme_source_stats
+from utils.stats import update_readme_all
 from utils.notify import send_tg_notification
 from utils.logger import logger
 
@@ -112,7 +112,6 @@ async def main():
                     'name': item.get('name', '未命名源'),
                     'valid_count': len(valid_nodes)
                 })
-            from utils.stats import update_readme_all
             update_readme_all(gen_stats, source_stats, now=now)
         except Exception as e:
             logger.warning(f"Failed to update README stats table: {e}")
