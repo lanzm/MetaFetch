@@ -56,9 +56,9 @@ sources:
     url: "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
     note: "每 6 小时自动更新的移动端精选（实测包含高速全绿新西兰等）"
 
-  - name: "📡 shaoyouvip 每日实测"
-    url: "https://raw.githubusercontent.com/shaoyouvip/free/main/base64.txt"
-    note: "每日实测测速更新 (纯净 VLESS)"
+  - name: "⚡ 0xRadikal Top 100 (15min 真实测活极速源)"
+    url: "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/top100.txt"
+    note: "每 15 分钟更新，3 轮真实 HTTP 请求测活，按中位数延迟排序取前 100 名 (包含 Reality/HY2/VLESS)"
 
   - name: "📡 Zhangkai 系列 (speednodes)"
     url: "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
@@ -67,6 +67,11 @@ sources:
   # ==========================================
   # 💤 备选休眠源 (默认关闭，需要时设 enabled: true)
   # ==========================================
+  - name: "📡 shaoyouvip 每日实测"
+    url: "https://raw.githubusercontent.com/shaoyouvip/free/main/base64.txt"
+    enabled: false
+    note: "【停用】上游破损停更，仅产出异常 anytls 节点"
+
   - name: "📡 anaer 精选池 (每日更新)"
     url: "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml"
     enabled: false
