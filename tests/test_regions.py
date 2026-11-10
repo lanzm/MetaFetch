@@ -38,11 +38,18 @@ class TestRegions(unittest.TestCase):
         self.assertEqual(match_region("ID-01"), "ID")
         self.assertEqual(match_region("[ID] Server 01"), "ID")
 
-        # "us" (pronoun) should NOT match United States (US)
+        # "us" (pronoun) should NOT match United States (US), but us-01 / [us] should match
         self.assertIsNone(match_region("Join us for updates"))
         self.assertIsNone(match_region("Contact us on Telegram"))
         self.assertEqual(match_region("US-01"), "US")
         self.assertEqual(match_region("[US] 01"), "US")
+        self.assertEqual(match_region("us-01"), "US")
+        self.assertEqual(match_region("us_01"), "US")
+        self.assertEqual(match_region("us|01"), "US")
+        self.assertEqual(match_region("[us] 01"), "US")
+        self.assertEqual(match_region("it-01"), "IT")
+        self.assertEqual(match_region("in_01"), "IN")
+        self.assertEqual(match_region("at-01"), "AT")
 
     def test_emoji_and_chinese_matching(self):
         self.assertEqual(match_region("🇯🇵 日本 01"), "JP")
@@ -97,6 +104,15 @@ class TestRegions(unittest.TestCase):
         self.assertEqual(match_region("深圳-中转-日本"), "JP")
         self.assertEqual(match_region("🇨🇳 广州 -> 🇭🇰 香港 02"), "HK")
         self.assertEqual(match_region("上海CN2 | 美国硅谷 05"), "US")
+
+    def test_expanded_city_matching(self):
+        self.assertEqual(match_region("巴西 圣保罗 01"), "BR")
+        self.assertEqual(match_region("俄罗斯 圣彼得堡 01"), "RU")
+        self.assertEqual(match_region("德国 汉堡 01"), "DE")
+        self.assertEqual(match_region("日本 千叶 01"), "JP")
+        self.assertEqual(match_region("日本 神户 01"), "JP")
+        self.assertEqual(match_region("阿联酋 阿布扎比 01"), "AE")
+        self.assertEqual(match_region("韩国 春川 01"), "KR")
 
 if __name__ == '__main__':
     unittest.main()

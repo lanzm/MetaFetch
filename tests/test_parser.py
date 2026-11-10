@@ -300,6 +300,59 @@ class TestParser(unittest.TestCase):
         ident2 = node.get_identity()
         self.assertEqual(ident1, ident2)
 
+    def test_vless_ws_host_and_grpc_service_name(self):
+        # 1. VLESS WebSocket with host
+        url_ws = "vless://uuid-123@example.com:443?type=ws&path=%2Fws-path&host=ws.example.com&security=tls#VlessWS"
+        node_ws = Node(url_ws)
+        self.assertEqual(node_ws.data["network"], "ws")
+        self.assertEqual(node_ws.data["ws-opts"]["path"], "/ws-path")
+        self.assertEqual(node_ws.data["ws-opts"]["headers"]["Host"], "ws.example.com")
+        out_ws_url = node_ws.to_url()
+        self.assertIn("host=ws.example.com", out_ws_url)
+        self.assertIn("path=/ws-path", out_ws_url)
+
+        # 2. VLESS gRPC with serviceName
+        url_grpc = "vless://uuid-456@example.com:443?type=grpc&serviceName=api.v1.FeedS&security=tls#VlessGRPC"
+        node_grpc = Node(url_grpc)
+        self.assertEqual(node_grpc.data["network"], "grpc")
+        self.assertEqual(node_grpc.data["grpc-opts"]["grpc-service-name"], "api.v1.FeedS")
+        out_grpc_url = node_grpc.to_url()
+        self.assertIn("serviceName=api.v1.FeedS", out_grpc_url)
+
+    def test_trojan_ws_and_grpc(self):
+        # Trojan WebSocket
+        url_ws = "trojan://pwd123@example.com:443?type=ws&path=%2Ftrojan-ws&host=trojan.host#TrojanWS"
+        node_ws = Node(url_ws)
+        self.assertEqual(node_ws.data["network"], "ws")
+        self.assertEqual(node_ws.data["ws-opts"]["path"], "/trojan-ws")
+        self.assertEqual(node_ws.data["ws-opts"]["headers"]["Host"], "trojan.host")
+        out_ws_url = node_ws.to_url()
+        self.assertIn("type=ws", out_ws_url)
+        self.assertIn("host=trojan.host", out_ws_url)
+
+        # Trojan gRPC
+        url_grpc = "trojan://pwd456@example.com:443?type=grpc&serviceName=trojan-service#TrojanGRPC"
+        node_grpc = Node(url_grpc)
+        self.assertEqual(node_grpc.data["network"], "grpc")
+        self.assertEqual(node_grpc.data["grpc-opts"]["grpc-service-name"], "trojan-service")
+        out_grpc_url = node_grpc.to_url()
+        self.assertIn("serviceName=trojan-service", out_grpc_url)
+
+    def test_hysteria2_auth_and_insecure(self):
+        # Hysteria2 insecure=1 -> skip-cert-verify
+        url_hy2 = "hy2://pwd789@example.com:443?insecure=1&sni=sni.com#Hy2Test"
+        node_hy2 = Node(url_hy2)
+        self.assertTrue(node_hy2.data.get("skip-cert-verify"))
+        out_hy2_url = node_hy2.to_url()
+        self.assertIn("insecure=1", out_hy2_url)
+
+        # Hysteria2 with auth in dict (sing-box style)
+        from core.processor import NodeProcessor
+        p = NodeProcessor()
+        valid = p.filter_invalid([Node({"name": "hy2-auth", "type": "hysteria2", "server": "1.2.3.4", "port": 443, "auth": "secret-auth"})])
+        self.assertEqual(len(valid), 1)
+        self.assertEqual(valid[0].data["password"], "secret-auth")
+
 if __name__ == "__main__":
     unittest.main()
 

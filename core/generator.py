@@ -9,8 +9,8 @@ from utils.regions import REGIONS_DB, match_region, REGION_NAMES
 from utils.common import b64encodes
 from utils.logger import logger
 
-_MB_SPEED_RE = re.compile(r'(\d+\.?\d*)\s*mb/s', re.IGNORECASE)
-_KB_SPEED_RE = re.compile(r'(\d+\.?\d*)\s*kb/s', re.IGNORECASE)
+_MB_SPEED_RE = re.compile(r'(\d+\.?\d*)\s*(?:mb/s|m/s|mbps)', re.IGNORECASE)
+_KB_SPEED_RE = re.compile(r'(\d+\.?\d*)\s*(?:kb/s|k/s|kbps)', re.IGNORECASE)
 # 引入控制字符深度清洗工具（保留 _YAML_SAFE_CONTROL_REGEX 与 deep_sanitize 导出兼容）
 from utils.common import deep_sanitize, YAML_SAFE_CONTROL_REGEX as _YAML_SAFE_CONTROL_REGEX
 

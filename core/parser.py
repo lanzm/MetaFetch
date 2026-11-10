@@ -249,14 +249,32 @@ class Node:
                 params = dict(parse_qsl(parsed.query))
                 sni_val = params.get('sni') or params.get('servername') or params.get('peer')
                 if sni_val: self.data['sni'] = sni_val
-                if 'allowInsecure' in params: self.data['skip-cert-verify'] = params['allowInsecure'] == '1'
+                if 'allowInsecure' in params or 'insecure' in params:
+                    self.data['skip-cert-verify'] = (params.get('allowInsecure') == '1' or params.get('insecure') == '1')
                 if 'security' in params:
                     if params['security'] == 'none':
                         self.data['tls'] = False
                     elif params['security'] in ('tls', 'reality'):
                         self.data['tls'] = True
                 if 'fp' in params: self.data['client-fingerprint'] = params['fp']
-                if 'type' in params: self.data['network'] = params['type']
+                net_type = params.get('type')
+                if net_type: self.data['network'] = net_type
+                if 'alpn' in params:
+                    alpn_list = [x.strip() for x in params['alpn'].split(',') if x.strip()]
+                    if alpn_list: self.data['alpn'] = alpn_list
+
+                # WebSocket & gRPC transport options
+                if net_type == 'ws' or 'path' in params:
+                    ws_opts = {}
+                    if 'path' in params: ws_opts['path'] = params['path']
+                    if 'host' in params: ws_opts['headers'] = {'Host': params['host']}
+                    if ws_opts:
+                        self.data['ws-opts'] = ws_opts
+                        if not net_type: self.data['network'] = 'ws'
+                if net_type == 'grpc':
+                    grpc_service = params.get('serviceName') or params.get('service_name') or params.get('path')
+                    if grpc_service:
+                        self.data['grpc-opts'] = {'grpc-service-name': grpc_service}
                 
                 # Reality options
                 self._parse_reality_opts(params)
@@ -284,14 +302,32 @@ class Node:
                 if 'security' in params:
                     if params['security'] in ('tls', 'reality'):
                         self.data['tls'] = True
+                if 'allowInsecure' in params or 'insecure' in params:
+                    self.data['skip-cert-verify'] = (params.get('allowInsecure') == '1' or params.get('insecure') == '1')
                 if 'flow' in params: self.data['flow'] = params['flow']
                 if 'fp' in params: self.data['client-fingerprint'] = params['fp']
-                if 'type' in params: self.data['network'] = params['type']
-                if 'path' in params:
-                    if params.get('type') == 'ws':
-                        self.data['ws-opts'] = {'path': params['path']}
-                    elif params.get('type') == 'grpc':
-                        self.data['grpc-opts'] = {'grpc-service-name': params['path']}
+                net_type = params.get('type')
+                if net_type: self.data['network'] = net_type
+                if 'alpn' in params:
+                    alpn_list = [x.strip() for x in params['alpn'].split(',') if x.strip()]
+                    if alpn_list: self.data['alpn'] = alpn_list
+                packet_enc = params.get('packetEncoding') or params.get('packet_encoding')
+                if packet_enc and packet_enc.lower() != 'none':
+                    self.data['packet-encoding'] = packet_enc
+
+                # WebSocket & gRPC transport options
+                if net_type == 'ws' or ('path' in params and net_type != 'grpc'):
+                    ws_opts = {}
+                    if 'path' in params: ws_opts['path'] = params['path']
+                    if 'host' in params: ws_opts['headers'] = {'Host': params['host']}
+                    if ws_opts:
+                        self.data['ws-opts'] = ws_opts
+                        if not net_type: self.data['network'] = 'ws'
+                if net_type == 'grpc' or 'serviceName' in params or 'service_name' in params:
+                    grpc_service = params.get('serviceName') or params.get('service_name') or params.get('path')
+                    if grpc_service:
+                        self.data['grpc-opts'] = {'grpc-service-name': grpc_service}
+                        if not net_type: self.data['network'] = 'grpc'
                 
                 # Reality options
                 self._parse_reality_opts(params)
@@ -301,18 +337,26 @@ class Node:
     def _load_hysteria2(self, url: str, dt: str):
         try:
             parsed = urlparse(url)
+            pwd = unquote(parsed.username or "")
             self.data = {
                 'name': unquote(parsed.fragment),
                 'server': parsed.hostname,
                 'port': parsed.port or 443,
                 'type': 'hysteria2',
-                'password': unquote(parsed.username or ""),
+                'password': pwd,
                 'udp': True
             }
             if parsed.query:
                 params = dict(parse_qsl(parsed.query))
+                if not self.data['password']:
+                    self.data['password'] = params.get('password') or params.get('auth') or ""
                 sni_val = params.get('sni') or params.get('servername')
                 if sni_val: self.data['sni'] = sni_val
+                if 'insecure' in params or 'allowInsecure' in params:
+                    self.data['skip-cert-verify'] = (params.get('insecure') == '1' or params.get('allowInsecure') == '1')
+                if 'alpn' in params:
+                    alpn_list = [x.strip() for x in params['alpn'].split(',') if x.strip()]
+                    if alpn_list: self.data['alpn'] = alpn_list
                 
                 # 只有当 obfs 存在且 obfs-password 不为空时才保留 obfs 混淆设置
                 # 避免产生有 obfs 但无 obfs-password 的缺陷节点导致 Clash 抛出 missing obfs password 错误
@@ -385,14 +429,23 @@ class Node:
                 query.append("flow=" + str(self.data.get('flow')))
             if self.data.get('client-fingerprint'):
                 query.append("fp=" + str(self.data.get('client-fingerprint')))
+            if self.data.get('skip-cert-verify'):
+                query.append("allowInsecure=1")
+            alpn = self.data.get('alpn')
+            if alpn and isinstance(alpn, list):
+                query.append("alpn=" + quote(",".join(alpn)))
             ws_opts = self.data.get('ws-opts') or {}
             ws_path = ws_opts.get('path')
             if ws_path:
                 query.append("path=" + quote(ws_path))
+            ws_headers = ws_opts.get('headers') or {}
+            ws_host = ws_headers.get('Host') or ws_headers.get('host')
+            if ws_host:
+                query.append("host=" + quote(str(ws_host)))
             grpc_opts = self.data.get('grpc-opts') or {}
             grpc_service = grpc_opts.get('grpc-service-name')
             if grpc_service:
-                query.append("path=" + quote(grpc_service))
+                query.append("serviceName=" + quote(grpc_service))
             ropts = self.data.get('reality-opts') or {}
             if ropts:
                 if ropts.get('public-key'): query.append("pbk=" + quote(str(ropts['public-key'])))
@@ -408,8 +461,25 @@ class Node:
                 query.append("sni=" + quote(str(sni)))
             if self.data.get('network'):
                 query.append("type=" + str(self.data.get('network')))
+            if self.data.get('client-fingerprint'):
+                query.append("fp=" + str(self.data.get('client-fingerprint')))
             if self.data.get('skip-cert-verify'):
                 query.append("allowInsecure=1")
+            alpn = self.data.get('alpn')
+            if alpn and isinstance(alpn, list):
+                query.append("alpn=" + quote(",".join(alpn)))
+            ws_opts = self.data.get('ws-opts') or {}
+            ws_path = ws_opts.get('path')
+            if ws_path:
+                query.append("path=" + quote(ws_path))
+            ws_headers = ws_opts.get('headers') or {}
+            ws_host = ws_headers.get('Host') or ws_headers.get('host')
+            if ws_host:
+                query.append("host=" + quote(str(ws_host)))
+            grpc_opts = self.data.get('grpc-opts') or {}
+            grpc_service = grpc_opts.get('grpc-service-name')
+            if grpc_service:
+                query.append("serviceName=" + quote(grpc_service))
             ropts = self.data.get('reality-opts') or {}
             if ropts:
                 query.append("security=reality")
@@ -424,6 +494,11 @@ class Node:
             sni = self.data.get('sni') or self.data.get('servername')
             if sni:
                 query.append("sni=" + quote(str(sni)))
+            if self.data.get('skip-cert-verify'):
+                query.append("insecure=1")
+            alpn = self.data.get('alpn')
+            if alpn and isinstance(alpn, list):
+                query.append("alpn=" + quote(",".join(alpn)))
             if self.data.get('obfs'):
                 query.append("obfs=" + str(self.data.get('obfs')))
             if self.data.get('obfs-password'):

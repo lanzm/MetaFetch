@@ -203,8 +203,10 @@ class NodeProcessor:
                     if not n_data.get('password'):
                         continue
                 elif n_type in ('hysteria2', 'hy2'):
-                    if not n_data.get('password'):
+                    pwd = n_data.get('password') or n_data.get('auth')
+                    if not pwd:
                         continue
+                    n_data['password'] = pwd
                     # 校验 obfs 完整性：如果为 none 或无 obfs-password 时剔除孤立/非法的 obfs 字段
                     obfs = n_data.get('obfs')
                     if obfs:

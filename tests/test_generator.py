@@ -382,6 +382,30 @@ class TestGenerator(unittest.TestCase):
             self.assertEqual(groups["🗺️ 选择地区"]["proxies"], ['DIRECT'])
             self.assertEqual(groups["✅ 手动选择"]["proxies"], ['DIRECT'])
 
+    def test_generator_speed_regex_variants(self):
+        from core.generator import _MB_SPEED_RE, _KB_SPEED_RE
+        # 1. MB/s, M/s, Mbps
+        m1 = _MB_SPEED_RE.search("US_1|50Mbps")
+        self.assertIsNotNone(m1)
+        self.assertEqual(m1.group(1), "50")
+
+        m2 = _MB_SPEED_RE.search("HK_01|3.5M/s")
+        self.assertIsNotNone(m2)
+        self.assertEqual(m2.group(1), "3.5")
+
+        m3 = _MB_SPEED_RE.search("JP_01|2.8MB/s")
+        self.assertIsNotNone(m3)
+        self.assertEqual(m3.group(1), "2.8")
+
+        # 2. KB/s, K/s, kbps
+        k1 = _KB_SPEED_RE.search("DE_01|800kbps")
+        self.assertIsNotNone(k1)
+        self.assertEqual(k1.group(1), "800")
+
+        k2 = _KB_SPEED_RE.search("SG_01|512KB/s")
+        self.assertIsNotNone(k2)
+        self.assertEqual(k2.group(1), "512")
+
 if __name__ == "__main__":
     unittest.main()
 
