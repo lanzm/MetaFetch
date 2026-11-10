@@ -60,6 +60,14 @@ sources:
     url: "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/top100.txt"
     note: "每 15 分钟更新，3 轮真实 HTTP 请求测活，按中位数延迟排序取前 100 名 (包含 Reality/HY2/VLESS)"
 
+  - name: "📡 shaoyouvip 每日实测"
+    url: "https://raw.githubusercontent.com/shaoyouvip/free/main/base64.txt"
+    note: "每日实测测速更新 (纯净 VLESS/SS，带 MB/s 速率标签)"
+
+  - name: "🐱 PuddinCat BestClash (30min 实测)"
+    url: "https://raw.githubusercontent.com/PuddinCat/BestClash/main/proxies.yaml"
+    note: "每 30 分钟自动化测速更新，提供精选加密节点"
+
   - name: "📡 Zhangkai 系列 (speednodes)"
     url: "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml"
     note: "上游每日更新实测 speednode（白名单仅收录加密安全节点）"
@@ -67,11 +75,6 @@ sources:
   # ==========================================
   # 💤 备选休眠源 (默认关闭，需要时设 enabled: true)
   # ==========================================
-  - name: "📡 shaoyouvip 每日实测"
-    url: "https://raw.githubusercontent.com/shaoyouvip/free/main/base64.txt"
-    enabled: false
-    note: "【停用】上游破损停更，仅产出异常 anytls 节点"
-
   - name: "📡 anaer 精选池 (每日更新)"
     url: "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml"
     enabled: false
