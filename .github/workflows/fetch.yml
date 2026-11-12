@@ -8,8 +8,8 @@ on:
       - 'README.md'
       - 'list.*'
       - 'docs/**'
-  # schedule:
-  #   - cron: '37 */2 * * *'  # 已迁移至 Cloudflare Workers Cron 外部定时托管
+  schedule:
+    - cron: '37 */4 * * *'  # 每 4 小时调度一次（主要服务于 Fork 用户，开箱即用自动更新）
   workflow_dispatch:      # 支持手动触发及外部 API (Cloudflare Workers) 调用
 
 permissions:
@@ -23,6 +23,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 主仓库由 Cloudflare Workers 外部高精定时托管，忽略自带 schedule 避免排队冲突；Fork 仓库则全自动启用原生 schedule
+    if: github.repository != 'lanzm/MetaFetch' || github.event_name != 'schedule'
     timeout-minutes: 15
     env:
       TZ: Asia/Shanghai
