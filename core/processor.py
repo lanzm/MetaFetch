@@ -3,7 +3,13 @@ from collections import defaultdict
 from typing import List, Set, Dict, Any
 from core.parser import Node
 from utils.regions import REGIONS_DB, match_region
-from utils.ciphers import normalize_ss_cipher, is_valid_ss_cipher
+from utils.ciphers import (
+    normalize_ss_cipher,
+    is_valid_ss_cipher,
+    SS_2022_KEY_LENGTHS,
+    validate_and_normalize_ss_2022_key,
+)
+from urllib.parse import unquote
 from utils.logger import logger
 
 # 清理广告与多余链接的预编译正则
@@ -152,6 +158,15 @@ class NodeProcessor:
                     if not is_valid_ss_cipher(norm_cipher):
                         continue
                     n_data['cipher'] = norm_cipher
+                    
+                    # 针对 Shadowsocks 2022 (SIP022) 严格校验 Base64 密钥与长度，防止 Clash 报 decode key error
+                    if norm_cipher in SS_2022_KEY_LENGTHS:
+                        valid_key = validate_and_normalize_ss_2022_key(norm_cipher, n_data.get('password'))
+                        if not valid_key:
+                            continue
+                        n_data['password'] = valid_key
+                    else:
+                        n_data['password'] = unquote(str(n_data['password'])).strip()
                     # 校验 Shadowsocks plugin
                     plugin = n_data.get('plugin')
                     if plugin:

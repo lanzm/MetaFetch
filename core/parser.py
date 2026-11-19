@@ -73,6 +73,14 @@ class Node:
             if cipher not in VMESS_ALLOWED_CIPHERS:
                 cipher = 'auto'
             self.data['cipher'] = cipher
+
+        # Clean cipher and password for Shadowsocks
+        if self.type == 'ss':
+            cipher = self.data.get('cipher')
+            if cipher:
+                self.data['cipher'] = normalize_ss_cipher(cipher)
+            if self.data.get('password'):
+                self.data['password'] = unquote(str(self.data['password'])).strip()
             
         # 2. Clean Reality options for VLESS/Trojan
         if self.type in ('vless', 'trojan'):
@@ -190,7 +198,7 @@ class Node:
                         'server': server,
                         'port': port_val,
                         'cipher': normalize_ss_cipher(cipher),
-                        'password': password,
+                        'password': unquote(password).strip(),
                         'udp': True
                     })
                     

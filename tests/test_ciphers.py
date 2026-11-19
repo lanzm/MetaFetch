@@ -1,5 +1,12 @@
 import unittest
-from utils.ciphers import normalize_ss_cipher, is_valid_ss_cipher, SS_CIPHER_ALIASES, VALID_SS_CIPHERS
+from utils.ciphers import (
+    normalize_ss_cipher,
+    is_valid_ss_cipher,
+    validate_and_normalize_ss_2022_key,
+    SS_CIPHER_ALIASES,
+    VALID_SS_CIPHERS,
+    SS_2022_KEY_LENGTHS,
+)
 from core.parser import Node
 from core.processor import NodeProcessor
 
@@ -84,6 +91,57 @@ class TestCiphers(unittest.TestCase):
         # 3. clean_and_rename 同样保证正确性
         cleaned = proc.clean_and_rename(valid)
         self.assertEqual(cleaned[0].data['cipher'], 'chacha20-ietf-poly1305')
+
+    def test_ss_2022_key_validation_and_normalization(self):
+        # 1. 测试真实报错用例：带 %3D 编码且符合 32 字节长度的 SS 2022 密钥
+        raw_key = 'qG5HzrJO2OAzMFY6WDz991qHHonSP2ix6l6jKlHwokY%3D'
+        expected_key = 'qG5HzrJO2OAzMFY6WDz991qHHonSP2ix6l6jKlHwokY='
+        norm = validate_and_normalize_ss_2022_key('2022-blake3-chacha20-poly1305', raw_key)
+        self.assertEqual(norm, expected_key)
+
+        # 2. 测试丢失 padding 的情况（43 位，缺少最后的 =）
+        unpadded_key = 'qG5HzrJO2OAzMFY6WDz991qHHonSP2ix6l6jKlHwokY'
+        norm2 = validate_and_normalize_ss_2022_key('2022-blake3-chacha20-poly1305', unpadded_key)
+        self.assertEqual(norm2, expected_key)
+
+        # 3. 测试 128 位算法 (16 字节密钥)
+        aes128_key = 'jUbDNsFamcyDfpm+rI3Zyw=='
+        self.assertEqual(validate_and_normalize_ss_2022_key('2022-blake3-aes-128-gcm', aes128_key), aes128_key)
+
+        # 4. 长度不符的情况（将 16 字节密钥用于 32 字节算法，或非法字符）
+        self.assertIsNone(validate_and_normalize_ss_2022_key('2022-blake3-aes-256-gcm', aes128_key))
+        self.assertIsNone(validate_and_normalize_ss_2022_key('2022-blake3-chacha20-poly1305', 'not-a-valid-base64!@#'))
+        self.assertIsNone(validate_and_normalize_ss_2022_key('2022-blake3-chacha20-poly1305', ''))
+
+    def test_processor_ss_2022_filter_and_sanitize(self):
+        proc = NodeProcessor()
+        # 模拟包含 %3D 的 SS 2022 缺陷节点
+        node_escaped = Node({
+            'name': 'US-SS2022',
+            'type': 'ss',
+            'server': '129.146.61.90',
+            'port': 50356,
+            'cipher': '2022-blake3-chacha20-poly1305',
+            'password': 'qG5HzrJO2OAzMFY6WDz991qHHonSP2ix6l6jKlHwokY%3D'
+        })
+        # 模拟非法 key 的 SS 2022 节点
+        node_broken_key = Node({
+            'name': 'Broken-SS2022',
+            'type': 'ss',
+            'server': '1.1.1.1',
+            'port': 1234,
+            'cipher': '2022-blake3-chacha20-poly1305',
+            'password': 'invalid_secret_key'
+        })
+        filtered = proc.filter_invalid([node_escaped, node_broken_key])
+        self.assertEqual(len(filtered), 1)
+        self.assertEqual(filtered[0].data['password'], 'qG5HzrJO2OAzMFY6WDz991qHHonSP2ix6l6jKlHwokY=')
+
+    def test_ss_url_load_with_escaped_password(self):
+        # 模拟从 ss:// 导入包含 URL 编码 password 的情况
+        url = 'ss://MjAyMi1ibGFrZTMtY2hhY2hhMjAtcG9seTEzMDU6cUc1SHpySk8yT0F6TUZZNldEejk5MXFISG9uU1AyaXg2bDZqS2xId29rWSUzRA==@129.146.61.90:50356#US-Test'
+        node = Node(url)
+        self.assertEqual(node.data['password'], 'qG5HzrJO2OAzMFY6WDz991qHHonSP2ix6l6jKlHwokY=')
 
 if __name__ == '__main__':
     unittest.main()
