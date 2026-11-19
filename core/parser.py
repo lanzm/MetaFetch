@@ -81,6 +81,20 @@ class Node:
                 self.data['cipher'] = normalize_ss_cipher(cipher)
             if self.data.get('password'):
                 self.data['password'] = unquote(str(self.data['password'])).strip()
+
+        # Clean fields for Trojan / VLESS / Hysteria2
+        if self.type == 'trojan':
+            if self.data.get('password'):
+                self.data['password'] = unquote(str(self.data['password'])).strip()
+        elif self.type == 'vless':
+            if self.data.get('uuid'):
+                self.data['uuid'] = unquote(str(self.data['uuid'])).strip()
+        elif self.type in ('hysteria2', 'hy2'):
+            pwd = self.data.get('password') or self.data.get('auth')
+            if pwd:
+                self.data['password'] = unquote(str(pwd)).strip()
+            if self.data.get('obfs-password'):
+                self.data['obfs-password'] = unquote(str(self.data['obfs-password'])).strip()
             
         # 2. Clean Reality options for VLESS/Trojan
         if self.type in ('vless', 'trojan'):
@@ -152,7 +166,21 @@ class Node:
                     'headers': {'Host': v.get('host', '')}
                 }
             elif net_val == 'grpc':
-                self.data['grpc-opts'] = {'grpc-service-name': v.get('path', '')}
+                grpc_service = v.get('serviceName') or v.get('service_name') or v.get('path', '')
+                self.data['grpc-opts'] = {'grpc-service-name': grpc_service}
+
+            fp_val = v.get('fp') or v.get('fingerprint')
+            if fp_val:
+                self.data['client-fingerprint'] = str(fp_val).strip()
+
+            alpn_raw = v.get('alpn')
+            if alpn_raw:
+                if isinstance(alpn_raw, list):
+                    alpn_list = [str(x).strip() for x in alpn_raw if str(x).strip()]
+                else:
+                    alpn_list = [x.strip() for x in str(alpn_raw).split(',') if x.strip()]
+                if alpn_list:
+                    self.data['alpn'] = alpn_list
         except Exception:
             pass
 

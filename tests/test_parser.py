@@ -353,6 +353,39 @@ class TestParser(unittest.TestCase):
         self.assertEqual(len(valid), 1)
         self.assertEqual(valid[0].data["password"], "secret-auth")
 
+    def test_vmess_grpc_service_name_fp_and_alpn(self):
+        vmess_json = {
+            "v": "2",
+            "ps": "VMess_GRPC_Test",
+            "add": "1.2.3.4",
+            "port": "443",
+            "id": "a0000000-0000-0000-0000-000000000000",
+            "net": "grpc",
+            "serviceName": "v2ray.cool.Service",
+            "fp": "chrome",
+            "alpn": "h2,http/1.1",
+            "tls": "tls"
+        }
+        url = "vmess://" + b64encodes(json.dumps(vmess_json))
+        node = Node(url)
+        self.assertEqual(node.data["grpc-opts"]["grpc-service-name"], "v2ray.cool.Service")
+        self.assertEqual(node.data["client-fingerprint"], "chrome")
+        self.assertEqual(node.data["alpn"], ["h2", "http/1.1"])
+
+    def test_dict_fields_unquoting_and_normalization(self):
+        # Trojan with URL encoded password
+        n_trojan = Node({"name": "trojan", "type": "trojan", "server": "1.2.3.4", "port": 443, "password": "pass%40word"})
+        self.assertEqual(n_trojan.data["password"], "pass@word")
+
+        # Hysteria2 with auth and URL encoded obfs-password
+        n_hy2 = Node({"name": "hy2", "type": "hysteria2", "server": "1.2.3.4", "port": 443, "auth": "pwd%20123", "obfs": "salamander", "obfs-password": "obfs%40pwd"})
+        self.assertEqual(n_hy2.data["password"], "pwd 123")
+        self.assertEqual(n_hy2.data["obfs-password"], "obfs@pwd")
+
+        # VLESS with URL encoded UUID
+        n_vless = Node({"name": "vless", "type": "vless", "server": "1.2.3.4", "port": 443, "uuid": "uuid%2Dtest"})
+        self.assertEqual(n_vless.data["uuid"], "uuid-test")
+
 if __name__ == "__main__":
     unittest.main()
 

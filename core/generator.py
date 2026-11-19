@@ -132,6 +132,7 @@ class Generator:
             name_lower = name.lower()
             node_obj = name_to_node.get(name)
             node_type = getattr(node_obj, 'type', '').lower() if node_obj else ''
+            is_private = bool(node_obj and (node_obj.data.get('_is_private') or name.startswith('👑')))
 
             m_mb = _MB_SPEED_RE.search(name)
             if m_mb:
@@ -162,6 +163,10 @@ class Generator:
                     score = 40.0
                 else:
                     score = 30.0
+
+            # 私有节点赋予最高质量优先级（+1000 分），确保在策略组中优先作为主干节点调度
+            if is_private:
+                score += 1000.0
             return score
 
         # 4. Create Dynamic Region Groups (地区内自动选择同样采用 fallback 故障转移模式，并按质量排序)

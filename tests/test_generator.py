@@ -406,6 +406,29 @@ class TestGenerator(unittest.TestCase):
         self.assertIsNotNone(k2)
         self.assertEqual(k2.group(1), "512")
 
+    def test_generator_private_node_priority(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            template_path = os.path.join(tmpdir, "config.yaml")
+            output_path = os.path.join(tmpdir, "output.yaml")
+            with open(template_path, "w", encoding="utf-8") as f:
+                yaml.safe_dump(self.template_data, f)
+
+            # 普通高速公共节点 vs 私有节点
+            n_public = Node({"name": "🇺🇸 US Public | 50MB/s", "type": "ss", "server": "1.1.1.1", "port": 443})
+            n_private = Node({"name": "👑 🇺🇸 US My VPS", "type": "ss", "server": "2.2.2.2", "port": 443})
+            n_private.data['_is_private'] = True
+
+            generator = Generator(template_path)
+            generator.generate([n_public, n_private], output_path)
+
+            with open(output_path, "r", encoding="utf-8") as f:
+                cfg = yaml.safe_load(f)
+
+            groups = {g["name"]: g for g in cfg["proxy-groups"]}
+            # 私有节点由于获得 +1000 质量加权，应排在地区 fallback / auto 组的首位
+            us_auto_proxies = groups["⚡ 自动选择 | 🇺🇸 美国"]["proxies"]
+            self.assertEqual(us_auto_proxies[0], "👑 🇺🇸 US My VPS")
+
 if __name__ == "__main__":
     unittest.main()
 

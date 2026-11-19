@@ -113,6 +113,20 @@ class TestRegions(unittest.TestCase):
         self.assertEqual(match_region("日本 神户 01"), "JP")
         self.assertEqual(match_region("阿联酋 阿布扎比 01"), "AE")
         self.assertEqual(match_region("韩国 春川 01"), "KR")
+        # 欧洲骨干机房枢纽城市扩展测试
+        self.assertEqual(match_region("瑞士 日内瓦 01"), "CH")
+        self.assertEqual(match_region("Geneva VIP Server"), "CH")
+        self.assertEqual(match_region("西班牙 巴塞罗那 01"), "ES")
+        self.assertEqual(match_region("波兰 华沙 01"), "PL")
+        self.assertEqual(match_region("捷克 布拉格 01"), "CZ")
+        self.assertEqual(match_region("乌克兰 基辅 01"), "UA")
+        self.assertEqual(match_region("罗马尼亚 布加勒斯特 01"), "RO")
+        self.assertEqual(match_region("挪威 奥斯陆 01"), "NO")
+        self.assertEqual(match_region("丹麦 哥本哈根 01"), "DK")
+        self.assertEqual(match_region("葡萄牙 里斯本 01"), "PT")
+        self.assertEqual(match_region("匈牙利 布达佩斯 01"), "HU")
+        self.assertEqual(match_region("印度 孟买 01"), "IN")
+        self.assertEqual(match_region("哈萨克斯坦 阿拉木图 01"), "KZ")
 
 if __name__ == '__main__':
     unittest.main()

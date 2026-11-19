@@ -104,8 +104,10 @@ class TestProcessor(unittest.TestCase):
         processor = NodeProcessor()
         node_ad1 = Node({"name": "飞机群-官方通知", "type": "vmess", "server": "1.2.3.4", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
         node_ad2 = Node({"name": "节点不可用请更新订阅", "type": "vmess", "server": "1.2.3.5", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
+        node_ad3 = Node({"name": "流量耗尽请去官网充值", "type": "vmess", "server": "1.2.3.7", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
+        node_ad4 = Node({"name": "全节点禁止BT下载", "type": "vmess", "server": "1.2.3.8", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
         node_ok = Node({"name": "US Normal Node", "type": "vmess", "server": "1.2.3.6", "port": 443, "uuid": "a0000000-0000-0000-0000-000000000000"})
-        processed = processor.process_all([node_ad1, node_ad2, node_ok])
+        processed = processor.process_all([node_ad1, node_ad2, node_ad3, node_ad4, node_ok])
         self.assertEqual(len(processed), 1)
         self.assertIn("US Normal Node", processed[0].name)
 
