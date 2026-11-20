@@ -78,5 +78,44 @@ class TestNotify(unittest.TestCase):
         payload = req.data.decode('utf-8')
         self.assertIn('"chat_id": "-10012345678"', payload)
 
+    @patch.dict('os.environ', {'TG_BOT_TOKEN': '123456:ABC', 'TG_CHAT_ID': '-100123'}, clear=True)
+    @patch('time.sleep', return_value=None)
+    @patch('urllib.request.urlopen')
+    def test_send_tg_notification_existing_id_does_not_fallback(self, mock_urlopen, mock_sleep):
+        # 当存在已有看板 ID 且 editMessageText 失败时，严禁 fallback 到 sendMessage 创建新消息
+        import urllib.error
+        mock_urlopen.side_effect = urllib.error.URLError("Connection timed out")
+
+        # 模拟存在已有 msg_id
+        with patch('builtins.open', unittest.mock.mock_open(read_data="203")), \
+             patch('os.path.exists', return_value=True):
+            res = send_tg_notification("Test Content")
+
+        self.assertFalse(res)
+        # 验证调用了 3 次 editMessageText 重试，但绝未调用 sendMessage
+        self.assertEqual(mock_urlopen.call_count, 3)
+        for call in mock_urlopen.call_args_list:
+            req = call[0][0]
+            self.assertIn("editMessageText", req.full_url)
+            self.assertNotIn("sendMessage", req.full_url)
+
+    @patch.dict('os.environ', {'TG_BOT_TOKEN': '123456:ABC', 'TG_CHAT_ID': '-100123'}, clear=True)
+    @patch('urllib.request.urlopen')
+    def test_send_tg_notification_no_id_creates_new(self, mock_urlopen):
+        # 当不存在 msg_id 时，调用 sendMessage 发送新消息并保存 ID
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = b'{"ok": true, "result": {"message_id": 300}}'
+        mock_urlopen.return_value.__enter__.return_value = mock_resp
+
+        m_open = unittest.mock.mock_open(read_data="")
+        with patch('builtins.open', m_open), patch('os.path.exists', return_value=False):
+            res = send_tg_notification("Init Content")
+
+        self.assertTrue(res)
+        req = mock_urlopen.call_args[0][0]
+        self.assertIn("sendMessage", req.full_url)
+        # 验证新 ID 被写回文件
+        m_open().write.assert_called_once_with("300")
+
 if __name__ == '__main__':
     unittest.main()

@@ -3,12 +3,14 @@ import sys
 import os
 import re
 import json
+import time
 import urllib.request
 import urllib.error
 from typing import Dict, Any, Union
 
 # 确保独立执行脚本时能正确导入项目根目录模块
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, PROJECT_ROOT)
 from utils.regions import REGION_NAMES
 from utils.logger import logger
 
@@ -74,7 +76,7 @@ def send_tg_notification(summary_or_text: Union[Dict[str, Any], str] = None) -> 
         logger.info("No notification text provided. Skipping Telegram notification.")
         return False
 
-    msg_id_file = "tg_msg_id.txt"
+    msg_id_file = os.path.join(PROJECT_ROOT, "tg_msg_id.txt")
     msg_id = None
     if os.path.exists(msg_id_file):
         try:
@@ -82,12 +84,10 @@ def send_tg_notification(summary_or_text: Union[Dict[str, Any], str] = None) -> 
                 content = f.read().strip()
                 if content.isdigit():
                     msg_id = int(content)
-        except Exception:
-            pass
+        except Exception as e:
+            logger.warning(f"Failed to read {msg_id_file}: {e}")
 
-    success = False
-
-    # 1. 优先尝试原地编辑已有看板消息
+    # 分支 1：如果已有看板消息 ID，永远只进行原地编辑（带重试），严禁降级发新消息破坏现有看板
     if msg_id:
         edit_url = f"https://api.telegram.org/bot{token}/editMessageText"
         data = json.dumps({
@@ -97,50 +97,61 @@ def send_tg_notification(summary_or_text: Union[Dict[str, Any], str] = None) -> 
             'parse_mode': 'HTML',
             'disable_web_page_preview': True
         }).encode('utf-8')
-        req = urllib.request.Request(edit_url, data=data, headers={'Content-Type': 'application/json'})
-        try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                result = json.loads(resp.read().decode('utf-8'))
-                if result.get('ok'):
-                    logger.info(f"Telegram dashboard message (ID: {msg_id}) updated successfully via editMessageText!")
-                    success = True
-        except urllib.error.HTTPError as e:
-            err_msg = e.read().decode('utf-8') if e.fp else str(e)
-            # 内容无变化时 Telegram 会报 "message is not modified"，视为成功无需重发
-            if "message is not modified" in err_msg.lower():
-                logger.info(f"Telegram dashboard message (ID: {msg_id}) content is unchanged.")
+
+        max_retries = 3
+        for attempt in range(1, max_retries + 1):
+            req = urllib.request.Request(edit_url, data=data, headers={'Content-Type': 'application/json'})
+            try:
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    result = json.loads(resp.read().decode('utf-8'))
+                    if result.get('ok'):
+                        logger.info(f"Telegram dashboard message (ID: {msg_id}) updated successfully via editMessageText!")
+                        return True
+            except urllib.error.HTTPError as e:
+                err_msg = e.read().decode('utf-8') if e.fp else str(e)
+                # 内容无变化时 Telegram 会报 "message is not modified"，视为成功无需重发
+                if "message is not modified" in err_msg.lower():
+                    logger.info(f"Telegram dashboard message (ID: {msg_id}) content is unchanged.")
+                    return True
+                logger.warning(f"editMessageText attempt {attempt}/{max_retries} failed ({e.code}: {err_msg})")
+            except Exception as e:
+                logger.warning(f"editMessageText attempt {attempt}/{max_retries} failed: {e}")
+
+            if attempt < max_retries:
+                time.sleep(2)
+
+        logger.error(
+            f"Failed to update Telegram dashboard message (ID: {msg_id}) after {max_retries} attempts. "
+            f"Preserving existing message ID without creating duplicate messages."
+        )
+        return False
+
+    # 分支 2：无历史 message_id（首次部署或文件为空），发送首条看板消息并记录 ID
+    send_url = f"https://api.telegram.org/bot{token}/sendMessage"
+    data = json.dumps({
+        'chat_id': chat_id,
+        'text': text,
+        'parse_mode': 'HTML',
+        'disable_web_page_preview': True
+    }).encode('utf-8')
+    req = urllib.request.Request(send_url, data=data, headers={'Content-Type': 'application/json'})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            result = json.loads(resp.read().decode('utf-8'))
+            if result.get('ok'):
+                new_msg_id = result.get('result', {}).get('message_id')
+                logger.info(f"New Telegram dashboard message created! Message ID: {new_msg_id}")
+                if new_msg_id:
+                    with open(msg_id_file, "w", encoding="utf-8") as f:
+                        f.write(str(new_msg_id))
                 return True
-            logger.info(f"editMessageText failed ({e.code}: {err_msg}), will create a new message.")
-        except Exception as e:
-            logger.warning(f"Failed to edit message: {e}, will fallback to sending a new message.")
+    except urllib.error.HTTPError as e:
+        err_msg = e.read().decode('utf-8') if e.fp else str(e)
+        logger.error(f"Telegram API HTTP Error {e.code}: {err_msg}")
+    except Exception as e:
+        logger.error(f"Failed to send Telegram notification: {e}")
 
-    # 2. 若无历史 message_id 或编辑失败（如原消息被删），则发送新消息并记录 ID
-    if not success:
-        send_url = f"https://api.telegram.org/bot{token}/sendMessage"
-        data = json.dumps({
-            'chat_id': chat_id,
-            'text': text,
-            'parse_mode': 'HTML',
-            'disable_web_page_preview': True
-        }).encode('utf-8')
-        req = urllib.request.Request(send_url, data=data, headers={'Content-Type': 'application/json'})
-        try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                result = json.loads(resp.read().decode('utf-8'))
-                if result.get('ok'):
-                    new_msg_id = result.get('result', {}).get('message_id')
-                    logger.info(f"New Telegram dashboard message created! Message ID: {new_msg_id}")
-                    if new_msg_id:
-                        with open(msg_id_file, "w", encoding="utf-8") as f:
-                            f.write(str(new_msg_id))
-                    success = True
-        except urllib.error.HTTPError as e:
-            err_msg = e.read().decode('utf-8') if e.fp else str(e)
-            logger.error(f"Telegram API HTTP Error {e.code}: {err_msg}")
-        except Exception as e:
-            logger.error(f"Failed to send Telegram notification: {e}")
-
-    return success
+    return False
 
 if __name__ == "__main__":
     send_tg_notification()
