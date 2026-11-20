@@ -429,6 +429,46 @@ class TestGenerator(unittest.TestCase):
             us_auto_proxies = groups["⚡ 自动选择 | 🇺🇸 美国"]["proxies"]
             self.assertEqual(us_auto_proxies[0], "👑 🇺🇸 US My VPS")
 
+    def test_generator_composite_scoring_model(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            template_path = os.path.join(tmpdir, "config.yaml")
+            output_path = os.path.join(tmpdir, "output.yaml")
+            with open(template_path, "w", encoding="utf-8") as f:
+                yaml.safe_dump(self.template_data, f)
+
+            # 1. 虚标 9999MB/s 的 VMess (封顶加50，得 15+50=65)
+            n_fake = Node({"name": "🇺🇸 US Fake|9999MB/s", "type": "vmess", "server": "1.1.1.1", "port": 443})
+            # 2. 真实高速 Hy2 节点 (50 + 15 + 20 = 85)
+            n_fast_hy2 = Node({"name": "🇺🇸 US Fast|10MB/s", "type": "hysteria2", "server": "1.1.1.2", "port": 443})
+            # 3. 无测速标签的普通 Reality 节点 (45 + 0 = 45)
+            n_plain_reality = Node({"name": "🇺🇸 US Reality", "type": "vless", "server": "1.1.1.3", "port": 443, "reality-opts": {"public-key": "pbk"}})
+            # 4. 龟速 0.1MB/s VMess (15 - 5 = 10，被正常节点全面压制)
+            n_slow_vmess = Node({"name": "🇺🇸 US Slow|0.1MB/s", "type": "vmess", "server": "1.1.1.4", "port": 443})
+            # 5. 私有节点 (+1000 分，稳居第一)
+            n_priv = Node({"name": "👑 🇺🇸 US Priv VPS", "type": "trojan", "server": "1.1.1.5", "port": 443})
+            n_priv.data['_is_private'] = True
+
+            generator = Generator(template_path)
+            generator.generate([n_fake, n_fast_hy2, n_plain_reality, n_slow_vmess, n_priv], output_path)
+
+            with open(output_path, "r", encoding="utf-8") as f:
+                cfg = yaml.safe_load(f)
+
+            groups = {g["name"]: g for g in cfg["proxy-groups"]}
+            us_proxies = groups["⚡ 自动选择 | 🇺🇸 美国"]["proxies"]
+            
+            # 验证严格按照科学复合模型排序：
+            # 1. 私有节点 (1030)
+            self.assertEqual(us_proxies[0], "👑 🇺🇸 US Priv VPS")
+            # 2. 真实高速 Hy2 (85)
+            self.assertEqual(us_proxies[1], "🇺🇸 US Fast|10MB/s")
+            # 3. 虚标防作弊封顶的 VMess (65)
+            self.assertEqual(us_proxies[2], "🇺🇸 US Fake|9999MB/s")
+            # 4. 普通 Reality (45)
+            self.assertEqual(us_proxies[3], "🇺🇸 US Reality")
+            # 5. 龟速 VMess (10，垫底)
+            self.assertEqual(us_proxies[4], "🇺🇸 US Slow|0.1MB/s")
+
 if __name__ == "__main__":
     unittest.main()
 

@@ -123,48 +123,65 @@ class Generator:
             else:
                 others.append(name)
 
-        # 3. Create Dynamic Region Groups
-        # 3. 质量评分函数 (实测带宽 > speednode > Hysteria2 > Reality > VLESS/Trojan > 普通)
+        # 3. 质量评分函数 (私有特权 + 协议基础分 + 实测速度加成分，封顶防作弊，惩罚龟速)
         name_to_node = {node.name: node for node in nodes}
 
         def get_node_quality_score(name: str) -> float:
-            score = 10.0
             name_lower = name.lower()
             node_obj = name_to_node.get(name)
             node_type = getattr(node_obj, 'type', '').lower() if node_obj else ''
             is_private = bool(node_obj and (node_obj.data.get('_is_private') or name.startswith('👑')))
 
+            # 1. 协议基准分 (抗丢包与抗封锁能力梯度)
+            if node_type in ('hysteria2', 'hy2') or 'hy2' in name_lower or 'hysteria' in name_lower:
+                base_score = 50.0
+            elif node_obj and (node_obj.data.get('reality-opts') or 'reality' in name_lower):
+                base_score = 45.0
+            elif node_type == 'vless':
+                base_score = 35.0
+            elif node_type == 'trojan':
+                base_score = 30.0
+            elif node_type == 'ss':
+                base_score = 25.0
+            elif node_type == 'vmess':
+                base_score = 15.0
+            else:
+                base_score = 10.0
+
+            # 2. 实测速度叠加分 (实测保活加成 + 速率比例加分，封顶 50 分防虚标，惩罚死节点与龟速)
+            speed_bonus = 0.0
             m_mb = _MB_SPEED_RE.search(name)
             if m_mb:
                 try:
                     speed_mb = float(m_mb.group(1))
-                    score = (100.0 + speed_mb) if speed_mb > 0.0 else 5.0
+                    if speed_mb <= 0.0:
+                        speed_bonus = -20.0  # 测速为 0 的失效节点重罚
+                    elif speed_mb < 0.5:
+                        speed_bonus = -5.0   # 低于 500KB/s 的龟速节点扣分
+                    else:
+                        # 0.5MB/s 以上具备实测保活加成 (15分) + 速度加分 (最高35分)，合计封顶 50 分防恶意虚标
+                        speed_bonus = 15.0 + min(speed_mb * 2.0, 35.0)
                 except (ValueError, TypeError):
-                    score = 100.0
+                    speed_bonus = 0.0
             else:
                 m_kb = _KB_SPEED_RE.search(name)
                 if m_kb:
                     try:
                         speed_kb = float(m_kb.group(1))
-                        score = (90.0 + min(speed_kb / 1024.0, 5.0)) if speed_kb > 0.0 else 5.0
+                        if speed_kb <= 0.0:
+                            speed_bonus = -20.0
+                        elif speed_kb < 500.0:
+                            speed_bonus = -5.0
+                        else:
+                            speed_bonus = 5.0 + min(speed_kb / 1024.0 * 5.0, 10.0)
                     except (ValueError, TypeError):
-                        score = 90.0
+                        speed_bonus = 0.0
                 elif 'speednode' in name_lower:
-                    score = 90.0
-                elif node_type in ('hysteria2', 'hy2') or 'hy2' in name_lower or 'hysteria' in name_lower:
-                    score = 80.0
-                elif node_obj and (node_obj.data.get('reality-opts') or 'reality' in name_lower):
-                    score = 75.0
-                elif node_type == 'vless':
-                    score = 60.0
-                elif node_type == 'trojan':
-                    score = 50.0
-                elif node_type == 'ss':
-                    score = 40.0
-                else:
-                    score = 30.0
+                    speed_bonus = 15.0  # 优质测速源专属加成
 
-            # 私有节点赋予最高质量优先级（+1000 分），确保在策略组中优先作为主干节点调度
+            score = base_score + speed_bonus
+
+            # 3. 私有节点赋予最高质量优先级（+1000 分），确保在策略组中优先作为主干节点调度
             if is_private:
                 score += 1000.0
             return score
