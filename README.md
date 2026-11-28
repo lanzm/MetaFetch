@@ -8,8 +8,8 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![Telegram Channel](https://img.shields.io/badge/Telegram-频道交流-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/MetaFetchNodes)
 <!-- STATS_BADGE_START -->
-![Update](https://img.shields.io/badge/Updated-2026--11--28_12%3A00%3A31-green.svg?style=flat-square)
-![Nodes](https://img.shields.io/badge/Valid_Nodes-364-orange.svg?style=flat-square)
+![Update](https://img.shields.io/badge/Updated-2026--11--28_13%3A00%3A30-green.svg?style=flat-square)
+![Nodes](https://img.shields.io/badge/Valid_Nodes-373-orange.svg?style=flat-square)
 ![Sources](https://img.shields.io/badge/Active_Sources-7-blue.svg?style=flat-square)
 <!-- STATS_BADGE_END -->
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
@@ -104,14 +104,14 @@
 ## 📊 节点分布统计
 
 <!-- STATS_TABLE_START -->
-> 更新时间：`2026-11-28 12:00:31`
-> 运行分析：从 `7` 个活跃源中抓取 `667` 个节点，耗时 `1.03s`。去重后保留 `364` 个有效节点。
+> 更新时间：`2026-11-28 13:00:30`
+> 运行分析：从 `7` 个活跃源中抓取 `667` 个节点，耗时 `1.10s`。去重后保留 `373` 个有效节点。
 
 <div style="overflow-x: auto;">
 
-| 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇨🇦加拿大 | 🇳🇱荷兰 | 🇮🇳印度 | 🇦🇺澳大利亚 | 🇪🇸西班牙 | 🇨🇳中国 | 🇫🇮芬兰 | 🇮🇪爱尔兰 | 🇵🇱波兰 | 🇦🇪阿联酋 | 🇪🇪爱沙尼亚 | 🌍其他 | **总计** |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **数量** | 7 | 2 | 95 | 120 | 10 | 2 | 22 | 13 | 7 | 2 | 23 | 5 | 4 | 2 | 2 | 1 | 3 | 2 | 3 | 1 | 3 | 35 | **364** |
+| 地区分布 | 🇭🇰香港 | 🇹🇼台湾 | 🇯🇵日本 | 🇺🇸美国 | 🇸🇬新加坡 | 🇰🇷韩国 | 🇩🇪德国 | 🇬🇧英国 | 🇫🇷法国 | 🇷🇺俄罗斯 | 🇨🇦加拿大 | 🇳🇱荷兰 | 🇮🇳印度 | 🇦🇺澳大利亚 | 🇪🇸西班牙 | 🇨🇳中国 | 🇫🇮芬兰 | 🇮🇪爱尔兰 | 🇵🇱波兰 | 🇪🇪爱沙尼亚 | 🌍其他 | **总计** |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **数量** | 7 | 2 | 95 | 120 | 10 | 2 | 22 | 14 | 7 | 1 | 33 | 5 | 4 | 2 | 4 | 1 | 3 | 2 | 3 | 3 | 33 | **373** |
 
 </div>
 <!-- STATS_TABLE_END -->
@@ -121,7 +121,7 @@
 <!-- SOURCE_STATS_TABLE_START -->
 ### 📡 各订阅源贡献度明细
 
-> 数据计算时间：`2026-11-28 12:00:30`
+> 数据计算时间：`2026-11-28 13:00:29`
 
 <table width="100%"><tr><td>
 
@@ -129,14 +129,14 @@
 
 | 排名 | 订阅源名称 | 有效节点数 | 节点贡献占比 |
 | :---: | :--- | :---: | :---: |
-| 1 | `🏆 huiwin NodeCollection (4h 自动测速清洗)` | **231** 个 | `63.46%` |
-| 2 | `⚡ 0xRadikal Top 100 (15min 真实测活极速源)` | **81** 个 | `22.25%` |
-| 3 | `[动态日期] NodeFree YAML` | **21** 个 | `5.77%` |
-| 4 | `📡 shaoyouvip 每日实测` | **16** 个 | `4.40%` |
-| 5 | `📱 Pawdroid 免费节点库` | **12** 个 | `3.30%` |
-| 6 | `📡 Zhangkai 系列 (speednodes)` | **2** 个 | `0.55%` |
+| 1 | `🏆 huiwin NodeCollection (4h 自动测速清洗)` | **231** 个 | `61.93%` |
+| 2 | `⚡ 0xRadikal Top 100 (15min 真实测活极速源)` | **89** 个 | `23.86%` |
+| 3 | `[动态日期] NodeFree YAML` | **21** 个 | `5.63%` |
+| 4 | `📡 shaoyouvip 每日实测` | **16** 个 | `4.29%` |
+| 5 | `📱 Pawdroid 免费节点库` | **13** 个 | `3.49%` |
+| 6 | `📡 Zhangkai 系列 (speednodes)` | **2** 个 | `0.54%` |
 | 7 | `🐱 PuddinCat BestClash (30min 实测)` | **1** 个 | `0.27%` |
-| **-** | **去重后总计** | **364** 个 | `100.00%` |
+| **-** | **去重后总计** | **373** 个 | `100.00%` |
 
 </div>
 
